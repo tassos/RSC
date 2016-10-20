@@ -5,33 +5,49 @@ function DHparams
 %                               Translation). The coordinate frames are
 %                               drawn after each transformation and
 %                               segments are drawn between transformations
+    clear all
+    global th d a r
+    
+    th{1}=90;
+    d{1}=0;
+    a{1}=2;
+    r{1}=2;
 
-theta=0;
-delta=0;
-alpha=0;
-rho=0;
-
-	Z=[cosd(theta) -sind(theta) 0 0;sind(theta) cosd(theta) 0 0;0 0 1 delta;0 0 0 1];
-    X=[1 0 0 rho;0 cosd(alpha) -sind(alpha) 0;0 sind(alpha) cosd(alpha) 0;0 0 0 1];
-    M={Z*X};
+    
 
     scrsz = get(groot,'ScreenSize')./2;
     figure('Position',[1 scrsz(4) scrsz(3) scrsz(4)]);
     xlim([-5 5]); ylim([-5 5]); zlim([-5 5]);
-    DrawRobot(M);
+    % Set the ascpect ratio to 1 for each direction and set the camera at
+    % point [1,1,1], looking towards point [0,0,0]
+    set(gca,'DataAspectRatio',[1 1 1]);
+    view(-235,45);
     
-    utheta=uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',theta,'Position', [scrsz(3)-130 80 120 20]);
+    ut = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',th{1},'Position', [scrsz(3)-130 80 120 20]);
     uicontrol('style','text','string','θ','position',[scrsz(3)-140 80 10 20]);
-    ualpha=uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',alpha,'Position', [scrsz(3)-130 60 120 20]);
+    ua = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',a{1},'Position', [scrsz(3)-130 60 120 20]);
     uicontrol('style','text','string','α','position',[scrsz(3)-140 60 10 20]);
-    udelta=uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',delta,'Position', [scrsz(3)-130 40 120 20]);
+    ud = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',d{1},'Position', [scrsz(3)-130 40 120 20]);
     uicontrol('style','text','string','d','position',[scrsz(3)-140 40 10 20]);
-    urho=uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',rho,'Position', [scrsz(3)-130 20 120 20]);
+    ur = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',r{1},'Position', [scrsz(3)-130 20 120 20]);
     uicontrol('style','text','string','r','position',[scrsz(3)-140 20 10 20]);
-    addlistener([utheta,ualpha,udelta,urho],'ContinuousValueChange',@(hObject, event) calculateMatrix(utheta,ualpha,udelta,urho));
+    h = uicontrol('style','popup','string',{'seg 1'},'Position',[10 80 120 20],'Callback',@(hObject,event)updateSliders(hObject,ut,ua,ud,ur));
+    uicontrol('style','pushbutton','string','Add segment','Position',[10 50 120 20],'Callback',@(hObject,event)addSegment(h));
+    uicontrol('style','pushbutton','string','Remove segment','Position',[10 30 120 20],'Callback',@(hObject,event)removeSegment(h));
+    addlistener([ut,ua,ud,ur],'ContinuousValueChange',@(hObject, event)listenSliders(h,ut,ua,ud,ur));
+    
+    DrawRobot
 end
 
-function DrawRobot(M)
+function DrawRobot
+    global th a d r
+    
+	for i=1:length(th)
+        Z{i}=[cosd(th{i}) -sind(th{i}) 0 0;sind(th{i}) cosd(th{i}) 0 0;0 0 1 d{i};0 0 0 1];
+        X{i}=[1 0 0 r{i};0 cosd(a{i}) -sind(a{i}) 0;0 sind(a{i}) cosd(a{i}) 0;0 0 0 1];
+        M{i}=Z{i}*X{i};
+    end
+
     cla(gca);
     P=eye(4);
     DrawCoord(P,2);
@@ -44,11 +60,6 @@ function DrawRobot(M)
         DrawSegment(P,N);
         P=N;
     end
-    
-    % Set the ascpect ratio to 1 for each direction and set the camera at
-    % point [1,1,1], looking towards point [0,0,0]
-    set(gca,'DataAspectRatio',[1 1 1]);
-    view(-235,45);
 end
 
 function obj = DrawSegment(M1,M2)
@@ -94,14 +105,52 @@ function obj = DrawCoord(M,L)
         [CoO(3);CoZ(3)],colours{3},'LineWidth',3);
 end
 
-function calculateMatrix(utheta,ualpha,udelta,urho)
-    theta=get(utheta,'Value');
-    alpha=get(ualpha,'Value');
-    delta=get(udelta,'Value');
-    rho=get(urho,'Value');
+function addSegment(h)
+    global th a d r
     
-	Z=[cosd(theta) -sind(theta) 0 0;sind(theta) cosd(theta) 0 0;0 0 1 delta;0 0 0 1];
-    X=[1 0 0 rho;0 cosd(alpha) -sind(alpha) 0;0 sind(alpha) cosd(alpha) 0;0 0 0 1];
-    M={Z*X};
-    DrawRobot(M);
+    segs = get(h,'String');
+    idx = length(segs)+1;
+    th{idx}=90;
+    a{idx}=0;
+    d{idx}=2;
+    r{idx}=2;
+    set(h,'String',[segs;['seg ',num2str(idx)]])
+    set(h,'Value',idx)
+    DrawRobot
+end
+
+function removeSegment(h)
+    global th a d r
+    segs = get(h,'String');
+    idx=length(segs);
+    
+    if idx>1
+        th(idx)=[];
+        a(idx)=[];
+        d(idx)=[];
+        r(idx)=[];
+        set(h,'String',segs(1:end-1))
+        set(h,'Value',min(idx-1,get(h,'Value')))
+        DrawRobot
+    end
+end
+
+function listenSliders(h,ut,ua,ud,ur)
+    global th a d r
+    
+    idx = get(h,'Value');
+    th{idx} = get(ut,'Value');
+    a{idx} = get(ua,'Value');
+    d{idx} = get(ud,'Value');
+    r{idx} = get(ur,'Value');
+    DrawRobot
+end
+
+function updateSliders(hObject,ut,ua,ud,ur)
+    global th a d r
+    h = get(hObject,'Value');
+    set(ut,'Value',th{h});
+    set(ua,'Value',a{h})
+    set(ud,'Value',d{h})
+    set(ur,'Value',r{h})
 end
