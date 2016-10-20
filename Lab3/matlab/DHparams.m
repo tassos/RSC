@@ -23,18 +23,18 @@ function DHparams
     set(gca,'DataAspectRatio',[1 1 1]);
     view(-235,45);
     
-    ut = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',th{1},'Position', [scrsz(3)-130 80 120 20]);
-    uicontrol('style','text','string','θ','position',[scrsz(3)-140 80 10 20]);
-    ua = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',a{1},'Position', [scrsz(3)-130 60 120 20]);
-    uicontrol('style','text','string','α','position',[scrsz(3)-140 60 10 20]);
-    ud = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',d{1},'Position', [scrsz(3)-130 40 120 20]);
-    uicontrol('style','text','string','d','position',[scrsz(3)-140 40 10 20]);
-    ur = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',r{1},'Position', [scrsz(3)-130 20 120 20]);
-    uicontrol('style','text','string','r','position',[scrsz(3)-140 20 10 20]);
-    h = uicontrol('style','popup','string',{'seg 1'},'Position',[10 80 120 20],'Callback',@(hObject,event)updateSliders(hObject,ut,ua,ud,ur));
+    handles.ut = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',th{1},'Position', [scrsz(3)-130 80 120 20]);
+    handles.lut = uicontrol('style','text','string','θ 90','position',[scrsz(3)-170 80 40 20]);
+    handles.ua = uicontrol('Style', 'slider','Min',-90,'Max',90,'Value',a{1},'Position', [scrsz(3)-130 60 120 20]);
+    handles.lua = uicontrol('style','text','string','α 2','position',[scrsz(3)-170 60 40 20]);
+    handles.ud = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',d{1},'Position', [scrsz(3)-130 40 120 20]);
+    handles.lud = uicontrol('style','text','string','d 0','position',[scrsz(3)-170 40 40 20]);
+    handles.ur = uicontrol('Style', 'slider','Min',-5,'Max',5,'Value',r{1},'Position', [scrsz(3)-130 20 120 20]);
+    handles.lur = uicontrol('style','text','string','r 2','position',[scrsz(3)-170 20 40 20]);
+    h = uicontrol('style','popup','string',{'seg 1'},'Position',[10 80 120 20],'Callback',@(hObject,event)updateSliders(hObject,handles));
     uicontrol('style','pushbutton','string','Add segment','Position',[10 50 120 20],'Callback',@(hObject,event)addSegment(h));
     uicontrol('style','pushbutton','string','Remove segment','Position',[10 30 120 20],'Callback',@(hObject,event)removeSegment(h));
-    addlistener([ut,ua,ud,ur],'ContinuousValueChange',@(hObject, event)listenSliders(h,ut,ua,ud,ur));
+    addlistener([handles.ut,handles.ua,handles.ud,handles.ur],'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
     
     DrawRobot
 end
@@ -135,14 +135,18 @@ function removeSegment(h)
     end
 end
 
-function listenSliders(h,ut,ua,ud,ur)
+function listenSliders(h,handles)
     global th a d r
     
     idx = get(h,'Value');
-    th{idx} = get(ut,'Value');
-    a{idx} = get(ua,'Value');
-    d{idx} = get(ud,'Value');
-    r{idx} = get(ur,'Value');
+    th{idx} = get(handles.ut,'Value');
+    set(handles.lut,'string',['θ ',num2str(th{idx})]);
+    a{idx} = get(handles.ua,'Value');
+    set(handles.lua,'string',['α ',num2str(a{idx})]);
+    d{idx} = get(handles.ud,'Value');
+    set(handles.lud,'string',['d ',num2str(d{idx})]);
+    r{idx} = get(handles.ur,'Value');
+    set(handles.lur,'string',['r ',num2str(r{idx})]);
     DrawRobot
 end
 
