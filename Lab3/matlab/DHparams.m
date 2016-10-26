@@ -34,7 +34,10 @@ function DHparams
     h = uicontrol('style','popup','string',{'seg 1'},'Position',[10 80 120 20],'Callback',@(hObject,event)updateSliders(hObject,handles));
     uicontrol('style','pushbutton','string','Add segment','Position',[10 50 120 20],'Callback',@(hObject,event)addSegment(h));
     uicontrol('style','pushbutton','string','Remove segment','Position',[10 30 120 20],'Callback',@(hObject,event)removeSegment(h));
-    addlistener([handles.ut,handles.ua,handles.ud,handles.ur],'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
+    addlistener(handles.ut,'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
+    addlistener(handles.ua,'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
+    addlistener(handles.ud,'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
+    addlistener(handles.ur,'ContinuousValueChange',@(hObject, event)listenSliders(h,handles));
     
     DrawRobot
 end
