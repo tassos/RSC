@@ -153,11 +153,11 @@ function listenSliders(h,handles)
     DrawRobot
 end
 
-function updateSliders(hObject,ut,ua,ud,ur)
+function updateSliders(hObject,handles)
     global th a d r
     h = get(hObject,'Value');
-    set(ut,'Value',th{h});
-    set(ua,'Value',a{h})
-    set(ud,'Value',d{h})
-    set(ur,'Value',r{h})
+    set(handles.ut,'Value',th{h});
+    set(handles.ua,'Value',a{h})
+    set(handles.ud,'Value',d{h})
+    set(handles.ur,'Value',r{h})
 end
