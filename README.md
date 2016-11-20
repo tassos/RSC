@@ -20,3 +20,14 @@ Function to draw multiple segments of a robot and change the DH parameters for e
 
 ### Food for thought
 [Determining DH parameters](https://www.youtube.com/watch?v=rA9tm0gTln8)
+
+## Embedded programming
+For the second part of the laboratory, we will learn a few things about embedded programming. Embedded programming will eventually allow us to control a robotic arm using a dedicated micro-processor. The first examples are rather simple, but it will help us getting started and understanding the underlying principles. If you wish to use your own laptops for this part, you will need to install some specific software to be able to communicate with the development board and the debugger.
+
+* Eclipse CDT (Eclipse for C/C++): https://www.eclipse.org
+* GNU Arm embedded toolchain: https://launchpad.net/gcc-arm-embedded
+* GNU Arm build tools: https://gnuarmeclipse.github.io/windows-build-tools
+* Segger J-Link drivers: https://www.segger.com
+* GNU Arm plugins for Eclipse: https://gnuarmeclipse.github.io
+
+You can find the first assignment in the Assignment document
