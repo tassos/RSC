@@ -31,3 +31,9 @@ For the second part of the laboratory, we will learn a few things about embedded
 * GNU Arm plugins for Eclipse: https://gnuarmeclipse.github.io
 
 You can find the first assignment in the Assignment document
+
+If you want to have a live view of the debugger and print messages in a console, you can use the RTT tools from SEGGER, which you can download from here:
+
+* RTT files: http://download.segger.com/J-Link/RTT/RTT_Implementation_141217.zip
+
+Extract the archive and include the binaries in the path of your project. Then add the 'SEGGER_RTT.h' in the includes of your project and debug your project. You can now print messages in the console and read them using the RTT Viewer software that should be installed by the Segger J-Link Software and Documentation
