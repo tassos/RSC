@@ -1,5 +1,3 @@
-function Lect1(F,V)
-
 % Start a new figure
 figure
 hold on
@@ -11,6 +9,9 @@ plot3(0,0,0,'k.','MarkerSize',20);
 plot3([0;5],[0;0],[0;0],'red','LineWidth',3);
 plot3([0;0],[0;5],[0;0],'green','LineWidth',3);
 plot3([0;0],[0;0],[0;5],'blue','LineWidth',3);
+
+F={F1,F2};
+V={V1(:,1:3),V2(:,1:3)};
 
 % Draw the two objects
 for ind = 1:length(F)
