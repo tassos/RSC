@@ -1,20 +1,16 @@
-Archive member included because of file (symbol)
+Archive member included to satisfy reference by file (symbol)
 
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
                               out/lpc17xx_timer.o (__aeabi_uldivmod)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
-                              c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o) (__gnu_uldivmod_helper)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
-                              c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
-                              c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o) (__divdi3)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
-                              c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o) (__udivdi3)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
                               out/queue.o (memcpy)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
                               out/tasks.o (memset)
-c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
+c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
                               out/lpc17xx_uart.o (strlen)
 
 Allocating common symbols
@@ -56,38 +52,13 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_app.o
  .group         0x00000000        0x8 out/rc_app.o
  .group         0x00000000        0x8 out/rc_app.o
+ .group         0x00000000        0x8 out/rc_app.o
+ .group         0x00000000        0x8 out/rc_app.o
  .text          0x00000000        0x0 out/rc_app.o
  .data          0x00000000        0x0 out/rc_app.o
  .bss           0x00000000        0x0 out/rc_app.o
- .group         0x00000000        0x8 out/core_cm3.o
- .group         0x00000000        0x8 out/core_cm3.o
- .group         0x00000000        0x8 out/core_cm3.o
- .group         0x00000000        0x8 out/core_cm3.o
- .group         0x00000000        0x8 out/core_cm3.o
- .text          0x00000000        0x0 out/core_cm3.o
- .data          0x00000000        0x0 out/core_cm3.o
- .bss           0x00000000        0x0 out/core_cm3.o
- .debug_info    0x00000000       0x68 out/core_cm3.o
- .debug_abbrev  0x00000000       0x29 out/core_cm3.o
- .debug_aranges
-                0x00000000       0x18 out/core_cm3.o
- .debug_macro   0x00000000       0x57 out/core_cm3.o
- .debug_macro   0x00000000      0x856 out/core_cm3.o
- .debug_macro   0x00000000       0x22 out/core_cm3.o
- .debug_macro   0x00000000       0x44 out/core_cm3.o
- .debug_macro   0x00000000       0x1c out/core_cm3.o
- .debug_macro   0x00000000      0x1f7 out/core_cm3.o
- .debug_line    0x00000000      0x17f out/core_cm3.o
- .debug_str     0x00000000     0x2f2e out/core_cm3.o
- .comment       0x00000000       0x71 out/core_cm3.o
- .ARM.attributes
-                0x00000000       0x33 out/core_cm3.o
- .group         0x00000000        0x8 out/startup_LPC17xx.o
- .text          0x00000000        0x0 out/startup_LPC17xx.o
- .data          0x00000000        0x0 out/startup_LPC17xx.o
- .bss           0x00000000        0x0 out/startup_LPC17xx.o
- .text._init    0x00000000        0xc out/startup_LPC17xx.o
- .debug_macro   0x00000000      0x856 out/startup_LPC17xx.o
+ .group         0x00000000        0x8 out/system_LPC17xx.o
+ .group         0x00000000        0x8 out/system_LPC17xx.o
  .group         0x00000000        0x8 out/system_LPC17xx.o
  .group         0x00000000        0x8 out/system_LPC17xx.o
  .group         0x00000000        0x8 out/system_LPC17xx.o
@@ -103,370 +74,50 @@ Discarded input sections
  .bss           0x00000000        0x0 out/system_LPC17xx.o
  .debug_macro   0x00000000      0x856 out/system_LPC17xx.o
  .debug_macro   0x00000000       0x22 out/system_LPC17xx.o
+ .debug_macro   0x00000000       0x87 out/system_LPC17xx.o
  .debug_macro   0x00000000       0x44 out/system_LPC17xx.o
- .debug_macro   0x00000000       0x1c out/system_LPC17xx.o
- .debug_macro   0x00000000      0x1f7 out/system_LPC17xx.o
+ .debug_macro   0x00000000       0xfd out/system_LPC17xx.o
+ .debug_macro   0x00000000       0x5e out/system_LPC17xx.o
+ .debug_macro   0x00000000      0x1df out/system_LPC17xx.o
  .debug_macro   0x00000000       0x1c out/system_LPC17xx.o
  .debug_macro   0x00000000       0x2e out/system_LPC17xx.o
  .debug_macro   0x00000000       0x18 out/system_LPC17xx.o
  .debug_macro   0x00000000      0x7af out/system_LPC17xx.o
  .debug_macro   0x00000000      0x2dc out/system_LPC17xx.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_adc.o
- .text          0x00000000        0x0 out/lpc17xx_adc.o
- .data          0x00000000        0x0 out/lpc17xx_adc.o
- .bss           0x00000000        0x0 out/lpc17xx_adc.o
- .rodata        0x00000000       0x14 out/lpc17xx_adc.o
- .text.ADC_Init
-                0x00000000       0x78 out/lpc17xx_adc.o
- .text.ADC_DeInit
-                0x00000000       0x3c out/lpc17xx_adc.o
- .text.ADC_GetData
-                0x00000000       0x2c out/lpc17xx_adc.o
- .text.ADC_StartCmd
-                0x00000000       0x7c out/lpc17xx_adc.o
- .text.ADC_BurstCmd
-                0x00000000       0x48 out/lpc17xx_adc.o
- .text.ADC_PowerdownCmd
-                0x00000000       0x48 out/lpc17xx_adc.o
- .text.ADC_EdgeStartConfig
-                0x00000000       0x5c out/lpc17xx_adc.o
- .text.ADC_IntConfig
-                0x00000000       0x98 out/lpc17xx_adc.o
- .text.ADC_ChannelCmd
-                0x00000000       0x5c out/lpc17xx_adc.o
- .text.ADC_ChannelGetData
-                0x00000000       0x48 out/lpc17xx_adc.o
- .text.ADC_ChannelGetStatus
-                0x00000000       0x7c out/lpc17xx_adc.o
- .text.ADC_GlobalGetData
-                0x00000000       0x3c out/lpc17xx_adc.o
- .text.ADC_GlobalGetStatus
-                0x00000000       0x6c out/lpc17xx_adc.o
- .debug_info    0x00000000      0x5f5 out/lpc17xx_adc.o
- .debug_abbrev  0x00000000      0x163 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .group         0x00000000        0x8 out/core_cm3.o
+ .text          0x00000000        0x0 out/core_cm3.o
+ .data          0x00000000        0x0 out/core_cm3.o
+ .bss           0x00000000        0x0 out/core_cm3.o
+ .debug_info    0x00000000       0x68 out/core_cm3.o
+ .debug_abbrev  0x00000000       0x29 out/core_cm3.o
  .debug_aranges
-                0x00000000       0x80 out/lpc17xx_adc.o
- .debug_ranges  0x00000000       0x70 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0xae out/lpc17xx_adc.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x2e out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_adc.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x18 out/lpc17xx_adc.o
- .debug_macro   0x00000000      0x7af out/lpc17xx_adc.o
- .debug_macro   0x00000000      0x2dc out/lpc17xx_adc.o
- .debug_macro   0x00000000       0x55 out/lpc17xx_adc.o
- .debug_macro   0x00000000       0xee out/lpc17xx_adc.o
- .debug_macro   0x00000000      0x2fe out/lpc17xx_adc.o
- .debug_macro   0x00000000       0xcb out/lpc17xx_adc.o
- .debug_line    0x00000000      0x41c out/lpc17xx_adc.o
- .debug_str     0x00000000     0x9041 out/lpc17xx_adc.o
- .comment       0x00000000       0x71 out/lpc17xx_adc.o
- .debug_frame   0x00000000      0x218 out/lpc17xx_adc.o
+                0x00000000       0x18 out/core_cm3.o
+ .debug_macro   0x00000000       0x6f out/core_cm3.o
+ .debug_macro   0x00000000      0x856 out/core_cm3.o
+ .debug_macro   0x00000000       0x22 out/core_cm3.o
+ .debug_macro   0x00000000       0x87 out/core_cm3.o
+ .debug_macro   0x00000000       0x44 out/core_cm3.o
+ .debug_macro   0x00000000       0xfd out/core_cm3.o
+ .debug_macro   0x00000000       0x5e out/core_cm3.o
+ .debug_macro   0x00000000      0x1df out/core_cm3.o
+ .debug_line    0x00000000      0x1f1 out/core_cm3.o
+ .debug_str     0x00000000     0x3305 out/core_cm3.o
+ .comment       0x00000000       0x6f out/core_cm3.o
  .ARM.attributes
-                0x00000000       0x33 out/lpc17xx_adc.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
- .text          0x00000000        0x0 out/lpc17xx_clkpwr.o
- .data          0x00000000        0x0 out/lpc17xx_clkpwr.o
- .bss           0x00000000        0x0 out/lpc17xx_clkpwr.o
- .text.CLKPWR_SetPCLKDiv
-                0x00000000       0x8c out/lpc17xx_clkpwr.o
- .text.CLKPWR_GetPCLKSEL
-                0x00000000       0x4c out/lpc17xx_clkpwr.o
- .text.CLKPWR_GetPCLK
-                0x00000000       0x64 out/lpc17xx_clkpwr.o
- .text.CLKPWR_ConfigPPWR
-                0x00000000       0x58 out/lpc17xx_clkpwr.o
- .text.CLKPWR_Sleep
-                0x00000000       0x1c out/lpc17xx_clkpwr.o
- .text.CLKPWR_DeepSleep
-                0x00000000       0x24 out/lpc17xx_clkpwr.o
- .text.CLKPWR_PowerDown
-                0x00000000       0x24 out/lpc17xx_clkpwr.o
- .text.CLKPWR_DeepPowerDown
-                0x00000000       0x24 out/lpc17xx_clkpwr.o
- .debug_info    0x00000000      0x632 out/lpc17xx_clkpwr.o
- .debug_abbrev  0x00000000      0x1d9 out/lpc17xx_clkpwr.o
- .debug_aranges
-                0x00000000       0x58 out/lpc17xx_clkpwr.o
- .debug_ranges  0x00000000       0x48 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x9c out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x2e out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x18 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000      0x7af out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000      0x2dc out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000       0x55 out/lpc17xx_clkpwr.o
- .debug_macro   0x00000000      0x2f8 out/lpc17xx_clkpwr.o
- .debug_line    0x00000000      0x2ed out/lpc17xx_clkpwr.o
- .debug_str     0x00000000     0x8679 out/lpc17xx_clkpwr.o
- .comment       0x00000000       0x71 out/lpc17xx_clkpwr.o
- .debug_frame   0x00000000      0x140 out/lpc17xx_clkpwr.o
- .ARM.attributes
-                0x00000000       0x33 out/lpc17xx_clkpwr.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_gpio.o
- .text          0x00000000        0x0 out/lpc17xx_gpio.o
- .data          0x00000000        0x0 out/lpc17xx_gpio.o
- .bss           0x00000000        0x0 out/lpc17xx_gpio.o
- .text.FIO_HalfWordGetPointer
-                0x00000000       0x74 out/lpc17xx_gpio.o
- .text.FIO_ByteGetPointer
-                0x00000000       0x74 out/lpc17xx_gpio.o
- .text.GPIO_ReadValue
-                0x00000000       0x2c out/lpc17xx_gpio.o
- .text.FIO_SetDir
-                0x00000000       0x24 out/lpc17xx_gpio.o
- .text.FIO_SetValue
-                0x00000000       0x1c out/lpc17xx_gpio.o
- .text.FIO_ClearValue
-                0x00000000       0x1c out/lpc17xx_gpio.o
- .text.FIO_ReadValue
-                0x00000000       0x1c out/lpc17xx_gpio.o
- .text.FIO_IntCmd
-                0x00000000       0x24 out/lpc17xx_gpio.o
- .text.FIO_GetIntStatus
-                0x00000000       0x28 out/lpc17xx_gpio.o
- .text.FIO_ClearInt
-                0x00000000       0x1c out/lpc17xx_gpio.o
- .text.FIO_SetMask
-                0x00000000       0x48 out/lpc17xx_gpio.o
- .text.FIO_HalfWordSetDir
-                0x00000000       0x9c out/lpc17xx_gpio.o
- .text.FIO_HalfWordSetMask
-                0x00000000       0x9c out/lpc17xx_gpio.o
- .text.FIO_HalfWordSetValue
-                0x00000000       0x3c out/lpc17xx_gpio.o
- .text.FIO_HalfWordClearValue
-                0x00000000       0x3c out/lpc17xx_gpio.o
- .text.FIO_HalfWordReadValue
-                0x00000000       0x40 out/lpc17xx_gpio.o
- .text.FIO_ByteSetDir
-                0x00000000       0x78 out/lpc17xx_gpio.o
- .text.FIO_ByteSetMask
-                0x00000000       0x84 out/lpc17xx_gpio.o
- .text.FIO_ByteSetValue
-                0x00000000       0x38 out/lpc17xx_gpio.o
- .text.FIO_ByteClearValue
-                0x00000000       0x38 out/lpc17xx_gpio.o
- .text.FIO_ByteReadValue
-                0x00000000       0x3c out/lpc17xx_gpio.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x2e out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_gpio.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x18 out/lpc17xx_gpio.o
- .debug_macro   0x00000000      0x7af out/lpc17xx_gpio.o
- .debug_macro   0x00000000      0x2dc out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0x55 out/lpc17xx_gpio.o
- .debug_macro   0x00000000       0xcb out/lpc17xx_gpio.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
- .text          0x00000000        0x0 out/lpc17xx_libcfg_default.o
- .data          0x00000000        0x0 out/lpc17xx_libcfg_default.o
- .bss           0x00000000        0x0 out/lpc17xx_libcfg_default.o
- .text.check_failed
-                0x00000000        0xc out/lpc17xx_libcfg_default.o
- .debug_info    0x00000000       0xdb out/lpc17xx_libcfg_default.o
- .debug_abbrev  0x00000000       0x6c out/lpc17xx_libcfg_default.o
- .debug_aranges
-                0x00000000       0x20 out/lpc17xx_libcfg_default.o
- .debug_ranges  0x00000000       0x10 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0x69 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0x4f out/lpc17xx_libcfg_default.o
- .debug_macro   0x00000000       0xc5 out/lpc17xx_libcfg_default.o
- .debug_line    0x00000000      0x1ca out/lpc17xx_libcfg_default.o
- .debug_str     0x00000000     0x3210 out/lpc17xx_libcfg_default.o
- .comment       0x00000000       0x71 out/lpc17xx_libcfg_default.o
- .debug_frame   0x00000000       0x2c out/lpc17xx_libcfg_default.o
- .ARM.attributes
-                0x00000000       0x33 out/lpc17xx_libcfg_default.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_pinsel.o
- .text          0x00000000        0x0 out/lpc17xx_pinsel.o
- .data          0x00000000        0x0 out/lpc17xx_pinsel.o
- .bss           0x00000000        0x0 out/lpc17xx_pinsel.o
- .text.PINSEL_SetPinFunc
-                0x00000000       0x80 out/lpc17xx_pinsel.o
- .text.PINSEL_ConfigTraceFunc
-                0x00000000       0x40 out/lpc17xx_pinsel.o
- .text.PINSEL_SetResistorMode
-                0x00000000       0x80 out/lpc17xx_pinsel.o
- .text.PINSEL_SetOpenDrainMode
-                0x00000000       0x6c out/lpc17xx_pinsel.o
- .text.PINSEL_SetI2C0Pins
-                0x00000000       0x38 out/lpc17xx_pinsel.o
- .text.PINSEL_ConfigPin
-                0x00000000       0x50 out/lpc17xx_pinsel.o
- .debug_info    0x00000000      0x476 out/lpc17xx_pinsel.o
- .debug_abbrev  0x00000000      0x129 out/lpc17xx_pinsel.o
- .debug_aranges
-                0x00000000       0x48 out/lpc17xx_pinsel.o
- .debug_ranges  0x00000000       0x38 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x9c out/lpc17xx_pinsel.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x2e out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_pinsel.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x18 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000      0x7af out/lpc17xx_pinsel.o
- .debug_macro   0x00000000      0x2dc out/lpc17xx_pinsel.o
- .debug_macro   0x00000000       0x55 out/lpc17xx_pinsel.o
- .debug_macro   0x00000000      0x143 out/lpc17xx_pinsel.o
- .debug_line    0x00000000      0x287 out/lpc17xx_pinsel.o
- .debug_str     0x00000000     0x7903 out/lpc17xx_pinsel.o
- .comment       0x00000000       0x71 out/lpc17xx_pinsel.o
- .debug_frame   0x00000000      0x100 out/lpc17xx_pinsel.o
- .ARM.attributes
-                0x00000000       0x33 out/lpc17xx_pinsel.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .group         0x00000000        0x8 out/lpc17xx_timer.o
- .text          0x00000000        0x0 out/lpc17xx_timer.o
- .data          0x00000000        0x0 out/lpc17xx_timer.o
- .bss           0x00000000        0x0 out/lpc17xx_timer.o
- .text.TIM_GetPClock
-                0x00000000       0x58 out/lpc17xx_timer.o
- .text.TIM_ConverUSecToVal
-                0x00000000       0x60 out/lpc17xx_timer.o
- .text.TIM_ConverPtrToTimeNum
-                0x00000000       0x60 out/lpc17xx_timer.o
- .rodata        0x00000000       0x18 out/lpc17xx_timer.o
- .text.TIM_GetIntStatus
-                0x00000000       0x98 out/lpc17xx_timer.o
- .text.TIM_GetIntCaptureStatus
-                0x00000000       0x9c out/lpc17xx_timer.o
- .text.TIM_ClearIntPending
-                0x00000000       0x88 out/lpc17xx_timer.o
- .text.TIM_ClearIntCapturePending
-                0x00000000       0x8c out/lpc17xx_timer.o
- .text.TIM_ConfigStructInit
-                0x00000000       0x38 out/lpc17xx_timer.o
- .text.TIM_Init
-                0x00000000      0x16c out/lpc17xx_timer.o
- .text.TIM_DeInit
-                0x00000000       0x98 out/lpc17xx_timer.o
- .text.TIM_Cmd  0x00000000       0x6c out/lpc17xx_timer.o
- .text.TIM_ResetCounter
-                0x00000000       0x60 out/lpc17xx_timer.o
- .text.TIM_ConfigMatch
-                0x00000000      0x158 out/lpc17xx_timer.o
- .text.TIM_ConfigCapture
-                0x00000000       0xd8 out/lpc17xx_timer.o
- .text.TIM_GetCaptureValue
-                0x00000000       0x74 out/lpc17xx_timer.o
- .text.Timer0_Wait
-                0x00000000       0x74 out/lpc17xx_timer.o
- .text.Timer0_us_Wait
-                0x00000000       0x74 out/lpc17xx_timer.o
- .debug_info    0x00000000      0x886 out/lpc17xx_timer.o
- .debug_abbrev  0x00000000      0x1e0 out/lpc17xx_timer.o
- .debug_aranges
-                0x00000000       0xa0 out/lpc17xx_timer.o
- .debug_ranges  0x00000000       0x90 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0xb7 out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x856 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x2e out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x22 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x44 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x18 out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x7af out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x2dc out/lpc17xx_timer.o
- .debug_macro   0x00000000       0x55 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0xe3 out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x2fe out/lpc17xx_timer.o
- .debug_macro   0x00000000      0x149 out/lpc17xx_timer.o
- .debug_macro   0x00000000       0xcb out/lpc17xx_timer.o
- .debug_line    0x00000000      0x5b1 out/lpc17xx_timer.o
- .debug_str     0x00000000     0x9646 out/lpc17xx_timer.o
- .comment       0x00000000       0x71 out/lpc17xx_timer.o
- .debug_frame   0x00000000      0x2b8 out/lpc17xx_timer.o
- .ARM.attributes
-                0x00000000       0x33 out/lpc17xx_timer.o
+                0x00000000       0x33 out/core_cm3.o
+ .group         0x00000000        0x8 out/startup_LPC17xx.o
+ .text          0x00000000        0x0 out/startup_LPC17xx.o
+ .data          0x00000000        0x0 out/startup_LPC17xx.o
+ .bss           0x00000000        0x0 out/startup_LPC17xx.o
+ .debug_macro   0x00000000      0x856 out/startup_LPC17xx.o
+ .group         0x00000000        0x8 out/lpc17xx_uart.o
+ .group         0x00000000        0x8 out/lpc17xx_uart.o
  .group         0x00000000        0x8 out/lpc17xx_uart.o
  .group         0x00000000        0x8 out/lpc17xx_uart.o
  .group         0x00000000        0x8 out/lpc17xx_uart.o
@@ -485,10 +136,10 @@ Discarded input sections
  .data          0x00000000        0x0 out/lpc17xx_uart.o
  .bss           0x00000000        0x0 out/lpc17xx_uart.o
  .text.uart_set_divisors
-                0x00000000      0x214 out/lpc17xx_uart.o
+                0x00000000      0x218 out/lpc17xx_uart.o
  .rodata        0x00000000       0x14 out/lpc17xx_uart.o
  .text.UART_DeInit
-                0x00000000       0x98 out/lpc17xx_uart.o
+                0x00000000       0x9c out/lpc17xx_uart.o
  .text.UART_Init
                 0x00000000      0x2ec out/lpc17xx_uart.o
  .text.UART_ConfigStructInit
@@ -500,7 +151,7 @@ Discarded input sections
  .text.UART_ForceBreak
                 0x00000000       0x78 out/lpc17xx_uart.o
  .text.UART_IrDAInvtInputCmd
-                0x00000000       0x78 out/lpc17xx_uart.o
+                0x00000000       0x7c out/lpc17xx_uart.o
  .text.UART_IrDACmd
                 0x00000000       0x74 out/lpc17xx_uart.o
  .text.UART_IrDAPulseDivConfig
@@ -536,32 +187,791 @@ Discarded input sections
  .text.UART_RS485SendData
                 0x00000000       0x24 out/lpc17xx_uart.o
  .text.UART_Send
-                0x00000000       0xe8 out/lpc17xx_uart.o
+                0x00000000       0xec out/lpc17xx_uart.o
  .text.UART_SendString
                 0x00000000       0x28 out/lpc17xx_uart.o
  .text.UART_Receive
-                0x00000000       0xb8 out/lpc17xx_uart.o
+                0x00000000       0xbc out/lpc17xx_uart.o
  .text.UART_SetupCbs
-                0x00000000       0x8c out/lpc17xx_uart.o
+                0x00000000       0x90 out/lpc17xx_uart.o
  .text.UART0_StdIntHandler
-                0x00000000       0x10 out/lpc17xx_uart.o
+                0x00000000       0x14 out/lpc17xx_uart.o
  .text.UART2_StdIntHandler
-                0x00000000       0x10 out/lpc17xx_uart.o
+                0x00000000       0x14 out/lpc17xx_uart.o
  .text.UART3_StdIntHandler
-                0x00000000       0x10 out/lpc17xx_uart.o
+                0x00000000       0x14 out/lpc17xx_uart.o
  .debug_macro   0x00000000      0x856 out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x1c out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x2e out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x22 out/lpc17xx_uart.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x44 out/lpc17xx_uart.o
- .debug_macro   0x00000000       0x1c out/lpc17xx_uart.o
- .debug_macro   0x00000000      0x1f7 out/lpc17xx_uart.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_uart.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_uart.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x18 out/lpc17xx_uart.o
  .debug_macro   0x00000000      0x7af out/lpc17xx_uart.o
  .debug_macro   0x00000000      0x2dc out/lpc17xx_uart.o
  .debug_macro   0x00000000       0x55 out/lpc17xx_uart.o
- .debug_macro   0x00000000      0x2fe out/lpc17xx_uart.o
- .debug_macro   0x00000000       0xcb out/lpc17xx_uart.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_timer.o
+ .text          0x00000000        0x0 out/lpc17xx_timer.o
+ .data          0x00000000        0x0 out/lpc17xx_timer.o
+ .bss           0x00000000        0x0 out/lpc17xx_timer.o
+ .text.TIM_GetPClock
+                0x00000000       0x58 out/lpc17xx_timer.o
+ .text.TIM_ConverUSecToVal
+                0x00000000       0x58 out/lpc17xx_timer.o
+ .text.TIM_ConverPtrToTimeNum
+                0x00000000       0x5c out/lpc17xx_timer.o
+ .rodata        0x00000000       0x15 out/lpc17xx_timer.o
+ .text.TIM_GetIntStatus
+                0x00000000       0x98 out/lpc17xx_timer.o
+ .text.TIM_GetIntCaptureStatus
+                0x00000000       0x9c out/lpc17xx_timer.o
+ .text.TIM_ClearIntPending
+                0x00000000       0x8c out/lpc17xx_timer.o
+ .text.TIM_ClearIntCapturePending
+                0x00000000       0x8c out/lpc17xx_timer.o
+ .text.TIM_ConfigStructInit
+                0x00000000       0x38 out/lpc17xx_timer.o
+ .text.TIM_Init
+                0x00000000      0x170 out/lpc17xx_timer.o
+ .text.TIM_DeInit
+                0x00000000       0x9c out/lpc17xx_timer.o
+ .text.TIM_Cmd  0x00000000       0x70 out/lpc17xx_timer.o
+ .text.TIM_ResetCounter
+                0x00000000       0x64 out/lpc17xx_timer.o
+ .text.TIM_ConfigMatch
+                0x00000000      0x15c out/lpc17xx_timer.o
+ .text.TIM_ConfigCapture
+                0x00000000       0xdc out/lpc17xx_timer.o
+ .text.TIM_GetCaptureValue
+                0x00000000       0x74 out/lpc17xx_timer.o
+ .text.Timer0_Wait
+                0x00000000       0x78 out/lpc17xx_timer.o
+ .text.Timer0_us_Wait
+                0x00000000       0x74 out/lpc17xx_timer.o
+ .debug_info    0x00000000      0x8a6 out/lpc17xx_timer.o
+ .debug_abbrev  0x00000000      0x1e2 out/lpc17xx_timer.o
+ .debug_aranges
+                0x00000000       0xa0 out/lpc17xx_timer.o
+ .debug_ranges  0x00000000       0x90 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0xcf out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x1c out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x2e out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x18 out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x7af out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x2dc out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0x55 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0xe3 out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x2fe out/lpc17xx_timer.o
+ .debug_macro   0x00000000      0x149 out/lpc17xx_timer.o
+ .debug_macro   0x00000000       0xcb out/lpc17xx_timer.o
+ .debug_line    0x00000000      0x62e out/lpc17xx_timer.o
+ .debug_str     0x00000000     0x9a18 out/lpc17xx_timer.o
+ .comment       0x00000000       0x6f out/lpc17xx_timer.o
+ .debug_frame   0x00000000      0x2b8 out/lpc17xx_timer.o
+ .ARM.attributes
+                0x00000000       0x33 out/lpc17xx_timer.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_pinsel.o
+ .text          0x00000000        0x0 out/lpc17xx_pinsel.o
+ .data          0x00000000        0x0 out/lpc17xx_pinsel.o
+ .bss           0x00000000        0x0 out/lpc17xx_pinsel.o
+ .text.PINSEL_SetPinFunc
+                0x00000000       0x84 out/lpc17xx_pinsel.o
+ .text.PINSEL_ConfigTraceFunc
+                0x00000000       0x40 out/lpc17xx_pinsel.o
+ .text.PINSEL_SetResistorMode
+                0x00000000       0x84 out/lpc17xx_pinsel.o
+ .text.PINSEL_SetOpenDrainMode
+                0x00000000       0x6c out/lpc17xx_pinsel.o
+ .text.PINSEL_SetI2C0Pins
+                0x00000000       0x38 out/lpc17xx_pinsel.o
+ .text.PINSEL_ConfigPin
+                0x00000000       0x48 out/lpc17xx_pinsel.o
+ .debug_info    0x00000000      0x47a out/lpc17xx_pinsel.o
+ .debug_abbrev  0x00000000      0x12b out/lpc17xx_pinsel.o
+ .debug_aranges
+                0x00000000       0x48 out/lpc17xx_pinsel.o
+ .debug_ranges  0x00000000       0x38 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0xb4 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x1c out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x2e out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x18 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000      0x7af out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000      0x2dc out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000       0x55 out/lpc17xx_pinsel.o
+ .debug_macro   0x00000000      0x143 out/lpc17xx_pinsel.o
+ .debug_line    0x00000000      0x2fb out/lpc17xx_pinsel.o
+ .debug_str     0x00000000     0x7cd5 out/lpc17xx_pinsel.o
+ .comment       0x00000000       0x6f out/lpc17xx_pinsel.o
+ .debug_frame   0x00000000      0x100 out/lpc17xx_pinsel.o
+ .ARM.attributes
+                0x00000000       0x33 out/lpc17xx_pinsel.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_clkpwr.o
+ .text          0x00000000        0x0 out/lpc17xx_clkpwr.o
+ .data          0x00000000        0x0 out/lpc17xx_clkpwr.o
+ .bss           0x00000000        0x0 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_SetPCLKDiv
+                0x00000000       0x8c out/lpc17xx_clkpwr.o
+ .text.CLKPWR_GetPCLKSEL
+                0x00000000       0x48 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_GetPCLK
+                0x00000000       0x64 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_ConfigPPWR
+                0x00000000       0x58 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_Sleep
+                0x00000000       0x1c out/lpc17xx_clkpwr.o
+ .text.CLKPWR_DeepSleep
+                0x00000000       0x24 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_PowerDown
+                0x00000000       0x24 out/lpc17xx_clkpwr.o
+ .text.CLKPWR_DeepPowerDown
+                0x00000000       0x24 out/lpc17xx_clkpwr.o
+ .debug_info    0x00000000      0x64b out/lpc17xx_clkpwr.o
+ .debug_abbrev  0x00000000      0x1db out/lpc17xx_clkpwr.o
+ .debug_aranges
+                0x00000000       0x58 out/lpc17xx_clkpwr.o
+ .debug_ranges  0x00000000       0x48 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0xb4 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x1c out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x2e out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x18 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000      0x7af out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000      0x2dc out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000       0x55 out/lpc17xx_clkpwr.o
+ .debug_macro   0x00000000      0x2f8 out/lpc17xx_clkpwr.o
+ .debug_line    0x00000000      0x363 out/lpc17xx_clkpwr.o
+ .debug_str     0x00000000     0x8a4b out/lpc17xx_clkpwr.o
+ .comment       0x00000000       0x6f out/lpc17xx_clkpwr.o
+ .debug_frame   0x00000000      0x140 out/lpc17xx_clkpwr.o
+ .ARM.attributes
+                0x00000000       0x33 out/lpc17xx_clkpwr.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_libcfg_default.o
+ .text          0x00000000        0x0 out/lpc17xx_libcfg_default.o
+ .data          0x00000000        0x0 out/lpc17xx_libcfg_default.o
+ .bss           0x00000000        0x0 out/lpc17xx_libcfg_default.o
+ .text.check_failed
+                0x00000000        0xc out/lpc17xx_libcfg_default.o
+ .debug_info    0x00000000       0xdb out/lpc17xx_libcfg_default.o
+ .debug_abbrev  0x00000000       0x6c out/lpc17xx_libcfg_default.o
+ .debug_aranges
+                0x00000000       0x20 out/lpc17xx_libcfg_default.o
+ .debug_ranges  0x00000000       0x10 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x81 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0x4f out/lpc17xx_libcfg_default.o
+ .debug_macro   0x00000000       0xc5 out/lpc17xx_libcfg_default.o
+ .debug_line    0x00000000      0x23c out/lpc17xx_libcfg_default.o
+ .debug_str     0x00000000     0x35e2 out/lpc17xx_libcfg_default.o
+ .comment       0x00000000       0x6f out/lpc17xx_libcfg_default.o
+ .debug_frame   0x00000000       0x2c out/lpc17xx_libcfg_default.o
+ .ARM.attributes
+                0x00000000       0x33 out/lpc17xx_libcfg_default.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_gpio.o
+ .text          0x00000000        0x0 out/lpc17xx_gpio.o
+ .data          0x00000000        0x0 out/lpc17xx_gpio.o
+ .bss           0x00000000        0x0 out/lpc17xx_gpio.o
+ .text.FIO_HalfWordGetPointer
+                0x00000000       0x70 out/lpc17xx_gpio.o
+ .text.FIO_ByteGetPointer
+                0x00000000       0x70 out/lpc17xx_gpio.o
+ .text.GPIO_ReadValue
+                0x00000000       0x2c out/lpc17xx_gpio.o
+ .text.FIO_SetDir
+                0x00000000       0x24 out/lpc17xx_gpio.o
+ .text.FIO_SetValue
+                0x00000000       0x20 out/lpc17xx_gpio.o
+ .text.FIO_ClearValue
+                0x00000000       0x20 out/lpc17xx_gpio.o
+ .text.FIO_ReadValue
+                0x00000000       0x1c out/lpc17xx_gpio.o
+ .text.FIO_IntCmd
+                0x00000000       0x24 out/lpc17xx_gpio.o
+ .text.FIO_GetIntStatus
+                0x00000000       0x28 out/lpc17xx_gpio.o
+ .text.FIO_ClearInt
+                0x00000000       0x20 out/lpc17xx_gpio.o
+ .text.FIO_SetMask
+                0x00000000       0x4c out/lpc17xx_gpio.o
+ .text.FIO_HalfWordSetDir
+                0x00000000       0xa4 out/lpc17xx_gpio.o
+ .text.FIO_HalfWordSetMask
+                0x00000000       0xa4 out/lpc17xx_gpio.o
+ .text.FIO_HalfWordSetValue
+                0x00000000       0x40 out/lpc17xx_gpio.o
+ .text.FIO_HalfWordClearValue
+                0x00000000       0x40 out/lpc17xx_gpio.o
+ .text.FIO_HalfWordReadValue
+                0x00000000       0x40 out/lpc17xx_gpio.o
+ .text.FIO_ByteSetDir
+                0x00000000       0x7c out/lpc17xx_gpio.o
+ .text.FIO_ByteSetMask
+                0x00000000       0x88 out/lpc17xx_gpio.o
+ .text.FIO_ByteSetValue
+                0x00000000       0x3c out/lpc17xx_gpio.o
+ .text.FIO_ByteClearValue
+                0x00000000       0x3c out/lpc17xx_gpio.o
+ .text.FIO_ByteReadValue
+                0x00000000       0x3c out/lpc17xx_gpio.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x1c out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x2e out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_gpio.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x18 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000      0x7af out/lpc17xx_gpio.o
+ .debug_macro   0x00000000      0x2dc out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0x55 out/lpc17xx_gpio.o
+ .debug_macro   0x00000000       0xcb out/lpc17xx_gpio.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/lpc17xx_adc.o
+ .text          0x00000000        0x0 out/lpc17xx_adc.o
+ .data          0x00000000        0x0 out/lpc17xx_adc.o
+ .bss           0x00000000        0x0 out/lpc17xx_adc.o
+ .rodata        0x00000000       0x13 out/lpc17xx_adc.o
+ .text.ADC_Init
+                0x00000000       0x78 out/lpc17xx_adc.o
+ .text.ADC_DeInit
+                0x00000000       0x40 out/lpc17xx_adc.o
+ .text.ADC_GetData
+                0x00000000       0x2c out/lpc17xx_adc.o
+ .text.ADC_StartCmd
+                0x00000000       0x80 out/lpc17xx_adc.o
+ .text.ADC_BurstCmd
+                0x00000000       0x4c out/lpc17xx_adc.o
+ .text.ADC_PowerdownCmd
+                0x00000000       0x4c out/lpc17xx_adc.o
+ .text.ADC_EdgeStartConfig
+                0x00000000       0x60 out/lpc17xx_adc.o
+ .text.ADC_IntConfig
+                0x00000000       0x9c out/lpc17xx_adc.o
+ .text.ADC_ChannelCmd
+                0x00000000       0x60 out/lpc17xx_adc.o
+ .text.ADC_ChannelGetData
+                0x00000000       0x48 out/lpc17xx_adc.o
+ .text.ADC_ChannelGetStatus
+                0x00000000       0x7c out/lpc17xx_adc.o
+ .text.ADC_GlobalGetData
+                0x00000000       0x3c out/lpc17xx_adc.o
+ .text.ADC_GlobalGetStatus
+                0x00000000       0x6c out/lpc17xx_adc.o
+ .debug_info    0x00000000      0x611 out/lpc17xx_adc.o
+ .debug_abbrev  0x00000000      0x165 out/lpc17xx_adc.o
+ .debug_aranges
+                0x00000000       0x80 out/lpc17xx_adc.o
+ .debug_ranges  0x00000000       0x70 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0xc6 out/lpc17xx_adc.o
+ .debug_macro   0x00000000      0x856 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x1c out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x2e out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x22 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x87 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x44 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0xfd out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x5e out/lpc17xx_adc.o
+ .debug_macro   0x00000000      0x1df out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x18 out/lpc17xx_adc.o
+ .debug_macro   0x00000000      0x7af out/lpc17xx_adc.o
+ .debug_macro   0x00000000      0x2dc out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0x55 out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0xee out/lpc17xx_adc.o
+ .debug_macro   0x00000000      0x2fe out/lpc17xx_adc.o
+ .debug_macro   0x00000000       0xcb out/lpc17xx_adc.o
+ .debug_line    0x00000000      0x48f out/lpc17xx_adc.o
+ .debug_str     0x00000000     0x9413 out/lpc17xx_adc.o
+ .comment       0x00000000       0x6f out/lpc17xx_adc.o
+ .debug_frame   0x00000000      0x218 out/lpc17xx_adc.o
+ .ARM.attributes
+                0x00000000       0x33 out/lpc17xx_adc.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .group         0x00000000        0x8 out/timers.o
+ .text          0x00000000        0x0 out/timers.o
+ .data          0x00000000        0x0 out/timers.o
+ .bss           0x00000000        0x0 out/timers.o
+ .debug_info    0x00000000       0x76 out/timers.o
+ .debug_abbrev  0x00000000       0x29 out/timers.o
+ .debug_aranges
+                0x00000000       0x18 out/timers.o
+ .debug_macro   0x00000000      0x1aa out/timers.o
+ .debug_macro   0x00000000      0x856 out/timers.o
+ .debug_macro   0x00000000       0x22 out/timers.o
+ .debug_macro   0x00000000       0x4c out/timers.o
+ .debug_macro   0x00000000       0x8d out/timers.o
+ .debug_macro   0x00000000       0x35 out/timers.o
+ .debug_macro   0x00000000       0x9c out/timers.o
+ .debug_macro   0x00000000       0x16 out/timers.o
+ .debug_macro   0x00000000      0x10e out/timers.o
+ .debug_macro   0x00000000       0x86 out/timers.o
+ .debug_macro   0x00000000       0x4a out/timers.o
+ .debug_macro   0x00000000       0x52 out/timers.o
+ .debug_macro   0x00000000       0x1f out/timers.o
+ .debug_macro   0x00000000       0x43 out/timers.o
+ .debug_macro   0x00000000       0x20 out/timers.o
+ .debug_macro   0x00000000      0x187 out/timers.o
+ .debug_macro   0x00000000      0x330 out/timers.o
+ .debug_macro   0x00000000       0x16 out/timers.o
+ .debug_macro   0x00000000       0x29 out/timers.o
+ .debug_macro   0x00000000       0xfd out/timers.o
+ .debug_macro   0x00000000       0x5e out/timers.o
+ .debug_macro   0x00000000      0x1df out/timers.o
+ .debug_macro   0x00000000      0x10c out/timers.o
+ .debug_macro   0x00000000       0x46 out/timers.o
+ .debug_macro   0x00000000       0xd3 out/timers.o
+ .debug_macro   0x00000000       0x12 out/timers.o
+ .debug_macro   0x00000000       0x1f out/timers.o
+ .debug_macro   0x00000000      0x35a out/timers.o
+ .debug_macro   0x00000000       0x79 out/timers.o
+ .debug_macro   0x00000000       0x69 out/timers.o
+ .debug_macro   0x00000000       0xb0 out/timers.o
+ .debug_macro   0x00000000       0x91 out/timers.o
+ .debug_line    0x00000000      0x348 out/timers.o
+ .debug_str     0x00000000     0x9911 out/timers.o
+ .comment       0x00000000       0x6f out/timers.o
+ .ARM.attributes
+                0x00000000       0x33 out/timers.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .group         0x00000000        0x8 out/tasks.o
+ .text          0x00000000        0x0 out/tasks.o
+ .data          0x00000000        0x0 out/tasks.o
+ .bss           0x00000000        0x0 out/tasks.o
+ .text.vTaskDelete
+                0x00000000       0xe8 out/tasks.o
+ .text.vTaskDelayUntil
+                0x00000000       0xe4 out/tasks.o
+ .text.uxTaskPriorityGet
+                0x00000000       0x34 out/tasks.o
+ .text.vTaskPrioritySet
+                0x00000000      0x13c out/tasks.o
+ .text.vTaskSuspend
+                0x00000000       0xf4 out/tasks.o
+ .text.prvTaskIsTaskSuspended
+                0x00000000       0x64 out/tasks.o
+ .text.vTaskResume
+                0x00000000       0x9c out/tasks.o
+ .text.xTaskResumeFromISR
+                0x00000000       0xb8 out/tasks.o
+ .text.vTaskEndScheduler
+                0x00000000       0x1c out/tasks.o
+ .text.xTaskGetTickCount
+                0x00000000       0x24 out/tasks.o
+ .text.xTaskGetTickCountFromISR
+                0x00000000       0x2c out/tasks.o
+ .text.uxTaskGetNumberOfTasks
+                0x00000000       0x14 out/tasks.o
+ .text.uxTaskGetSystemState
+                0x00000000       0xf4 out/tasks.o
+ .text.vTaskPlaceOnEventList
+                0x00000000       0x90 out/tasks.o
+ .text.vTaskPlaceOnUnorderedEventList
+                0x00000000       0xb0 out/tasks.o
+ .text.xTaskRemoveFromEventList
+                0x00000000       0xb4 out/tasks.o
+ .text.xTaskRemoveFromUnorderedEventList
+                0x00000000       0xb0 out/tasks.o
+ .text.vTaskSetTimeOutState
+                0x00000000       0x34 out/tasks.o
+ .text.xTaskCheckForTimeOut
+                0x00000000       0xa0 out/tasks.o
+ .text.vTaskMissedYield
+                0x00000000       0x18 out/tasks.o
+ .text.uxTaskGetTaskNumber
+                0x00000000       0x2c out/tasks.o
+ .text.vTaskSetTaskNumber
+                0x00000000       0x24 out/tasks.o
+ .text.prvListTaskWithinSingleList
+                0x00000000      0x118 out/tasks.o
+ .text.prvTaskCheckFreeStackSpace
+                0x00000000       0x38 out/tasks.o
+ .text.uxTaskGetStackHighWaterMark
+                0x00000000       0x38 out/tasks.o
+ .text.xTaskGetCurrentTaskHandle
+                0x00000000       0x1c out/tasks.o
+ .text.vTaskPriorityInherit
+                0x00000000       0xec out/tasks.o
+ .text.xTaskPriorityDisinherit
+                0x00000000       0xd8 out/tasks.o
+ .text.uxTaskResetEventItemValue
+                0x00000000       0x30 out/tasks.o
+ .text.pvTaskIncrementMutexHeldCount
+                0x00000000       0x28 out/tasks.o
+ .debug_macro   0x00000000      0x856 out/tasks.o
+ .debug_macro   0x00000000       0x22 out/tasks.o
+ .debug_macro   0x00000000       0x4c out/tasks.o
+ .debug_macro   0x00000000       0x8d out/tasks.o
+ .debug_macro   0x00000000       0x35 out/tasks.o
+ .debug_macro   0x00000000       0x9c out/tasks.o
+ .debug_macro   0x00000000       0x16 out/tasks.o
+ .debug_macro   0x00000000      0x10e out/tasks.o
+ .debug_macro   0x00000000       0x86 out/tasks.o
+ .debug_macro   0x00000000       0x4a out/tasks.o
+ .debug_macro   0x00000000       0x52 out/tasks.o
+ .debug_macro   0x00000000       0x1f out/tasks.o
+ .debug_macro   0x00000000       0x43 out/tasks.o
+ .debug_macro   0x00000000       0x20 out/tasks.o
+ .debug_macro   0x00000000      0x187 out/tasks.o
+ .debug_macro   0x00000000      0x330 out/tasks.o
+ .debug_macro   0x00000000       0x16 out/tasks.o
+ .debug_macro   0x00000000       0x29 out/tasks.o
+ .debug_macro   0x00000000       0xfd out/tasks.o
+ .debug_macro   0x00000000       0x5e out/tasks.o
+ .debug_macro   0x00000000      0x1df out/tasks.o
+ .debug_macro   0x00000000      0x10c out/tasks.o
+ .debug_macro   0x00000000       0x46 out/tasks.o
+ .debug_macro   0x00000000       0xd3 out/tasks.o
+ .debug_macro   0x00000000       0x12 out/tasks.o
+ .debug_macro   0x00000000       0x1f out/tasks.o
+ .debug_macro   0x00000000      0x35a out/tasks.o
+ .debug_macro   0x00000000       0x79 out/tasks.o
+ .debug_macro   0x00000000       0x69 out/tasks.o
+ .debug_macro   0x00000000       0x91 out/tasks.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .group         0x00000000        0x8 out/event_groups.o
+ .text          0x00000000        0x0 out/event_groups.o
+ .data          0x00000000        0x0 out/event_groups.o
+ .bss           0x00000000        0x0 out/event_groups.o
+ .text.xEventGroupCreate
+                0x00000000       0x30 out/event_groups.o
+ .text.xEventGroupSync
+                0x00000000       0xf8 out/event_groups.o
+ .text.xEventGroupWaitBits
+                0x00000000      0x11c out/event_groups.o
+ .text.xEventGroupClearBits
+                0x00000000       0x44 out/event_groups.o
+ .text.xEventGroupGetBitsFromISR
+                0x00000000       0x28 out/event_groups.o
+ .text.xEventGroupSetBits
+                0x00000000       0xec out/event_groups.o
+ .text.vEventGroupDelete
+                0x00000000       0x54 out/event_groups.o
+ .text.vEventGroupSetBitsCallback
+                0x00000000       0x1c out/event_groups.o
+ .text.vEventGroupClearBitsCallback
+                0x00000000       0x1c out/event_groups.o
+ .text.prvTestWaitCondition
+                0x00000000       0x44 out/event_groups.o
+ .text.uxEventGroupGetNumber
+                0x00000000       0x2c out/event_groups.o
+ .debug_info    0x00000000      0x662 out/event_groups.o
+ .debug_abbrev  0x00000000      0x13a out/event_groups.o
+ .debug_aranges
+                0x00000000       0x70 out/event_groups.o
+ .debug_ranges  0x00000000       0x60 out/event_groups.o
+ .debug_macro   0x00000000      0x1ce out/event_groups.o
+ .debug_macro   0x00000000      0x856 out/event_groups.o
+ .debug_macro   0x00000000       0x22 out/event_groups.o
+ .debug_macro   0x00000000       0x4c out/event_groups.o
+ .debug_macro   0x00000000       0x8d out/event_groups.o
+ .debug_macro   0x00000000       0x35 out/event_groups.o
+ .debug_macro   0x00000000       0x9c out/event_groups.o
+ .debug_macro   0x00000000       0x16 out/event_groups.o
+ .debug_macro   0x00000000      0x10e out/event_groups.o
+ .debug_macro   0x00000000       0x86 out/event_groups.o
+ .debug_macro   0x00000000       0x4a out/event_groups.o
+ .debug_macro   0x00000000       0x52 out/event_groups.o
+ .debug_macro   0x00000000       0x1f out/event_groups.o
+ .debug_macro   0x00000000       0x43 out/event_groups.o
+ .debug_macro   0x00000000       0x20 out/event_groups.o
+ .debug_macro   0x00000000      0x187 out/event_groups.o
+ .debug_macro   0x00000000      0x330 out/event_groups.o
+ .debug_macro   0x00000000       0x16 out/event_groups.o
+ .debug_macro   0x00000000       0x29 out/event_groups.o
+ .debug_macro   0x00000000       0xfd out/event_groups.o
+ .debug_macro   0x00000000       0x5e out/event_groups.o
+ .debug_macro   0x00000000      0x1df out/event_groups.o
+ .debug_macro   0x00000000      0x10c out/event_groups.o
+ .debug_macro   0x00000000       0x46 out/event_groups.o
+ .debug_macro   0x00000000       0xd3 out/event_groups.o
+ .debug_macro   0x00000000       0x12 out/event_groups.o
+ .debug_macro   0x00000000       0x1f out/event_groups.o
+ .debug_macro   0x00000000      0x35a out/event_groups.o
+ .debug_macro   0x00000000       0x79 out/event_groups.o
+ .debug_macro   0x00000000       0x69 out/event_groups.o
+ .debug_macro   0x00000000       0x91 out/event_groups.o
+ .debug_line    0x00000000      0x4e3 out/event_groups.o
+ .debug_str     0x00000000     0x9399 out/event_groups.o
+ .comment       0x00000000       0x6f out/event_groups.o
+ .debug_frame   0x00000000      0x1c8 out/event_groups.o
+ .ARM.attributes
+                0x00000000       0x33 out/event_groups.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .group         0x00000000        0x8 out/hooks.o
+ .text          0x00000000        0x0 out/hooks.o
+ .data          0x00000000        0x0 out/hooks.o
+ .bss           0x00000000        0x0 out/hooks.o
+ .text.vApplicationIdleHook
+                0x00000000        0xc out/hooks.o
+ .text.vApplicationMallocFailedHook
+                0x00000000        0xc out/hooks.o
+ .debug_macro   0x00000000      0x856 out/hooks.o
+ .debug_macro   0x00000000       0x22 out/hooks.o
+ .debug_macro   0x00000000       0x4c out/hooks.o
+ .debug_macro   0x00000000       0x8d out/hooks.o
+ .debug_macro   0x00000000       0x35 out/hooks.o
+ .debug_macro   0x00000000       0x9c out/hooks.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .group         0x00000000        0x8 out/list.o
+ .text          0x00000000        0x0 out/list.o
+ .data          0x00000000        0x0 out/list.o
+ .bss           0x00000000        0x0 out/list.o
+ .debug_macro   0x00000000      0x856 out/list.o
+ .debug_macro   0x00000000       0x22 out/list.o
+ .debug_macro   0x00000000       0x4c out/list.o
+ .debug_macro   0x00000000       0x8d out/list.o
+ .debug_macro   0x00000000       0x35 out/list.o
+ .debug_macro   0x00000000       0x9c out/list.o
+ .debug_macro   0x00000000       0x16 out/list.o
+ .debug_macro   0x00000000      0x10e out/list.o
+ .debug_macro   0x00000000       0x86 out/list.o
+ .debug_macro   0x00000000       0x4a out/list.o
+ .debug_macro   0x00000000       0x52 out/list.o
+ .debug_macro   0x00000000       0x1f out/list.o
+ .debug_macro   0x00000000       0x43 out/list.o
+ .debug_macro   0x00000000       0x20 out/list.o
+ .debug_macro   0x00000000      0x187 out/list.o
+ .debug_macro   0x00000000      0x330 out/list.o
+ .debug_macro   0x00000000       0x16 out/list.o
+ .debug_macro   0x00000000       0x29 out/list.o
+ .debug_macro   0x00000000       0xfd out/list.o
+ .debug_macro   0x00000000       0x5e out/list.o
+ .debug_macro   0x00000000      0x1df out/list.o
+ .debug_macro   0x00000000      0x10c out/list.o
+ .debug_macro   0x00000000       0x46 out/list.o
+ .debug_macro   0x00000000       0xd3 out/list.o
+ .debug_macro   0x00000000       0x12 out/list.o
+ .debug_macro   0x00000000       0x1f out/list.o
+ .debug_macro   0x00000000      0x35a out/list.o
+ .debug_macro   0x00000000       0x79 out/list.o
+ .group         0x00000000        0x8 out/croutine.o
+ .group         0x00000000        0x8 out/croutine.o
  .group         0x00000000        0x8 out/croutine.o
  .group         0x00000000        0x8 out/croutine.o
  .group         0x00000000        0x8 out/croutine.o
@@ -607,13 +1017,13 @@ Discarded input sections
  .text.vCoRoutineAddToDelayedList
                 0x00000000       0x84 out/croutine.o
  .text.prvCheckPendingReadyList
-                0x00000000       0x78 out/croutine.o
+                0x00000000       0x7c out/croutine.o
  .text.prvCheckDelayedList
-                0x00000000       0xf4 out/croutine.o
+                0x00000000       0xf8 out/croutine.o
  .text.vCoRoutineSchedule
                 0x00000000       0xa0 out/croutine.o
  .text.prvInitialiseCoRoutineLists
-                0x00000000       0x68 out/croutine.o
+                0x00000000       0x6c out/croutine.o
  .text.xCoRoutineRemoveFromEventList
                 0x00000000       0x50 out/croutine.o
  .debug_info    0x00000000      0x4c2 out/croutine.o
@@ -621,13 +1031,15 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x50 out/croutine.o
  .debug_ranges  0x00000000       0x40 out/croutine.o
- .debug_macro   0x00000000       0xc5 out/croutine.o
+ .debug_macro   0x00000000       0xdd out/croutine.o
  .debug_macro   0x00000000      0x856 out/croutine.o
- .debug_macro   0x00000000      0x166 out/croutine.o
+ .debug_macro   0x00000000      0x16d out/croutine.o
  .debug_macro   0x00000000       0x22 out/croutine.o
+ .debug_macro   0x00000000       0x87 out/croutine.o
  .debug_macro   0x00000000       0x44 out/croutine.o
- .debug_macro   0x00000000       0x1c out/croutine.o
- .debug_macro   0x00000000      0x1f7 out/croutine.o
+ .debug_macro   0x00000000       0xfd out/croutine.o
+ .debug_macro   0x00000000       0x5e out/croutine.o
+ .debug_macro   0x00000000      0x1df out/croutine.o
  .debug_macro   0x00000000      0x10c out/croutine.o
  .debug_macro   0x00000000       0x46 out/croutine.o
  .debug_macro   0x00000000       0xd3 out/croutine.o
@@ -637,174 +1049,15 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 out/croutine.o
  .debug_macro   0x00000000       0x69 out/croutine.o
  .debug_macro   0x00000000       0x49 out/croutine.o
- .debug_line    0x00000000      0x366 out/croutine.o
- .debug_str     0x00000000     0x6576 out/croutine.o
- .comment       0x00000000       0x71 out/croutine.o
+ .debug_line    0x00000000      0x3dc out/croutine.o
+ .debug_str     0x00000000     0x695d out/croutine.o
+ .comment       0x00000000       0x6f out/croutine.o
  .debug_frame   0x00000000      0x128 out/croutine.o
  .ARM.attributes
                 0x00000000       0x33 out/croutine.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .group         0x00000000        0x8 out/event_groups.o
- .text          0x00000000        0x0 out/event_groups.o
- .data          0x00000000        0x0 out/event_groups.o
- .bss           0x00000000        0x0 out/event_groups.o
- .text.xEventGroupCreate
-                0x00000000       0x30 out/event_groups.o
- .text.xEventGroupSync
-                0x00000000       0xfc out/event_groups.o
- .text.xEventGroupWaitBits
-                0x00000000      0x120 out/event_groups.o
- .text.xEventGroupClearBits
-                0x00000000       0x44 out/event_groups.o
- .text.xEventGroupGetBitsFromISR
-                0x00000000       0x28 out/event_groups.o
- .text.xEventGroupSetBits
-                0x00000000       0xec out/event_groups.o
- .text.vEventGroupDelete
-                0x00000000       0x50 out/event_groups.o
- .text.vEventGroupSetBitsCallback
-                0x00000000       0x18 out/event_groups.o
- .text.vEventGroupClearBitsCallback
-                0x00000000       0x18 out/event_groups.o
- .text.prvTestWaitCondition
-                0x00000000       0x44 out/event_groups.o
- .text.uxEventGroupGetNumber
-                0x00000000       0x2c out/event_groups.o
- .debug_info    0x00000000      0x662 out/event_groups.o
- .debug_abbrev  0x00000000      0x13a out/event_groups.o
- .debug_aranges
-                0x00000000       0x70 out/event_groups.o
- .debug_ranges  0x00000000       0x60 out/event_groups.o
- .debug_macro   0x00000000      0x1b0 out/event_groups.o
- .debug_macro   0x00000000      0x856 out/event_groups.o
- .debug_macro   0x00000000       0x58 out/event_groups.o
- .debug_macro   0x00000000       0x22 out/event_groups.o
- .debug_macro   0x00000000       0x35 out/event_groups.o
- .debug_macro   0x00000000       0x9c out/event_groups.o
- .debug_macro   0x00000000       0x16 out/event_groups.o
- .debug_macro   0x00000000      0x10e out/event_groups.o
- .debug_macro   0x00000000       0x7f out/event_groups.o
- .debug_macro   0x00000000       0x4a out/event_groups.o
- .debug_macro   0x00000000       0x52 out/event_groups.o
- .debug_macro   0x00000000       0x16 out/event_groups.o
- .debug_macro   0x00000000       0x43 out/event_groups.o
- .debug_macro   0x00000000      0x180 out/event_groups.o
- .debug_macro   0x00000000      0x29d out/event_groups.o
- .debug_macro   0x00000000       0x16 out/event_groups.o
- .debug_macro   0x00000000       0x29 out/event_groups.o
- .debug_macro   0x00000000       0x1c out/event_groups.o
- .debug_macro   0x00000000      0x1f7 out/event_groups.o
- .debug_macro   0x00000000      0x10c out/event_groups.o
- .debug_macro   0x00000000       0x46 out/event_groups.o
- .debug_macro   0x00000000       0xd3 out/event_groups.o
- .debug_macro   0x00000000       0x12 out/event_groups.o
- .debug_macro   0x00000000       0x1f out/event_groups.o
- .debug_macro   0x00000000      0x35a out/event_groups.o
- .debug_macro   0x00000000       0x79 out/event_groups.o
- .debug_macro   0x00000000       0x69 out/event_groups.o
- .debug_macro   0x00000000       0x91 out/event_groups.o
- .debug_line    0x00000000      0x471 out/event_groups.o
- .debug_str     0x00000000     0x8a0c out/event_groups.o
- .comment       0x00000000       0x71 out/event_groups.o
- .debug_frame   0x00000000      0x1c8 out/event_groups.o
- .ARM.attributes
-                0x00000000       0x33 out/event_groups.o
- .group         0x00000000        0x8 out/hooks.o
- .group         0x00000000        0x8 out/hooks.o
- .group         0x00000000        0x8 out/hooks.o
- .group         0x00000000        0x8 out/hooks.o
- .group         0x00000000        0x8 out/hooks.o
- .group         0x00000000        0x8 out/hooks.o
- .text          0x00000000        0x0 out/hooks.o
- .data          0x00000000        0x0 out/hooks.o
- .bss           0x00000000        0x0 out/hooks.o
- .text.vApplicationIdleHook
-                0x00000000        0xc out/hooks.o
- .text.vApplicationMallocFailedHook
-                0x00000000        0xc out/hooks.o
- .debug_macro   0x00000000      0x856 out/hooks.o
- .debug_macro   0x00000000       0x58 out/hooks.o
- .debug_macro   0x00000000       0x22 out/hooks.o
- .debug_macro   0x00000000       0x35 out/hooks.o
- .debug_macro   0x00000000       0x9c out/hooks.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .group         0x00000000        0x8 out/list.o
- .text          0x00000000        0x0 out/list.o
- .data          0x00000000        0x0 out/list.o
- .bss           0x00000000        0x0 out/list.o
- .debug_macro   0x00000000      0x856 out/list.o
- .debug_macro   0x00000000       0x58 out/list.o
- .debug_macro   0x00000000       0x22 out/list.o
- .debug_macro   0x00000000       0x35 out/list.o
- .debug_macro   0x00000000       0x9c out/list.o
- .debug_macro   0x00000000       0x16 out/list.o
- .debug_macro   0x00000000      0x10e out/list.o
- .debug_macro   0x00000000       0x7f out/list.o
- .debug_macro   0x00000000       0x4a out/list.o
- .debug_macro   0x00000000       0x52 out/list.o
- .debug_macro   0x00000000       0x16 out/list.o
- .debug_macro   0x00000000       0x43 out/list.o
- .debug_macro   0x00000000      0x180 out/list.o
- .debug_macro   0x00000000      0x29d out/list.o
- .debug_macro   0x00000000       0x16 out/list.o
- .debug_macro   0x00000000       0x29 out/list.o
- .debug_macro   0x00000000       0x1c out/list.o
- .debug_macro   0x00000000      0x1f7 out/list.o
- .debug_macro   0x00000000      0x10c out/list.o
- .debug_macro   0x00000000       0x46 out/list.o
- .debug_macro   0x00000000       0xd3 out/list.o
- .debug_macro   0x00000000       0x12 out/list.o
- .debug_macro   0x00000000       0x1f out/list.o
- .debug_macro   0x00000000      0x35a out/list.o
- .debug_macro   0x00000000       0x79 out/list.o
+ .group         0x00000000        0x8 out/queue.o
+ .group         0x00000000        0x8 out/queue.o
+ .group         0x00000000        0x8 out/queue.o
  .group         0x00000000        0x8 out/queue.o
  .group         0x00000000        0x8 out/queue.o
  .group         0x00000000        0x8 out/queue.o
@@ -850,11 +1103,11 @@ Discarded input sections
  .text.xQueueCreateCountingSemaphore
                 0x00000000       0x54 out/queue.o
  .text.xQueueGenericSend
-                0x00000000      0x16c out/queue.o
+                0x00000000      0x168 out/queue.o
  .text.xQueueGenericSendFromISR
                 0x00000000       0xe8 out/queue.o
  .text.xQueueGenericReceive
-                0x00000000      0x19c out/queue.o
+                0x00000000      0x198 out/queue.o
  .text.xQueueReceiveFromISR
                 0x00000000       0xb4 out/queue.o
  .text.xQueuePeekFromISR
@@ -866,15 +1119,15 @@ Discarded input sections
  .text.uxQueueMessagesWaitingFromISR
                 0x00000000       0x24 out/queue.o
  .text.vQueueDelete
-                0x00000000       0x3c out/queue.o
+                0x00000000       0x40 out/queue.o
  .text.uxQueueGetQueueNumber
                 0x00000000       0x18 out/queue.o
  .text.vQueueSetQueueNumber
                 0x00000000       0x1c out/queue.o
  .text.ucQueueGetQueueType
-                0x00000000       0x1c out/queue.o
+                0x00000000       0x18 out/queue.o
  .text.prvCopyDataToQueue
-                0x00000000       0xdc out/queue.o
+                0x00000000       0xd8 out/queue.o
  .text.prvCopyDataFromQueue
                 0x00000000       0x4c out/queue.o
  .text.prvUnlockQueue
@@ -896,27 +1149,30 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0xf0 out/queue.o
  .debug_ranges  0x00000000       0xe0 out/queue.o
- .debug_macro   0x00000000      0x1c7 out/queue.o
+ .debug_macro   0x00000000      0x1ef out/queue.o
  .debug_macro   0x00000000      0x856 out/queue.o
- .debug_macro   0x00000000       0x58 out/queue.o
  .debug_macro   0x00000000       0x22 out/queue.o
+ .debug_macro   0x00000000       0x4c out/queue.o
+ .debug_macro   0x00000000       0x8d out/queue.o
  .debug_macro   0x00000000       0x35 out/queue.o
  .debug_macro   0x00000000       0x9c out/queue.o
  .debug_macro   0x00000000       0x16 out/queue.o
  .debug_macro   0x00000000      0x10e out/queue.o
- .debug_macro   0x00000000       0x7f out/queue.o
+ .debug_macro   0x00000000       0x86 out/queue.o
  .debug_macro   0x00000000       0x4a out/queue.o
  .debug_macro   0x00000000       0x52 out/queue.o
- .debug_macro   0x00000000       0x16 out/queue.o
+ .debug_macro   0x00000000       0x1f out/queue.o
  .debug_macro   0x00000000       0x43 out/queue.o
- .debug_macro   0x00000000      0x180 out/queue.o
- .debug_macro   0x00000000      0x29d out/queue.o
+ .debug_macro   0x00000000       0x20 out/queue.o
+ .debug_macro   0x00000000      0x187 out/queue.o
+ .debug_macro   0x00000000      0x330 out/queue.o
  .debug_macro   0x00000000       0x16 out/queue.o
  .debug_macro   0x00000000       0x29 out/queue.o
  .debug_macro   0x00000000       0x16 out/queue.o
  .debug_macro   0x00000000       0x35 out/queue.o
- .debug_macro   0x00000000       0x1c out/queue.o
- .debug_macro   0x00000000      0x1f7 out/queue.o
+ .debug_macro   0x00000000       0xfd out/queue.o
+ .debug_macro   0x00000000       0x5e out/queue.o
+ .debug_macro   0x00000000      0x1df out/queue.o
  .debug_macro   0x00000000      0x10c out/queue.o
  .debug_macro   0x00000000       0x46 out/queue.o
  .debug_macro   0x00000000       0xd3 out/queue.o
@@ -926,204 +1182,15 @@ Discarded input sections
  .debug_macro   0x00000000       0x79 out/queue.o
  .debug_macro   0x00000000       0x69 out/queue.o
  .debug_macro   0x00000000       0xb0 out/queue.o
- .debug_line    0x00000000      0x807 out/queue.o
- .debug_str     0x00000000     0x8ffb out/queue.o
- .comment       0x00000000       0x71 out/queue.o
+ .debug_line    0x00000000      0x87b out/queue.o
+ .debug_str     0x00000000     0x9998 out/queue.o
+ .comment       0x00000000       0x6f out/queue.o
  .debug_frame   0x00000000      0x448 out/queue.o
  .ARM.attributes
                 0x00000000       0x33 out/queue.o
  COMMON         0x00000000       0x50 out/queue.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .group         0x00000000        0x8 out/tasks.o
- .text          0x00000000        0x0 out/tasks.o
- .data          0x00000000        0x0 out/tasks.o
- .bss           0x00000000        0x0 out/tasks.o
- .text.vTaskDelete
-                0x00000000       0xe8 out/tasks.o
- .text.vTaskDelayUntil
-                0x00000000       0xe4 out/tasks.o
- .text.uxTaskPriorityGet
-                0x00000000       0x34 out/tasks.o
- .text.vTaskPrioritySet
-                0x00000000      0x140 out/tasks.o
- .text.vTaskSuspend
-                0x00000000       0xf0 out/tasks.o
- .text.prvTaskIsTaskSuspended
-                0x00000000       0x64 out/tasks.o
- .text.vTaskResume
-                0x00000000       0x9c out/tasks.o
- .text.xTaskResumeFromISR
-                0x00000000       0xbc out/tasks.o
- .text.vTaskEndScheduler
-                0x00000000       0x18 out/tasks.o
- .text.xTaskGetTickCount
-                0x00000000       0x24 out/tasks.o
- .text.xTaskGetTickCountFromISR
-                0x00000000       0x2c out/tasks.o
- .text.uxTaskGetNumberOfTasks
-                0x00000000       0x18 out/tasks.o
- .text.uxTaskGetSystemState
-                0x00000000       0xf8 out/tasks.o
- .text.vTaskPlaceOnEventList
-                0x00000000       0x8c out/tasks.o
- .text.vTaskPlaceOnUnorderedEventList
-                0x00000000       0xac out/tasks.o
- .text.xTaskRemoveFromEventList
-                0x00000000       0xb8 out/tasks.o
- .text.xTaskRemoveFromUnorderedEventList
-                0x00000000       0xb4 out/tasks.o
- .text.vTaskSetTimeOutState
-                0x00000000       0x34 out/tasks.o
- .text.xTaskCheckForTimeOut
-                0x00000000       0xa0 out/tasks.o
- .text.vTaskMissedYield
-                0x00000000       0x18 out/tasks.o
- .text.uxTaskGetTaskNumber
-                0x00000000       0x2c out/tasks.o
- .text.vTaskSetTaskNumber
-                0x00000000       0x24 out/tasks.o
- .text.prvListTaskWithinSingleList
-                0x00000000      0x118 out/tasks.o
- .text.prvTaskCheckFreeStackSpace
-                0x00000000       0x38 out/tasks.o
- .text.uxTaskGetStackHighWaterMark
-                0x00000000       0x38 out/tasks.o
- .text.xTaskGetCurrentTaskHandle
-                0x00000000       0x20 out/tasks.o
- .text.vTaskPriorityInherit
-                0x00000000       0xf0 out/tasks.o
- .text.xTaskPriorityDisinherit
-                0x00000000       0xdc out/tasks.o
- .text.uxTaskResetEventItemValue
-                0x00000000       0x30 out/tasks.o
- .text.pvTaskIncrementMutexHeldCount
-                0x00000000       0x28 out/tasks.o
- .debug_macro   0x00000000      0x856 out/tasks.o
- .debug_macro   0x00000000       0x58 out/tasks.o
- .debug_macro   0x00000000       0x22 out/tasks.o
- .debug_macro   0x00000000       0x35 out/tasks.o
- .debug_macro   0x00000000       0x9c out/tasks.o
- .debug_macro   0x00000000       0x16 out/tasks.o
- .debug_macro   0x00000000      0x10e out/tasks.o
- .debug_macro   0x00000000       0x7f out/tasks.o
- .debug_macro   0x00000000       0x4a out/tasks.o
- .debug_macro   0x00000000       0x52 out/tasks.o
- .debug_macro   0x00000000       0x16 out/tasks.o
- .debug_macro   0x00000000       0x43 out/tasks.o
- .debug_macro   0x00000000      0x180 out/tasks.o
- .debug_macro   0x00000000      0x29d out/tasks.o
- .debug_macro   0x00000000       0x16 out/tasks.o
- .debug_macro   0x00000000       0x29 out/tasks.o
- .debug_macro   0x00000000       0x16 out/tasks.o
- .debug_macro   0x00000000       0x35 out/tasks.o
- .debug_macro   0x00000000       0x1c out/tasks.o
- .debug_macro   0x00000000      0x1f7 out/tasks.o
- .debug_macro   0x00000000      0x10c out/tasks.o
- .debug_macro   0x00000000       0x46 out/tasks.o
- .debug_macro   0x00000000       0xd3 out/tasks.o
- .debug_macro   0x00000000       0x12 out/tasks.o
- .debug_macro   0x00000000       0x1f out/tasks.o
- .debug_macro   0x00000000      0x35a out/tasks.o
- .debug_macro   0x00000000       0x79 out/tasks.o
- .debug_macro   0x00000000       0x69 out/tasks.o
- .debug_macro   0x00000000       0x91 out/tasks.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .group         0x00000000        0x8 out/timers.o
- .text          0x00000000        0x0 out/timers.o
- .data          0x00000000        0x0 out/timers.o
- .bss           0x00000000        0x0 out/timers.o
- .debug_info    0x00000000       0x76 out/timers.o
- .debug_abbrev  0x00000000       0x29 out/timers.o
- .debug_aranges
-                0x00000000       0x18 out/timers.o
- .debug_macro   0x00000000      0x18c out/timers.o
- .debug_macro   0x00000000      0x856 out/timers.o
- .debug_macro   0x00000000       0x58 out/timers.o
- .debug_macro   0x00000000       0x22 out/timers.o
- .debug_macro   0x00000000       0x35 out/timers.o
- .debug_macro   0x00000000       0x9c out/timers.o
- .debug_macro   0x00000000       0x16 out/timers.o
- .debug_macro   0x00000000      0x10e out/timers.o
- .debug_macro   0x00000000       0x7f out/timers.o
- .debug_macro   0x00000000       0x4a out/timers.o
- .debug_macro   0x00000000       0x52 out/timers.o
- .debug_macro   0x00000000       0x16 out/timers.o
- .debug_macro   0x00000000       0x43 out/timers.o
- .debug_macro   0x00000000      0x180 out/timers.o
- .debug_macro   0x00000000      0x29d out/timers.o
- .debug_macro   0x00000000       0x16 out/timers.o
- .debug_macro   0x00000000       0x29 out/timers.o
- .debug_macro   0x00000000       0x1c out/timers.o
- .debug_macro   0x00000000      0x1f7 out/timers.o
- .debug_macro   0x00000000      0x10c out/timers.o
- .debug_macro   0x00000000       0x46 out/timers.o
- .debug_macro   0x00000000       0xd3 out/timers.o
- .debug_macro   0x00000000       0x12 out/timers.o
- .debug_macro   0x00000000       0x1f out/timers.o
- .debug_macro   0x00000000      0x35a out/timers.o
- .debug_macro   0x00000000       0x79 out/timers.o
- .debug_macro   0x00000000       0x69 out/timers.o
- .debug_macro   0x00000000       0xb0 out/timers.o
- .debug_macro   0x00000000       0x91 out/timers.o
- .debug_line    0x00000000      0x2d6 out/timers.o
- .debug_str     0x00000000     0x8f84 out/timers.o
- .comment       0x00000000       0x71 out/timers.o
- .ARM.attributes
-                0x00000000       0x33 out/timers.o
+ .group         0x00000000        0x8 out/port.o
+ .group         0x00000000        0x8 out/port.o
  .group         0x00000000        0x8 out/port.o
  .group         0x00000000        0x8 out/port.o
  .group         0x00000000        0x8 out/port.o
@@ -1146,13 +1213,15 @@ Discarded input sections
  .text.vPortEndScheduler
                 0x00000000       0x1c out/port.o
  .text.vPortValidateInterruptPriority
-                0x00000000       0x58 out/port.o
+                0x00000000       0x5c out/port.o
  .debug_macro   0x00000000      0x856 out/port.o
- .debug_macro   0x00000000      0x166 out/port.o
+ .debug_macro   0x00000000      0x16d out/port.o
  .debug_macro   0x00000000       0x22 out/port.o
+ .debug_macro   0x00000000       0x87 out/port.o
  .debug_macro   0x00000000       0x44 out/port.o
- .debug_macro   0x00000000       0x1c out/port.o
- .debug_macro   0x00000000      0x1f7 out/port.o
+ .debug_macro   0x00000000       0xfd out/port.o
+ .debug_macro   0x00000000       0x5e out/port.o
+ .debug_macro   0x00000000      0x1df out/port.o
  .debug_macro   0x00000000      0x10c out/port.o
  .debug_macro   0x00000000       0x46 out/port.o
  .debug_macro   0x00000000       0xd3 out/port.o
@@ -1187,33 +1256,39 @@ Discarded input sections
  .group         0x00000000        0x8 out/heap_2.o
  .group         0x00000000        0x8 out/heap_2.o
  .group         0x00000000        0x8 out/heap_2.o
+ .group         0x00000000        0x8 out/heap_2.o
+ .group         0x00000000        0x8 out/heap_2.o
+ .group         0x00000000        0x8 out/heap_2.o
  .text          0x00000000        0x0 out/heap_2.o
  .data          0x00000000        0x0 out/heap_2.o
  .bss           0x00000000        0x0 out/heap_2.o
  .rodata.heapSTRUCT_SIZE
                 0x00000000        0x2 out/heap_2.o
  .text.xPortGetFreeHeapSize
-                0x00000000       0x18 out/heap_2.o
+                0x00000000       0x14 out/heap_2.o
  .text.vPortInitialiseBlocks
                 0x00000000        0xc out/heap_2.o
  .debug_macro   0x00000000      0x856 out/heap_2.o
- .debug_macro   0x00000000       0x58 out/heap_2.o
  .debug_macro   0x00000000       0x22 out/heap_2.o
+ .debug_macro   0x00000000       0x4c out/heap_2.o
+ .debug_macro   0x00000000       0x8d out/heap_2.o
  .debug_macro   0x00000000       0x35 out/heap_2.o
  .debug_macro   0x00000000       0x9c out/heap_2.o
  .debug_macro   0x00000000       0x16 out/heap_2.o
  .debug_macro   0x00000000      0x10e out/heap_2.o
- .debug_macro   0x00000000       0x7f out/heap_2.o
+ .debug_macro   0x00000000       0x86 out/heap_2.o
  .debug_macro   0x00000000       0x4a out/heap_2.o
  .debug_macro   0x00000000       0x52 out/heap_2.o
- .debug_macro   0x00000000       0x16 out/heap_2.o
+ .debug_macro   0x00000000       0x1f out/heap_2.o
  .debug_macro   0x00000000       0x43 out/heap_2.o
- .debug_macro   0x00000000      0x180 out/heap_2.o
- .debug_macro   0x00000000      0x29d out/heap_2.o
+ .debug_macro   0x00000000       0x20 out/heap_2.o
+ .debug_macro   0x00000000      0x187 out/heap_2.o
+ .debug_macro   0x00000000      0x330 out/heap_2.o
  .debug_macro   0x00000000       0x16 out/heap_2.o
  .debug_macro   0x00000000       0x29 out/heap_2.o
- .debug_macro   0x00000000       0x1c out/heap_2.o
- .debug_macro   0x00000000      0x1f7 out/heap_2.o
+ .debug_macro   0x00000000       0xfd out/heap_2.o
+ .debug_macro   0x00000000       0x5e out/heap_2.o
+ .debug_macro   0x00000000      0x1df out/heap_2.o
  .debug_macro   0x00000000      0x10c out/heap_2.o
  .debug_macro   0x00000000       0x46 out/heap_2.o
  .debug_macro   0x00000000       0xd3 out/heap_2.o
@@ -1248,15 +1323,19 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_task_leds.o
  .group         0x00000000        0x8 out/rc_task_leds.o
  .group         0x00000000        0x8 out/rc_task_leds.o
+ .group         0x00000000        0x8 out/rc_task_leds.o
+ .group         0x00000000        0x8 out/rc_task_leds.o
  .text          0x00000000        0x0 out/rc_task_leds.o
  .data          0x00000000        0x0 out/rc_task_leds.o
  .bss           0x00000000        0x0 out/rc_task_leds.o
  .debug_macro   0x00000000      0x856 out/rc_task_leds.o
- .debug_macro   0x00000000      0x166 out/rc_task_leds.o
+ .debug_macro   0x00000000      0x16d out/rc_task_leds.o
  .debug_macro   0x00000000       0x22 out/rc_task_leds.o
+ .debug_macro   0x00000000       0x87 out/rc_task_leds.o
  .debug_macro   0x00000000       0x44 out/rc_task_leds.o
- .debug_macro   0x00000000       0x1c out/rc_task_leds.o
- .debug_macro   0x00000000      0x1f7 out/rc_task_leds.o
+ .debug_macro   0x00000000       0xfd out/rc_task_leds.o
+ .debug_macro   0x00000000       0x5e out/rc_task_leds.o
+ .debug_macro   0x00000000      0x1df out/rc_task_leds.o
  .debug_macro   0x00000000      0x10c out/rc_task_leds.o
  .debug_macro   0x00000000       0x46 out/rc_task_leds.o
  .debug_macro   0x00000000       0xd3 out/rc_task_leds.o
@@ -1289,6 +1368,8 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_leds.o
  .group         0x00000000        0x8 out/rc_leds.o
  .group         0x00000000        0x8 out/rc_leds.o
+ .group         0x00000000        0x8 out/rc_leds.o
+ .group         0x00000000        0x8 out/rc_leds.o
  .text          0x00000000        0x0 out/rc_leds.o
  .data          0x00000000        0x0 out/rc_leds.o
  .bss           0x00000000        0x0 out/rc_leds.o
@@ -1296,9 +1377,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c out/rc_leds.o
  .debug_macro   0x00000000       0x2e out/rc_leds.o
  .debug_macro   0x00000000       0x22 out/rc_leds.o
+ .debug_macro   0x00000000       0x87 out/rc_leds.o
  .debug_macro   0x00000000       0x44 out/rc_leds.o
- .debug_macro   0x00000000       0x1c out/rc_leds.o
- .debug_macro   0x00000000      0x1f7 out/rc_leds.o
+ .debug_macro   0x00000000       0xfd out/rc_leds.o
+ .debug_macro   0x00000000       0x5e out/rc_leds.o
+ .debug_macro   0x00000000      0x1df out/rc_leds.o
  .debug_macro   0x00000000       0x18 out/rc_leds.o
  .debug_macro   0x00000000      0x7af out/rc_leds.o
  .debug_macro   0x00000000      0x2dc out/rc_leds.o
@@ -1321,6 +1404,8 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_system.o
  .group         0x00000000        0x8 out/rc_system.o
  .group         0x00000000        0x8 out/rc_system.o
+ .group         0x00000000        0x8 out/rc_system.o
+ .group         0x00000000        0x8 out/rc_system.o
  .text          0x00000000        0x0 out/rc_system.o
  .data          0x00000000        0x0 out/rc_system.o
  .bss           0x00000000        0x0 out/rc_system.o
@@ -1330,9 +1415,11 @@ Discarded input sections
                 0x00000000       0x10 out/rc_system.o
  .debug_macro   0x00000000      0x856 out/rc_system.o
  .debug_macro   0x00000000       0x22 out/rc_system.o
+ .debug_macro   0x00000000       0x87 out/rc_system.o
  .debug_macro   0x00000000       0x44 out/rc_system.o
- .debug_macro   0x00000000       0x1c out/rc_system.o
- .debug_macro   0x00000000      0x1f7 out/rc_system.o
+ .debug_macro   0x00000000       0xfd out/rc_system.o
+ .debug_macro   0x00000000       0x5e out/rc_system.o
+ .debug_macro   0x00000000      0x1df out/rc_system.o
  .debug_macro   0x00000000       0x1c out/rc_system.o
  .debug_macro   0x00000000       0x2e out/rc_system.o
  .debug_macro   0x00000000       0x18 out/rc_system.o
@@ -1341,6 +1428,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x55 out/rc_system.o
  .debug_macro   0x00000000       0xc5 out/rc_system.o
  .debug_macro   0x00000000       0x5e out/rc_system.o
+ .group         0x00000000        0x8 out/rc_gpio.o
+ .group         0x00000000        0x8 out/rc_gpio.o
  .group         0x00000000        0x8 out/rc_gpio.o
  .group         0x00000000        0x8 out/rc_gpio.o
  .group         0x00000000        0x8 out/rc_gpio.o
@@ -1366,9 +1455,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c out/rc_gpio.o
  .debug_macro   0x00000000       0x2e out/rc_gpio.o
  .debug_macro   0x00000000       0x22 out/rc_gpio.o
+ .debug_macro   0x00000000       0x87 out/rc_gpio.o
  .debug_macro   0x00000000       0x44 out/rc_gpio.o
- .debug_macro   0x00000000       0x1c out/rc_gpio.o
- .debug_macro   0x00000000      0x1f7 out/rc_gpio.o
+ .debug_macro   0x00000000       0xfd out/rc_gpio.o
+ .debug_macro   0x00000000       0x5e out/rc_gpio.o
+ .debug_macro   0x00000000      0x1df out/rc_gpio.o
  .debug_macro   0x00000000       0x18 out/rc_gpio.o
  .debug_macro   0x00000000      0x7af out/rc_gpio.o
  .debug_macro   0x00000000      0x2dc out/rc_gpio.o
@@ -1390,23 +1481,25 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_uart.o
  .group         0x00000000        0x8 out/rc_uart.o
  .group         0x00000000        0x8 out/rc_uart.o
+ .group         0x00000000        0x8 out/rc_uart.o
+ .group         0x00000000        0x8 out/rc_uart.o
  .text          0x00000000        0x0 out/rc_uart.o
  .data          0x00000000        0x0 out/rc_uart.o
  .bss           0x00000000        0x0 out/rc_uart.o
  .text.rcuart_Init
-                0x00000000       0x30 out/rc_uart.o
+                0x00000000       0x34 out/rc_uart.o
  .text.rcuart_DeInit
-                0x00000000       0x14 out/rc_uart.o
+                0x00000000       0x18 out/rc_uart.o
  .text.rcuart_Send
-                0x00000000       0x80 out/rc_uart.o
+                0x00000000       0x7c out/rc_uart.o
  .text.rcuart_Receive
                 0x00000000       0x24 out/rc_uart.o
  .text.rcuart_SetInterrupt
                 0x00000000       0x24 out/rc_uart.o
  .text.rcuart_TxState
-                0x00000000       0x1c out/rc_uart.o
- .text.rcuart_SetCallback_Function
                 0x00000000       0x20 out/rc_uart.o
+ .text.rcuart_SetCallback_Function
+                0x00000000       0x24 out/rc_uart.o
  .text.rcuart_PORT0_IRQHandler
                 0x00000000        0xc out/rc_uart.o
  .text.rcuart_PORT2_IRQHandler
@@ -1417,9 +1510,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c out/rc_uart.o
  .debug_macro   0x00000000       0x2e out/rc_uart.o
  .debug_macro   0x00000000       0x22 out/rc_uart.o
+ .debug_macro   0x00000000       0x87 out/rc_uart.o
  .debug_macro   0x00000000       0x44 out/rc_uart.o
- .debug_macro   0x00000000       0x1c out/rc_uart.o
- .debug_macro   0x00000000      0x1f7 out/rc_uart.o
+ .debug_macro   0x00000000       0xfd out/rc_uart.o
+ .debug_macro   0x00000000       0x5e out/rc_uart.o
+ .debug_macro   0x00000000      0x1df out/rc_uart.o
  .debug_macro   0x00000000       0x18 out/rc_uart.o
  .debug_macro   0x00000000      0x7af out/rc_uart.o
  .debug_macro   0x00000000      0x2dc out/rc_uart.o
@@ -1441,32 +1536,36 @@ Discarded input sections
  .group         0x00000000        0x8 out/rc_pinsel.o
  .group         0x00000000        0x8 out/rc_pinsel.o
  .group         0x00000000        0x8 out/rc_pinsel.o
+ .group         0x00000000        0x8 out/rc_pinsel.o
+ .group         0x00000000        0x8 out/rc_pinsel.o
  .text          0x00000000        0x0 out/rc_pinsel.o
  .data          0x00000000        0x0 out/rc_pinsel.o
  .bss           0x00000000        0x0 out/rc_pinsel.o
  .text.rcpinsel_SetPinFunction
                 0x00000000       0x28 out/rc_pinsel.o
  .text.rcpinsel_ConfigTraceFunction
-                0x00000000       0x18 out/rc_pinsel.o
+                0x00000000       0x1c out/rc_pinsel.o
  .text.rcpinsel_SetResistorMode
                 0x00000000       0x28 out/rc_pinsel.o
  .text.rcpinsel_SetDrainMode
                 0x00000000       0x28 out/rc_pinsel.o
  .text.rcpinsel_ConfigPin
-                0x00000000       0x30 out/rc_pinsel.o
- .debug_info    0x00000000      0x43c out/rc_pinsel.o
- .debug_abbrev  0x00000000       0xd0 out/rc_pinsel.o
+                0x00000000       0x34 out/rc_pinsel.o
+ .debug_info    0x00000000      0x454 out/rc_pinsel.o
+ .debug_abbrev  0x00000000       0xd2 out/rc_pinsel.o
  .debug_aranges
                 0x00000000       0x40 out/rc_pinsel.o
  .debug_ranges  0x00000000       0x30 out/rc_pinsel.o
- .debug_macro   0x00000000       0xc6 out/rc_pinsel.o
+ .debug_macro   0x00000000       0xde out/rc_pinsel.o
  .debug_macro   0x00000000      0x856 out/rc_pinsel.o
  .debug_macro   0x00000000       0x1c out/rc_pinsel.o
  .debug_macro   0x00000000       0x2e out/rc_pinsel.o
  .debug_macro   0x00000000       0x22 out/rc_pinsel.o
+ .debug_macro   0x00000000       0x87 out/rc_pinsel.o
  .debug_macro   0x00000000       0x44 out/rc_pinsel.o
- .debug_macro   0x00000000       0x1c out/rc_pinsel.o
- .debug_macro   0x00000000      0x1f7 out/rc_pinsel.o
+ .debug_macro   0x00000000       0xfd out/rc_pinsel.o
+ .debug_macro   0x00000000       0x5e out/rc_pinsel.o
+ .debug_macro   0x00000000      0x1df out/rc_pinsel.o
  .debug_macro   0x00000000       0x18 out/rc_pinsel.o
  .debug_macro   0x00000000      0x7af out/rc_pinsel.o
  .debug_macro   0x00000000      0x2dc out/rc_pinsel.o
@@ -1474,12 +1573,14 @@ Discarded input sections
  .debug_macro   0x00000000       0xc5 out/rc_pinsel.o
  .debug_macro   0x00000000       0x5e out/rc_pinsel.o
  .debug_macro   0x00000000      0x149 out/rc_pinsel.o
- .debug_line    0x00000000      0x2ae out/rc_pinsel.o
- .debug_str     0x00000000     0x7dc6 out/rc_pinsel.o
- .comment       0x00000000       0x71 out/rc_pinsel.o
+ .debug_line    0x00000000      0x320 out/rc_pinsel.o
+ .debug_str     0x00000000     0x8198 out/rc_pinsel.o
+ .comment       0x00000000       0x6f out/rc_pinsel.o
  .debug_frame   0x00000000       0xd8 out/rc_pinsel.o
  .ARM.attributes
                 0x00000000       0x33 out/rc_pinsel.o
+ .group         0x00000000        0x8 out/rc_timer.o
+ .group         0x00000000        0x8 out/rc_timer.o
  .group         0x00000000        0x8 out/rc_timer.o
  .group         0x00000000        0x8 out/rc_timer.o
  .group         0x00000000        0x8 out/rc_timer.o
@@ -1498,42 +1599,44 @@ Discarded input sections
  .data          0x00000000        0x0 out/rc_timer.o
  .bss           0x00000000        0x0 out/rc_timer.o
  .text.rctimer_Init
-                0x00000000       0x20 out/rc_timer.o
+                0x00000000       0x24 out/rc_timer.o
  .text.rctimer_DeInit
-                0x00000000       0x14 out/rc_timer.o
+                0x00000000       0x18 out/rc_timer.o
  .text.rctimer_SetTimerState
-                0x00000000       0x1c out/rc_timer.o
+                0x00000000       0x20 out/rc_timer.o
  .text.rctimer_GetTimerInterruptStatus
                 0x00000000       0x20 out/rc_timer.o
  .text.rctimer_GetCaptureInterruptStatus
                 0x00000000       0x20 out/rc_timer.o
  .text.rctimer_ClearTimerInterrupt
-                0x00000000       0x1c out/rc_timer.o
+                0x00000000       0x20 out/rc_timer.o
  .text.rctimer_ClearCaptureInterrupt
-                0x00000000       0x1c out/rc_timer.o
+                0x00000000       0x20 out/rc_timer.o
  .text.rctimer_InitConfig
-                0x00000000       0x1c out/rc_timer.o
+                0x00000000       0x20 out/rc_timer.o
  .text.rctimer_ResetCounter
-                0x00000000       0x14 out/rc_timer.o
+                0x00000000       0x18 out/rc_timer.o
  .text.rctimer_ConfigMatch
-                0x00000000       0x38 out/rc_timer.o
+                0x00000000       0x3c out/rc_timer.o
  .text.rctimer_ConfigCapture
-                0x00000000       0x2c out/rc_timer.o
+                0x00000000       0x30 out/rc_timer.o
  .text.rctimer_GetCaptureValue
                 0x00000000       0x20 out/rc_timer.o
- .debug_info    0x00000000      0x77f out/rc_timer.o
- .debug_abbrev  0x00000000      0x13b out/rc_timer.o
+ .debug_info    0x00000000      0x79f out/rc_timer.o
+ .debug_abbrev  0x00000000      0x13d out/rc_timer.o
  .debug_aranges
                 0x00000000       0x78 out/rc_timer.o
  .debug_ranges  0x00000000       0x68 out/rc_timer.o
- .debug_macro   0x00000000       0xc6 out/rc_timer.o
+ .debug_macro   0x00000000       0xde out/rc_timer.o
  .debug_macro   0x00000000      0x856 out/rc_timer.o
  .debug_macro   0x00000000       0x1c out/rc_timer.o
  .debug_macro   0x00000000       0x2e out/rc_timer.o
  .debug_macro   0x00000000       0x22 out/rc_timer.o
+ .debug_macro   0x00000000       0x87 out/rc_timer.o
  .debug_macro   0x00000000       0x44 out/rc_timer.o
- .debug_macro   0x00000000       0x1c out/rc_timer.o
- .debug_macro   0x00000000      0x1f7 out/rc_timer.o
+ .debug_macro   0x00000000       0xfd out/rc_timer.o
+ .debug_macro   0x00000000       0x5e out/rc_timer.o
+ .debug_macro   0x00000000      0x1df out/rc_timer.o
  .debug_macro   0x00000000       0x18 out/rc_timer.o
  .debug_macro   0x00000000      0x7af out/rc_timer.o
  .debug_macro   0x00000000      0x2dc out/rc_timer.o
@@ -1541,12 +1644,14 @@ Discarded input sections
  .debug_macro   0x00000000       0xc5 out/rc_timer.o
  .debug_macro   0x00000000       0x5e out/rc_timer.o
  .debug_macro   0x00000000       0xe9 out/rc_timer.o
- .debug_line    0x00000000      0x32d out/rc_timer.o
- .debug_str     0x00000000     0x82a4 out/rc_timer.o
- .comment       0x00000000       0x71 out/rc_timer.o
+ .debug_line    0x00000000      0x39f out/rc_timer.o
+ .debug_str     0x00000000     0x8676 out/rc_timer.o
+ .comment       0x00000000       0x6f out/rc_timer.o
  .debug_frame   0x00000000      0x1f0 out/rc_timer.o
  .ARM.attributes
                 0x00000000       0x33 out/rc_timer.o
+ .group         0x00000000        0x8 out/rc_adc.o
+ .group         0x00000000        0x8 out/rc_adc.o
  .group         0x00000000        0x8 out/rc_adc.o
  .group         0x00000000        0x8 out/rc_adc.o
  .group         0x00000000        0x8 out/rc_adc.o
@@ -1566,36 +1671,38 @@ Discarded input sections
  .data          0x00000000        0x0 out/rc_adc.o
  .bss           0x00000000        0x0 out/rc_adc.o
  .text.rcadc_Init
-                0x00000000       0x18 out/rc_adc.o
+                0x00000000       0x1c out/rc_adc.o
  .text.rcadc_DeInit
-                0x00000000       0x14 out/rc_adc.o
+                0x00000000       0x18 out/rc_adc.o
  .text.rcadc_ReadChannelData
                 0x00000000       0x20 out/rc_adc.o
  .text.rcadc_ReadChannelStatus
                 0x00000000       0x28 out/rc_adc.o
  .text.rcadc_SetBurstMode
-                0x00000000       0x1c out/rc_adc.o
+                0x00000000       0x20 out/rc_adc.o
  .text.rcadc_SetStartMode
-                0x00000000       0x1c out/rc_adc.o
+                0x00000000       0x20 out/rc_adc.o
  .text.rcadc_SetInterruptState
                 0x00000000       0x24 out/rc_adc.o
  .text.rcadc_SetChannelState
                 0x00000000       0x24 out/rc_adc.o
  .text.rcadc_SetEdgeStart
-                0x00000000       0x1c out/rc_adc.o
- .debug_info    0x00000000      0x50c out/rc_adc.o
- .debug_abbrev  0x00000000       0xe8 out/rc_adc.o
+                0x00000000       0x20 out/rc_adc.o
+ .debug_info    0x00000000      0x528 out/rc_adc.o
+ .debug_abbrev  0x00000000       0xea out/rc_adc.o
  .debug_aranges
                 0x00000000       0x60 out/rc_adc.o
  .debug_ranges  0x00000000       0x50 out/rc_adc.o
- .debug_macro   0x00000000       0xcf out/rc_adc.o
+ .debug_macro   0x00000000       0xe7 out/rc_adc.o
  .debug_macro   0x00000000      0x856 out/rc_adc.o
  .debug_macro   0x00000000       0x1c out/rc_adc.o
  .debug_macro   0x00000000       0x2e out/rc_adc.o
  .debug_macro   0x00000000       0x22 out/rc_adc.o
+ .debug_macro   0x00000000       0x87 out/rc_adc.o
  .debug_macro   0x00000000       0x44 out/rc_adc.o
- .debug_macro   0x00000000       0x1c out/rc_adc.o
- .debug_macro   0x00000000      0x1f7 out/rc_adc.o
+ .debug_macro   0x00000000       0xfd out/rc_adc.o
+ .debug_macro   0x00000000       0x5e out/rc_adc.o
+ .debug_macro   0x00000000      0x1df out/rc_adc.o
  .debug_macro   0x00000000       0x18 out/rc_adc.o
  .debug_macro   0x00000000      0x7af out/rc_adc.o
  .debug_macro   0x00000000      0x2dc out/rc_adc.o
@@ -1604,60 +1711,46 @@ Discarded input sections
  .debug_macro   0x00000000       0x5e out/rc_adc.o
  .debug_macro   0x00000000      0x149 out/rc_adc.o
  .debug_macro   0x00000000       0xf4 out/rc_adc.o
- .debug_line    0x00000000      0x2f9 out/rc_adc.o
- .debug_str     0x00000000     0x856e out/rc_adc.o
- .comment       0x00000000       0x71 out/rc_adc.o
+ .debug_line    0x00000000      0x36b out/rc_adc.o
+ .debug_str     0x00000000     0x8940 out/rc_adc.o
+ .comment       0x00000000       0x6f out/rc_adc.o
  .debug_frame   0x00000000      0x178 out/rc_adc.o
  .ARM.attributes
                 0x00000000       0x33 out/rc_adc.o
- .text          0x00000000       0x30 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x00000000       0x28 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+ .text          0x00000000       0x30 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00000000       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000000       0x1d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
- .text          0x00000000       0x60 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
- .debug_frame   0x00000000       0x54 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
+                0x00000000       0x1d c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+ .text          0x00000000      0x2ec c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00000000       0x38 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x00000000       0x2d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
- .text          0x00000000        0x4 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
+                0x00000000       0x2d c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+ .text          0x00000000        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000000       0x1d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
- .text          0x00000000      0x2ac c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .ARM.extab     0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .ARM.exidx     0x00000000        0x8 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .debug_frame   0x00000000       0x34 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
+                0x00000000       0x1d c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000       0xec c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000000       0x2d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
- .text          0x00000000      0x270 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .ARM.extab     0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .ARM.exidx     0x00000000        0x8 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .debug_frame   0x00000000       0x34 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
+                0x00000000       0x1b c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
+ .text.strlen   0x00000000       0x5c c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
+ .debug_frame   0x00000000       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
  .ARM.attributes
-                0x00000000       0x2d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
- .text          0x00000000       0xec c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
- .ARM.attributes
-                0x00000000       0x1b c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
- .text          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
- .text          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
- .data          0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
- .bss           0x00000000        0x0 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
- .text.strlen   0x00000000       0x5c c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
- .debug_frame   0x00000000       0x20 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
- .ARM.attributes
-                0x00000000       0x2d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
+                0x00000000       0x2d c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
 
 Memory Configuration
 
@@ -1670,23 +1763,23 @@ FLASH            0x00000000         0x00080000         xr
 Linker script and memory map
 
 LOAD out/rc_app.o
+LOAD out/system_LPC17xx.o
 LOAD out/core_cm3.o
 LOAD out/startup_LPC17xx.o
-LOAD out/system_LPC17xx.o
-LOAD out/lpc17xx_adc.o
-LOAD out/lpc17xx_clkpwr.o
-LOAD out/lpc17xx_gpio.o
-LOAD out/lpc17xx_libcfg_default.o
-LOAD out/lpc17xx_pinsel.o
-LOAD out/lpc17xx_timer.o
 LOAD out/lpc17xx_uart.o
-LOAD out/croutine.o
+LOAD out/lpc17xx_timer.o
+LOAD out/lpc17xx_pinsel.o
+LOAD out/lpc17xx_clkpwr.o
+LOAD out/lpc17xx_libcfg_default.o
+LOAD out/lpc17xx_gpio.o
+LOAD out/lpc17xx_adc.o
+LOAD out/timers.o
+LOAD out/tasks.o
 LOAD out/event_groups.o
 LOAD out/hooks.o
 LOAD out/list.o
+LOAD out/croutine.o
 LOAD out/queue.o
-LOAD out/tasks.o
-LOAD out/timers.o
 LOAD out/port.o
 LOAD out/heap_2.o
 LOAD out/rc_task_leds.o
@@ -1697,18 +1790,18 @@ LOAD out/rc_uart.o
 LOAD out/rc_pinsel.o
 LOAD out/rc_timer.o
 LOAD out/rc_adc.o
-LOAD c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libstdc++.a
-LOAD c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libm.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libstdc++.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a
 START GROUP
-LOAD c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a
-LOAD c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a
-LOAD c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a
+LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc.a
 END GROUP
                 0x10008000                _estack = 0x10008000
                 0x000007d0                __Stack_Size = 0x7d0
-                0x000007d0                PROVIDE (_Stack_Size, __Stack_Size)
+                [!provide]                PROVIDE (_Stack_Size, __Stack_Size)
                 0x10007830                __Stack_Init = (_estack - __Stack_Size)
-                0x10007830                PROVIDE (_Stack_Init, __Stack_Init)
+                [!provide]                PROVIDE (_Stack_Init, __Stack_Init)
                 0x00000100                _Minimum_Stack_Size = 0x100
 
 .mios32_bsl     0x00000000        0x0
@@ -1723,14 +1816,14 @@ END GROUP
  .isr_vector    0x00000000       0xcc out/startup_LPC17xx.o
                 0x00000000                g_pfnVectors
                 0x000000cc                . = ALIGN (0x4)
-                0x00000000                PROVIDE (mios32_sys_isr_vector, _mios32_sys_isr_vector)
+                [!provide]                PROVIDE (mios32_sys_isr_vector, _mios32_sys_isr_vector)
 
 .flashtext      0x000000cc        0x0
                 0x000000cc                . = ALIGN (0x4)
  *(.flashtext)
                 0x000000cc                . = ALIGN (0x4)
 
-.text           0x000000cc     0x1a30
+.text           0x000000cc     0x1a5c
                 0x000000cc                . = ALIGN (0x4)
  CREATE_OBJECT_SYMBOLS
  *(.text .text.* .gnu.linkonce.t.*)
@@ -1740,319 +1833,324 @@ END GROUP
                 0x000000fc       0x74 out/rc_app.o
                 0x000000fc                EINT3_IRQHandler
  .text.rcapp_SetupHardware
-                0x00000170       0x54 out/rc_app.o
- .text.main     0x000001c4       0x40 out/rc_app.o
-                0x000001c4                main
- .text.Reset_Handler
-                0x00000204       0x88 out/startup_LPC17xx.o
-                0x00000204                Reset_Handler
- .text.Default_Handler
-                0x0000028c        0x8 out/startup_LPC17xx.o
-                0x0000028c                TIMER2_IRQHandler
-                0x0000028c                DebugMon_Handler
-                0x0000028c                RIT_IRQHandler
-                0x0000028c                I2C0_IRQHandler
-                0x0000028c                HardFault_Handler
-                0x0000028c                SysTick_Handler
-                0x0000028c                USBActivity_IRQHandler
-                0x0000028c                PWM1_IRQHandler
-                0x0000028c                PendSV_Handler
-                0x0000028c                NMI_Handler
-                0x0000028c                I2C1_IRQHandler
-                0x0000028c                EINT2_IRQHandler
-                0x0000028c                CANActivity_IRQHandler
-                0x0000028c                TIMER3_IRQHandler
-                0x0000028c                UART0_IRQHandler
-                0x0000028c                UsageFault_Handler
-                0x0000028c                PLL0_IRQHandler
-                0x0000028c                CAN_IRQHandler
-                0x0000028c                PLL1_IRQHandler
-                0x0000028c                SSP0_IRQHandler
-                0x0000028c                I2S_IRQHandler
-                0x0000028c                I2C2_IRQHandler
-                0x0000028c                RTC_IRQHandler
-                0x0000028c                SPI_IRQHandler
-                0x0000028c                EINT1_IRQHandler
-                0x0000028c                TIMER1_IRQHandler
-                0x0000028c                UART2_IRQHandler
-                0x0000028c                Default_Handler
-                0x0000028c                ADC_IRQHandler
-                0x0000028c                SSP1_IRQHandler
-                0x0000028c                rcscheduler_Timer0_IRQHandler
-                0x0000028c                USB_IRQHandler
-                0x0000028c                BOD_IRQHandler
-                0x0000028c                MemManage_Handler
-                0x0000028c                WDT_IRQHandler
-                0x0000028c                SVC_Handler
-                0x0000028c                QEI_IRQHandler
-                0x0000028c                EINT0_IRQHandler
-                0x0000028c                DMA_IRQHandler
-                0x0000028c                BusFault_Handler
-                0x0000028c                UART3_IRQHandler
-                0x0000028c                MCPWM_IRQHandler
-                0x0000028c                ENET_IRQHandler
+                0x00000170       0x58 out/rc_app.o
+ .text.main     0x000001c8       0x40 out/rc_app.o
+                0x000001c8                main
  .text.SystemCoreClockUpdate
-                0x00000294      0x164 out/system_LPC17xx.o
-                0x00000294                SystemCoreClockUpdate
+                0x00000208      0x164 out/system_LPC17xx.o
+                0x00000208                SystemCoreClockUpdate
  .text.SystemInit
-                0x000003f8      0x150 out/system_LPC17xx.o
-                0x000003f8                SystemInit
- .text.GPIO_GetPointer
-                0x00000548       0x74 out/lpc17xx_gpio.o
- .text.GPIO_SetDir
-                0x000005bc       0x48 out/lpc17xx_gpio.o
-                0x000005bc                GPIO_SetDir
- .text.GPIO_SetValue
-                0x00000604       0x28 out/lpc17xx_gpio.o
-                0x00000604                GPIO_SetValue
- .text.GPIO_ClearValue
-                0x0000062c       0x28 out/lpc17xx_gpio.o
-                0x0000062c                GPIO_ClearValue
- .text.GPIO_IntCmd
-                0x00000654       0x88 out/lpc17xx_gpio.o
-                0x00000654                GPIO_IntCmd
- .text.GPIO_GetIntStatus
-                0x000006dc       0xa4 out/lpc17xx_gpio.o
-                0x000006dc                GPIO_GetIntStatus
- .text.GPIO_ClearInt
-                0x00000780       0x38 out/lpc17xx_gpio.o
-                0x00000780                GPIO_ClearInt
+                0x0000036c      0x150 out/system_LPC17xx.o
+                0x0000036c                SystemInit
+ .text.Reset_Handler
+                0x000004bc       0x88 out/startup_LPC17xx.o
+                0x000004bc                Reset_Handler
+ .text._init    0x00000544        0xc out/startup_LPC17xx.o
+                0x00000544                _init
+ .text.Default_Handler
+                0x00000550        0x8 out/startup_LPC17xx.o
+                0x00000550                TIMER2_IRQHandler
+                0x00000550                DebugMon_Handler
+                0x00000550                RIT_IRQHandler
+                0x00000550                I2C0_IRQHandler
+                0x00000550                HardFault_Handler
+                0x00000550                SysTick_Handler
+                0x00000550                USBActivity_IRQHandler
+                0x00000550                PWM1_IRQHandler
+                0x00000550                PendSV_Handler
+                0x00000550                NMI_Handler
+                0x00000550                I2C1_IRQHandler
+                0x00000550                EINT2_IRQHandler
+                0x00000550                CANActivity_IRQHandler
+                0x00000550                TIMER3_IRQHandler
+                0x00000550                UART0_IRQHandler
+                0x00000550                UsageFault_Handler
+                0x00000550                PLL0_IRQHandler
+                0x00000550                CAN_IRQHandler
+                0x00000550                PLL1_IRQHandler
+                0x00000550                SSP0_IRQHandler
+                0x00000550                I2S_IRQHandler
+                0x00000550                I2C2_IRQHandler
+                0x00000550                RTC_IRQHandler
+                0x00000550                SPI_IRQHandler
+                0x00000550                EINT1_IRQHandler
+                0x00000550                TIMER1_IRQHandler
+                0x00000550                UART2_IRQHandler
+                0x00000550                Default_Handler
+                0x00000550                ADC_IRQHandler
+                0x00000550                SSP1_IRQHandler
+                0x00000550                rcscheduler_Timer0_IRQHandler
+                0x00000550                USB_IRQHandler
+                0x00000550                BOD_IRQHandler
+                0x00000550                MemManage_Handler
+                0x00000550                WDT_IRQHandler
+                0x00000550                SVC_Handler
+                0x00000550                QEI_IRQHandler
+                0x00000550                EINT0_IRQHandler
+                0x00000550                DMA_IRQHandler
+                0x00000550                BusFault_Handler
+                0x00000550                UART3_IRQHandler
+                0x00000550                MCPWM_IRQHandler
+                0x00000550                ENET_IRQHandler
  .text.getUartNum
-                0x000007b8       0x48 out/lpc17xx_uart.o
-                0x000007b8                getUartNum
+                0x00000558       0x44 out/lpc17xx_uart.o
+                0x00000558                getUartNum
  .text.UART_GenIntHandler
-                0x00000800      0x170 out/lpc17xx_uart.o
-                0x00000800                UART_GenIntHandler
+                0x0000059c      0x174 out/lpc17xx_uart.o
+                0x0000059c                UART_GenIntHandler
  .text.UART1_StdIntHandler
-                0x00000970       0x10 out/lpc17xx_uart.o
-                0x00000970                UART1_StdIntHandler
- .text.vApplicationTickHook
-                0x00000980        0xc out/hooks.o
-                0x00000980                vApplicationTickHook
- .text.vListInitialise
-                0x0000098c       0x40 out/list.o
-                0x0000098c                vListInitialise
- .text.vListInitialiseItem
-                0x000009cc       0x18 out/list.o
-                0x000009cc                vListInitialiseItem
- .text.vListInsertEnd
-                0x000009e4       0x48 out/list.o
-                0x000009e4                vListInsertEnd
- .text.vListInsert
-                0x00000a2c       0x70 out/list.o
-                0x00000a2c                vListInsert
- .text.uxListRemove
-                0x00000a9c       0x54 out/list.o
-                0x00000a9c                uxListRemove
+                0x00000710       0x14 out/lpc17xx_uart.o
+                0x00000710                UART1_StdIntHandler
+ .text.GPIO_GetPointer
+                0x00000724       0x70 out/lpc17xx_gpio.o
+ .text.GPIO_SetDir
+                0x00000794       0x4c out/lpc17xx_gpio.o
+                0x00000794                GPIO_SetDir
+ .text.GPIO_SetValue
+                0x000007e0       0x2c out/lpc17xx_gpio.o
+                0x000007e0                GPIO_SetValue
+ .text.GPIO_ClearValue
+                0x0000080c       0x2c out/lpc17xx_gpio.o
+                0x0000080c                GPIO_ClearValue
+ .text.GPIO_IntCmd
+                0x00000838       0x88 out/lpc17xx_gpio.o
+                0x00000838                GPIO_IntCmd
+ .text.GPIO_GetIntStatus
+                0x000008c0       0xa0 out/lpc17xx_gpio.o
+                0x000008c0                GPIO_GetIntStatus
+ .text.GPIO_ClearInt
+                0x00000960       0x38 out/lpc17xx_gpio.o
+                0x00000960                GPIO_ClearInt
  .text.xTaskGenericCreate
-                0x00000af0      0x168 out/tasks.o
-                0x00000af0                xTaskGenericCreate
+                0x00000998      0x164 out/tasks.o
+                0x00000998                xTaskGenericCreate
  .text.vTaskDelay
-                0x00000c58       0x84 out/tasks.o
-                0x00000c58                vTaskDelay
+                0x00000afc       0x88 out/tasks.o
+                0x00000afc                vTaskDelay
  .text.vTaskStartScheduler
-                0x00000cdc       0x64 out/tasks.o
-                0x00000cdc                vTaskStartScheduler
+                0x00000b84       0x68 out/tasks.o
+                0x00000b84                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00000d40       0x1c out/tasks.o
-                0x00000d40                vTaskSuspendAll
+                0x00000bec       0x1c out/tasks.o
+                0x00000bec                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x00000d5c      0x10c out/tasks.o
-                0x00000d5c                xTaskResumeAll
+                0x00000c08      0x108 out/tasks.o
+                0x00000c08                xTaskResumeAll
  .text.xTaskIncrementTick
-                0x00000e68      0x180 out/tasks.o
-                0x00000e68                xTaskIncrementTick
+                0x00000d10      0x17c out/tasks.o
+                0x00000d10                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x00000fe8       0xa0 out/tasks.o
-                0x00000fe8                vTaskSwitchContext
+                0x00000e8c       0xa4 out/tasks.o
+                0x00000e8c                vTaskSwitchContext
  .text.prvIdleTask
-                0x00001088       0x10 out/tasks.o
+                0x00000f30       0x10 out/tasks.o
  .text.prvInitialiseTCBVariables
-                0x00001098       0x98 out/tasks.o
+                0x00000f40       0x9c out/tasks.o
  .text.prvInitialiseTaskLists
-                0x00001130       0x7c out/tasks.o
+                0x00000fdc       0x80 out/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x000011ac       0x74 out/tasks.o
+                0x0000105c       0x78 out/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x00001220       0x6c out/tasks.o
+                0x000010d4       0x6c out/tasks.o
  .text.prvAllocateTCBAndStack
-                0x0000128c       0x64 out/tasks.o
+                0x00001140       0x64 out/tasks.o
  .text.prvDeleteTCB
-                0x000012f0       0x20 out/tasks.o
+                0x000011a4       0x20 out/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x00001310       0x48 out/tasks.o
+                0x000011c4       0x48 out/tasks.o
+ .text.vApplicationTickHook
+                0x0000120c        0xc out/hooks.o
+                0x0000120c                vApplicationTickHook
+ .text.vListInitialise
+                0x00001218       0x40 out/list.o
+                0x00001218                vListInitialise
+ .text.vListInitialiseItem
+                0x00001258       0x18 out/list.o
+                0x00001258                vListInitialiseItem
+ .text.vListInsertEnd
+                0x00001270       0x48 out/list.o
+                0x00001270                vListInsertEnd
+ .text.vListInsert
+                0x000012b8       0x70 out/list.o
+                0x000012b8                vListInsert
+ .text.uxListRemove
+                0x00001328       0x54 out/list.o
+                0x00001328                uxListRemove
  .text.pxPortInitialiseStack
-                0x00001358       0x58 out/port.o
-                0x00001358                pxPortInitialiseStack
+                0x0000137c       0x54 out/port.o
+                0x0000137c                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x000013b0       0x20 out/port.o
+                0x000013d0       0x20 out/port.o
  .text.vPortSVCHandler
-                0x000013d0       0x24 out/port.o
-                0x000013d0                vPortSVCHandler
+                0x000013f0       0x28 out/port.o
+                0x000013f0                vPortSVCHandler
  .text.prvPortStartFirstTask
-                0x000013f4       0x20 out/port.o
+                0x00001418       0x20 out/port.o
  .text.xPortStartScheduler
-                0x00001414       0xbc out/port.o
-                0x00001414                xPortStartScheduler
+                0x00001438       0xbc out/port.o
+                0x00001438                xPortStartScheduler
  .text.vPortYield
-                0x000014d0       0x20 out/port.o
-                0x000014d0                vPortYield
+                0x000014f4       0x20 out/port.o
+                0x000014f4                vPortYield
  .text.vPortEnterCritical
-                0x000014f0       0x40 out/port.o
-                0x000014f0                vPortEnterCritical
+                0x00001514       0x40 out/port.o
+                0x00001514                vPortEnterCritical
  .text.vPortExitCritical
-                0x00001530       0x30 out/port.o
-                0x00001530                vPortExitCritical
+                0x00001554       0x34 out/port.o
+                0x00001554                vPortExitCritical
  .text.ulPortSetInterruptMask
-                0x00001560       0x14 out/port.o
-                0x00001560                ulPortSetInterruptMask
+                0x00001588       0x14 out/port.o
+                0x00001588                ulPortSetInterruptMask
  .text.vPortClearInterruptMask
-                0x00001574        0x8 out/port.o
-                0x00001574                vPortClearInterruptMask
+                0x0000159c        0x8 out/port.o
+                0x0000159c                vPortClearInterruptMask
  .text.xPortPendSVHandler
-                0x0000157c       0x44 out/port.o
-                0x0000157c                xPortPendSVHandler
+                0x000015a4       0x48 out/port.o
+                0x000015a4                xPortPendSVHandler
  .text.xPortSysTickHandler
-                0x000015c0       0x28 out/port.o
-                0x000015c0                xPortSysTickHandler
+                0x000015ec       0x28 out/port.o
+                0x000015ec                xPortSysTickHandler
  .text.vPortSetupTimerInterrupt
-                0x000015e8       0x24 out/port.o
-                0x000015e8                vPortSetupTimerInterrupt
+                0x00001614       0x24 out/port.o
+                0x00001614                vPortSetupTimerInterrupt
  .text.pvPortMalloc
-                0x0000160c      0x11c out/heap_2.o
-                0x0000160c                pvPortMalloc
+                0x00001638      0x11c out/heap_2.o
+                0x00001638                pvPortMalloc
  .text.vPortFree
-                0x00001728       0x70 out/heap_2.o
-                0x00001728                vPortFree
+                0x00001754       0x74 out/heap_2.o
+                0x00001754                vPortFree
  .text.prvHeapInit
-                0x00001798       0x50 out/heap_2.o
+                0x000017c8       0x50 out/heap_2.o
  .text.rctask_LEDs
-                0x000017e8       0x60 out/rc_task_leds.o
-                0x000017e8                rctask_LEDs
+                0x00001818       0x60 out/rc_task_leds.o
+                0x00001818                rctask_LEDs
  .text.rcleds_Init
-                0x00001848       0x74 out/rc_leds.o
-                0x00001848                rcleds_Init
+                0x00001878       0x74 out/rc_leds.o
+                0x00001878                rcleds_Init
  .text.rcleds_ClearLEDs
-                0x000018bc       0x38 out/rc_leds.o
-                0x000018bc                rcleds_ClearLEDs
+                0x000018ec       0x38 out/rc_leds.o
+                0x000018ec                rcleds_ClearLEDs
  .text.rcleds_GetState
-                0x000018f4       0x18 out/rc_leds.o
-                0x000018f4                rcleds_GetState
+                0x00001924       0x18 out/rc_leds.o
+                0x00001924                rcleds_GetState
  .text.rcleds_SetState
-                0x0000190c       0x20 out/rc_leds.o
-                0x0000190c                rcleds_SetState
+                0x0000193c       0x20 out/rc_leds.o
+                0x0000193c                rcleds_SetState
  .text.rcsys_Init
-                0x0000192c        0xc out/rc_system.o
-                0x0000192c                rcsys_Init
+                0x0000195c        0xc out/rc_system.o
+                0x0000195c                rcsys_Init
  .text.rcsys_CoreClockUpdate
-                0x00001938        0xc out/rc_system.o
-                0x00001938                rcsys_CoreClockUpdate
+                0x00001968        0xc out/rc_system.o
+                0x00001968                rcsys_CoreClockUpdate
  .text.rcgpio_SetPin
-                0x00001944       0x2c out/rc_gpio.o
-                0x00001944                rcgpio_SetPin
+                0x00001974       0x2c out/rc_gpio.o
+                0x00001974                rcgpio_SetPin
  .text.rcgpio_ClearPin
-                0x00001970       0x2c out/rc_gpio.o
-                0x00001970                rcgpio_ClearPin
+                0x000019a0       0x2c out/rc_gpio.o
+                0x000019a0                rcgpio_ClearPin
  .text.rcgpio_SetDirection
-                0x0000199c       0x30 out/rc_gpio.o
-                0x0000199c                rcgpio_SetDirection
- .text.rcgpio_EnableInterrupt
                 0x000019cc       0x30 out/rc_gpio.o
-                0x000019cc                rcgpio_EnableInterrupt
+                0x000019cc                rcgpio_SetDirection
+ .text.rcgpio_EnableInterrupt
+                0x000019fc       0x30 out/rc_gpio.o
+                0x000019fc                rcgpio_EnableInterrupt
  .text.rcgpio_ClearInterrupt
-                0x000019fc       0x2c out/rc_gpio.o
-                0x000019fc                rcgpio_ClearInterrupt
+                0x00001a2c       0x2c out/rc_gpio.o
+                0x00001a2c                rcgpio_ClearInterrupt
  .text.rcgpio_GetInterruptStatus
-                0x00001a28       0x2c out/rc_gpio.o
-                0x00001a28                rcgpio_GetInterruptStatus
+                0x00001a58       0x28 out/rc_gpio.o
+                0x00001a58                rcgpio_GetInterruptStatus
  .text.rcuart_PORT1_IRQHandler
-                0x00001a54        0xc out/rc_uart.o
-                0x00001a54                rcuart_PORT1_IRQHandler
- .text.memset   0x00001a60       0x9c c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
-                0x00001a60                memset
+                0x00001a80        0xc out/rc_uart.o
+                0x00001a80                rcuart_PORT1_IRQHandler
+ .text.memset   0x00001a8c       0x9c c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+                0x00001a8c                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00000000        0x0 linker stubs
+ .glue_7t       0x00001b28        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00000000        0x0 linker stubs
+ .glue_7        0x00001b28        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00000000        0x0 linker stubs
+ .vfp11_veneer  0x00001b28        0x0 linker stubs
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00001afc        0x0
- .v4_bx         0x00000000        0x0 linker stubs
+.v4_bx          0x00001b28        0x0
+ .v4_bx         0x00001b28        0x0 linker stubs
 
-.iplt           0x00001afc        0x0
- .iplt          0x00000000        0x0 out/rc_app.o
+.iplt           0x00001b28        0x0
+ .iplt          0x00001b28        0x0 out/rc_app.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
 .eh_frame
  *(.eh_frame)
-                0x00001afc                __exidx_start = .
+                0x00001b28                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00001afc                __exidx_end = .
+                0x00001b28                __exidx_end = .
 
-.rodata         0x00001afc       0x14
+.rodata         0x00001b28       0x18
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00001afc        0xc out/rc_app.o
- .rodata        0x00001b08        0x8 out/tasks.o
-                0x00001b10                . = ALIGN (0x4)
+ .rodata        0x00001b28        0xa out/rc_app.o
+ *fill*         0x00001b32        0x2 
+ .rodata        0x00001b34        0x5 out/tasks.o
+                0x00001b3c                . = ALIGN (0x4)
+ *fill*         0x00001b39        0x3 
  *(.init)
-                0x00001b10                . = ALIGN (0x4)
-                0x00001b10                __preinit_array_start = .
+                0x00001b3c                . = ALIGN (0x4)
+                0x00001b3c                __preinit_array_start = .
  *(.preinit_array)
-                0x00001b10                __preinit_array_end = .
-                0x00001b10                . = ALIGN (0x4)
-                0x00001b10                __init_array_start = .
+                0x00001b3c                __preinit_array_end = .
+                0x00001b3c                . = ALIGN (0x4)
+                0x00001b3c                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00001b10                __init_array_end = .
-                0x00001b10                . = ALIGN (0x4)
+                0x00001b3c                __init_array_end = .
+                0x00001b3c                . = ALIGN (0x4)
  *(.fini)
-                0x00001b10                . = ALIGN (0x4)
-                0x00001b10                __fini_array_start = .
+                0x00001b3c                . = ALIGN (0x4)
+                0x00001b3c                __fini_array_start = .
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x00001b10                __fini_array_end = .
-                0x00001b10                . = ALIGN (0x4)
+                0x00001b3c                __fini_array_end = .
+                0x00001b3c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00001b10                . = ALIGN (0x4)
+                0x00001b3c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
  *(.init .init.*)
  *(.fini .fini.*)
-                0x00001b10                PROVIDE (__preinit_array_start, .)
+                [!provide]                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x00001b10                PROVIDE (__preinit_array_end, .)
-                0x00001b10                PROVIDE (__init_array_start, .)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+                [!provide]                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00001b10                PROVIDE (__init_array_end, .)
-                0x00001b10                PROVIDE (__fini_array_start, .)
+                [!provide]                PROVIDE (__init_array_end, .)
+                [!provide]                PROVIDE (__fini_array_start, .)
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x00001b10                PROVIDE (__fini_array_end, .)
-                0x00001b10                . = ALIGN (0x8)
+                [!provide]                PROVIDE (__fini_array_end, .)
+                0x00001b40                . = ALIGN (0x8)
+ *fill*         0x00001b3c        0x4 
  *(.rom)
  *(.rom.b)
-                0x00001b10                _etext = .
-                0x00001b10                _sidata = _etext
+                0x00001b40                _etext = .
+                0x00001b40                _sidata = _etext
 
-.rel.dyn        0x00001b10        0x0
- .rel.iplt      0x00000000        0x0 out/rc_app.o
+.rel.dyn        0x00001b40        0x0
+ .rel.iplt      0x00001b40        0x0 out/rc_app.o
 
-.bss            0x10000000     0x21a8 load address 0x00001b10
+.bss            0x10000000     0x21a8 load address 0x00001b40
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sbss = .
  *(.shbss)
@@ -2111,7 +2209,7 @@ END GROUP
  .bss.ucHeap    0x10000188     0x2000 out/heap_2.o
  .bss.xStart    0x10002188        0x8 out/heap_2.o
  .bss.xEnd      0x10002190        0x8 out/heap_2.o
- .bss.xHeapHasBeenInitialised.4950
+ .bss.xHeapHasBeenInitialised.5044
                 0x10002198        0x4 out/heap_2.o
  .bss.re_rcleds_state
                 0x1000219c        0x1 out/rc_leds.o
@@ -2126,12 +2224,12 @@ END GROUP
                 0x100021a8                _ebss = .
                 0x100021a8                _end = .
                 0x100021a8                __end = .
-                0x100021a8                PROVIDE (end, _ebss)
-                0x100021a8                PROVIDE (_end, _ebss)
-                0x10000000                PROVIDE (__bss_start__, _sbss)
-                0x100021a8                PROVIDE (__bss_end__, _ebss)
+                [!provide]                PROVIDE (end, _ebss)
+                [!provide]                PROVIDE (_end, _ebss)
+                [!provide]                PROVIDE (__bss_start__, _sbss)
+                [!provide]                PROVIDE (__bss_end__, _ebss)
 
-._usrstack      0x100021a8      0x100 load address 0x00001b10
+._usrstack      0x100021a8      0x100 load address 0x00001b40
                 0x100021a8                . = ALIGN (0x4)
                 0x100021a8                _susrstack = .
                 0x100022a8                . = (. + _Minimum_Stack_Size)
@@ -2139,7 +2237,7 @@ END GROUP
                 0x100022a8                . = ALIGN (0x4)
                 0x100022a8                _eusrstack = .
 
-.data           0x2007c000       0x10 load address 0x00001b10
+.data           0x2007c000       0x10 load address 0x00001b40
                 0x2007c000                _sdata = .
                 0x2007c000                . = ALIGN (0x80)
                 0x00000000                _isr_vectorsram_offs = (. - 0x2007c000)
@@ -2165,10 +2263,10 @@ END GROUP
                 0x2007c010                . = ALIGN (0x4)
                 0x2007c010                _edata = .
 
-.igot.plt       0x2007c010        0x0 load address 0x00001b20
- .igot.plt      0x00000000        0x0 out/rc_app.o
+.igot.plt       0x2007c010        0x0 load address 0x00001b50
+ .igot.plt      0x2007c010        0x0 out/rc_app.o
 
-.bss_ahb        0x2007c010        0x0 load address 0x00001b20
+.bss_ahb        0x2007c010        0x0 load address 0x00001b50
                 0x2007c010                . = ALIGN (0x4)
                 0x2007c010                _sbss_ahb = .
  *(.shbss_ahb)
@@ -2179,10 +2277,10 @@ END GROUP
                 0x2007c010                _ebss_ahb = .
                 0x2007c010                _end_ahb = .
                 0x2007c010                __end_ahb = .
-                0x2007c010                PROVIDE (end_ahb, _ebss_ahb)
-                0x2007c010                PROVIDE (_end_ahb, _ebss_ahb)
-                0x2007c010                PROVIDE (__bss_ahb_start__, _sbss_ahb)
-                0x2007c010                PROVIDE (__bss_ahb_end__, _ebss_ahb)
+                [!provide]                PROVIDE (end_ahb, _ebss_ahb)
+                [!provide]                PROVIDE (_end_ahb, _ebss_ahb)
+                [!provide]                PROVIDE (__bss_ahb_start__, _sbss_ahb)
+                [!provide]                PROVIDE (__bss_ahb_end__, _ebss_ahb)
 
 /DISCARD/
  libc.a(*)
@@ -2207,43 +2305,43 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x00000000       0x70
+.comment        0x00000000       0x6e
  *(.comment)
- .comment       0x00000000       0x70 out/rc_app.o
-                                 0x71 (size before relaxing)
- .comment       0x00000000       0x71 out/startup_LPC17xx.o
- .comment       0x00000000       0x71 out/system_LPC17xx.o
- .comment       0x00000000       0x71 out/lpc17xx_gpio.o
- .comment       0x00000000       0x71 out/lpc17xx_uart.o
- .comment       0x00000000       0x71 out/hooks.o
- .comment       0x00000000       0x71 out/list.o
- .comment       0x00000000       0x71 out/tasks.o
- .comment       0x00000000       0x71 out/port.o
- .comment       0x00000000       0x71 out/heap_2.o
- .comment       0x00000000       0x71 out/rc_task_leds.o
- .comment       0x00000000       0x71 out/rc_leds.o
- .comment       0x00000000       0x71 out/rc_system.o
- .comment       0x00000000       0x71 out/rc_gpio.o
- .comment       0x00000000       0x71 out/rc_uart.o
+ .comment       0x00000000       0x6e out/rc_app.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f out/system_LPC17xx.o
+ .comment       0x0000006e       0x6f out/startup_LPC17xx.o
+ .comment       0x0000006e       0x6f out/lpc17xx_uart.o
+ .comment       0x0000006e       0x6f out/lpc17xx_gpio.o
+ .comment       0x0000006e       0x6f out/tasks.o
+ .comment       0x0000006e       0x6f out/hooks.o
+ .comment       0x0000006e       0x6f out/list.o
+ .comment       0x0000006e       0x6f out/port.o
+ .comment       0x0000006e       0x6f out/heap_2.o
+ .comment       0x0000006e       0x6f out/rc_task_leds.o
+ .comment       0x0000006e       0x6f out/rc_leds.o
+ .comment       0x0000006e       0x6f out/rc_system.o
+ .comment       0x0000006e       0x6f out/rc_gpio.o
+ .comment       0x0000006e       0x6f out/rc_uart.o
 
 .ARM.attributes
                 0x00000000       0x31
  .ARM.attributes
                 0x00000000       0x33 out/rc_app.o
  .ARM.attributes
-                0x00000033       0x33 out/startup_LPC17xx.o
+                0x00000033       0x33 out/system_LPC17xx.o
  .ARM.attributes
-                0x00000066       0x33 out/system_LPC17xx.o
+                0x00000066       0x33 out/startup_LPC17xx.o
  .ARM.attributes
-                0x00000099       0x33 out/lpc17xx_gpio.o
+                0x00000099       0x33 out/lpc17xx_uart.o
  .ARM.attributes
-                0x000000cc       0x33 out/lpc17xx_uart.o
+                0x000000cc       0x33 out/lpc17xx_gpio.o
  .ARM.attributes
-                0x000000ff       0x33 out/hooks.o
+                0x000000ff       0x33 out/tasks.o
  .ARM.attributes
-                0x00000132       0x33 out/list.o
+                0x00000132       0x33 out/hooks.o
  .ARM.attributes
-                0x00000165       0x33 out/tasks.o
+                0x00000165       0x33 out/list.o
  .ARM.attributes
                 0x00000198       0x33 out/port.o
  .ARM.attributes
@@ -2259,7 +2357,7 @@ END GROUP
  .ARM.attributes
                 0x000002ca       0x33 out/rc_uart.o
  .ARM.attributes
-                0x000002fd       0x2d c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+                0x000002fd       0x2d c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
 
 .debug
  *(.debug)
@@ -2278,19 +2376,19 @@ END GROUP
  .debug_aranges
                 0x00000000       0x38 out/rc_app.o
  .debug_aranges
-                0x00000038       0x30 out/startup_LPC17xx.o
+                0x00000038       0x28 out/system_LPC17xx.o
  .debug_aranges
-                0x00000068       0x28 out/system_LPC17xx.o
+                0x00000060       0x30 out/startup_LPC17xx.o
  .debug_aranges
-                0x00000090       0xf8 out/lpc17xx_gpio.o
+                0x00000090      0x130 out/lpc17xx_uart.o
  .debug_aranges
-                0x00000188      0x130 out/lpc17xx_uart.o
+                0x000001c0       0xf8 out/lpc17xx_gpio.o
  .debug_aranges
-                0x000002b8       0x30 out/hooks.o
+                0x000002b8      0x180 out/tasks.o
  .debug_aranges
-                0x000002e8       0x40 out/list.o
+                0x00000438       0x30 out/hooks.o
  .debug_aranges
-                0x00000328      0x180 out/tasks.o
+                0x00000468       0x40 out/list.o
  .debug_aranges
                 0x000004a8       0x90 out/port.o
  .debug_aranges
@@ -2309,70 +2407,70 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x56e3
+.debug_info     0x00000000     0x57ca
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x519 out/rc_app.o
- .debug_info    0x00000519      0x128 out/startup_LPC17xx.o
- .debug_info    0x00000641      0x494 out/system_LPC17xx.o
- .debug_info    0x00000ad5      0xd5d out/lpc17xx_gpio.o
- .debug_info    0x00001832     0x1274 out/lpc17xx_uart.o
- .debug_info    0x00002aa6       0x8e out/hooks.o
- .debug_info    0x00002b34      0x2ac out/list.o
- .debug_info    0x00002de0     0x124f out/tasks.o
- .debug_info    0x0000402f      0x326 out/port.o
- .debug_info    0x00004355      0x2eb out/heap_2.o
- .debug_info    0x00004640      0x217 out/rc_task_leds.o
- .debug_info    0x00004857      0x251 out/rc_leds.o
- .debug_info    0x00004aa8      0x123 out/rc_system.o
- .debug_info    0x00004bcb      0x337 out/rc_gpio.o
- .debug_info    0x00004f02      0x7e1 out/rc_uart.o
+ .debug_info    0x00000000      0x53e out/rc_app.o
+ .debug_info    0x0000053e      0x4a9 out/system_LPC17xx.o
+ .debug_info    0x000009e7      0x128 out/startup_LPC17xx.o
+ .debug_info    0x00000b0f     0x12b0 out/lpc17xx_uart.o
+ .debug_info    0x00001dbf      0xd61 out/lpc17xx_gpio.o
+ .debug_info    0x00002b20     0x1253 out/tasks.o
+ .debug_info    0x00003d73       0x93 out/hooks.o
+ .debug_info    0x00003e06      0x2ac out/list.o
+ .debug_info    0x000040b2      0x326 out/port.o
+ .debug_info    0x000043d8      0x2eb out/heap_2.o
+ .debug_info    0x000046c3      0x223 out/rc_task_leds.o
+ .debug_info    0x000048e6      0x261 out/rc_leds.o
+ .debug_info    0x00004b47      0x123 out/rc_system.o
+ .debug_info    0x00004c6a      0x347 out/rc_gpio.o
+ .debug_info    0x00004fb1      0x819 out/rc_uart.o
 
-.debug_abbrev   0x00000000     0x131b
+.debug_abbrev   0x00000000     0x133a
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x146 out/rc_app.o
- .debug_abbrev  0x00000146       0xd3 out/startup_LPC17xx.o
- .debug_abbrev  0x00000219      0x115 out/system_LPC17xx.o
- .debug_abbrev  0x0000032e      0x20f out/lpc17xx_gpio.o
- .debug_abbrev  0x0000053d      0x2a5 out/lpc17xx_uart.o
- .debug_abbrev  0x000007e2       0x78 out/hooks.o
- .debug_abbrev  0x0000085a       0xc1 out/list.o
- .debug_abbrev  0x0000091b      0x279 out/tasks.o
- .debug_abbrev  0x00000b94      0x1a7 out/port.o
- .debug_abbrev  0x00000d3b      0x155 out/heap_2.o
- .debug_abbrev  0x00000e90       0xba out/rc_task_leds.o
- .debug_abbrev  0x00000f4a       0xd4 out/rc_leds.o
- .debug_abbrev  0x0000101e       0xa2 out/rc_system.o
- .debug_abbrev  0x000010c0       0xbe out/rc_gpio.o
- .debug_abbrev  0x0000117e      0x19d out/rc_uart.o
+ .debug_abbrev  0x00000000      0x151 out/rc_app.o
+ .debug_abbrev  0x00000151      0x115 out/system_LPC17xx.o
+ .debug_abbrev  0x00000266       0xd3 out/startup_LPC17xx.o
+ .debug_abbrev  0x00000339      0x2a9 out/lpc17xx_uart.o
+ .debug_abbrev  0x000005e2      0x211 out/lpc17xx_gpio.o
+ .debug_abbrev  0x000007f3      0x27b out/tasks.o
+ .debug_abbrev  0x00000a6e       0x78 out/hooks.o
+ .debug_abbrev  0x00000ae6       0xc1 out/list.o
+ .debug_abbrev  0x00000ba7      0x1a7 out/port.o
+ .debug_abbrev  0x00000d4e      0x155 out/heap_2.o
+ .debug_abbrev  0x00000ea3       0xbc out/rc_task_leds.o
+ .debug_abbrev  0x00000f5f       0xd6 out/rc_leds.o
+ .debug_abbrev  0x00001035       0xa2 out/rc_system.o
+ .debug_abbrev  0x000010d7       0xc0 out/rc_gpio.o
+ .debug_abbrev  0x00001197      0x1a3 out/rc_uart.o
 
-.debug_line     0x00000000     0x3b1f
+.debug_line     0x00000000     0x41e3
  *(.debug_line)
- .debug_line    0x00000000      0x464 out/rc_app.o
- .debug_line    0x00000464       0x8e out/startup_LPC17xx.o
- .debug_line    0x000004f2      0x260 out/system_LPC17xx.o
- .debug_line    0x00000752      0x4d0 out/lpc17xx_gpio.o
- .debug_line    0x00000c22      0x98d out/lpc17xx_uart.o
- .debug_line    0x000015af      0x167 out/hooks.o
- .debug_line    0x00001716      0x337 out/list.o
- .debug_line    0x00001a4d      0xad3 out/tasks.o
- .debug_line    0x00002520      0x3a4 out/port.o
- .debug_line    0x000028c4      0x383 out/heap_2.o
- .debug_line    0x00002c47      0x386 out/rc_task_leds.o
- .debug_line    0x00002fcd      0x2ca out/rc_leds.o
- .debug_line    0x00003297      0x287 out/rc_system.o
- .debug_line    0x0000351e      0x2de out/rc_gpio.o
- .debug_line    0x000037fc      0x323 out/rc_uart.o
+ .debug_line    0x00000000      0x4d6 out/rc_app.o
+ .debug_line    0x000004d6      0x2d2 out/system_LPC17xx.o
+ .debug_line    0x000007a8       0x8e out/startup_LPC17xx.o
+ .debug_line    0x00000836      0xa34 out/lpc17xx_uart.o
+ .debug_line    0x0000126a      0x567 out/lpc17xx_gpio.o
+ .debug_line    0x000017d1      0xb85 out/tasks.o
+ .debug_line    0x00002356      0x1b8 out/hooks.o
+ .debug_line    0x0000250e      0x3a9 out/list.o
+ .debug_line    0x000028b7      0x421 out/port.o
+ .debug_line    0x00002cd8      0x3f5 out/heap_2.o
+ .debug_line    0x000030cd      0x3fb out/rc_task_leds.o
+ .debug_line    0x000034c8      0x33c out/rc_leds.o
+ .debug_line    0x00003804      0x2f9 out/rc_system.o
+ .debug_line    0x00003afd      0x351 out/rc_gpio.o
+ .debug_line    0x00003e4e      0x395 out/rc_uart.o
 
 .debug_frame    0x00000000     0x1a70
  *(.debug_frame)
  .debug_frame   0x00000000       0x94 out/rc_app.o
- .debug_frame   0x00000094       0x78 out/startup_LPC17xx.o
- .debug_frame   0x0000010c       0x58 out/system_LPC17xx.o
- .debug_frame   0x00000164      0x478 out/lpc17xx_gpio.o
- .debug_frame   0x000005dc      0x55c out/lpc17xx_uart.o
- .debug_frame   0x00000b38       0x7c out/hooks.o
- .debug_frame   0x00000bb4       0xd8 out/list.o
- .debug_frame   0x00000c8c      0x6f8 out/tasks.o
+ .debug_frame   0x00000094       0x58 out/system_LPC17xx.o
+ .debug_frame   0x000000ec       0x78 out/startup_LPC17xx.o
+ .debug_frame   0x00000164      0x55c out/lpc17xx_uart.o
+ .debug_frame   0x000006c0      0x478 out/lpc17xx_gpio.o
+ .debug_frame   0x00000b38      0x6f8 out/tasks.o
+ .debug_frame   0x00001230       0x7c out/hooks.o
+ .debug_frame   0x000012ac       0xd8 out/list.o
  .debug_frame   0x00001384      0x1ac out/port.o
  .debug_frame   0x00001530       0xd0 out/heap_2.o
  .debug_frame   0x00001600       0x30 out/rc_task_leds.o
@@ -2380,40 +2478,40 @@ END GROUP
  .debug_frame   0x000016c4       0x90 out/rc_system.o
  .debug_frame   0x00001754      0x150 out/rc_gpio.o
  .debug_frame   0x000018a4      0x198 out/rc_uart.o
- .debug_frame   0x00001a3c       0x34 c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+ .debug_frame   0x00001a3c       0x34 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
 
-.debug_str      0x00000000    0x13f73
+.debug_str      0x00000000    0x148f4
  *(.debug_str)
- .debug_str     0x00000000     0xcc7e out/rc_app.o
-                               0xcf33 (size before relaxing)
- .debug_str     0x0000cc7e       0xfa out/startup_LPC17xx.o
-                               0x24ff (size before relaxing)
- .debug_str     0x0000cd78      0x453 out/system_LPC17xx.o
-                               0x7511 (size before relaxing)
- .debug_str     0x0000d1cb      0x43d out/lpc17xx_gpio.o
-                               0x79e1 (size before relaxing)
- .debug_str     0x0000d608     0x1bbb out/lpc17xx_uart.o
-                               0xa7c7 (size before relaxing)
- .debug_str     0x0000f1c3      0x503 out/hooks.o
-                               0x29d1 (size before relaxing)
- .debug_str     0x0000f6c6     0x1fa4 out/list.o
-                               0x7b60 (size before relaxing)
- .debug_str     0x0001166a     0x1747 out/tasks.o
-                               0x9669 (size before relaxing)
- .debug_str     0x00012db1      0x724 out/port.o
-                               0x628b (size before relaxing)
- .debug_str     0x000134d5      0x34a out/heap_2.o
-                               0x8187 (size before relaxing)
- .debug_str     0x0001381f       0x4c out/rc_task_leds.o
-                               0xa7d0 (size before relaxing)
- .debug_str     0x0001386b       0x70 out/rc_leds.o
-                               0x7bfd (size before relaxing)
- .debug_str     0x000138db       0x8c out/rc_system.o
-                               0x74dd (size before relaxing)
- .debug_str     0x00013967      0x169 out/rc_gpio.o
-                               0x78a8 (size before relaxing)
- .debug_str     0x00013ad0      0x4a3 out/rc_uart.o
-                               0x9385 (size before relaxing)
+ .debug_str     0x00000000     0xd049 out/rc_app.o
+                               0xd31a (size before relaxing)
+ .debug_str     0x0000d049      0x453 out/system_LPC17xx.o
+                               0x78e8 (size before relaxing)
+ .debug_str     0x0000d49c       0xfa out/startup_LPC17xx.o
+                               0x252a (size before relaxing)
+ .debug_str     0x0000d596     0x1bcb out/lpc17xx_uart.o
+                               0xab99 (size before relaxing)
+ .debug_str     0x0000f161      0x42d out/lpc17xx_gpio.o
+                               0x7db3 (size before relaxing)
+ .debug_str     0x0000f58e     0x4035 out/tasks.o
+                               0xa006 (size before relaxing)
+ .debug_str     0x000135c3       0xd2 out/hooks.o
+                               0x2b59 (size before relaxing)
+ .debug_str     0x00013695       0x9d out/list.o
+                               0x84ed (size before relaxing)
+ .debug_str     0x00013732      0x724 out/port.o
+                               0x6672 (size before relaxing)
+ .debug_str     0x00013e56      0x34a out/heap_2.o
+                               0x8b14 (size before relaxing)
+ .debug_str     0x000141a0       0x4c out/rc_task_leds.o
+                               0xabb7 (size before relaxing)
+ .debug_str     0x000141ec       0x70 out/rc_leds.o
+                               0x7fcf (size before relaxing)
+ .debug_str     0x0001425c       0x8c out/rc_system.o
+                               0x78af (size before relaxing)
+ .debug_str     0x000142e8      0x169 out/rc_gpio.o
+                               0x7c7a (size before relaxing)
+ .debug_str     0x00014451      0x4a3 out/rc_uart.o
+                               0x9757 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)
@@ -2436,13 +2534,13 @@ OUTPUT(out/aoaa.elf elf32-littlearm)
 
 .debug_ranges   0x00000000      0x5e0
  .debug_ranges  0x00000000       0x28 out/rc_app.o
- .debug_ranges  0x00000028       0x20 out/startup_LPC17xx.o
- .debug_ranges  0x00000048       0x18 out/system_LPC17xx.o
- .debug_ranges  0x00000060       0xe8 out/lpc17xx_gpio.o
- .debug_ranges  0x00000148      0x120 out/lpc17xx_uart.o
- .debug_ranges  0x00000268       0x20 out/hooks.o
- .debug_ranges  0x00000288       0x30 out/list.o
- .debug_ranges  0x000002b8      0x170 out/tasks.o
+ .debug_ranges  0x00000028       0x18 out/system_LPC17xx.o
+ .debug_ranges  0x00000040       0x20 out/startup_LPC17xx.o
+ .debug_ranges  0x00000060      0x120 out/lpc17xx_uart.o
+ .debug_ranges  0x00000180       0xe8 out/lpc17xx_gpio.o
+ .debug_ranges  0x00000268      0x170 out/tasks.o
+ .debug_ranges  0x000003d8       0x20 out/hooks.o
+ .debug_ranges  0x000003f8       0x30 out/list.o
  .debug_ranges  0x00000428       0x80 out/port.o
  .debug_ranges  0x000004a8       0x30 out/heap_2.o
  .debug_ranges  0x000004d8       0x10 out/rc_task_leds.o
@@ -2451,61 +2549,67 @@ OUTPUT(out/aoaa.elf elf32-littlearm)
  .debug_ranges  0x00000538       0x48 out/rc_gpio.o
  .debug_ranges  0x00000580       0x60 out/rc_uart.o
 
-.debug_macro    0x00000000     0x398e
- .debug_macro   0x00000000      0x1b1 out/rc_app.o
- .debug_macro   0x000001b1      0x856 out/rc_app.o
- .debug_macro   0x00000a07       0x1c out/rc_app.o
- .debug_macro   0x00000a23       0x2e out/rc_app.o
- .debug_macro   0x00000a51       0x22 out/rc_app.o
- .debug_macro   0x00000a73       0x44 out/rc_app.o
- .debug_macro   0x00000ab7       0x1c out/rc_app.o
- .debug_macro   0x00000ad3      0x1f7 out/rc_app.o
- .debug_macro   0x00000cca       0x18 out/rc_app.o
- .debug_macro   0x00000ce2      0x7af out/rc_app.o
- .debug_macro   0x00001491      0x2dc out/rc_app.o
- .debug_macro   0x0000176d       0x55 out/rc_app.o
- .debug_macro   0x000017c2       0xc5 out/rc_app.o
- .debug_macro   0x00001887       0x5e out/rc_app.o
- .debug_macro   0x000018e5       0x16 out/rc_app.o
- .debug_macro   0x000018fb       0x22 out/rc_app.o
- .debug_macro   0x0000191d       0x52 out/rc_app.o
- .debug_macro   0x0000196f       0x46 out/rc_app.o
- .debug_macro   0x000019b5      0x32a out/rc_app.o
- .debug_macro   0x00001cdf      0x149 out/rc_app.o
- .debug_macro   0x00001e28       0xf4 out/rc_app.o
- .debug_macro   0x00001f1c       0x34 out/rc_app.o
- .debug_macro   0x00001f50      0x166 out/rc_app.o
- .debug_macro   0x000020b6      0x10c out/rc_app.o
- .debug_macro   0x000021c2       0x46 out/rc_app.o
- .debug_macro   0x00002208       0xd3 out/rc_app.o
- .debug_macro   0x000022db       0x12 out/rc_app.o
- .debug_macro   0x000022ed       0x1f out/rc_app.o
- .debug_macro   0x0000230c      0x35a out/rc_app.o
- .debug_macro   0x00002666       0x79 out/rc_app.o
- .debug_macro   0x000026df       0x69 out/rc_app.o
- .debug_macro   0x00002748       0x16 out/rc_app.o
- .debug_macro   0x0000275e       0x23 out/startup_LPC17xx.o
- .debug_macro   0x00002781      0x13a out/system_LPC17xx.o
- .debug_macro   0x000028bb       0xa5 out/lpc17xx_gpio.o
- .debug_macro   0x00002960       0x40 out/lpc17xx_gpio.o
- .debug_macro   0x000029a0       0xae out/lpc17xx_uart.o
- .debug_macro   0x00002a4e      0x324 out/lpc17xx_uart.o
- .debug_macro   0x00002d72       0x54 out/hooks.o
- .debug_macro   0x00002dc6       0x16 out/hooks.o
- .debug_macro   0x00002ddc      0x155 out/list.o
- .debug_macro   0x00002f31      0x203 out/tasks.o
- .debug_macro   0x00003134       0x16 out/tasks.o
- .debug_macro   0x0000314a      0x14e out/port.o
- .debug_macro   0x00003298      0x182 out/heap_2.o
- .debug_macro   0x0000341a      0x162 out/rc_task_leds.o
- .debug_macro   0x0000357c       0x10 out/rc_task_leds.o
- .debug_macro   0x0000358c       0x4f out/rc_task_leds.o
- .debug_macro   0x000035db       0x4c out/rc_task_leds.o
- .debug_macro   0x00003627       0x2e out/rc_task_leds.o
- .debug_macro   0x00003655       0xee out/rc_leds.o
- .debug_macro   0x00003743       0xb3 out/rc_system.o
- .debug_macro   0x000037f6       0xcc out/rc_gpio.o
- .debug_macro   0x000038c2       0xcc out/rc_uart.o
+.debug_macro    0x00000000     0x40ba
+ .debug_macro   0x00000000      0x1c9 out/rc_app.o
+ .debug_macro   0x000001c9      0x856 out/rc_app.o
+ .debug_macro   0x00000a1f       0x1c out/rc_app.o
+ .debug_macro   0x00000a3b       0x2e out/rc_app.o
+ .debug_macro   0x00000a69       0x22 out/rc_app.o
+ .debug_macro   0x00000a8b       0x87 out/rc_app.o
+ .debug_macro   0x00000b12       0x44 out/rc_app.o
+ .debug_macro   0x00000b56       0xfd out/rc_app.o
+ .debug_macro   0x00000c53       0x5e out/rc_app.o
+ .debug_macro   0x00000cb1      0x1df out/rc_app.o
+ .debug_macro   0x00000e90       0x18 out/rc_app.o
+ .debug_macro   0x00000ea8      0x7af out/rc_app.o
+ .debug_macro   0x00001657      0x2dc out/rc_app.o
+ .debug_macro   0x00001933       0x55 out/rc_app.o
+ .debug_macro   0x00001988       0xc5 out/rc_app.o
+ .debug_macro   0x00001a4d       0x5e out/rc_app.o
+ .debug_macro   0x00001aab       0x16 out/rc_app.o
+ .debug_macro   0x00001ac1       0x22 out/rc_app.o
+ .debug_macro   0x00001ae3       0x52 out/rc_app.o
+ .debug_macro   0x00001b35       0x46 out/rc_app.o
+ .debug_macro   0x00001b7b      0x32a out/rc_app.o
+ .debug_macro   0x00001ea5      0x149 out/rc_app.o
+ .debug_macro   0x00001fee       0xf4 out/rc_app.o
+ .debug_macro   0x000020e2       0x34 out/rc_app.o
+ .debug_macro   0x00002116      0x16d out/rc_app.o
+ .debug_macro   0x00002283      0x10c out/rc_app.o
+ .debug_macro   0x0000238f       0x46 out/rc_app.o
+ .debug_macro   0x000023d5       0xd3 out/rc_app.o
+ .debug_macro   0x000024a8       0x12 out/rc_app.o
+ .debug_macro   0x000024ba       0x1f out/rc_app.o
+ .debug_macro   0x000024d9      0x35a out/rc_app.o
+ .debug_macro   0x00002833       0x79 out/rc_app.o
+ .debug_macro   0x000028ac       0x69 out/rc_app.o
+ .debug_macro   0x00002915       0x16 out/rc_app.o
+ .debug_macro   0x0000292b      0x152 out/system_LPC17xx.o
+ .debug_macro   0x00002a7d       0x23 out/startup_LPC17xx.o
+ .debug_macro   0x00002aa0       0xc6 out/lpc17xx_uart.o
+ .debug_macro   0x00002b66      0x324 out/lpc17xx_uart.o
+ .debug_macro   0x00002e8a      0x2fe out/lpc17xx_uart.o
+ .debug_macro   0x00003188       0xcb out/lpc17xx_uart.o
+ .debug_macro   0x00003253       0xbd out/lpc17xx_gpio.o
+ .debug_macro   0x00003310       0x40 out/lpc17xx_gpio.o
+ .debug_macro   0x00003350      0x22b out/tasks.o
+ .debug_macro   0x0000357b       0x16 out/tasks.o
+ .debug_macro   0x00003591       0x35 out/tasks.o
+ .debug_macro   0x000035c6       0x16 out/tasks.o
+ .debug_macro   0x000035dc       0x63 out/hooks.o
+ .debug_macro   0x0000363f       0x16 out/hooks.o
+ .debug_macro   0x00003655      0x173 out/list.o
+ .debug_macro   0x000037c8      0x166 out/port.o
+ .debug_macro   0x0000392e      0x1a0 out/heap_2.o
+ .debug_macro   0x00003ace      0x17a out/rc_task_leds.o
+ .debug_macro   0x00003c48       0x10 out/rc_task_leds.o
+ .debug_macro   0x00003c58       0x4f out/rc_task_leds.o
+ .debug_macro   0x00003ca7       0x4c out/rc_task_leds.o
+ .debug_macro   0x00003cf3       0x2e out/rc_task_leds.o
+ .debug_macro   0x00003d21      0x106 out/rc_leds.o
+ .debug_macro   0x00003e27       0xcb out/rc_system.o
+ .debug_macro   0x00003ef2       0xe4 out/rc_gpio.o
+ .debug_macro   0x00003fd6       0xe4 out/rc_uart.o
 
 Cross Reference Table
 
@@ -2538,15 +2642,15 @@ BusFault_Handler                                  out/startup_LPC17xx.o
 CANActivity_IRQHandler                            out/startup_LPC17xx.o
 CAN_IRQHandler                                    out/startup_LPC17xx.o
 CLKPWR_ConfigPPWR                                 out/lpc17xx_clkpwr.o
-                                                  out/lpc17xx_uart.o
-                                                  out/lpc17xx_timer.o
                                                   out/lpc17xx_adc.o
+                                                  out/lpc17xx_timer.o
+                                                  out/lpc17xx_uart.o
 CLKPWR_DeepPowerDown                              out/lpc17xx_clkpwr.o
 CLKPWR_DeepSleep                                  out/lpc17xx_clkpwr.o
 CLKPWR_GetPCLK                                    out/lpc17xx_clkpwr.o
-                                                  out/lpc17xx_uart.o
-                                                  out/lpc17xx_timer.o
                                                   out/lpc17xx_adc.o
+                                                  out/lpc17xx_timer.o
+                                                  out/lpc17xx_uart.o
 CLKPWR_GetPCLKSEL                                 out/lpc17xx_clkpwr.o
 CLKPWR_PowerDown                                  out/lpc17xx_clkpwr.o
 CLKPWR_SetPCLKDiv                                 out/lpc17xx_clkpwr.o
@@ -2714,18 +2818,13 @@ USBActivity_IRQHandler                            out/startup_LPC17xx.o
 USB_IRQHandler                                    out/startup_LPC17xx.o
 UsageFault_Handler                                out/startup_LPC17xx.o
 WDT_IRQHandler                                    out/startup_LPC17xx.o
-__aeabi_idiv0                                     c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
-__aeabi_ldiv0                                     c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_dvmd_tls.o)
-                                                  c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
-__aeabi_uldivmod                                  c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+__aeabi_idiv0                                     c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+__aeabi_ldiv0                                     c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_dvmd_tls.o)
+                                                  c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
+__aeabi_uldivmod                                  c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
                                                   out/lpc17xx_timer.o
-__divdi3                                          c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_divdi3.o)
-                                                  c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
-__gnu_ldivmod_helper                              c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
-__gnu_uldivmod_helper                             c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
-                                                  c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_aeabi_uldivmod.o)
-__udivdi3                                         c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(_udivdi3.o)
-                                                  c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libgcc.a(bpabi.o)
+__udivmoddi4                                      c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_udivmoddi4.o)
+                                                  c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_aeabi_uldivmod.o)
 _ebss                                             out/startup_LPC17xx.o
 _ebss_ahb                                         out/startup_LPC17xx.o
 _edata                                            out/startup_LPC17xx.o
@@ -2736,23 +2835,23 @@ _sbss_ahb                                         out/startup_LPC17xx.o
 _sdata                                            out/startup_LPC17xx.o
 _sidata                                           out/startup_LPC17xx.o
 check_failed                                      out/lpc17xx_libcfg_default.o
-                                                  out/lpc17xx_uart.o
-                                                  out/lpc17xx_timer.o
                                                   out/lpc17xx_adc.o
+                                                  out/lpc17xx_timer.o
+                                                  out/lpc17xx_uart.o
 g_pfnVectors                                      out/startup_LPC17xx.o
 getUartNum                                        out/lpc17xx_uart.o
 main                                              out/rc_app.o
                                                   out/startup_LPC17xx.o
-memcpy                                            c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
+memcpy                                            c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memcpy.o)
                                                   out/queue.o
-memset                                            c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
+memset                                            c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-memset.o)
                                                   out/tasks.o
 pfnModemCbs                                       out/lpc17xx_uart.o
 pvPortMalloc                                      out/heap_2.o
-                                                  out/tasks.o
                                                   out/queue.o
-                                                  out/event_groups.o
                                                   out/croutine.o
+                                                  out/event_groups.o
+                                                  out/tasks.o
 pvTaskIncrementMutexHeldCount                     out/tasks.o
                                                   out/queue.o
 pxCurrentCoRoutine                                out/croutine.o
@@ -2831,20 +2930,20 @@ rcuart_Send                                       out/rc_uart.o
 rcuart_SetCallback_Function                       out/rc_uart.o
 rcuart_SetInterrupt                               out/rc_uart.o
 rcuart_TxState                                    out/rc_uart.o
-strlen                                            c:/gnu tools arm embedded/4.9 2015q1/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen.o)
+strlen                                            c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-strlen-stub.o)
                                                   out/lpc17xx_uart.o
 uartCbsDat                                        out/lpc17xx_uart.o
 uart_set_divisors                                 out/lpc17xx_uart.o
 ucQueueGetQueueType                               out/queue.o
 ulPortSetInterruptMask                            out/port.o
-                                                  out/tasks.o
                                                   out/queue.o
-                                                  out/event_groups.o
                                                   out/croutine.o
+                                                  out/event_groups.o
+                                                  out/tasks.o
 uxEventGroupGetNumber                             out/event_groups.o
 uxListRemove                                      out/list.o
-                                                  out/tasks.o
                                                   out/croutine.o
+                                                  out/tasks.o
 uxQueueGetQueueNumber                             out/queue.o
 uxQueueMessagesWaiting                            out/queue.o
 uxQueueMessagesWaitingFromISR                     out/queue.o
@@ -2866,49 +2965,49 @@ vEventGroupClearBitsCallback                      out/event_groups.o
 vEventGroupDelete                                 out/event_groups.o
 vEventGroupSetBitsCallback                        out/event_groups.o
 vListInitialise                                   out/list.o
-                                                  out/tasks.o
                                                   out/queue.o
-                                                  out/event_groups.o
                                                   out/croutine.o
+                                                  out/event_groups.o
+                                                  out/tasks.o
 vListInitialiseItem                               out/list.o
-                                                  out/tasks.o
                                                   out/croutine.o
+                                                  out/tasks.o
 vListInsert                                       out/list.o
-                                                  out/tasks.o
                                                   out/croutine.o
+                                                  out/tasks.o
 vListInsertEnd                                    out/list.o
-                                                  out/tasks.o
                                                   out/croutine.o
+                                                  out/tasks.o
 vPortClearInterruptMask                           out/port.o
-                                                  out/tasks.o
                                                   out/queue.o
-                                                  out/event_groups.o
                                                   out/croutine.o
+                                                  out/event_groups.o
+                                                  out/tasks.o
 vPortEndScheduler                                 out/port.o
                                                   out/tasks.o
 vPortEnterCritical                                out/port.o
-                                                  out/tasks.o
                                                   out/queue.o
                                                   out/event_groups.o
+                                                  out/tasks.o
 vPortExitCritical                                 out/port.o
-                                                  out/tasks.o
                                                   out/queue.o
                                                   out/event_groups.o
+                                                  out/tasks.o
 vPortFree                                         out/heap_2.o
-                                                  out/tasks.o
                                                   out/queue.o
                                                   out/event_groups.o
+                                                  out/tasks.o
 vPortInitialiseBlocks                             out/heap_2.o
 vPortSVCHandler                                   out/port.o
                                                   out/startup_LPC17xx.o
 vPortSetupTimerInterrupt                          out/port.o
 vPortValidateInterruptPriority                    out/port.o
-                                                  out/tasks.o
                                                   out/queue.o
-vPortYield                                        out/port.o
                                                   out/tasks.o
+vPortYield                                        out/port.o
                                                   out/queue.o
                                                   out/event_groups.o
+                                                  out/tasks.o
 vQueueAddToRegistry                               out/queue.o
 vQueueDelete                                      out/queue.o
 vQueueSetQueueNumber                              out/queue.o
