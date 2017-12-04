@@ -1,0 +1,4600 @@
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   5              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   6              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   7              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   8              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   9              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+  10              		.eabi_attribute 30, 6	@ Tag_ABI_optimization_goals
+  11              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  12              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  13              		.file	"startup_LPC17xx.c"
+  14              	@ GNU C (GNU Tools for ARM Embedded Processors) version 4.9.3 20150303 (release) [ARM/embedded-4_9-
+  15              	@	compiled by GNU C version 4.7.4, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.1
+  16              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  17              	@ options passed:  -I . -I config -I system -I core -I drivers -I FreeRTOS
+  18              	@ -I FreeRTOS/include -I FreeRTOS/portable/GCC/ARM_CM3 -I FreeRTOS/portable
+  19              	@ -I tasks/rc_task_leds -I tasks/rc_task_pot -I modules/rc_leds
+  20              	@ -I modules/rc_pot -I drivers/rc_system -I drivers/rc_gpio
+  21              	@ -I drivers/rc_uart -I drivers/rc_pinsel -I drivers/rc_timer
+  22              	@ -I drivers/rc_adc -imultilib armv7-m
+  23              	@ -iprefix c:\gnu tools arm embedded\4.9 2015q1\bin\../lib/gcc/arm-none-eabi/4.9.3/
+  24              	@ -isysroot c:\gnu tools arm embedded\4.9 2015q1\bin\../arm-none-eabi
+  25              	@ -MD out/startup_LPC17xx.d -MF out/startup_LPC17xx.d -MP
+  26              	@ -MQ out/startup_LPC17xx.o -D__USES_INITFINI__ system/startup_LPC17xx.c
+  27              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip out/startup_LPC17xx.o -g -ggdb3
+  28              	@ -O0 -Wall -Wstrict-prototypes -Wextra -std=gnu90 -ffunction-sections
+  29              	@ -fdata-sections -fverbose-asm
+  30              	@ options enabled:  -faggressive-loop-optimizations -fauto-inc-dec -fcommon
+  31              	@ -fdata-sections -fdelete-null-pointer-checks -fdwarf2-cfi-asm
+  32              	@ -fearly-inlining -feliminate-unused-debug-types -ffunction-cse
+  33              	@ -ffunction-sections -fgcse-lm -fgnu-runtime -fgnu-unique -fident
+  34              	@ -finline-atomics -fira-hoist-pressure -fira-share-save-slots
+  35              	@ -fira-share-spill-slots -fivopts -fkeep-static-consts
+  36              	@ -fleading-underscore -flifetime-dse -fmath-errno -fmerge-debug-strings
+  37              	@ -fpeephole -fprefetch-loop-arrays -freg-struct-return
+  38              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  39              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  40              	@ -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
+  41              	@ -fsched-stalled-insns-dep -fshow-column -fsigned-zeros
+  42              	@ -fsplit-ivs-in-unroller -fstrict-volatile-bitfields -fsync-libcalls
+  43              	@ -ftrapping-math -ftree-coalesce-vars -ftree-cselim -ftree-forwprop
+  44              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  45              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop
+  46              	@ -ftree-reassoc -ftree-scev-cprop -funit-at-a-time -fverbose-asm
+  47              	@ -fzero-initialized-in-bss -mfix-cortex-m3-ldrd -mlittle-endian -mlra
+  48              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  49              	@ -mvectorize-with-neon-quad
+  50              	
+  51              		.text
+  52              	.Ltext0:
+  53              		.cfi_sections	.debug_frame
+  54              		.global	g_pfnVectors
+  55              		.section	.isr_vector,"a",%progbits
+  56              		.align	2
+  57              		.type	g_pfnVectors, %object
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 2
+
+
+  58              		.size	g_pfnVectors, 204
+  59              	g_pfnVectors:
+  60 0000 00000000 		.word	_estack
+  61 0004 00000000 		.word	Reset_Handler
+  62 0008 00000000 		.word	NMI_Handler
+  63 000c 00000000 		.word	HardFault_Handler
+  64 0010 00000000 		.word	MemManage_Handler
+  65 0014 00000000 		.word	BusFault_Handler
+  66 0018 00000000 		.word	UsageFault_Handler
+  67 001c 00000000 		.word	0
+  68 0020 00000000 		.word	0
+  69 0024 00000000 		.word	0
+  70 0028 00000000 		.word	0
+  71 002c 00000000 		.word	vPortSVCHandler
+  72 0030 00000000 		.word	DebugMon_Handler
+  73 0034 00000000 		.word	0
+  74 0038 00000000 		.word	xPortPendSVHandler
+  75 003c 00000000 		.word	xPortSysTickHandler
+  76 0040 00000000 		.word	WDT_IRQHandler
+  77 0044 00000000 		.word	rcscheduler_Timer0_IRQHandler
+  78 0048 00000000 		.word	TIMER1_IRQHandler
+  79 004c 00000000 		.word	TIMER2_IRQHandler
+  80 0050 00000000 		.word	TIMER3_IRQHandler
+  81 0054 00000000 		.word	UART0_IRQHandler
+  82 0058 00000000 		.word	rcuart_PORT1_IRQHandler
+  83 005c 00000000 		.word	UART2_IRQHandler
+  84 0060 00000000 		.word	UART3_IRQHandler
+  85 0064 00000000 		.word	PWM1_IRQHandler
+  86 0068 00000000 		.word	I2C0_IRQHandler
+  87 006c 00000000 		.word	I2C1_IRQHandler
+  88 0070 00000000 		.word	I2C2_IRQHandler
+  89 0074 00000000 		.word	SPI_IRQHandler
+  90 0078 00000000 		.word	SSP0_IRQHandler
+  91 007c 00000000 		.word	SSP1_IRQHandler
+  92 0080 00000000 		.word	PLL0_IRQHandler
+  93 0084 00000000 		.word	RTC_IRQHandler
+  94 0088 00000000 		.word	EINT0_IRQHandler
+  95 008c 00000000 		.word	EINT1_IRQHandler
+  96 0090 00000000 		.word	EINT2_IRQHandler
+  97 0094 00000000 		.word	EINT3_IRQHandler
+  98 0098 00000000 		.word	ADC_IRQHandler
+  99 009c 00000000 		.word	BOD_IRQHandler
+ 100 00a0 00000000 		.word	USB_IRQHandler
+ 101 00a4 00000000 		.word	CAN_IRQHandler
+ 102 00a8 00000000 		.word	DMA_IRQHandler
+ 103 00ac 00000000 		.word	I2S_IRQHandler
+ 104 00b0 00000000 		.word	ENET_IRQHandler
+ 105 00b4 00000000 		.word	RIT_IRQHandler
+ 106 00b8 00000000 		.word	MCPWM_IRQHandler
+ 107 00bc 00000000 		.word	QEI_IRQHandler
+ 108 00c0 00000000 		.word	PLL1_IRQHandler
+ 109 00c4 00000000 		.word	USBActivity_IRQHandler
+ 110 00c8 00000000 		.word	CANActivity_IRQHandler
+ 111              		.section	.text.Reset_Handler,"ax",%progbits
+ 112              		.align	2
+ 113              		.weak	Reset_Handler
+ 114              		.thumb
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 3
+
+
+ 115              		.thumb_func
+ 116              		.type	Reset_Handler, %function
+ 117              	Reset_Handler:
+ 118              	.LFB0:
+ 119              		.file 1 "system/startup_LPC17xx.c"
+   1:system/startup_LPC17xx.c **** //$Id: startup_LPC17xx.c 1269 2011-07-22 22:51:08Z tk $
+   2:system/startup_LPC17xx.c **** /**
+   3:system/startup_LPC17xx.c ****  ******************************************************************************
+   4:system/startup_LPC17xx.c ****  * @file      startup_LPC17xx.c
+   5:system/startup_LPC17xx.c ****  ******************************************************************************
+   6:system/startup_LPC17xx.c ****  */
+   7:system/startup_LPC17xx.c **** 
+   8:system/startup_LPC17xx.c **** #define STARTUP_FREERTOS	1
+   9:system/startup_LPC17xx.c **** 
+  10:system/startup_LPC17xx.c **** /* Includes ------------------------------------------------------------------*/
+  11:system/startup_LPC17xx.c **** /* Private typedef -----------------------------------------------------------*/
+  12:system/startup_LPC17xx.c **** typedef void( *const intfunc )( void );
+  13:system/startup_LPC17xx.c **** 
+  14:system/startup_LPC17xx.c **** /* Private define ------------------------------------------------------------*/
+  15:system/startup_LPC17xx.c **** #define WEAK __attribute__ ((weak))
+  16:system/startup_LPC17xx.c **** #define ALIAS(f) __attribute__ ((weak, alias (#f)))
+  17:system/startup_LPC17xx.c **** 
+  18:system/startup_LPC17xx.c **** /* Private macro -------------------------------------------------------------*/
+  19:system/startup_LPC17xx.c **** //extern unsigned long _etext;
+  20:system/startup_LPC17xx.c **** /* start address for the initialization values of the .data section.
+  21:system/startup_LPC17xx.c **** defined in linker script */
+  22:system/startup_LPC17xx.c **** extern unsigned long _sidata;
+  23:system/startup_LPC17xx.c **** 
+  24:system/startup_LPC17xx.c **** /* start address for the .data section. defined in linker script */    
+  25:system/startup_LPC17xx.c **** extern unsigned long _sdata;
+  26:system/startup_LPC17xx.c **** 
+  27:system/startup_LPC17xx.c **** /* end address for the .data section. defined in linker script */    
+  28:system/startup_LPC17xx.c **** extern unsigned long _edata;
+  29:system/startup_LPC17xx.c ****    
+  30:system/startup_LPC17xx.c **** /* start address for the .bss section. defined in linker script */
+  31:system/startup_LPC17xx.c **** extern unsigned long _sbss;
+  32:system/startup_LPC17xx.c **** extern unsigned long _sbss_ahb;
+  33:system/startup_LPC17xx.c **** 
+  34:system/startup_LPC17xx.c **** /* end address for the .bss section. defined in linker script */      
+  35:system/startup_LPC17xx.c **** extern unsigned long _ebss;  
+  36:system/startup_LPC17xx.c **** extern unsigned long _ebss_ahb;  
+  37:system/startup_LPC17xx.c ****    
+  38:system/startup_LPC17xx.c **** /* init value for the stack pointer. defined in linker script */
+  39:system/startup_LPC17xx.c **** extern unsigned long _estack;
+  40:system/startup_LPC17xx.c **** 
+  41:system/startup_LPC17xx.c **** /* Private variables ---------------------------------------------------------*/
+  42:system/startup_LPC17xx.c **** /* Private function prototypes -----------------------------------------------*/
+  43:system/startup_LPC17xx.c **** void Reset_Handler(void) __attribute__((__interrupt__));
+  44:system/startup_LPC17xx.c **** extern int main(void);
+  45:system/startup_LPC17xx.c **** extern void SystemInit(void);
+  46:system/startup_LPC17xx.c **** //extern void __libc_init_array(void);  /* calls CTORS of static objects */
+  47:system/startup_LPC17xx.c **** //void __Init_Data(void);
+  48:system/startup_LPC17xx.c **** void _init(void);
+  49:system/startup_LPC17xx.c **** 
+  50:system/startup_LPC17xx.c **** // for FreeRTOS
+  51:system/startup_LPC17xx.c **** #if STARTUP_FREERTOS
+  52:system/startup_LPC17xx.c **** extern void xPortPendSVHandler(void);
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 4
+
+
+  53:system/startup_LPC17xx.c **** extern void xPortSysTickHandler(void);
+  54:system/startup_LPC17xx.c **** extern void vPortSVCHandler( void );
+  55:system/startup_LPC17xx.c **** #endif
+  56:system/startup_LPC17xx.c **** 
+  57:system/startup_LPC17xx.c **** /******************************************************************************
+  58:system/startup_LPC17xx.c **** *
+  59:system/startup_LPC17xx.c **** * Forward declaration of the default fault handlers.
+  60:system/startup_LPC17xx.c **** *
+  61:system/startup_LPC17xx.c **** *******************************************************************************/
+  62:system/startup_LPC17xx.c **** void WEAK Reset_Handler(void);
+  63:system/startup_LPC17xx.c **** void WEAK NMI_Handler(void);
+  64:system/startup_LPC17xx.c **** void WEAK HardFault_Handler(void);
+  65:system/startup_LPC17xx.c **** void WEAK MemManage_Handler(void);
+  66:system/startup_LPC17xx.c **** void WEAK BusFault_Handler(void);
+  67:system/startup_LPC17xx.c **** void WEAK UsageFault_Handler(void);
+  68:system/startup_LPC17xx.c **** void WEAK MemManage_Handler(void);
+  69:system/startup_LPC17xx.c **** void WEAK SVC_Handler(void);
+  70:system/startup_LPC17xx.c **** void WEAK DebugMon_Handler(void);
+  71:system/startup_LPC17xx.c **** void WEAK PendSV_Handler(void);
+  72:system/startup_LPC17xx.c **** void WEAK SysTick_Handler(void);
+  73:system/startup_LPC17xx.c **** 
+  74:system/startup_LPC17xx.c **** void WEAK Default_Handler(void);
+  75:system/startup_LPC17xx.c **** 
+  76:system/startup_LPC17xx.c **** /* External Interrupts */
+  77:system/startup_LPC17xx.c **** void WDT_IRQHandler(void) ALIAS(Default_Handler);
+  78:system/startup_LPC17xx.c **** void rcscheduler_Timer0_IRQHandler(void) ALIAS(Default_Handler);
+  79:system/startup_LPC17xx.c **** void TIMER1_IRQHandler(void) ALIAS(Default_Handler);
+  80:system/startup_LPC17xx.c **** void TIMER2_IRQHandler(void) ALIAS(Default_Handler);
+  81:system/startup_LPC17xx.c **** void TIMER3_IRQHandler(void) ALIAS(Default_Handler);
+  82:system/startup_LPC17xx.c **** void UART0_IRQHandler(void) ALIAS(Default_Handler);
+  83:system/startup_LPC17xx.c **** void rcuart_PORT1_IRQHandler(void) ALIAS(Default_Handler);
+  84:system/startup_LPC17xx.c **** void UART2_IRQHandler(void) ALIAS(Default_Handler);
+  85:system/startup_LPC17xx.c **** void UART3_IRQHandler(void) ALIAS(Default_Handler);
+  86:system/startup_LPC17xx.c **** void PWM1_IRQHandler(void) ALIAS(Default_Handler);
+  87:system/startup_LPC17xx.c **** void I2C0_IRQHandler(void) ALIAS(Default_Handler);
+  88:system/startup_LPC17xx.c **** void I2C1_IRQHandler(void) ALIAS(Default_Handler);
+  89:system/startup_LPC17xx.c **** void I2C2_IRQHandler(void) ALIAS(Default_Handler);
+  90:system/startup_LPC17xx.c **** void SPI_IRQHandler(void) ALIAS(Default_Handler);
+  91:system/startup_LPC17xx.c **** void SSP0_IRQHandler(void) ALIAS(Default_Handler);
+  92:system/startup_LPC17xx.c **** void SSP1_IRQHandler(void) ALIAS(Default_Handler);
+  93:system/startup_LPC17xx.c **** void PLL0_IRQHandler(void) ALIAS(Default_Handler);
+  94:system/startup_LPC17xx.c **** void RTC_IRQHandler(void) ALIAS(Default_Handler);
+  95:system/startup_LPC17xx.c **** void EINT0_IRQHandler(void) ALIAS(Default_Handler);
+  96:system/startup_LPC17xx.c **** void EINT1_IRQHandler(void) ALIAS(Default_Handler);
+  97:system/startup_LPC17xx.c **** void EINT2_IRQHandler(void) ALIAS(Default_Handler);
+  98:system/startup_LPC17xx.c **** void EINT3_IRQHandler(void) ALIAS(Default_Handler);
+  99:system/startup_LPC17xx.c **** void ADC_IRQHandler(void) ALIAS(Default_Handler);
+ 100:system/startup_LPC17xx.c **** void BOD_IRQHandler(void) ALIAS(Default_Handler);
+ 101:system/startup_LPC17xx.c **** void USB_IRQHandler(void) ALIAS(Default_Handler);
+ 102:system/startup_LPC17xx.c **** void CAN_IRQHandler(void) ALIAS(Default_Handler);
+ 103:system/startup_LPC17xx.c **** void DMA_IRQHandler(void) ALIAS(Default_Handler);
+ 104:system/startup_LPC17xx.c **** void I2S_IRQHandler(void) ALIAS(Default_Handler);
+ 105:system/startup_LPC17xx.c **** void ENET_IRQHandler(void) ALIAS(Default_Handler);
+ 106:system/startup_LPC17xx.c **** void RIT_IRQHandler(void) ALIAS(Default_Handler);
+ 107:system/startup_LPC17xx.c **** void MCPWM_IRQHandler(void) ALIAS(Default_Handler);
+ 108:system/startup_LPC17xx.c **** void QEI_IRQHandler(void) ALIAS(Default_Handler);
+ 109:system/startup_LPC17xx.c **** void PLL1_IRQHandler(void) ALIAS(Default_Handler);
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 5
+
+
+ 110:system/startup_LPC17xx.c **** void USBActivity_IRQHandler(void) ALIAS(Default_Handler);
+ 111:system/startup_LPC17xx.c **** void CANActivity_IRQHandler(void) ALIAS(Default_Handler);
+ 112:system/startup_LPC17xx.c **** 
+ 113:system/startup_LPC17xx.c **** /* Private functions ---------------------------------------------------------*/
+ 114:system/startup_LPC17xx.c **** /******************************************************************************
+ 115:system/startup_LPC17xx.c **** *
+ 116:system/startup_LPC17xx.c **** * The minimal vector table for a Cortex M3.  Note that the proper constructs
+ 117:system/startup_LPC17xx.c **** * must be placed on this to ensure that it ends up at physical address
+ 118:system/startup_LPC17xx.c **** * 0x0000.0000.
+ 119:system/startup_LPC17xx.c **** *
+ 120:system/startup_LPC17xx.c **** ******************************************************************************/
+ 121:system/startup_LPC17xx.c **** 
+ 122:system/startup_LPC17xx.c **** __attribute__ ((section(".isr_vector")))
+ 123:system/startup_LPC17xx.c **** void (* const g_pfnVectors[])(void) =
+ 124:system/startup_LPC17xx.c **** {      
+ 125:system/startup_LPC17xx.c ****     (intfunc)((unsigned long)&_estack), /* The initial stack pointer */
+ 126:system/startup_LPC17xx.c ****     Reset_Handler,              /* Reset Handler */
+ 127:system/startup_LPC17xx.c ****     NMI_Handler,                /* NMI Handler */
+ 128:system/startup_LPC17xx.c ****     HardFault_Handler,          /* Hard Fault Handler */
+ 129:system/startup_LPC17xx.c ****     MemManage_Handler,          /* MPU Fault Handler */
+ 130:system/startup_LPC17xx.c ****     BusFault_Handler,           /* Bus Fault Handler */
+ 131:system/startup_LPC17xx.c ****     UsageFault_Handler,         /* Usage Fault Handler */
+ 132:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 133:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 134:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 135:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 136:system/startup_LPC17xx.c **** 
+ 137:system/startup_LPC17xx.c **** #if !STARTUP_FREERTOS
+ 138:system/startup_LPC17xx.c ****     SVC_Handler,                /* SVCall Handler */
+ 139:system/startup_LPC17xx.c **** #else
+ 140:system/startup_LPC17xx.c ****     // for FreeRTOS
+ 141:system/startup_LPC17xx.c ****     vPortSVCHandler,
+ 142:system/startup_LPC17xx.c **** #endif
+ 143:system/startup_LPC17xx.c **** 
+ 144:system/startup_LPC17xx.c ****     DebugMon_Handler,           /* Debug Monitor Handler */
+ 145:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 146:system/startup_LPC17xx.c **** 
+ 147:system/startup_LPC17xx.c **** #if !STARTUP_FREERTOS
+ 148:system/startup_LPC17xx.c ****     PendSV_Handler,             /* PendSV Handler */
+ 149:system/startup_LPC17xx.c ****     SysTick_Handler,            /* SysTick Handler */
+ 150:system/startup_LPC17xx.c **** #else
+ 151:system/startup_LPC17xx.c ****     // for FreeRTOS
+ 152:system/startup_LPC17xx.c ****     xPortPendSVHandler,
+ 153:system/startup_LPC17xx.c ****     xPortSysTickHandler,
+ 154:system/startup_LPC17xx.c **** #endif
+ 155:system/startup_LPC17xx.c **** 
+ 156:system/startup_LPC17xx.c ****     /* External Interrupts */
+ 157:system/startup_LPC17xx.c ****     WDT_IRQHandler,                         // 16, 0x40 - WDT
+ 158:system/startup_LPC17xx.c **** 	rcscheduler_Timer0_IRQHandler,                      // 17, 0x44 - TIMER0
+ 159:system/startup_LPC17xx.c ****     TIMER1_IRQHandler,                      // 18, 0x48 - TIMER1
+ 160:system/startup_LPC17xx.c ****     TIMER2_IRQHandler,                      // 19, 0x4c - TIMER2
+ 161:system/startup_LPC17xx.c ****     TIMER3_IRQHandler,                      // 20, 0x50 - TIMER3
+ 162:system/startup_LPC17xx.c ****     UART0_IRQHandler,                       // 21, 0x54 - UART0
+ 163:system/startup_LPC17xx.c **** 	rcuart_PORT1_IRQHandler,                       // 22, 0x58 - UART1
+ 164:system/startup_LPC17xx.c ****     UART2_IRQHandler,                       // 23, 0x5c - UART2
+ 165:system/startup_LPC17xx.c ****     UART3_IRQHandler,                       // 24, 0x60 - UART3
+ 166:system/startup_LPC17xx.c ****     PWM1_IRQHandler,                        // 25, 0x64 - PWM1
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 6
+
+
+ 167:system/startup_LPC17xx.c ****     I2C0_IRQHandler,                        // 26, 0x68 - I2C0
+ 168:system/startup_LPC17xx.c ****     I2C1_IRQHandler,                        // 27, 0x6c - I2C1
+ 169:system/startup_LPC17xx.c ****     I2C2_IRQHandler,                        // 28, 0x70 - I2C2
+ 170:system/startup_LPC17xx.c ****     SPI_IRQHandler,                         // 29, 0x74 - SPI
+ 171:system/startup_LPC17xx.c ****     SSP0_IRQHandler,                        // 30, 0x78 - SSP0
+ 172:system/startup_LPC17xx.c ****     SSP1_IRQHandler,                        // 31, 0x7c - SSP1
+ 173:system/startup_LPC17xx.c ****     PLL0_IRQHandler,                        // 32, 0x80 - PLL0 (Main PLL)
+ 174:system/startup_LPC17xx.c ****     RTC_IRQHandler,                         // 33, 0x84 - RTC
+ 175:system/startup_LPC17xx.c ****     EINT0_IRQHandler,                       // 34, 0x88 - EINT0
+ 176:system/startup_LPC17xx.c ****     EINT1_IRQHandler,                       // 35, 0x8c - EINT1
+ 177:system/startup_LPC17xx.c ****     EINT2_IRQHandler,                       // 36, 0x90 - EINT2
+ 178:system/startup_LPC17xx.c ****     EINT3_IRQHandler,                       // 37, 0x94 - EINT3
+ 179:system/startup_LPC17xx.c ****     ADC_IRQHandler,                         // 38, 0x98 - ADC
+ 180:system/startup_LPC17xx.c ****     BOD_IRQHandler,                         // 39, 0x9c - BOD
+ 181:system/startup_LPC17xx.c ****     USB_IRQHandler,                         // 40, 0xA0 - USB
+ 182:system/startup_LPC17xx.c ****     CAN_IRQHandler,                         // 41, 0xa4 - CAN
+ 183:system/startup_LPC17xx.c ****     DMA_IRQHandler,                         // 42, 0xa8 - GP DMA
+ 184:system/startup_LPC17xx.c ****     I2S_IRQHandler,                         // 43, 0xac - I2S
+ 185:system/startup_LPC17xx.c ****     ENET_IRQHandler,                        // 44, 0xb0 - Ethernet
+ 186:system/startup_LPC17xx.c ****     RIT_IRQHandler,                         // 45, 0xb4 - RITINT
+ 187:system/startup_LPC17xx.c ****     MCPWM_IRQHandler,                       // 46, 0xb8 - Motor Control PWM
+ 188:system/startup_LPC17xx.c ****     QEI_IRQHandler,                         // 47, 0xbc - Quadrature Encoder
+ 189:system/startup_LPC17xx.c ****     PLL1_IRQHandler,                        // 48, 0xc0 - PLL1 (USB PLL)
+ 190:system/startup_LPC17xx.c ****     USBActivity_IRQHandler,                 // 49, 0xc4 - USB Activity interrupt to wakeup
+ 191:system/startup_LPC17xx.c ****     CANActivity_IRQHandler,                 // 50, 0xc8 - CAN Activity interrupt to wakeup
+ 192:system/startup_LPC17xx.c **** };
+ 193:system/startup_LPC17xx.c **** 
+ 194:system/startup_LPC17xx.c **** /**
+ 195:system/startup_LPC17xx.c ****  * @brief  This is the code that gets called when the processor first
+ 196:system/startup_LPC17xx.c ****  *          starts execution following a reset event. Only the absolutely
+ 197:system/startup_LPC17xx.c ****  *          necessary set is performed, after which the application
+ 198:system/startup_LPC17xx.c ****  *          supplied main() routine is called.
+ 199:system/startup_LPC17xx.c ****  * @param  None
+ 200:system/startup_LPC17xx.c ****  * @retval : None
+ 201:system/startup_LPC17xx.c **** */
+ 202:system/startup_LPC17xx.c **** 
+ 203:system/startup_LPC17xx.c **** void Reset_Handler(void)
+ 204:system/startup_LPC17xx.c **** {
+ 120              		.loc 1 204 0
+ 121              		.cfi_startproc
+ 122              		@ Stack Align: May be called with mis-aligned SP.
+ 123              		@ args = 0, pretend = 0, frame = 8
+ 124              		@ frame_needed = 1, uses_anonymous_args = 0
+ 125 0000 6846     		mov	r0, sp	@,
+ 126              		.cfi_register 13, 0
+ 127 0002 20F00701 		bic	r1, r0, #7	@,,
+ 128 0006 8D46     		mov	sp, r1	@,
+ 129 0008 81B5     		push	{r0, r7, lr}	@
+ 130              		.cfi_def_cfa_offset 12
+ 131              		.cfi_offset 13, -12
+ 132              		.cfi_offset 7, -8
+ 133              		.cfi_offset 14, -4
+ 134 000a 83B0     		sub	sp, sp, #12	@,,
+ 135              		.cfi_def_cfa_offset 24
+ 136 000c 00AF     		add	r7, sp, #0	@,,
+ 137              		.cfi_def_cfa_register 7
+ 205:system/startup_LPC17xx.c ****   /* Initialize data and bss */
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 7
+
+
+ 206:system/startup_LPC17xx.c ****   unsigned long *pulSrc, *pulDest;
+ 207:system/startup_LPC17xx.c **** 
+ 208:system/startup_LPC17xx.c ****   /* Copy the data segment initializers from flash to SRAM */
+ 209:system/startup_LPC17xx.c ****   pulSrc = &_sidata;
+ 138              		.loc 1 209 0
+ 139 000e 174B     		ldr	r3, .L9	@ tmp115,
+ 140 0010 7B60     		str	r3, [r7, #4]	@ tmp115, pulSrc
+ 210:system/startup_LPC17xx.c **** 
+ 211:system/startup_LPC17xx.c ****   for(pulDest = &_sdata; pulDest < &_edata; )
+ 141              		.loc 1 211 0
+ 142 0012 174B     		ldr	r3, .L9+4	@ tmp116,
+ 143 0014 3B60     		str	r3, [r7]	@ tmp116, pulDest
+ 144 0016 07E0     		b	.L2	@
+ 145              	.L3:
+ 212:system/startup_LPC17xx.c ****   {
+ 213:system/startup_LPC17xx.c ****     *(pulDest++) = *(pulSrc++);
+ 146              		.loc 1 213 0
+ 147 0018 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 148 001a 1A1D     		adds	r2, r3, #4	@ tmp117, D.4227,
+ 149 001c 3A60     		str	r2, [r7]	@ tmp117, pulDest
+ 150 001e 7A68     		ldr	r2, [r7, #4]	@ D.4227, pulSrc
+ 151 0020 111D     		adds	r1, r2, #4	@ tmp118, D.4227,
+ 152 0022 7960     		str	r1, [r7, #4]	@ tmp118, pulSrc
+ 153 0024 1268     		ldr	r2, [r2]	@ D.4228, *_9
+ 154 0026 1A60     		str	r2, [r3]	@ D.4228, *_7
+ 155              	.L2:
+ 211:system/startup_LPC17xx.c ****   {
+ 156              		.loc 1 211 0 discriminator 1
+ 157 0028 3B68     		ldr	r3, [r7]	@ tmp119, pulDest
+ 158 002a 124A     		ldr	r2, .L9+8	@ tmp120,
+ 159 002c 9342     		cmp	r3, r2	@ tmp119, tmp120
+ 160 002e F3D3     		bcc	.L3	@,
+ 214:system/startup_LPC17xx.c ****   }
+ 215:system/startup_LPC17xx.c **** 
+ 216:system/startup_LPC17xx.c ****   /* Zero fill the bss segment. */
+ 217:system/startup_LPC17xx.c ****   for(pulDest = &_sbss; pulDest < &_ebss; )
+ 161              		.loc 1 217 0
+ 162 0030 114B     		ldr	r3, .L9+12	@ tmp121,
+ 163 0032 3B60     		str	r3, [r7]	@ tmp121, pulDest
+ 164 0034 04E0     		b	.L4	@
+ 165              	.L5:
+ 218:system/startup_LPC17xx.c ****   {
+ 219:system/startup_LPC17xx.c ****     *(pulDest++) = 0;
+ 166              		.loc 1 219 0
+ 167 0036 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 168 0038 1A1D     		adds	r2, r3, #4	@ tmp122, D.4227,
+ 169 003a 3A60     		str	r2, [r7]	@ tmp122, pulDest
+ 170 003c 0022     		movs	r2, #0	@ tmp123,
+ 171 003e 1A60     		str	r2, [r3]	@ tmp123, *_13
+ 172              	.L4:
+ 217:system/startup_LPC17xx.c ****   {
+ 173              		.loc 1 217 0 discriminator 1
+ 174 0040 3B68     		ldr	r3, [r7]	@ tmp124, pulDest
+ 175 0042 0E4A     		ldr	r2, .L9+16	@ tmp125,
+ 176 0044 9342     		cmp	r3, r2	@ tmp124, tmp125
+ 177 0046 F6D3     		bcc	.L5	@,
+ 220:system/startup_LPC17xx.c ****   }
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 8
+
+
+ 221:system/startup_LPC17xx.c **** 
+ 222:system/startup_LPC17xx.c ****   /* Zero fill the bss_ahb segment. */
+ 223:system/startup_LPC17xx.c ****   for(pulDest = &_sbss_ahb; pulDest < &_ebss_ahb; )
+ 178              		.loc 1 223 0
+ 179 0048 0D4B     		ldr	r3, .L9+20	@ tmp126,
+ 180 004a 3B60     		str	r3, [r7]	@ tmp126, pulDest
+ 181 004c 04E0     		b	.L6	@
+ 182              	.L7:
+ 224:system/startup_LPC17xx.c ****   {
+ 225:system/startup_LPC17xx.c ****     *(pulDest++) = 0;
+ 183              		.loc 1 225 0
+ 184 004e 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 185 0050 1A1D     		adds	r2, r3, #4	@ tmp127, D.4227,
+ 186 0052 3A60     		str	r2, [r7]	@ tmp127, pulDest
+ 187 0054 0022     		movs	r2, #0	@ tmp128,
+ 188 0056 1A60     		str	r2, [r3]	@ tmp128, *_16
+ 189              	.L6:
+ 223:system/startup_LPC17xx.c ****   {
+ 190              		.loc 1 223 0 discriminator 1
+ 191 0058 3B68     		ldr	r3, [r7]	@ tmp129, pulDest
+ 192 005a 0A4A     		ldr	r2, .L9+24	@ tmp130,
+ 193 005c 9342     		cmp	r3, r2	@ tmp129, tmp130
+ 194 005e F6D3     		bcc	.L7	@,
+ 226:system/startup_LPC17xx.c ****   }
+ 227:system/startup_LPC17xx.c **** 
+ 228:system/startup_LPC17xx.c ****   /* Call the application's entry point.*/
+ 229:system/startup_LPC17xx.c ****   SystemInit();
+ 195              		.loc 1 229 0
+ 196 0060 FFF7FEFF 		bl	SystemInit	@
+ 230:system/startup_LPC17xx.c ****   main();
+ 197              		.loc 1 230 0
+ 198 0064 FFF7FEFF 		bl	main	@
+ 199              	.L8:
+ 231:system/startup_LPC17xx.c **** 
+ 232:system/startup_LPC17xx.c ****   //
+ 233:system/startup_LPC17xx.c ****   // we should never reach this point
+ 234:system/startup_LPC17xx.c ****   // however, wait endless...
+ 235:system/startup_LPC17xx.c ****   //
+ 236:system/startup_LPC17xx.c ****   while( 1 );
+ 200              		.loc 1 236 0 discriminator 1
+ 201 0068 FEE7     		b	.L8	@
+ 202              	.L10:
+ 203 006a 00BF     		.align	2
+ 204              	.L9:
+ 205 006c 00000000 		.word	_sidata
+ 206 0070 00000000 		.word	_sdata
+ 207 0074 00000000 		.word	_edata
+ 208 0078 00000000 		.word	_sbss
+ 209 007c 00000000 		.word	_ebss
+ 210 0080 00000000 		.word	_sbss_ahb
+ 211 0084 00000000 		.word	_ebss_ahb
+ 212              		.cfi_endproc
+ 213              	.LFE0:
+ 214              		.size	Reset_Handler, .-Reset_Handler
+ 215              		.section	.text._init,"ax",%progbits
+ 216              		.align	2
+ 217              		.global	_init
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 9
+
+
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.type	_init, %function
+ 221              	_init:
+ 222              	.LFB1:
+ 237:system/startup_LPC17xx.c **** }
+ 238:system/startup_LPC17xx.c **** 
+ 239:system/startup_LPC17xx.c **** // dummy for newer gcc versions
+ 240:system/startup_LPC17xx.c **** void _init()
+ 241:system/startup_LPC17xx.c **** {
+ 223              		.loc 1 241 0
+ 224              		.cfi_startproc
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 1, uses_anonymous_args = 0
+ 227              		@ link register save eliminated.
+ 228 0000 80B4     		push	{r7}	@
+ 229              		.cfi_def_cfa_offset 4
+ 230              		.cfi_offset 7, -4
+ 231 0002 00AF     		add	r7, sp, #0	@,,
+ 232              		.cfi_def_cfa_register 7
+ 242:system/startup_LPC17xx.c **** }
+ 233              		.loc 1 242 0
+ 234 0004 BD46     		mov	sp, r7	@,
+ 235              		.cfi_def_cfa_register 13
+ 236              		@ sp needed	@
+ 237 0006 5DF8047B 		ldr	r7, [sp], #4	@,
+ 238              		.cfi_restore 7
+ 239              		.cfi_def_cfa_offset 0
+ 240 000a 7047     		bx	lr	@
+ 241              		.cfi_endproc
+ 242              	.LFE1:
+ 243              		.size	_init, .-_init
+ 244              		.section	.text.Default_Handler,"ax",%progbits
+ 245              		.align	2
+ 246              		.weak	Default_Handler
+ 247              		.thumb
+ 248              		.thumb_func
+ 249              		.type	Default_Handler, %function
+ 250              	Default_Handler:
+ 251              	.LFB2:
+ 243:system/startup_LPC17xx.c **** 
+ 244:system/startup_LPC17xx.c **** /*******************************************************************************
+ 245:system/startup_LPC17xx.c **** *
+ 246:system/startup_LPC17xx.c **** * Provide weak aliases for each Exception handler to the Default_Handler.
+ 247:system/startup_LPC17xx.c **** * As they are weak aliases, any function with the same name will override
+ 248:system/startup_LPC17xx.c **** * this definition.
+ 249:system/startup_LPC17xx.c **** *
+ 250:system/startup_LPC17xx.c **** *******************************************************************************/
+ 251:system/startup_LPC17xx.c **** #pragma weak NMI_Handler = Default_Handler
+ 252:system/startup_LPC17xx.c **** #pragma weak MemManage_Handler = Default_Handler
+ 253:system/startup_LPC17xx.c **** #pragma weak BusFault_Handler = Default_Handler
+ 254:system/startup_LPC17xx.c **** #pragma weak HardFault_Handler = Default_Handler
+ 255:system/startup_LPC17xx.c **** #pragma weak UsageFault_Handler = Default_Handler
+ 256:system/startup_LPC17xx.c **** #pragma weak SVC_Handler = Default_Handler
+ 257:system/startup_LPC17xx.c **** #pragma weak DebugMon_Handler = Default_Handler
+ 258:system/startup_LPC17xx.c **** #pragma weak PendSV_Handler = Default_Handler
+ 259:system/startup_LPC17xx.c **** #pragma weak SysTick_Handler = Default_Handler
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 10
+
+
+ 260:system/startup_LPC17xx.c **** 
+ 261:system/startup_LPC17xx.c **** /**
+ 262:system/startup_LPC17xx.c ****  * @brief  This is the code that gets called when the processor receives an
+ 263:system/startup_LPC17xx.c ****  *         unexpected interrupt.  This simply enters an infinite loop, preserving
+ 264:system/startup_LPC17xx.c ****  *         the system state for examination by a debugger.
+ 265:system/startup_LPC17xx.c ****  *
+ 266:system/startup_LPC17xx.c ****  * @param  None    
+ 267:system/startup_LPC17xx.c ****  * @retval : None      
+ 268:system/startup_LPC17xx.c **** */
+ 269:system/startup_LPC17xx.c **** 
+ 270:system/startup_LPC17xx.c **** void Default_Handler(void)
+ 271:system/startup_LPC17xx.c **** {
+ 252              		.loc 1 271 0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 1, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257 0000 80B4     		push	{r7}	@
+ 258              		.cfi_def_cfa_offset 4
+ 259              		.cfi_offset 7, -4
+ 260 0002 00AF     		add	r7, sp, #0	@,,
+ 261              		.cfi_def_cfa_register 7
+ 262              	.L13:
+ 272:system/startup_LPC17xx.c ****   /* Go into an infinite loop. */
+ 273:system/startup_LPC17xx.c ****   while (1)
+ 274:system/startup_LPC17xx.c ****   {
+ 275:system/startup_LPC17xx.c ****     // TK: TODO - insert an error notification here
+ 276:system/startup_LPC17xx.c ****     // We could send a debug message via USB, but this could be critical if there is
+ 277:system/startup_LPC17xx.c ****     // an issue in the MIDI or USB handler or related application hooks
+ 278:system/startup_LPC17xx.c ****     //
+ 279:system/startup_LPC17xx.c ****     // Alternatively we could flash the On-Board LED - it's safe!
+ 280:system/startup_LPC17xx.c ****   }
+ 263              		.loc 1 280 0 discriminator 1
+ 264 0004 FEE7     		b	.L13	@
+ 265              		.cfi_endproc
+ 266              	.LFE2:
+ 267              		.size	Default_Handler, .-Default_Handler
+ 268              		.weak	WDT_IRQHandler
+ 269              		.thumb_set WDT_IRQHandler,Default_Handler
+ 270              		.weak	rcscheduler_Timer0_IRQHandler
+ 271              		.thumb_set rcscheduler_Timer0_IRQHandler,Default_Handler
+ 272              		.weak	TIMER1_IRQHandler
+ 273              		.thumb_set TIMER1_IRQHandler,Default_Handler
+ 274              		.weak	TIMER2_IRQHandler
+ 275              		.thumb_set TIMER2_IRQHandler,Default_Handler
+ 276              		.weak	TIMER3_IRQHandler
+ 277              		.thumb_set TIMER3_IRQHandler,Default_Handler
+ 278              		.weak	UART0_IRQHandler
+ 279              		.thumb_set UART0_IRQHandler,Default_Handler
+ 280              		.weak	rcuart_PORT1_IRQHandler
+ 281              		.thumb_set rcuart_PORT1_IRQHandler,Default_Handler
+ 282              		.weak	UART2_IRQHandler
+ 283              		.thumb_set UART2_IRQHandler,Default_Handler
+ 284              		.weak	UART3_IRQHandler
+ 285              		.thumb_set UART3_IRQHandler,Default_Handler
+ 286              		.weak	PWM1_IRQHandler
+ 287              		.thumb_set PWM1_IRQHandler,Default_Handler
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 11
+
+
+ 288              		.weak	I2C0_IRQHandler
+ 289              		.thumb_set I2C0_IRQHandler,Default_Handler
+ 290              		.weak	I2C1_IRQHandler
+ 291              		.thumb_set I2C1_IRQHandler,Default_Handler
+ 292              		.weak	I2C2_IRQHandler
+ 293              		.thumb_set I2C2_IRQHandler,Default_Handler
+ 294              		.weak	SPI_IRQHandler
+ 295              		.thumb_set SPI_IRQHandler,Default_Handler
+ 296              		.weak	SSP0_IRQHandler
+ 297              		.thumb_set SSP0_IRQHandler,Default_Handler
+ 298              		.weak	SSP1_IRQHandler
+ 299              		.thumb_set SSP1_IRQHandler,Default_Handler
+ 300              		.weak	PLL0_IRQHandler
+ 301              		.thumb_set PLL0_IRQHandler,Default_Handler
+ 302              		.weak	RTC_IRQHandler
+ 303              		.thumb_set RTC_IRQHandler,Default_Handler
+ 304              		.weak	EINT0_IRQHandler
+ 305              		.thumb_set EINT0_IRQHandler,Default_Handler
+ 306              		.weak	EINT1_IRQHandler
+ 307              		.thumb_set EINT1_IRQHandler,Default_Handler
+ 308              		.weak	EINT2_IRQHandler
+ 309              		.thumb_set EINT2_IRQHandler,Default_Handler
+ 310              		.weak	EINT3_IRQHandler
+ 311              		.thumb_set EINT3_IRQHandler,Default_Handler
+ 312              		.weak	ADC_IRQHandler
+ 313              		.thumb_set ADC_IRQHandler,Default_Handler
+ 314              		.weak	BOD_IRQHandler
+ 315              		.thumb_set BOD_IRQHandler,Default_Handler
+ 316              		.weak	USB_IRQHandler
+ 317              		.thumb_set USB_IRQHandler,Default_Handler
+ 318              		.weak	CAN_IRQHandler
+ 319              		.thumb_set CAN_IRQHandler,Default_Handler
+ 320              		.weak	DMA_IRQHandler
+ 321              		.thumb_set DMA_IRQHandler,Default_Handler
+ 322              		.weak	I2S_IRQHandler
+ 323              		.thumb_set I2S_IRQHandler,Default_Handler
+ 324              		.weak	ENET_IRQHandler
+ 325              		.thumb_set ENET_IRQHandler,Default_Handler
+ 326              		.weak	RIT_IRQHandler
+ 327              		.thumb_set RIT_IRQHandler,Default_Handler
+ 328              		.weak	MCPWM_IRQHandler
+ 329              		.thumb_set MCPWM_IRQHandler,Default_Handler
+ 330              		.weak	QEI_IRQHandler
+ 331              		.thumb_set QEI_IRQHandler,Default_Handler
+ 332              		.weak	PLL1_IRQHandler
+ 333              		.thumb_set PLL1_IRQHandler,Default_Handler
+ 334              		.weak	USBActivity_IRQHandler
+ 335              		.thumb_set USBActivity_IRQHandler,Default_Handler
+ 336              		.weak	CANActivity_IRQHandler
+ 337              		.thumb_set CANActivity_IRQHandler,Default_Handler
+ 338              		.weak	NMI_Handler
+ 339              		.thumb_set NMI_Handler,Default_Handler
+ 340              		.weak	MemManage_Handler
+ 341              		.thumb_set MemManage_Handler,Default_Handler
+ 342              		.weak	BusFault_Handler
+ 343              		.thumb_set BusFault_Handler,Default_Handler
+ 344              		.weak	HardFault_Handler
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 12
+
+
+ 345              		.thumb_set HardFault_Handler,Default_Handler
+ 346              		.weak	UsageFault_Handler
+ 347              		.thumb_set UsageFault_Handler,Default_Handler
+ 348              		.weak	SVC_Handler
+ 349              		.thumb_set SVC_Handler,Default_Handler
+ 350              		.weak	DebugMon_Handler
+ 351              		.thumb_set DebugMon_Handler,Default_Handler
+ 352              		.weak	PendSV_Handler
+ 353              		.thumb_set PendSV_Handler,Default_Handler
+ 354              		.weak	SysTick_Handler
+ 355              		.thumb_set SysTick_Handler,Default_Handler
+ 356 0006 00BF     		.text
+ 357              	.Letext0:
+ 358              		.section	.debug_info,"",%progbits
+ 359              	.Ldebug_info0:
+ 360 0000 24010000 		.4byte	0x124
+ 361 0004 0400     		.2byte	0x4
+ 362 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 363 000a 04       		.byte	0x4
+ 364 000b 01       		.uleb128 0x1
+ 365 000c 02060000 		.4byte	.LASF373
+ 366 0010 01       		.byte	0x1
+ 367 0011 4F150000 		.4byte	.LASF374
+ 368 0015 94200000 		.4byte	.LASF375
+ 369 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 370 001d 00000000 		.4byte	0
+ 371 0021 00000000 		.4byte	.Ldebug_line0
+ 372 0025 00000000 		.4byte	.Ldebug_macro0
+ 373 0029 02       		.uleb128 0x2
+ 374 002a 02200000 		.4byte	.LASF376
+ 375 002e 01       		.byte	0x1
+ 376 002f 0C       		.byte	0xc
+ 377 0030 34000000 		.4byte	0x34
+ 378 0034 03       		.uleb128 0x3
+ 379 0035 39000000 		.4byte	0x39
+ 380 0039 04       		.uleb128 0x4
+ 381 003a 04       		.byte	0x4
+ 382 003b 3F000000 		.4byte	0x3f
+ 383 003f 05       		.uleb128 0x5
+ 384 0040 06       		.uleb128 0x6
+ 385 0041 06080000 		.4byte	.LASF377
+ 386 0045 01       		.byte	0x1
+ 387 0046 CB       		.byte	0xcb
+ 388 0047 00000000 		.4byte	.LFB0
+ 389 004b 88000000 		.4byte	.LFE0-.LFB0
+ 390 004f 01       		.uleb128 0x1
+ 391 0050 9C       		.byte	0x9c
+ 392 0051 72000000 		.4byte	0x72
+ 393 0055 07       		.uleb128 0x7
+ 394 0056 90050000 		.4byte	.LASF358
+ 395 005a 01       		.byte	0x1
+ 396 005b CE       		.byte	0xce
+ 397 005c 72000000 		.4byte	0x72
+ 398 0060 02       		.uleb128 0x2
+ 399 0061 91       		.byte	0x91
+ 400 0062 6C       		.sleb128 -20
+ 401 0063 07       		.uleb128 0x7
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 13
+
+
+ 402 0064 ED130000 		.4byte	.LASF359
+ 403 0068 01       		.byte	0x1
+ 404 0069 CE       		.byte	0xce
+ 405 006a 72000000 		.4byte	0x72
+ 406 006e 02       		.uleb128 0x2
+ 407 006f 91       		.byte	0x91
+ 408 0070 68       		.sleb128 -24
+ 409 0071 00       		.byte	0
+ 410 0072 04       		.uleb128 0x4
+ 411 0073 04       		.byte	0x4
+ 412 0074 78000000 		.4byte	0x78
+ 413 0078 08       		.uleb128 0x8
+ 414 0079 04       		.byte	0x4
+ 415 007a 07       		.byte	0x7
+ 416 007b DA0D0000 		.4byte	.LASF370
+ 417 007f 09       		.uleb128 0x9
+ 418 0080 1F1C0000 		.4byte	.LASF360
+ 419 0084 01       		.byte	0x1
+ 420 0085 F0       		.byte	0xf0
+ 421 0086 00000000 		.4byte	.LFB1
+ 422 008a 0C000000 		.4byte	.LFE1-.LFB1
+ 423 008e 01       		.uleb128 0x1
+ 424 008f 9C       		.byte	0x9c
+ 425 0090 0A       		.uleb128 0xa
+ 426 0091 251E0000 		.4byte	.LASF361
+ 427 0095 01       		.byte	0x1
+ 428 0096 0E01     		.2byte	0x10e
+ 429 0098 00000000 		.4byte	.LFB2
+ 430 009c 06000000 		.4byte	.LFE2-.LFB2
+ 431 00a0 01       		.uleb128 0x1
+ 432 00a1 9C       		.byte	0x9c
+ 433 00a2 0B       		.uleb128 0xb
+ 434 00a3 991F0000 		.4byte	.LASF362
+ 435 00a7 01       		.byte	0x1
+ 436 00a8 16       		.byte	0x16
+ 437 00a9 78000000 		.4byte	0x78
+ 438 00ad 0B       		.uleb128 0xb
+ 439 00ae 00230000 		.4byte	.LASF363
+ 440 00b2 01       		.byte	0x1
+ 441 00b3 19       		.byte	0x19
+ 442 00b4 78000000 		.4byte	0x78
+ 443 00b8 0B       		.uleb128 0xb
+ 444 00b9 6E040000 		.4byte	.LASF364
+ 445 00bd 01       		.byte	0x1
+ 446 00be 1C       		.byte	0x1c
+ 447 00bf 78000000 		.4byte	0x78
+ 448 00c3 0B       		.uleb128 0xb
+ 449 00c4 BB130000 		.4byte	.LASF365
+ 450 00c8 01       		.byte	0x1
+ 451 00c9 1F       		.byte	0x1f
+ 452 00ca 78000000 		.4byte	0x78
+ 453 00ce 0B       		.uleb128 0xb
+ 454 00cf 4C1F0000 		.4byte	.LASF366
+ 455 00d3 01       		.byte	0x1
+ 456 00d4 20       		.byte	0x20
+ 457 00d5 78000000 		.4byte	0x78
+ 458 00d9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 14
+
+
+ 459 00da D8230000 		.4byte	.LASF367
+ 460 00de 01       		.byte	0x1
+ 461 00df 23       		.byte	0x23
+ 462 00e0 78000000 		.4byte	0x78
+ 463 00e4 0B       		.uleb128 0xb
+ 464 00e5 DA090000 		.4byte	.LASF368
+ 465 00e9 01       		.byte	0x1
+ 466 00ea 24       		.byte	0x24
+ 467 00eb 78000000 		.4byte	0x78
+ 468 00ef 0B       		.uleb128 0xb
+ 469 00f0 481B0000 		.4byte	.LASF369
+ 470 00f4 01       		.byte	0x1
+ 471 00f5 27       		.byte	0x27
+ 472 00f6 78000000 		.4byte	0x78
+ 473 00fa 0C       		.uleb128 0xc
+ 474 00fb 39000000 		.4byte	0x39
+ 475 00ff 0A010000 		.4byte	0x10a
+ 476 0103 0D       		.uleb128 0xd
+ 477 0104 0A010000 		.4byte	0x10a
+ 478 0108 32       		.byte	0x32
+ 479 0109 00       		.byte	0
+ 480 010a 08       		.uleb128 0x8
+ 481 010b 04       		.byte	0x4
+ 482 010c 07       		.byte	0x7
+ 483 010d 26130000 		.4byte	.LASF371
+ 484 0111 0E       		.uleb128 0xe
+ 485 0112 0C140000 		.4byte	.LASF372
+ 486 0116 01       		.byte	0x1
+ 487 0117 7B       		.byte	0x7b
+ 488 0118 22010000 		.4byte	0x122
+ 489 011c 05       		.uleb128 0x5
+ 490 011d 03       		.byte	0x3
+ 491 011e 00000000 		.4byte	g_pfnVectors
+ 492 0122 03       		.uleb128 0x3
+ 493 0123 FA000000 		.4byte	0xfa
+ 494 0127 00       		.byte	0
+ 495              		.section	.debug_abbrev,"",%progbits
+ 496              	.Ldebug_abbrev0:
+ 497 0000 01       		.uleb128 0x1
+ 498 0001 11       		.uleb128 0x11
+ 499 0002 01       		.byte	0x1
+ 500 0003 25       		.uleb128 0x25
+ 501 0004 0E       		.uleb128 0xe
+ 502 0005 13       		.uleb128 0x13
+ 503 0006 0B       		.uleb128 0xb
+ 504 0007 03       		.uleb128 0x3
+ 505 0008 0E       		.uleb128 0xe
+ 506 0009 1B       		.uleb128 0x1b
+ 507 000a 0E       		.uleb128 0xe
+ 508 000b 55       		.uleb128 0x55
+ 509 000c 17       		.uleb128 0x17
+ 510 000d 11       		.uleb128 0x11
+ 511 000e 01       		.uleb128 0x1
+ 512 000f 10       		.uleb128 0x10
+ 513 0010 17       		.uleb128 0x17
+ 514 0011 9942     		.uleb128 0x2119
+ 515 0013 17       		.uleb128 0x17
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 15
+
+
+ 516 0014 00       		.byte	0
+ 517 0015 00       		.byte	0
+ 518 0016 02       		.uleb128 0x2
+ 519 0017 16       		.uleb128 0x16
+ 520 0018 00       		.byte	0
+ 521 0019 03       		.uleb128 0x3
+ 522 001a 0E       		.uleb128 0xe
+ 523 001b 3A       		.uleb128 0x3a
+ 524 001c 0B       		.uleb128 0xb
+ 525 001d 3B       		.uleb128 0x3b
+ 526 001e 0B       		.uleb128 0xb
+ 527 001f 49       		.uleb128 0x49
+ 528 0020 13       		.uleb128 0x13
+ 529 0021 00       		.byte	0
+ 530 0022 00       		.byte	0
+ 531 0023 03       		.uleb128 0x3
+ 532 0024 26       		.uleb128 0x26
+ 533 0025 00       		.byte	0
+ 534 0026 49       		.uleb128 0x49
+ 535 0027 13       		.uleb128 0x13
+ 536 0028 00       		.byte	0
+ 537 0029 00       		.byte	0
+ 538 002a 04       		.uleb128 0x4
+ 539 002b 0F       		.uleb128 0xf
+ 540 002c 00       		.byte	0
+ 541 002d 0B       		.uleb128 0xb
+ 542 002e 0B       		.uleb128 0xb
+ 543 002f 49       		.uleb128 0x49
+ 544 0030 13       		.uleb128 0x13
+ 545 0031 00       		.byte	0
+ 546 0032 00       		.byte	0
+ 547 0033 05       		.uleb128 0x5
+ 548 0034 15       		.uleb128 0x15
+ 549 0035 00       		.byte	0
+ 550 0036 27       		.uleb128 0x27
+ 551 0037 19       		.uleb128 0x19
+ 552 0038 00       		.byte	0
+ 553 0039 00       		.byte	0
+ 554 003a 06       		.uleb128 0x6
+ 555 003b 2E       		.uleb128 0x2e
+ 556 003c 01       		.byte	0x1
+ 557 003d 3F       		.uleb128 0x3f
+ 558 003e 19       		.uleb128 0x19
+ 559 003f 03       		.uleb128 0x3
+ 560 0040 0E       		.uleb128 0xe
+ 561 0041 3A       		.uleb128 0x3a
+ 562 0042 0B       		.uleb128 0xb
+ 563 0043 3B       		.uleb128 0x3b
+ 564 0044 0B       		.uleb128 0xb
+ 565 0045 27       		.uleb128 0x27
+ 566 0046 19       		.uleb128 0x19
+ 567 0047 11       		.uleb128 0x11
+ 568 0048 01       		.uleb128 0x1
+ 569 0049 12       		.uleb128 0x12
+ 570 004a 06       		.uleb128 0x6
+ 571 004b 40       		.uleb128 0x40
+ 572 004c 18       		.uleb128 0x18
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 16
+
+
+ 573 004d 9642     		.uleb128 0x2116
+ 574 004f 19       		.uleb128 0x19
+ 575 0050 01       		.uleb128 0x1
+ 576 0051 13       		.uleb128 0x13
+ 577 0052 00       		.byte	0
+ 578 0053 00       		.byte	0
+ 579 0054 07       		.uleb128 0x7
+ 580 0055 34       		.uleb128 0x34
+ 581 0056 00       		.byte	0
+ 582 0057 03       		.uleb128 0x3
+ 583 0058 0E       		.uleb128 0xe
+ 584 0059 3A       		.uleb128 0x3a
+ 585 005a 0B       		.uleb128 0xb
+ 586 005b 3B       		.uleb128 0x3b
+ 587 005c 0B       		.uleb128 0xb
+ 588 005d 49       		.uleb128 0x49
+ 589 005e 13       		.uleb128 0x13
+ 590 005f 02       		.uleb128 0x2
+ 591 0060 18       		.uleb128 0x18
+ 592 0061 00       		.byte	0
+ 593 0062 00       		.byte	0
+ 594 0063 08       		.uleb128 0x8
+ 595 0064 24       		.uleb128 0x24
+ 596 0065 00       		.byte	0
+ 597 0066 0B       		.uleb128 0xb
+ 598 0067 0B       		.uleb128 0xb
+ 599 0068 3E       		.uleb128 0x3e
+ 600 0069 0B       		.uleb128 0xb
+ 601 006a 03       		.uleb128 0x3
+ 602 006b 0E       		.uleb128 0xe
+ 603 006c 00       		.byte	0
+ 604 006d 00       		.byte	0
+ 605 006e 09       		.uleb128 0x9
+ 606 006f 2E       		.uleb128 0x2e
+ 607 0070 00       		.byte	0
+ 608 0071 3F       		.uleb128 0x3f
+ 609 0072 19       		.uleb128 0x19
+ 610 0073 03       		.uleb128 0x3
+ 611 0074 0E       		.uleb128 0xe
+ 612 0075 3A       		.uleb128 0x3a
+ 613 0076 0B       		.uleb128 0xb
+ 614 0077 3B       		.uleb128 0x3b
+ 615 0078 0B       		.uleb128 0xb
+ 616 0079 27       		.uleb128 0x27
+ 617 007a 19       		.uleb128 0x19
+ 618 007b 11       		.uleb128 0x11
+ 619 007c 01       		.uleb128 0x1
+ 620 007d 12       		.uleb128 0x12
+ 621 007e 06       		.uleb128 0x6
+ 622 007f 40       		.uleb128 0x40
+ 623 0080 18       		.uleb128 0x18
+ 624 0081 9742     		.uleb128 0x2117
+ 625 0083 19       		.uleb128 0x19
+ 626 0084 00       		.byte	0
+ 627 0085 00       		.byte	0
+ 628 0086 0A       		.uleb128 0xa
+ 629 0087 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 17
+
+
+ 630 0088 00       		.byte	0
+ 631 0089 3F       		.uleb128 0x3f
+ 632 008a 19       		.uleb128 0x19
+ 633 008b 03       		.uleb128 0x3
+ 634 008c 0E       		.uleb128 0xe
+ 635 008d 3A       		.uleb128 0x3a
+ 636 008e 0B       		.uleb128 0xb
+ 637 008f 3B       		.uleb128 0x3b
+ 638 0090 05       		.uleb128 0x5
+ 639 0091 27       		.uleb128 0x27
+ 640 0092 19       		.uleb128 0x19
+ 641 0093 11       		.uleb128 0x11
+ 642 0094 01       		.uleb128 0x1
+ 643 0095 12       		.uleb128 0x12
+ 644 0096 06       		.uleb128 0x6
+ 645 0097 40       		.uleb128 0x40
+ 646 0098 18       		.uleb128 0x18
+ 647 0099 9742     		.uleb128 0x2117
+ 648 009b 19       		.uleb128 0x19
+ 649 009c 00       		.byte	0
+ 650 009d 00       		.byte	0
+ 651 009e 0B       		.uleb128 0xb
+ 652 009f 34       		.uleb128 0x34
+ 653 00a0 00       		.byte	0
+ 654 00a1 03       		.uleb128 0x3
+ 655 00a2 0E       		.uleb128 0xe
+ 656 00a3 3A       		.uleb128 0x3a
+ 657 00a4 0B       		.uleb128 0xb
+ 658 00a5 3B       		.uleb128 0x3b
+ 659 00a6 0B       		.uleb128 0xb
+ 660 00a7 49       		.uleb128 0x49
+ 661 00a8 13       		.uleb128 0x13
+ 662 00a9 3F       		.uleb128 0x3f
+ 663 00aa 19       		.uleb128 0x19
+ 664 00ab 3C       		.uleb128 0x3c
+ 665 00ac 19       		.uleb128 0x19
+ 666 00ad 00       		.byte	0
+ 667 00ae 00       		.byte	0
+ 668 00af 0C       		.uleb128 0xc
+ 669 00b0 01       		.uleb128 0x1
+ 670 00b1 01       		.byte	0x1
+ 671 00b2 49       		.uleb128 0x49
+ 672 00b3 13       		.uleb128 0x13
+ 673 00b4 01       		.uleb128 0x1
+ 674 00b5 13       		.uleb128 0x13
+ 675 00b6 00       		.byte	0
+ 676 00b7 00       		.byte	0
+ 677 00b8 0D       		.uleb128 0xd
+ 678 00b9 21       		.uleb128 0x21
+ 679 00ba 00       		.byte	0
+ 680 00bb 49       		.uleb128 0x49
+ 681 00bc 13       		.uleb128 0x13
+ 682 00bd 2F       		.uleb128 0x2f
+ 683 00be 0B       		.uleb128 0xb
+ 684 00bf 00       		.byte	0
+ 685 00c0 00       		.byte	0
+ 686 00c1 0E       		.uleb128 0xe
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 18
+
+
+ 687 00c2 34       		.uleb128 0x34
+ 688 00c3 00       		.byte	0
+ 689 00c4 03       		.uleb128 0x3
+ 690 00c5 0E       		.uleb128 0xe
+ 691 00c6 3A       		.uleb128 0x3a
+ 692 00c7 0B       		.uleb128 0xb
+ 693 00c8 3B       		.uleb128 0x3b
+ 694 00c9 0B       		.uleb128 0xb
+ 695 00ca 49       		.uleb128 0x49
+ 696 00cb 13       		.uleb128 0x13
+ 697 00cc 3F       		.uleb128 0x3f
+ 698 00cd 19       		.uleb128 0x19
+ 699 00ce 02       		.uleb128 0x2
+ 700 00cf 18       		.uleb128 0x18
+ 701 00d0 00       		.byte	0
+ 702 00d1 00       		.byte	0
+ 703 00d2 00       		.byte	0
+ 704              		.section	.debug_aranges,"",%progbits
+ 705 0000 2C000000 		.4byte	0x2c
+ 706 0004 0200     		.2byte	0x2
+ 707 0006 00000000 		.4byte	.Ldebug_info0
+ 708 000a 04       		.byte	0x4
+ 709 000b 00       		.byte	0
+ 710 000c 0000     		.2byte	0
+ 711 000e 0000     		.2byte	0
+ 712 0010 00000000 		.4byte	.LFB0
+ 713 0014 88000000 		.4byte	.LFE0-.LFB0
+ 714 0018 00000000 		.4byte	.LFB1
+ 715 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 716 0020 00000000 		.4byte	.LFB2
+ 717 0024 06000000 		.4byte	.LFE2-.LFB2
+ 718 0028 00000000 		.4byte	0
+ 719 002c 00000000 		.4byte	0
+ 720              		.section	.debug_ranges,"",%progbits
+ 721              	.Ldebug_ranges0:
+ 722 0000 00000000 		.4byte	.LFB0
+ 723 0004 88000000 		.4byte	.LFE0
+ 724 0008 00000000 		.4byte	.LFB1
+ 725 000c 0C000000 		.4byte	.LFE1
+ 726 0010 00000000 		.4byte	.LFB2
+ 727 0014 06000000 		.4byte	.LFE2
+ 728 0018 00000000 		.4byte	0
+ 729 001c 00000000 		.4byte	0
+ 730              		.section	.debug_macro,"",%progbits
+ 731              	.Ldebug_macro0:
+ 732 0000 0400     		.2byte	0x4
+ 733 0002 02       		.byte	0x2
+ 734 0003 00000000 		.4byte	.Ldebug_line0
+ 735 0007 07       		.byte	0x7
+ 736 0008 00000000 		.4byte	.Ldebug_macro1
+ 737 000c 03       		.byte	0x3
+ 738 000d 00       		.uleb128 0
+ 739 000e 01       		.uleb128 0x1
+ 740 000f 05       		.byte	0x5
+ 741 0010 08       		.uleb128 0x8
+ 742 0011 D91E0000 		.4byte	.LASF355
+ 743 0015 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 19
+
+
+ 744 0016 0F       		.uleb128 0xf
+ 745 0017 BD1D0000 		.4byte	.LASF356
+ 746 001b 05       		.byte	0x5
+ 747 001c 10       		.uleb128 0x10
+ 748 001d 95020000 		.4byte	.LASF357
+ 749 0021 04       		.byte	0x4
+ 750 0022 00       		.byte	0
+ 751              		.section	.debug_macro,"G",%progbits,wm4.0.1834ce015d70b8127b1e5f7bc96e3d8e,comdat
+ 752              	.Ldebug_macro1:
+ 753 0000 0400     		.2byte	0x4
+ 754 0002 00       		.byte	0
+ 755 0003 05       		.byte	0x5
+ 756 0004 00       		.uleb128 0
+ 757 0005 3A150000 		.4byte	.LASF0
+ 758 0009 05       		.byte	0x5
+ 759 000a 00       		.uleb128 0
+ 760 000b 39040000 		.4byte	.LASF1
+ 761 000f 05       		.byte	0x5
+ 762 0010 00       		.uleb128 0
+ 763 0011 90030000 		.4byte	.LASF2
+ 764 0015 05       		.byte	0x5
+ 765 0016 00       		.uleb128 0
+ 766 0017 260E0000 		.4byte	.LASF3
+ 767 001b 05       		.byte	0x5
+ 768 001c 00       		.uleb128 0
+ 769 001d CF110000 		.4byte	.LASF4
+ 770 0021 05       		.byte	0x5
+ 771 0022 00       		.uleb128 0
+ 772 0023 BE0C0000 		.4byte	.LASF5
+ 773 0027 05       		.byte	0x5
+ 774 0028 00       		.uleb128 0
+ 775 0029 7C1A0000 		.4byte	.LASF6
+ 776 002d 05       		.byte	0x5
+ 777 002e 00       		.uleb128 0
+ 778 002f F60A0000 		.4byte	.LASF7
+ 779 0033 05       		.byte	0x5
+ 780 0034 00       		.uleb128 0
+ 781 0035 8E150000 		.4byte	.LASF8
+ 782 0039 05       		.byte	0x5
+ 783 003a 00       		.uleb128 0
+ 784 003b 950C0000 		.4byte	.LASF9
+ 785 003f 05       		.byte	0x5
+ 786 0040 00       		.uleb128 0
+ 787 0041 E2210000 		.4byte	.LASF10
+ 788 0045 05       		.byte	0x5
+ 789 0046 00       		.uleb128 0
+ 790 0047 C61E0000 		.4byte	.LASF11
+ 791 004b 05       		.byte	0x5
+ 792 004c 00       		.uleb128 0
+ 793 004d 8F1A0000 		.4byte	.LASF12
+ 794 0051 05       		.byte	0x5
+ 795 0052 00       		.uleb128 0
+ 796 0053 98120000 		.4byte	.LASF13
+ 797 0057 05       		.byte	0x5
+ 798 0058 00       		.uleb128 0
+ 799 0059 4D070000 		.4byte	.LASF14
+ 800 005d 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 20
+
+
+ 801 005e 00       		.uleb128 0
+ 802 005f 220C0000 		.4byte	.LASF15
+ 803 0063 05       		.byte	0x5
+ 804 0064 00       		.uleb128 0
+ 805 0065 FA0F0000 		.4byte	.LASF16
+ 806 0069 05       		.byte	0x5
+ 807 006a 00       		.uleb128 0
+ 808 006b 3B190000 		.4byte	.LASF17
+ 809 006f 05       		.byte	0x5
+ 810 0070 00       		.uleb128 0
+ 811 0071 640A0000 		.4byte	.LASF18
+ 812 0075 05       		.byte	0x5
+ 813 0076 00       		.uleb128 0
+ 814 0077 F8060000 		.4byte	.LASF19
+ 815 007b 05       		.byte	0x5
+ 816 007c 00       		.uleb128 0
+ 817 007d 88000000 		.4byte	.LASF20
+ 818 0081 05       		.byte	0x5
+ 819 0082 00       		.uleb128 0
+ 820 0083 32200000 		.4byte	.LASF21
+ 821 0087 05       		.byte	0x5
+ 822 0088 00       		.uleb128 0
+ 823 0089 D5130000 		.4byte	.LASF22
+ 824 008d 05       		.byte	0x5
+ 825 008e 00       		.uleb128 0
+ 826 008f 0B1A0000 		.4byte	.LASF23
+ 827 0093 05       		.byte	0x5
+ 828 0094 00       		.uleb128 0
+ 829 0095 780F0000 		.4byte	.LASF24
+ 830 0099 05       		.byte	0x5
+ 831 009a 00       		.uleb128 0
+ 832 009b BD190000 		.4byte	.LASF25
+ 833 009f 05       		.byte	0x5
+ 834 00a0 00       		.uleb128 0
+ 835 00a1 4F080000 		.4byte	.LASF26
+ 836 00a5 05       		.byte	0x5
+ 837 00a6 00       		.uleb128 0
+ 838 00a7 CD080000 		.4byte	.LASF27
+ 839 00ab 05       		.byte	0x5
+ 840 00ac 00       		.uleb128 0
+ 841 00ad FA000000 		.4byte	.LASF28
+ 842 00b1 05       		.byte	0x5
+ 843 00b2 00       		.uleb128 0
+ 844 00b3 CD040000 		.4byte	.LASF29
+ 845 00b7 05       		.byte	0x5
+ 846 00b8 00       		.uleb128 0
+ 847 00b9 FA1D0000 		.4byte	.LASF30
+ 848 00bd 05       		.byte	0x5
+ 849 00be 00       		.uleb128 0
+ 850 00bf 351E0000 		.4byte	.LASF31
+ 851 00c3 05       		.byte	0x5
+ 852 00c4 00       		.uleb128 0
+ 853 00c5 281A0000 		.4byte	.LASF32
+ 854 00c9 05       		.byte	0x5
+ 855 00ca 00       		.uleb128 0
+ 856 00cb DC0F0000 		.4byte	.LASF33
+ 857 00cf 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 21
+
+
+ 858 00d0 00       		.uleb128 0
+ 859 00d1 A90B0000 		.4byte	.LASF34
+ 860 00d5 05       		.byte	0x5
+ 861 00d6 00       		.uleb128 0
+ 862 00d7 920F0000 		.4byte	.LASF35
+ 863 00db 05       		.byte	0x5
+ 864 00dc 00       		.uleb128 0
+ 865 00dd 4F030000 		.4byte	.LASF36
+ 866 00e1 05       		.byte	0x5
+ 867 00e2 00       		.uleb128 0
+ 868 00e3 B6060000 		.4byte	.LASF37
+ 869 00e7 05       		.byte	0x5
+ 870 00e8 00       		.uleb128 0
+ 871 00e9 35080000 		.4byte	.LASF38
+ 872 00ed 05       		.byte	0x5
+ 873 00ee 00       		.uleb128 0
+ 874 00ef 130A0000 		.4byte	.LASF39
+ 875 00f3 05       		.byte	0x5
+ 876 00f4 00       		.uleb128 0
+ 877 00f5 38090000 		.4byte	.LASF40
+ 878 00f9 05       		.byte	0x5
+ 879 00fa 00       		.uleb128 0
+ 880 00fb A9120000 		.4byte	.LASF41
+ 881 00ff 05       		.byte	0x5
+ 882 0100 00       		.uleb128 0
+ 883 0101 E5050000 		.4byte	.LASF42
+ 884 0105 05       		.byte	0x5
+ 885 0106 00       		.uleb128 0
+ 886 0107 561F0000 		.4byte	.LASF43
+ 887 010b 05       		.byte	0x5
+ 888 010c 00       		.uleb128 0
+ 889 010d F7160000 		.4byte	.LASF44
+ 890 0111 05       		.byte	0x5
+ 891 0112 00       		.uleb128 0
+ 892 0113 14020000 		.4byte	.LASF45
+ 893 0117 05       		.byte	0x5
+ 894 0118 00       		.uleb128 0
+ 895 0119 ED180000 		.4byte	.LASF46
+ 896 011d 05       		.byte	0x5
+ 897 011e 00       		.uleb128 0
+ 898 011f 760C0000 		.4byte	.LASF47
+ 899 0123 05       		.byte	0x5
+ 900 0124 00       		.uleb128 0
+ 901 0125 4E170000 		.4byte	.LASF48
+ 902 0129 05       		.byte	0x5
+ 903 012a 00       		.uleb128 0
+ 904 012b 591A0000 		.4byte	.LASF49
+ 905 012f 05       		.byte	0x5
+ 906 0130 00       		.uleb128 0
+ 907 0131 B5230000 		.4byte	.LASF50
+ 908 0135 05       		.byte	0x5
+ 909 0136 00       		.uleb128 0
+ 910 0137 EB140000 		.4byte	.LASF51
+ 911 013b 05       		.byte	0x5
+ 912 013c 00       		.uleb128 0
+ 913 013d A1180000 		.4byte	.LASF52
+ 914 0141 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 22
+
+
+ 915 0142 00       		.uleb128 0
+ 916 0143 63050000 		.4byte	.LASF53
+ 917 0147 05       		.byte	0x5
+ 918 0148 00       		.uleb128 0
+ 919 0149 F5130000 		.4byte	.LASF54
+ 920 014d 05       		.byte	0x5
+ 921 014e 00       		.uleb128 0
+ 922 014f 6A090000 		.4byte	.LASF55
+ 923 0153 05       		.byte	0x5
+ 924 0154 00       		.uleb128 0
+ 925 0155 C5200000 		.4byte	.LASF56
+ 926 0159 05       		.byte	0x5
+ 927 015a 00       		.uleb128 0
+ 928 015b A7100000 		.4byte	.LASF57
+ 929 015f 05       		.byte	0x5
+ 930 0160 00       		.uleb128 0
+ 931 0161 D91D0000 		.4byte	.LASF58
+ 932 0165 05       		.byte	0x5
+ 933 0166 00       		.uleb128 0
+ 934 0167 DD200000 		.4byte	.LASF59
+ 935 016b 05       		.byte	0x5
+ 936 016c 00       		.uleb128 0
+ 937 016d 34160000 		.4byte	.LASF60
+ 938 0171 05       		.byte	0x5
+ 939 0172 00       		.uleb128 0
+ 940 0173 7A230000 		.4byte	.LASF61
+ 941 0177 05       		.byte	0x5
+ 942 0178 00       		.uleb128 0
+ 943 0179 97050000 		.4byte	.LASF62
+ 944 017d 05       		.byte	0x5
+ 945 017e 00       		.uleb128 0
+ 946 017f 651C0000 		.4byte	.LASF63
+ 947 0183 05       		.byte	0x5
+ 948 0184 00       		.uleb128 0
+ 949 0185 0A200000 		.4byte	.LASF64
+ 950 0189 05       		.byte	0x5
+ 951 018a 00       		.uleb128 0
+ 952 018b A8090000 		.4byte	.LASF65
+ 953 018f 05       		.byte	0x5
+ 954 0190 00       		.uleb128 0
+ 955 0191 901B0000 		.4byte	.LASF66
+ 956 0195 05       		.byte	0x5
+ 957 0196 00       		.uleb128 0
+ 958 0197 ED240000 		.4byte	.LASF67
+ 959 019b 05       		.byte	0x5
+ 960 019c 00       		.uleb128 0
+ 961 019d 051D0000 		.4byte	.LASF68
+ 962 01a1 05       		.byte	0x5
+ 963 01a2 00       		.uleb128 0
+ 964 01a3 07230000 		.4byte	.LASF69
+ 965 01a7 05       		.byte	0x5
+ 966 01a8 00       		.uleb128 0
+ 967 01a9 1B110000 		.4byte	.LASF70
+ 968 01ad 05       		.byte	0x5
+ 969 01ae 00       		.uleb128 0
+ 970 01af A7110000 		.4byte	.LASF71
+ 971 01b3 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 23
+
+
+ 972 01b4 00       		.uleb128 0
+ 973 01b5 23000000 		.4byte	.LASF72
+ 974 01b9 05       		.byte	0x5
+ 975 01ba 00       		.uleb128 0
+ 976 01bb F41C0000 		.4byte	.LASF73
+ 977 01bf 05       		.byte	0x5
+ 978 01c0 00       		.uleb128 0
+ 979 01c1 A21C0000 		.4byte	.LASF74
+ 980 01c5 05       		.byte	0x5
+ 981 01c6 00       		.uleb128 0
+ 982 01c7 4B040000 		.4byte	.LASF75
+ 983 01cb 05       		.byte	0x5
+ 984 01cc 00       		.uleb128 0
+ 985 01cd F1170000 		.4byte	.LASF76
+ 986 01d1 05       		.byte	0x5
+ 987 01d2 00       		.uleb128 0
+ 988 01d3 0C180000 		.4byte	.LASF77
+ 989 01d7 05       		.byte	0x5
+ 990 01d8 00       		.uleb128 0
+ 991 01d9 6B1B0000 		.4byte	.LASF78
+ 992 01dd 05       		.byte	0x5
+ 993 01de 00       		.uleb128 0
+ 994 01df 6D180000 		.4byte	.LASF79
+ 995 01e3 05       		.byte	0x5
+ 996 01e4 00       		.uleb128 0
+ 997 01e5 25220000 		.4byte	.LASF80
+ 998 01e9 05       		.byte	0x5
+ 999 01ea 00       		.uleb128 0
+ 1000 01eb E6010000 		.4byte	.LASF81
+ 1001 01ef 05       		.byte	0x5
+ 1002 01f0 00       		.uleb128 0
+ 1003 01f1 2A1B0000 		.4byte	.LASF82
+ 1004 01f5 05       		.byte	0x5
+ 1005 01f6 00       		.uleb128 0
+ 1006 01f7 41200000 		.4byte	.LASF83
+ 1007 01fb 05       		.byte	0x5
+ 1008 01fc 00       		.uleb128 0
+ 1009 01fd 490E0000 		.4byte	.LASF84
+ 1010 0201 05       		.byte	0x5
+ 1011 0202 00       		.uleb128 0
+ 1012 0203 55120000 		.4byte	.LASF85
+ 1013 0207 05       		.byte	0x5
+ 1014 0208 00       		.uleb128 0
+ 1015 0209 50090000 		.4byte	.LASF86
+ 1016 020d 05       		.byte	0x5
+ 1017 020e 00       		.uleb128 0
+ 1018 020f 3D000000 		.4byte	.LASF87
+ 1019 0213 05       		.byte	0x5
+ 1020 0214 00       		.uleb128 0
+ 1021 0215 77010000 		.4byte	.LASF88
+ 1022 0219 05       		.byte	0x5
+ 1023 021a 00       		.uleb128 0
+ 1024 021b 6C170000 		.4byte	.LASF89
+ 1025 021f 05       		.byte	0x5
+ 1026 0220 00       		.uleb128 0
+ 1027 0221 18160000 		.4byte	.LASF90
+ 1028 0225 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 24
+
+
+ 1029 0226 00       		.uleb128 0
+ 1030 0227 980E0000 		.4byte	.LASF91
+ 1031 022b 05       		.byte	0x5
+ 1032 022c 00       		.uleb128 0
+ 1033 022d 010F0000 		.4byte	.LASF92
+ 1034 0231 05       		.byte	0x5
+ 1035 0232 00       		.uleb128 0
+ 1036 0233 A20D0000 		.4byte	.LASF93
+ 1037 0237 05       		.byte	0x5
+ 1038 0238 00       		.uleb128 0
+ 1039 0239 1F0D0000 		.4byte	.LASF94
+ 1040 023d 05       		.byte	0x5
+ 1041 023e 00       		.uleb128 0
+ 1042 023f 58100000 		.4byte	.LASF95
+ 1043 0243 05       		.byte	0x5
+ 1044 0244 00       		.uleb128 0
+ 1045 0245 9C070000 		.4byte	.LASF96
+ 1046 0249 05       		.byte	0x5
+ 1047 024a 00       		.uleb128 0
+ 1048 024b 4C0B0000 		.4byte	.LASF97
+ 1049 024f 05       		.byte	0x5
+ 1050 0250 00       		.uleb128 0
+ 1051 0251 D0000000 		.4byte	.LASF98
+ 1052 0255 05       		.byte	0x5
+ 1053 0256 00       		.uleb128 0
+ 1054 0257 C9180000 		.4byte	.LASF99
+ 1055 025b 05       		.byte	0x5
+ 1056 025c 00       		.uleb128 0
+ 1057 025d CE010000 		.4byte	.LASF100
+ 1058 0261 05       		.byte	0x5
+ 1059 0262 00       		.uleb128 0
+ 1060 0263 A6230000 		.4byte	.LASF101
+ 1061 0267 05       		.byte	0x5
+ 1062 0268 00       		.uleb128 0
+ 1063 0269 7B190000 		.4byte	.LASF102
+ 1064 026d 05       		.byte	0x5
+ 1065 026e 00       		.uleb128 0
+ 1066 026f 0D190000 		.4byte	.LASF103
+ 1067 0273 05       		.byte	0x5
+ 1068 0274 00       		.uleb128 0
+ 1069 0275 1D120000 		.4byte	.LASF104
+ 1070 0279 05       		.byte	0x5
+ 1071 027a 00       		.uleb128 0
+ 1072 027b 19170000 		.4byte	.LASF105
+ 1073 027f 05       		.byte	0x5
+ 1074 0280 00       		.uleb128 0
+ 1075 0281 181D0000 		.4byte	.LASF106
+ 1076 0285 05       		.byte	0x5
+ 1077 0286 00       		.uleb128 0
+ 1078 0287 71000000 		.4byte	.LASF107
+ 1079 028b 05       		.byte	0x5
+ 1080 028c 00       		.uleb128 0
+ 1081 028d 0F010000 		.4byte	.LASF108
+ 1082 0291 05       		.byte	0x5
+ 1083 0292 00       		.uleb128 0
+ 1084 0293 CD140000 		.4byte	.LASF109
+ 1085 0297 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 25
+
+
+ 1086 0298 00       		.uleb128 0
+ 1087 0299 901D0000 		.4byte	.LASF110
+ 1088 029d 05       		.byte	0x5
+ 1089 029e 00       		.uleb128 0
+ 1090 029f 4F0F0000 		.4byte	.LASF111
+ 1091 02a3 05       		.byte	0x5
+ 1092 02a4 00       		.uleb128 0
+ 1093 02a5 B7220000 		.4byte	.LASF112
+ 1094 02a9 05       		.byte	0x5
+ 1095 02aa 00       		.uleb128 0
+ 1096 02ab 791F0000 		.4byte	.LASF113
+ 1097 02af 05       		.byte	0x5
+ 1098 02b0 00       		.uleb128 0
+ 1099 02b1 75040000 		.4byte	.LASF114
+ 1100 02b5 05       		.byte	0x5
+ 1101 02b6 00       		.uleb128 0
+ 1102 02b7 950A0000 		.4byte	.LASF115
+ 1103 02bb 05       		.byte	0x5
+ 1104 02bc 00       		.uleb128 0
+ 1105 02bd 10210000 		.4byte	.LASF116
+ 1106 02c1 05       		.byte	0x5
+ 1107 02c2 00       		.uleb128 0
+ 1108 02c3 4A240000 		.4byte	.LASF117
+ 1109 02c7 05       		.byte	0x5
+ 1110 02c8 00       		.uleb128 0
+ 1111 02c9 FC1A0000 		.4byte	.LASF118
+ 1112 02cd 05       		.byte	0x5
+ 1113 02ce 00       		.uleb128 0
+ 1114 02cf 5A0E0000 		.4byte	.LASF119
+ 1115 02d3 05       		.byte	0x5
+ 1116 02d4 00       		.uleb128 0
+ 1117 02d5 68150000 		.4byte	.LASF120
+ 1118 02d9 05       		.byte	0x5
+ 1119 02da 00       		.uleb128 0
+ 1120 02db A80C0000 		.4byte	.LASF121
+ 1121 02df 05       		.byte	0x5
+ 1122 02e0 00       		.uleb128 0
+ 1123 02e1 921C0000 		.4byte	.LASF122
+ 1124 02e5 05       		.byte	0x5
+ 1125 02e6 00       		.uleb128 0
+ 1126 02e7 C1130000 		.4byte	.LASF123
+ 1127 02eb 05       		.byte	0x5
+ 1128 02ec 00       		.uleb128 0
+ 1129 02ed 390C0000 		.4byte	.LASF124
+ 1130 02f1 05       		.byte	0x5
+ 1131 02f2 00       		.uleb128 0
+ 1132 02f3 EA0E0000 		.4byte	.LASF125
+ 1133 02f7 05       		.byte	0x5
+ 1134 02f8 00       		.uleb128 0
+ 1135 02f9 9A210000 		.4byte	.LASF126
+ 1136 02fd 05       		.byte	0x5
+ 1137 02fe 00       		.uleb128 0
+ 1138 02ff C9100000 		.4byte	.LASF127
+ 1139 0303 05       		.byte	0x5
+ 1140 0304 00       		.uleb128 0
+ 1141 0305 98170000 		.4byte	.LASF128
+ 1142 0309 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 26
+
+
+ 1143 030a 00       		.uleb128 0
+ 1144 030b 3F120000 		.4byte	.LASF129
+ 1145 030f 05       		.byte	0x5
+ 1146 0310 00       		.uleb128 0
+ 1147 0311 AE170000 		.4byte	.LASF130
+ 1148 0315 05       		.byte	0x5
+ 1149 0316 00       		.uleb128 0
+ 1150 0317 19050000 		.4byte	.LASF131
+ 1151 031b 05       		.byte	0x5
+ 1152 031c 00       		.uleb128 0
+ 1153 031d 96190000 		.4byte	.LASF132
+ 1154 0321 05       		.byte	0x5
+ 1155 0322 00       		.uleb128 0
+ 1156 0323 24030000 		.4byte	.LASF133
+ 1157 0327 05       		.byte	0x5
+ 1158 0328 00       		.uleb128 0
+ 1159 0329 66240000 		.4byte	.LASF134
+ 1160 032d 05       		.byte	0x5
+ 1161 032e 00       		.uleb128 0
+ 1162 032f DD1C0000 		.4byte	.LASF135
+ 1163 0333 05       		.byte	0x5
+ 1164 0334 00       		.uleb128 0
+ 1165 0335 BF0E0000 		.4byte	.LASF136
+ 1166 0339 05       		.byte	0x5
+ 1167 033a 00       		.uleb128 0
+ 1168 033b 3D050000 		.4byte	.LASF137
+ 1169 033f 05       		.byte	0x5
+ 1170 0340 00       		.uleb128 0
+ 1171 0341 0E120000 		.4byte	.LASF138
+ 1172 0345 05       		.byte	0x5
+ 1173 0346 00       		.uleb128 0
+ 1174 0347 071C0000 		.4byte	.LASF139
+ 1175 034b 05       		.byte	0x5
+ 1176 034c 00       		.uleb128 0
+ 1177 034d C1240000 		.4byte	.LASF140
+ 1178 0351 05       		.byte	0x5
+ 1179 0352 00       		.uleb128 0
+ 1180 0353 25150000 		.4byte	.LASF141
+ 1181 0357 05       		.byte	0x5
+ 1182 0358 00       		.uleb128 0
+ 1183 0359 64190000 		.4byte	.LASF142
+ 1184 035d 05       		.byte	0x5
+ 1185 035e 00       		.uleb128 0
+ 1186 035f F7110000 		.4byte	.LASF143
+ 1187 0363 05       		.byte	0x5
+ 1188 0364 00       		.uleb128 0
+ 1189 0365 89010000 		.4byte	.LASF144
+ 1190 0369 05       		.byte	0x5
+ 1191 036a 00       		.uleb128 0
+ 1192 036b 92240000 		.4byte	.LASF145
+ 1193 036f 05       		.byte	0x5
+ 1194 0370 00       		.uleb128 0
+ 1195 0371 731E0000 		.4byte	.LASF146
+ 1196 0375 05       		.byte	0x5
+ 1197 0376 00       		.uleb128 0
+ 1198 0377 85130000 		.4byte	.LASF147
+ 1199 037b 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 27
+
+
+ 1200 037c 00       		.uleb128 0
+ 1201 037d ED100000 		.4byte	.LASF148
+ 1202 0381 05       		.byte	0x5
+ 1203 0382 00       		.uleb128 0
+ 1204 0383 D4030000 		.4byte	.LASF149
+ 1205 0387 05       		.byte	0x5
+ 1206 0388 00       		.uleb128 0
+ 1207 0389 82210000 		.4byte	.LASF150
+ 1208 038d 05       		.byte	0x5
+ 1209 038e 00       		.uleb128 0
+ 1210 038f 331C0000 		.4byte	.LASF151
+ 1211 0393 05       		.byte	0x5
+ 1212 0394 00       		.uleb128 0
+ 1213 0395 56160000 		.4byte	.LASF152
+ 1214 0399 05       		.byte	0x5
+ 1215 039a 00       		.uleb128 0
+ 1216 039b EB030000 		.4byte	.LASF153
+ 1217 039f 05       		.byte	0x5
+ 1218 03a0 00       		.uleb128 0
+ 1219 03a1 69120000 		.4byte	.LASF154
+ 1220 03a5 05       		.byte	0x5
+ 1221 03a6 00       		.uleb128 0
+ 1222 03a7 A0060000 		.4byte	.LASF155
+ 1223 03ab 05       		.byte	0x5
+ 1224 03ac 00       		.uleb128 0
+ 1225 03ad 451D0000 		.4byte	.LASF156
+ 1226 03b1 05       		.byte	0x5
+ 1227 03b2 00       		.uleb128 0
+ 1228 03b3 5B040000 		.4byte	.LASF157
+ 1229 03b7 05       		.byte	0x5
+ 1230 03b8 00       		.uleb128 0
+ 1231 03b9 95040000 		.4byte	.LASF158
+ 1232 03bd 05       		.byte	0x5
+ 1233 03be 00       		.uleb128 0
+ 1234 03bf AB050000 		.4byte	.LASF159
+ 1235 03c3 05       		.byte	0x5
+ 1236 03c4 00       		.uleb128 0
+ 1237 03c5 7A160000 		.4byte	.LASF160
+ 1238 03c9 05       		.byte	0x5
+ 1239 03ca 00       		.uleb128 0
+ 1240 03cb 42130000 		.4byte	.LASF161
+ 1241 03cf 05       		.byte	0x5
+ 1242 03d0 00       		.uleb128 0
+ 1243 03d1 0F1E0000 		.4byte	.LASF162
+ 1244 03d5 05       		.byte	0x5
+ 1245 03d6 00       		.uleb128 0
+ 1246 03d7 D7070000 		.4byte	.LASF163
+ 1247 03db 05       		.byte	0x5
+ 1248 03dc 00       		.uleb128 0
+ 1249 03dd 2C0A0000 		.4byte	.LASF164
+ 1250 03e1 05       		.byte	0x5
+ 1251 03e2 00       		.uleb128 0
+ 1252 03e3 E71A0000 		.4byte	.LASF165
+ 1253 03e7 05       		.byte	0x5
+ 1254 03e8 00       		.uleb128 0
+ 1255 03e9 390D0000 		.4byte	.LASF166
+ 1256 03ed 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 28
+
+
+ 1257 03ee 00       		.uleb128 0
+ 1258 03ef 510D0000 		.4byte	.LASF167
+ 1259 03f3 05       		.byte	0x5
+ 1260 03f4 00       		.uleb128 0
+ 1261 03f5 FE010000 		.4byte	.LASF168
+ 1262 03f9 05       		.byte	0x5
+ 1263 03fa 00       		.uleb128 0
+ 1264 03fb EC0D0000 		.4byte	.LASF169
+ 1265 03ff 05       		.byte	0x5
+ 1266 0400 00       		.uleb128 0
+ 1267 0401 DE230000 		.4byte	.LASF170
+ 1268 0405 05       		.byte	0x5
+ 1269 0406 00       		.uleb128 0
+ 1270 0407 C10A0000 		.4byte	.LASF171
+ 1271 040b 05       		.byte	0x5
+ 1272 040c 00       		.uleb128 0
+ 1273 040d B8010000 		.4byte	.LASF172
+ 1274 0411 05       		.byte	0x5
+ 1275 0412 00       		.uleb128 0
+ 1276 0413 5F070000 		.4byte	.LASF173
+ 1277 0417 05       		.byte	0x5
+ 1278 0418 00       		.uleb128 0
+ 1279 0419 6F130000 		.4byte	.LASF174
+ 1280 041d 05       		.byte	0x5
+ 1281 041e 00       		.uleb128 0
+ 1282 041f 920B0000 		.4byte	.LASF175
+ 1283 0423 05       		.byte	0x5
+ 1284 0424 00       		.uleb128 0
+ 1285 0425 44140000 		.4byte	.LASF176
+ 1286 0429 05       		.byte	0x5
+ 1287 042a 00       		.uleb128 0
+ 1288 042b A1150000 		.4byte	.LASF177
+ 1289 042f 05       		.byte	0x5
+ 1290 0430 00       		.uleb128 0
+ 1291 0431 E8040000 		.4byte	.LASF178
+ 1292 0435 05       		.byte	0x5
+ 1293 0436 00       		.uleb128 0
+ 1294 0437 81170000 		.4byte	.LASF179
+ 1295 043b 05       		.byte	0x5
+ 1296 043c 00       		.uleb128 0
+ 1297 043d 8C110000 		.4byte	.LASF180
+ 1298 0441 05       		.byte	0x5
+ 1299 0442 00       		.uleb128 0
+ 1300 0443 DA120000 		.4byte	.LASF181
+ 1301 0447 05       		.byte	0x5
+ 1302 0448 00       		.uleb128 0
+ 1303 0449 CE1A0000 		.4byte	.LASF182
+ 1304 044d 05       		.byte	0x5
+ 1305 044e 00       		.uleb128 0
+ 1306 044f 7C140000 		.4byte	.LASF183
+ 1307 0453 05       		.byte	0x5
+ 1308 0454 00       		.uleb128 0
+ 1309 0455 D9150000 		.4byte	.LASF184
+ 1310 0459 05       		.byte	0x5
+ 1311 045a 00       		.uleb128 0
+ 1312 045b EC1E0000 		.4byte	.LASF185
+ 1313 045f 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 29
+
+
+ 1314 0460 00       		.uleb128 0
+ 1315 0461 E5110000 		.4byte	.LASF186
+ 1316 0465 05       		.byte	0x5
+ 1317 0466 00       		.uleb128 0
+ 1318 0467 BB040000 		.4byte	.LASF187
+ 1319 046b 05       		.byte	0x5
+ 1320 046c 00       		.uleb128 0
+ 1321 046d 25180000 		.4byte	.LASF188
+ 1322 0471 05       		.byte	0x5
+ 1323 0472 00       		.uleb128 0
+ 1324 0473 330B0000 		.4byte	.LASF189
+ 1325 0477 05       		.byte	0x5
+ 1326 0478 00       		.uleb128 0
+ 1327 0479 B8030000 		.4byte	.LASF190
+ 1328 047d 05       		.byte	0x5
+ 1329 047e 00       		.uleb128 0
+ 1330 047f C8160000 		.4byte	.LASF191
+ 1331 0483 05       		.byte	0x5
+ 1332 0484 00       		.uleb128 0
+ 1333 0485 A71B0000 		.4byte	.LASF192
+ 1334 0489 05       		.byte	0x5
+ 1335 048a 00       		.uleb128 0
+ 1336 048b B50F0000 		.4byte	.LASF193
+ 1337 048f 05       		.byte	0x5
+ 1338 0490 00       		.uleb128 0
+ 1339 0491 340F0000 		.4byte	.LASF194
+ 1340 0495 05       		.byte	0x5
+ 1341 0496 00       		.uleb128 0
+ 1342 0497 59010000 		.4byte	.LASF195
+ 1343 049b 05       		.byte	0x5
+ 1344 049c 00       		.uleb128 0
+ 1345 049d 11070000 		.4byte	.LASF196
+ 1346 04a1 05       		.byte	0x5
+ 1347 04a2 00       		.uleb128 0
+ 1348 04a3 FF200000 		.4byte	.LASF197
+ 1349 04a7 05       		.byte	0x5
+ 1350 04a8 00       		.uleb128 0
+ 1351 04a9 AA200000 		.4byte	.LASF198
+ 1352 04ad 05       		.byte	0x5
+ 1353 04ae 00       		.uleb128 0
+ 1354 04af 2A210000 		.4byte	.LASF199
+ 1355 04b3 05       		.byte	0x5
+ 1356 04b4 00       		.uleb128 0
+ 1357 04b5 96080000 		.4byte	.LASF200
+ 1358 04b9 05       		.byte	0x5
+ 1359 04ba 00       		.uleb128 0
+ 1360 04bb D70E0000 		.4byte	.LASF201
+ 1361 04bf 05       		.byte	0x5
+ 1362 04c0 00       		.uleb128 0
+ 1363 04c1 5D1D0000 		.4byte	.LASF202
+ 1364 04c5 05       		.byte	0x5
+ 1365 04c6 00       		.uleb128 0
+ 1366 04c7 2F170000 		.4byte	.LASF203
+ 1367 04cb 05       		.byte	0x5
+ 1368 04cc 00       		.uleb128 0
+ 1369 04cd 180F0000 		.4byte	.LASF204
+ 1370 04d1 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 30
+
+
+ 1371 04d2 00       		.uleb128 0
+ 1372 04d3 481C0000 		.4byte	.LASF205
+ 1373 04d7 05       		.byte	0x5
+ 1374 04d8 00       		.uleb128 0
+ 1375 04d9 34110000 		.4byte	.LASF206
+ 1376 04dd 05       		.byte	0x5
+ 1377 04de 00       		.uleb128 0
+ 1378 04df 51050000 		.4byte	.LASF207
+ 1379 04e3 05       		.byte	0x5
+ 1380 04e4 00       		.uleb128 0
+ 1381 04e5 2C010000 		.4byte	.LASF208
+ 1382 04e9 05       		.byte	0x5
+ 1383 04ea 00       		.uleb128 0
+ 1384 04eb 76080000 		.4byte	.LASF209
+ 1385 04ef 05       		.byte	0x5
+ 1386 04f0 00       		.uleb128 0
+ 1387 04f1 E60B0000 		.4byte	.LASF210
+ 1388 04f5 05       		.byte	0x5
+ 1389 04f6 00       		.uleb128 0
+ 1390 04f7 78110000 		.4byte	.LASF211
+ 1391 04fb 05       		.byte	0x5
+ 1392 04fc 00       		.uleb128 0
+ 1393 04fd C70D0000 		.4byte	.LASF212
+ 1394 0501 05       		.byte	0x5
+ 1395 0502 00       		.uleb128 0
+ 1396 0503 B00D0000 		.4byte	.LASF213
+ 1397 0507 05       		.byte	0x5
+ 1398 0508 00       		.uleb128 0
+ 1399 0509 58230000 		.4byte	.LASF214
+ 1400 050d 05       		.byte	0x5
+ 1401 050e 00       		.uleb128 0
+ 1402 050f 570C0000 		.4byte	.LASF215
+ 1403 0513 05       		.byte	0x5
+ 1404 0514 00       		.uleb128 0
+ 1405 0515 5A210000 		.4byte	.LASF216
+ 1406 0519 05       		.byte	0x5
+ 1407 051a 00       		.uleb128 0
+ 1408 051b 45230000 		.4byte	.LASF217
+ 1409 051f 05       		.byte	0x5
+ 1410 0520 00       		.uleb128 0
+ 1411 0521 F5210000 		.4byte	.LASF218
+ 1412 0525 05       		.byte	0x5
+ 1413 0526 00       		.uleb128 0
+ 1414 0527 23070000 		.4byte	.LASF219
+ 1415 052b 05       		.byte	0x5
+ 1416 052c 00       		.uleb128 0
+ 1417 052d 030C0000 		.4byte	.LASF220
+ 1418 0531 05       		.byte	0x5
+ 1419 0532 00       		.uleb128 0
+ 1420 0533 B3210000 		.4byte	.LASF221
+ 1421 0537 05       		.byte	0x5
+ 1422 0538 00       		.uleb128 0
+ 1423 0539 D1050000 		.4byte	.LASF222
+ 1424 053d 05       		.byte	0x5
+ 1425 053e 00       		.uleb128 0
+ 1426 053f 3B020000 		.4byte	.LASF223
+ 1427 0543 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 31
+
+
+ 1428 0544 00       		.uleb128 0
+ 1429 0545 B11F0000 		.4byte	.LASF224
+ 1430 0549 05       		.byte	0x5
+ 1431 054a 00       		.uleb128 0
+ 1432 054b 6F1D0000 		.4byte	.LASF225
+ 1433 054f 05       		.byte	0x5
+ 1434 0550 00       		.uleb128 0
+ 1435 0551 6A140000 		.4byte	.LASF226
+ 1436 0555 05       		.byte	0x5
+ 1437 0556 00       		.uleb128 0
+ 1438 0557 DB240000 		.4byte	.LASF227
+ 1439 055b 05       		.byte	0x5
+ 1440 055c 00       		.uleb128 0
+ 1441 055d BB1C0000 		.4byte	.LASF228
+ 1442 0561 05       		.byte	0x5
+ 1443 0562 00       		.uleb128 0
+ 1444 0563 501B0000 		.4byte	.LASF229
+ 1445 0567 05       		.byte	0x5
+ 1446 0568 00       		.uleb128 0
+ 1447 0569 E2020000 		.4byte	.LASF230
+ 1448 056d 05       		.byte	0x5
+ 1449 056e 00       		.uleb128 0
+ 1450 056f 850E0000 		.4byte	.LASF231
+ 1451 0573 05       		.byte	0x5
+ 1452 0574 00       		.uleb128 0
+ 1453 0575 F8190000 		.4byte	.LASF232
+ 1454 0579 05       		.byte	0x5
+ 1455 057a 00       		.uleb128 0
+ 1456 057b A0220000 		.4byte	.LASF233
+ 1457 057f 05       		.byte	0x5
+ 1458 0580 00       		.uleb128 0
+ 1459 0581 780A0000 		.4byte	.LASF234
+ 1460 0585 05       		.byte	0x5
+ 1461 0586 00       		.uleb128 0
+ 1462 0587 080E0000 		.4byte	.LASF235
+ 1463 058b 05       		.byte	0x5
+ 1464 058c 00       		.uleb128 0
+ 1465 058d 04040000 		.4byte	.LASF236
+ 1466 0591 05       		.byte	0x5
+ 1467 0592 00       		.uleb128 0
+ 1468 0593 96090000 		.4byte	.LASF237
+ 1469 0597 05       		.byte	0x5
+ 1470 0598 00       		.uleb128 0
+ 1471 0599 1C240000 		.4byte	.LASF238
+ 1472 059d 05       		.byte	0x5
+ 1473 059e 00       		.uleb128 0
+ 1474 059f 0C1B0000 		.4byte	.LASF239
+ 1475 05a3 05       		.byte	0x5
+ 1476 05a4 00       		.uleb128 0
+ 1477 05a5 311F0000 		.4byte	.LASF240
+ 1478 05a9 05       		.byte	0x5
+ 1479 05aa 00       		.uleb128 0
+ 1480 05ab 2F130000 		.4byte	.LASF241
+ 1481 05af 05       		.byte	0x5
+ 1482 05b0 00       		.uleb128 0
+ 1483 05b1 720E0000 		.4byte	.LASF242
+ 1484 05b5 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 32
+
+
+ 1485 05b6 00       		.uleb128 0
+ 1486 05b7 B11E0000 		.4byte	.LASF243
+ 1487 05bb 05       		.byte	0x5
+ 1488 05bc 00       		.uleb128 0
+ 1489 05bd F3090000 		.4byte	.LASF244
+ 1490 05c1 05       		.byte	0x5
+ 1491 05c2 00       		.uleb128 0
+ 1492 05c3 9B030000 		.4byte	.LASF245
+ 1493 05c7 05       		.byte	0x5
+ 1494 05c8 00       		.uleb128 0
+ 1495 05c9 61220000 		.4byte	.LASF246
+ 1496 05cd 05       		.byte	0x5
+ 1497 05ce 00       		.uleb128 0
+ 1498 05cf 26040000 		.4byte	.LASF247
+ 1499 05d3 05       		.byte	0x5
+ 1500 05d4 00       		.uleb128 0
+ 1501 05d5 83100000 		.4byte	.LASF248
+ 1502 05d9 05       		.byte	0x5
+ 1503 05da 00       		.uleb128 0
+ 1504 05db A61A0000 		.4byte	.LASF249
+ 1505 05df 05       		.byte	0x5
+ 1506 05e0 00       		.uleb128 0
+ 1507 05e1 1B090000 		.4byte	.LASF250
+ 1508 05e5 05       		.byte	0x5
+ 1509 05e6 00       		.uleb128 0
+ 1510 05e7 00000000 		.4byte	.LASF251
+ 1511 05eb 05       		.byte	0x5
+ 1512 05ec 00       		.uleb128 0
+ 1513 05ed C91B0000 		.4byte	.LASF252
+ 1514 05f1 05       		.byte	0x5
+ 1515 05f2 00       		.uleb128 0
+ 1516 05f3 6E200000 		.4byte	.LASF253
+ 1517 05f7 05       		.byte	0x5
+ 1518 05f8 00       		.uleb128 0
+ 1519 05f9 CE060000 		.4byte	.LASF254
+ 1520 05fd 05       		.byte	0x5
+ 1521 05fe 00       		.uleb128 0
+ 1522 05ff 9C000000 		.4byte	.LASF255
+ 1523 0603 05       		.byte	0x5
+ 1524 0604 00       		.uleb128 0
+ 1525 0605 6E210000 		.4byte	.LASF256
+ 1526 0609 05       		.byte	0x5
+ 1527 060a 00       		.uleb128 0
+ 1528 060b 4D220000 		.4byte	.LASF257
+ 1529 060f 05       		.byte	0x5
+ 1530 0610 00       		.uleb128 0
+ 1531 0611 660D0000 		.4byte	.LASF258
+ 1532 0615 05       		.byte	0x5
+ 1533 0616 00       		.uleb128 0
+ 1534 0617 D6220000 		.4byte	.LASF259
+ 1535 061b 05       		.byte	0x5
+ 1536 061c 00       		.uleb128 0
+ 1537 061d 450A0000 		.4byte	.LASF260
+ 1538 0621 05       		.byte	0x5
+ 1539 0622 00       		.uleb128 0
+ 1540 0623 BB000000 		.4byte	.LASF261
+ 1541 0627 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 33
+
+
+ 1542 0628 00       		.uleb128 0
+ 1543 0629 55110000 		.4byte	.LASF262
+ 1544 062d 05       		.byte	0x5
+ 1545 062e 00       		.uleb128 0
+ 1546 062f 02110000 		.4byte	.LASF263
+ 1547 0633 05       		.byte	0x5
+ 1548 0634 00       		.uleb128 0
+ 1549 0635 74220000 		.4byte	.LASF264
+ 1550 0639 05       		.byte	0x5
+ 1551 063a 00       		.uleb128 0
+ 1552 063b 54020000 		.4byte	.LASF265
+ 1553 063f 05       		.byte	0x5
+ 1554 0640 00       		.uleb128 0
+ 1555 0641 DB160000 		.4byte	.LASF266
+ 1556 0645 05       		.byte	0x5
+ 1557 0646 00       		.uleb128 0
+ 1558 0647 6A110000 		.4byte	.LASF267
+ 1559 064b 05       		.byte	0x5
+ 1560 064c 00       		.uleb128 0
+ 1561 064d 14000000 		.4byte	.LASF268
+ 1562 0651 05       		.byte	0x5
+ 1563 0652 00       		.uleb128 0
+ 1564 0653 F91B0000 		.4byte	.LASF269
+ 1565 0657 05       		.byte	0x5
+ 1566 0658 00       		.uleb128 0
+ 1567 0659 2A100000 		.4byte	.LASF270
+ 1568 065d 05       		.byte	0x5
+ 1569 065e 00       		.uleb128 0
+ 1570 065f 090B0000 		.4byte	.LASF271
+ 1571 0663 05       		.byte	0x5
+ 1572 0664 00       		.uleb128 0
+ 1573 0665 F2120000 		.4byte	.LASF272
+ 1574 0669 05       		.byte	0x5
+ 1575 066a 00       		.uleb128 0
+ 1576 066b 5F180000 		.4byte	.LASF273
+ 1577 066f 05       		.byte	0x5
+ 1578 0670 00       		.uleb128 0
+ 1579 0671 820B0000 		.4byte	.LASF274
+ 1580 0675 05       		.byte	0x5
+ 1581 0676 00       		.uleb128 0
+ 1582 0677 E80A0000 		.4byte	.LASF275
+ 1583 067b 05       		.byte	0x5
+ 1584 067c 00       		.uleb128 0
+ 1585 067d 35140000 		.4byte	.LASF276
+ 1586 0681 05       		.byte	0x5
+ 1587 0682 00       		.uleb128 0
+ 1588 0683 16220000 		.4byte	.LASF277
+ 1589 0687 05       		.byte	0x5
+ 1590 0688 00       		.uleb128 0
+ 1591 0689 48100000 		.4byte	.LASF278
+ 1592 068d 05       		.byte	0x5
+ 1593 068e 00       		.uleb128 0
+ 1594 068f DE180000 		.4byte	.LASF279
+ 1595 0693 05       		.byte	0x5
+ 1596 0694 00       		.uleb128 0
+ 1597 0695 CC0F0000 		.4byte	.LASF280
+ 1598 0699 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 34
+
+
+ 1599 069a 00       		.uleb128 0
+ 1600 069b AE1D0000 		.4byte	.LASF281
+ 1601 069f 05       		.byte	0x5
+ 1602 06a0 00       		.uleb128 0
+ 1603 06a1 E91B0000 		.4byte	.LASF282
+ 1604 06a5 05       		.byte	0x5
+ 1605 06a6 00       		.uleb128 0
+ 1606 06a7 F4150000 		.4byte	.LASF283
+ 1607 06ab 05       		.byte	0x5
+ 1608 06ac 00       		.uleb128 0
+ 1609 06ad 14150000 		.4byte	.LASF284
+ 1610 06b1 05       		.byte	0x5
+ 1611 06b2 00       		.uleb128 0
+ 1612 06b3 E4090000 		.4byte	.LASF285
+ 1613 06b7 05       		.byte	0x5
+ 1614 06b8 00       		.uleb128 0
+ 1615 06b9 251C0000 		.4byte	.LASF286
+ 1616 06bd 05       		.byte	0x5
+ 1617 06be 00       		.uleb128 0
+ 1618 06bf E9160000 		.4byte	.LASF287
+ 1619 06c3 05       		.byte	0x5
+ 1620 06c4 00       		.uleb128 0
+ 1621 06c5 BA1B0000 		.4byte	.LASF288
+ 1622 06c9 05       		.byte	0x5
+ 1623 06ca 00       		.uleb128 0
+ 1624 06cb 4A010000 		.4byte	.LASF289
+ 1625 06cf 05       		.byte	0x5
+ 1626 06d0 00       		.uleb128 0
+ 1627 06d1 39100000 		.4byte	.LASF290
+ 1628 06d5 05       		.byte	0x5
+ 1629 06d6 00       		.uleb128 0
+ 1630 06d7 A3160000 		.4byte	.LASF291
+ 1631 06db 05       		.byte	0x5
+ 1632 06dc 00       		.uleb128 0
+ 1633 06dd 85200000 		.4byte	.LASF292
+ 1634 06e1 05       		.byte	0x5
+ 1635 06e2 00       		.uleb128 0
+ 1636 06e3 C8070000 		.4byte	.LASF293
+ 1637 06e7 05       		.byte	0x5
+ 1638 06e8 00       		.uleb128 0
+ 1639 06e9 43180000 		.4byte	.LASF294
+ 1640 06ed 05       		.byte	0x5
+ 1641 06ee 00       		.uleb128 0
+ 1642 06ef 26140000 		.4byte	.LASF295
+ 1643 06f3 05       		.byte	0x5
+ 1644 06f4 00       		.uleb128 0
+ 1645 06f5 1E230000 		.4byte	.LASF296
+ 1646 06f9 05       		.byte	0x5
+ 1647 06fa 00       		.uleb128 0
+ 1648 06fb DD100000 		.4byte	.LASF297
+ 1649 06ff 05       		.byte	0x5
+ 1650 0700 00       		.uleb128 0
+ 1651 0701 A11F0000 		.4byte	.LASF298
+ 1652 0705 05       		.byte	0x5
+ 1653 0706 00       		.uleb128 0
+ 1654 0707 16040000 		.4byte	.LASF299
+ 1655 070b 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 35
+
+
+ 1656 070c 00       		.uleb128 0
+ 1657 070d 61000000 		.4byte	.LASF300
+ 1658 0711 05       		.byte	0x5
+ 1659 0712 00       		.uleb128 0
+ 1660 0713 7E150000 		.4byte	.LASF301
+ 1661 0717 05       		.byte	0x5
+ 1662 0718 00       		.uleb128 0
+ 1663 0719 D10B0000 		.4byte	.LASF302
+ 1664 071d 05       		.byte	0x5
+ 1665 071e 00       		.uleb128 0
+ 1666 071f 2E230000 		.4byte	.LASF303
+ 1667 0723 05       		.byte	0x5
+ 1668 0724 00       		.uleb128 0
+ 1669 0725 B2160000 		.4byte	.LASF304
+ 1670 0729 05       		.byte	0x5
+ 1671 072a 00       		.uleb128 0
+ 1672 072b 0F0D0000 		.4byte	.LASF305
+ 1673 072f 05       		.byte	0x5
+ 1674 0730 00       		.uleb128 0
+ 1675 0731 C6120000 		.4byte	.LASF306
+ 1676 0735 05       		.byte	0x5
+ 1677 0736 00       		.uleb128 0
+ 1678 0737 F7230000 		.4byte	.LASF307
+ 1679 073b 05       		.byte	0x5
+ 1680 073c 00       		.uleb128 0
+ 1681 073d DD1F0000 		.4byte	.LASF308
+ 1682 0741 05       		.byte	0x5
+ 1683 0742 00       		.uleb128 0
+ 1684 0743 01130000 		.4byte	.LASF309
+ 1685 0747 05       		.byte	0x5
+ 1686 0748 00       		.uleb128 0
+ 1687 0749 1D190000 		.4byte	.LASF310
+ 1688 074d 05       		.byte	0x5
+ 1689 074e 00       		.uleb128 0
+ 1690 074f BB150000 		.4byte	.LASF311
+ 1691 0753 05       		.byte	0x5
+ 1692 0754 00       		.uleb128 0
+ 1693 0755 511E0000 		.4byte	.LASF312
+ 1694 0759 05       		.byte	0x5
+ 1695 075a 00       		.uleb128 0
+ 1696 075b 600B0000 		.4byte	.LASF313
+ 1697 075f 05       		.byte	0x5
+ 1698 0760 00       		.uleb128 0
+ 1699 0761 14080000 		.4byte	.LASF314
+ 1700 0765 05       		.byte	0x5
+ 1701 0766 00       		.uleb128 0
+ 1702 0767 71030000 		.4byte	.LASF315
+ 1703 076b 05       		.byte	0x5
+ 1704 076c 00       		.uleb128 0
+ 1705 076d 0D100000 		.4byte	.LASF316
+ 1706 0771 05       		.byte	0x5
+ 1707 0772 00       		.uleb128 0
+ 1708 0773 83180000 		.4byte	.LASF317
+ 1709 0777 05       		.byte	0x5
+ 1710 0778 00       		.uleb128 0
+ 1711 0779 D2170000 		.4byte	.LASF318
+ 1712 077d 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 36
+
+
+ 1713 077e 00       		.uleb128 0
+ 1714 077f 78070000 		.4byte	.LASF319
+ 1715 0783 05       		.byte	0x5
+ 1716 0784 00       		.uleb128 0
+ 1717 0785 D7190000 		.4byte	.LASF320
+ 1718 0789 05       		.byte	0x5
+ 1719 078a 00       		.uleb128 0
+ 1720 078b 170B0000 		.4byte	.LASF321
+ 1721 078f 05       		.byte	0x5
+ 1722 0790 00       		.uleb128 0
+ 1723 0791 B1080000 		.4byte	.LASF322
+ 1724 0795 05       		.byte	0x5
+ 1725 0796 00       		.uleb128 0
+ 1726 0797 03160000 		.4byte	.LASF323
+ 1727 079b 05       		.byte	0x5
+ 1728 079c 00       		.uleb128 0
+ 1729 079d CE020000 		.4byte	.LASF324
+ 1730 07a1 05       		.byte	0x5
+ 1731 07a2 00       		.uleb128 0
+ 1732 07a3 EF070000 		.4byte	.LASF325
+ 1733 07a7 05       		.byte	0x5
+ 1734 07a8 00       		.uleb128 0
+ 1735 07a9 8D0D0000 		.4byte	.LASF326
+ 1736 07ad 05       		.byte	0x5
+ 1737 07ae 00       		.uleb128 0
+ 1738 07af 82090000 		.4byte	.LASF327
+ 1739 07b3 05       		.byte	0x5
+ 1740 07b4 00       		.uleb128 0
+ 1741 07b5 C8210000 		.4byte	.LASF328
+ 1742 07b9 05       		.byte	0x5
+ 1743 07ba 00       		.uleb128 0
+ 1744 07bb 84120000 		.4byte	.LASF329
+ 1745 07bf 05       		.byte	0x5
+ 1746 07c0 00       		.uleb128 0
+ 1747 07c1 431A0000 		.4byte	.LASF330
+ 1748 07c5 05       		.byte	0x5
+ 1749 07c6 00       		.uleb128 0
+ 1750 07c7 66160000 		.4byte	.LASF331
+ 1751 07cb 05       		.byte	0x5
+ 1752 07cc 00       		.uleb128 0
+ 1753 07cd 67100000 		.4byte	.LASF332
+ 1754 07d1 05       		.byte	0x5
+ 1755 07d2 00       		.uleb128 0
+ 1756 07d3 7B240000 		.4byte	.LASF333
+ 1757 07d7 05       		.byte	0x5
+ 1758 07d8 00       		.uleb128 0
+ 1759 07d9 44210000 		.4byte	.LASF334
+ 1760 07dd 05       		.byte	0x5
+ 1761 07de 00       		.uleb128 0
+ 1762 07df 44170000 		.4byte	.LASF335
+ 1763 07e3 05       		.byte	0x5
+ 1764 07e4 00       		.uleb128 0
+ 1765 07e5 19140000 		.4byte	.LASF336
+ 1766 07e9 05       		.byte	0x5
+ 1767 07ea 00       		.uleb128 0
+ 1768 07eb 47110000 		.4byte	.LASF337
+ 1769 07ef 05       		.byte	0x5
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 37
+
+
+ 1770 07f0 00       		.uleb128 0
+ 1771 07f1 A51E0000 		.4byte	.LASF338
+ 1772 07f5 05       		.byte	0x5
+ 1773 07f6 00       		.uleb128 0
+ 1774 07f7 52180000 		.4byte	.LASF339
+ 1775 07fb 05       		.byte	0x5
+ 1776 07fc 00       		.uleb128 0
+ 1777 07fd B6140000 		.4byte	.LASF340
+ 1778 0801 05       		.byte	0x5
+ 1779 0802 00       		.uleb128 0
+ 1780 0803 DD1B0000 		.4byte	.LASF341
+ 1781 0807 05       		.byte	0x5
+ 1782 0808 00       		.uleb128 0
+ 1783 0809 FE020000 		.4byte	.LASF342
+ 1784 080d 05       		.byte	0x5
+ 1785 080e 00       		.uleb128 0
+ 1786 080f 3D240000 		.4byte	.LASF343
+ 1787 0813 05       		.byte	0x5
+ 1788 0814 00       		.uleb128 0
+ 1789 0815 C1020000 		.4byte	.LASF344
+ 1790 0819 05       		.byte	0x5
+ 1791 081a 00       		.uleb128 0
+ 1792 081b BC070000 		.4byte	.LASF345
+ 1793 081f 05       		.byte	0x5
+ 1794 0820 00       		.uleb128 0
+ 1795 0821 470C0000 		.4byte	.LASF346
+ 1796 0825 05       		.byte	0x5
+ 1797 0826 00       		.uleb128 0
+ 1798 0827 4E190000 		.4byte	.LASF347
+ 1799 082b 05       		.byte	0x5
+ 1800 082c 00       		.uleb128 0
+ 1801 082d 370E0000 		.4byte	.LASF348
+ 1802 0831 05       		.byte	0x5
+ 1803 0832 00       		.uleb128 0
+ 1804 0833 75020000 		.4byte	.LASF349
+ 1805 0837 05       		.byte	0x5
+ 1806 0838 00       		.uleb128 0
+ 1807 0839 831C0000 		.4byte	.LASF350
+ 1808 083d 05       		.byte	0x5
+ 1809 083e 00       		.uleb128 0
+ 1810 083f 0C030000 		.4byte	.LASF351
+ 1811 0843 05       		.byte	0x5
+ 1812 0844 00       		.uleb128 0
+ 1813 0845 FA080000 		.4byte	.LASF352
+ 1814 0849 05       		.byte	0x5
+ 1815 084a 00       		.uleb128 0
+ 1816 084b 45150000 		.4byte	.LASF353
+ 1817 084f 05       		.byte	0x5
+ 1818 0850 00       		.uleb128 0
+ 1819 0851 81020000 		.4byte	.LASF354
+ 1820 0855 00       		.byte	0
+ 1821              		.section	.debug_line,"",%progbits
+ 1822              	.Ldebug_line0:
+ 1823 0000 8A000000 		.section	.debug_str,"MS",%progbits,1
+ 1823      02002F00 
+ 1823      00000201 
+ 1823      FB0E0D00 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 38
+
+
+ 1823      01010101 
+ 1824              	.LASF251:
+ 1825 0000 5F5F554C 		.ascii	"__ULACCUM_FBIT__ 32\000"
+ 1825      41434355 
+ 1825      4D5F4642 
+ 1825      49545F5F 
+ 1825      20333200 
+ 1826              	.LASF268:
+ 1827 0014 5F5F4851 		.ascii	"__HQ_FBIT__ 15\000"
+ 1827      5F464249 
+ 1827      545F5F20 
+ 1827      313500
+ 1828              	.LASF72:
+ 1829 0023 5F5F5743 		.ascii	"__WCHAR_MAX__ 4294967295U\000"
+ 1829      4841525F 
+ 1829      4D41585F 
+ 1829      5F203432 
+ 1829      39343936 
+ 1830              	.LASF87:
+ 1831 003d 5F5F494E 		.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
+ 1831      5436345F 
+ 1831      4D41585F 
+ 1831      5F203932 
+ 1831      32333337 
+ 1832              	.LASF300:
+ 1833 0061 5F5F5554 		.ascii	"__UTA_FBIT__ 64\000"
+ 1833      415F4642 
+ 1833      49545F5F 
+ 1833      20363400 
+ 1834              	.LASF107:
+ 1835 0071 5F5F5549 		.ascii	"__UINT64_C(c) c ## ULL\000"
+ 1835      4E543634 
+ 1835      5F432863 
+ 1835      29206320 
+ 1835      23232055 
+ 1836              	.LASF20:
+ 1837 0088 5F5F5349 		.ascii	"__SIZEOF_SIZE_T__ 4\000"
+ 1837      5A454F46 
+ 1837      5F53495A 
+ 1837      455F545F 
+ 1837      5F203400 
+ 1838              	.LASF255:
+ 1839 009c 5F5F554C 		.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
+ 1839      41434355 
+ 1839      4D5F4550 
+ 1839      53494C4F 
+ 1839      4E5F5F20 
+ 1840              	.LASF261:
+ 1841 00bb 5F5F554C 		.ascii	"__ULLACCUM_FBIT__ 32\000"
+ 1841      4C414343 
+ 1841      554D5F46 
+ 1841      4249545F 
+ 1841      5F203332 
+ 1842              	.LASF98:
+ 1843 00d0 5F5F494E 		.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
+ 1843      545F4C45 
+ 1843      41535436 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 39
+
+
+ 1843      345F4D41 
+ 1843      585F5F20 
+ 1844              	.LASF28:
+ 1845 00fa 5F5F5349 		.ascii	"__SIZEOF_POINTER__ 4\000"
+ 1845      5A454F46 
+ 1845      5F504F49 
+ 1845      4E544552 
+ 1845      5F5F2034 
+ 1846              	.LASF108:
+ 1847 010f 5F5F494E 		.ascii	"__INT_FAST8_MAX__ 2147483647\000"
+ 1847      545F4641 
+ 1847      5354385F 
+ 1847      4D41585F 
+ 1847      5F203231 
+ 1848              	.LASF208:
+ 1849 012c 5F5F4C46 		.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
+ 1849      52414354 
+ 1849      5F4D494E 
+ 1849      5F5F2028 
+ 1849      2D302E35 
+ 1850              	.LASF289:
+ 1851 014a 5F5F5341 		.ascii	"__SA_IBIT__ 16\000"
+ 1851      5F494249 
+ 1851      545F5F20 
+ 1851      313600
+ 1852              	.LASF195:
+ 1853 0159 5F5F5553 		.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
+ 1853      46524143 
+ 1853      545F4550 
+ 1853      53494C4F 
+ 1853      4E5F5F20 
+ 1854              	.LASF88:
+ 1855 0177 5F5F5549 		.ascii	"__UINT8_MAX__ 255\000"
+ 1855      4E54385F 
+ 1855      4D41585F 
+ 1855      5F203235 
+ 1855      3500
+ 1856              	.LASF144:
+ 1857 0189 5F5F4442 		.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
+ 1857      4C5F4D41 
+ 1857      585F5F20 
+ 1857      2828646F 
+ 1857      75626C65 
+ 1858              	.LASF172:
+ 1859 01b8 5F5F4445 		.ascii	"__DEC64_MANT_DIG__ 16\000"
+ 1859      4336345F 
+ 1859      4D414E54 
+ 1859      5F444947 
+ 1859      5F5F2031 
+ 1860              	.LASF100:
+ 1861 01ce 5F5F5549 		.ascii	"__UINT_LEAST8_MAX__ 255\000"
+ 1861      4E545F4C 
+ 1861      45415354 
+ 1861      385F4D41 
+ 1861      585F5F20 
+ 1862              	.LASF81:
+ 1863 01e6 5F5F5549 		.ascii	"__UINTMAX_C(c) c ## ULL\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 40
+
+
+ 1863      4E544D41 
+ 1863      585F4328 
+ 1863      63292063 
+ 1863      20232320 
+ 1864              	.LASF168:
+ 1865 01fe 5F5F4445 		.ascii	"__DEC32_MIN__ 1E-95DF\000"
+ 1865      4333325F 
+ 1865      4D494E5F 
+ 1865      5F203145 
+ 1865      2D393544 
+ 1866              	.LASF45:
+ 1867 0214 5F5F5549 		.ascii	"__UINT64_TYPE__ long long unsigned int\000"
+ 1867      4E543634 
+ 1867      5F545950 
+ 1867      455F5F20 
+ 1867      6C6F6E67 
+ 1868              	.LASF223:
+ 1869 023b 5F5F554C 		.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
+ 1869      4C465241 
+ 1869      43545F4D 
+ 1869      494E5F5F 
+ 1869      20302E30 
+ 1870              	.LASF265:
+ 1871 0254 5F5F554C 		.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
+ 1871      4C414343 
+ 1871      554D5F45 
+ 1871      5053494C 
+ 1871      4F4E5F5F 
+ 1872              	.LASF349:
+ 1873 0275 5F5F4152 		.ascii	"__ARM_PCS 1\000"
+ 1873      4D5F5043 
+ 1873      53203100 
+ 1874              	.LASF354:
+ 1875 0281 5F5F5553 		.ascii	"__USES_INITFINI__ 1\000"
+ 1875      45535F49 
+ 1875      4E495446 
+ 1875      494E495F 
+ 1875      5F203100 
+ 1876              	.LASF357:
+ 1877 0295 414C4941 		.ascii	"ALIAS(f) __attribute__ ((weak, alias (#f)))\000"
+ 1877      53286629 
+ 1877      205F5F61 
+ 1877      74747269 
+ 1877      62757465 
+ 1878              	.LASF344:
+ 1879 02c1 5F5F5646 		.ascii	"__VFP_FP__ 1\000"
+ 1879      505F4650 
+ 1879      5F5F2031 
+ 1879      00
+ 1880              	.LASF324:
+ 1881 02ce 5F5F5349 		.ascii	"__SIZEOF_WINT_T__ 4\000"
+ 1881      5A454F46 
+ 1881      5F57494E 
+ 1881      545F545F 
+ 1881      5F203400 
+ 1882              	.LASF230:
+ 1883 02e2 5F5F5341 		.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 41
+
+
+ 1883      4343554D 
+ 1883      5F455053 
+ 1883      494C4F4E 
+ 1883      5F5F2030 
+ 1884              	.LASF342:
+ 1885 02fe 5F5F5448 		.ascii	"__THUMBEL__ 1\000"
+ 1885      554D4245 
+ 1885      4C5F5F20 
+ 1885      3100
+ 1886              	.LASF351:
+ 1887 030c 5F5F4152 		.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
+ 1887      4D5F4152 
+ 1887      43485F45 
+ 1887      58545F49 
+ 1887      4449565F 
+ 1888              	.LASF133:
+ 1889 0324 5F5F464C 		.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
+ 1889      545F4445 
+ 1889      4E4F524D 
+ 1889      5F4D494E 
+ 1889      5F5F2031 
+ 1890              	.LASF36:
+ 1891 034f 5F5F4348 		.ascii	"__CHAR32_TYPE__ long unsigned int\000"
+ 1891      41523332 
+ 1891      5F545950 
+ 1891      455F5F20 
+ 1891      6C6F6E67 
+ 1892              	.LASF315:
+ 1893 0371 5F5F4743 		.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
+ 1893      435F4154 
+ 1893      4F4D4943 
+ 1893      5F53484F 
+ 1893      52545F4C 
+ 1894              	.LASF2:
+ 1895 0390 5F5F474E 		.ascii	"__GNUC__ 4\000"
+ 1895      55435F5F 
+ 1895      203400
+ 1896              	.LASF245:
+ 1897 039b 5F5F5541 		.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
+ 1897      4343554D 
+ 1897      5F455053 
+ 1897      494C4F4E 
+ 1897      5F5F2030 
+ 1898              	.LASF190:
+ 1899 03b8 5F5F5346 		.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
+ 1899      52414354 
+ 1899      5F455053 
+ 1899      494C4F4E 
+ 1899      5F5F2030 
+ 1900              	.LASF149:
+ 1901 03d4 5F5F4442 		.ascii	"__DBL_HAS_INFINITY__ 1\000"
+ 1901      4C5F4841 
+ 1901      535F494E 
+ 1901      46494E49 
+ 1901      54595F5F 
+ 1902              	.LASF153:
+ 1903 03eb 5F5F4C44 		.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 42
+
+
+ 1903      424C5F4D 
+ 1903      494E5F45 
+ 1903      58505F5F 
+ 1903      20282D31 
+ 1904              	.LASF236:
+ 1905 0404 5F5F4143 		.ascii	"__ACCUM_FBIT__ 15\000"
+ 1905      43554D5F 
+ 1905      46424954 
+ 1905      5F5F2031 
+ 1905      3500
+ 1906              	.LASF299:
+ 1907 0416 5F5F5544 		.ascii	"__UDA_IBIT__ 32\000"
+ 1907      415F4942 
+ 1907      49545F5F 
+ 1907      20333200 
+ 1908              	.LASF247:
+ 1909 0426 5F5F4C41 		.ascii	"__LACCUM_IBIT__ 32\000"
+ 1909      4343554D 
+ 1909      5F494249 
+ 1909      545F5F20 
+ 1909      333200
+ 1910              	.LASF1:
+ 1911 0439 5F5F5354 		.ascii	"__STDC_HOSTED__ 1\000"
+ 1911      44435F48 
+ 1911      4F535445 
+ 1911      445F5F20 
+ 1911      3100
+ 1912              	.LASF75:
+ 1913 044b 5F5F5749 		.ascii	"__WINT_MIN__ 0U\000"
+ 1913      4E545F4D 
+ 1913      494E5F5F 
+ 1913      20305500 
+ 1914              	.LASF157:
+ 1915 045b 5F5F4445 		.ascii	"__DECIMAL_DIG__ 17\000"
+ 1915      43494D41 
+ 1915      4C5F4449 
+ 1915      475F5F20 
+ 1915      313700
+ 1916              	.LASF364:
+ 1917 046e 5F656461 		.ascii	"_edata\000"
+ 1917      746100
+ 1918              	.LASF114:
+ 1919 0475 5F5F5549 		.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
+ 1919      4E545F46 
+ 1919      41535433 
+ 1919      325F4D41 
+ 1919      585F5F20 
+ 1920              	.LASF158:
+ 1921 0495 5F5F4C44 		.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
+ 1921      424C5F4D 
+ 1921      41585F5F 
+ 1921      20312E37 
+ 1921      39373639 
+ 1922              	.LASF187:
+ 1923 04bb 5F5F5346 		.ascii	"__SFRACT_IBIT__ 0\000"
+ 1923      52414354 
+ 1923      5F494249 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 43
+
+
+ 1923      545F5F20 
+ 1923      3000
+ 1924              	.LASF29:
+ 1925 04cd 5F5F5349 		.ascii	"__SIZE_TYPE__ unsigned int\000"
+ 1925      5A455F54 
+ 1925      5950455F 
+ 1925      5F20756E 
+ 1925      7369676E 
+ 1926              	.LASF178:
+ 1927 04e8 5F5F4445 		.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+ 1927      4336345F 
+ 1927      5355424E 
+ 1927      4F524D41 
+ 1927      4C5F4D49 
+ 1928              	.LASF131:
+ 1929 0519 5F5F464C 		.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
+ 1929      545F4D49 
+ 1929      4E5F5F20 
+ 1929      312E3137 
+ 1929      35343934 
+ 1930              	.LASF137:
+ 1931 053d 5F5F4442 		.ascii	"__DBL_MANT_DIG__ 53\000"
+ 1931      4C5F4D41 
+ 1931      4E545F44 
+ 1931      49475F5F 
+ 1931      20353300 
+ 1932              	.LASF207:
+ 1933 0551 5F5F4C46 		.ascii	"__LFRACT_IBIT__ 0\000"
+ 1933      52414354 
+ 1933      5F494249 
+ 1933      545F5F20 
+ 1933      3000
+ 1934              	.LASF53:
+ 1935 0563 5F5F5549 		.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
+ 1935      4E545F4C 
+ 1935      45415354 
+ 1935      36345F54 
+ 1935      5950455F 
+ 1936              	.LASF358:
+ 1937 0590 70756C53 		.ascii	"pulSrc\000"
+ 1937      726300
+ 1938              	.LASF62:
+ 1939 0597 5F5F494E 		.ascii	"__INTPTR_TYPE__ int\000"
+ 1939      54505452 
+ 1939      5F545950 
+ 1939      455F5F20 
+ 1939      696E7400 
+ 1940              	.LASF159:
+ 1941 05ab 5F5F4C44 		.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
+ 1941      424C5F4D 
+ 1941      494E5F5F 
+ 1941      20322E32 
+ 1941      32353037 
+ 1942              	.LASF222:
+ 1943 05d1 5F5F554C 		.ascii	"__ULLFRACT_IBIT__ 0\000"
+ 1943      4C465241 
+ 1943      43545F49 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 44
+
+
+ 1943      4249545F 
+ 1943      5F203000 
+ 1944              	.LASF42:
+ 1945 05e5 5F5F5549 		.ascii	"__UINT8_TYPE__ unsigned char\000"
+ 1945      4E54385F 
+ 1945      54595045 
+ 1945      5F5F2075 
+ 1945      6E736967 
+ 1946              	.LASF373:
+ 1947 0602 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1947      4320342E 
+ 1947      392E3320 
+ 1947      32303135 
+ 1947      30333033 
+ 1948 0635 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -g"
+ 1948      20726576 
+ 1948      6973696F 
+ 1948      6E203232 
+ 1948      31323230 
+ 1949 0668 67646233 		.ascii	"gdb3 -O0 -std=gnu90 -ffunction-sections -fdata-sect"
+ 1949      202D4F30 
+ 1949      202D7374 
+ 1949      643D676E 
+ 1949      75393020 
+ 1950 069b 696F6E73 		.ascii	"ions\000"
+ 1950      00
+ 1951              	.LASF155:
+ 1952 06a0 5F5F4C44 		.ascii	"__LDBL_MAX_EXP__ 1024\000"
+ 1952      424C5F4D 
+ 1952      41585F45 
+ 1952      58505F5F 
+ 1952      20313032 
+ 1953              	.LASF37:
+ 1954 06b6 5F5F5349 		.ascii	"__SIG_ATOMIC_TYPE__ int\000"
+ 1954      475F4154 
+ 1954      4F4D4943 
+ 1954      5F545950 
+ 1954      455F5F20 
+ 1955              	.LASF254:
+ 1956 06ce 5F5F554C 		.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
+ 1956      41434355 
+ 1956      4D5F4D41 
+ 1956      585F5F20 
+ 1956      30584646 
+ 1957              	.LASF19:
+ 1958 06f8 5F5F5349 		.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
+ 1958      5A454F46 
+ 1958      5F4C4F4E 
+ 1958      475F444F 
+ 1958      55424C45 
+ 1959              	.LASF196:
+ 1960 0711 5F5F4652 		.ascii	"__FRACT_FBIT__ 15\000"
+ 1960      4143545F 
+ 1960      46424954 
+ 1960      5F5F2031 
+ 1960      3500
+ 1961              	.LASF219:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 45
+
+
+ 1962 0723 5F5F4C4C 		.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
+ 1962      46524143 
+ 1962      545F4D41 
+ 1962      585F5F20 
+ 1962      30583746 
+ 1963              	.LASF14:
+ 1964 074d 5F5F5349 		.ascii	"__SIZEOF_LONG__ 4\000"
+ 1964      5A454F46 
+ 1964      5F4C4F4E 
+ 1964      475F5F20 
+ 1964      3400
+ 1965              	.LASF173:
+ 1966 075f 5F5F4445 		.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+ 1966      4336345F 
+ 1966      4D494E5F 
+ 1966      4558505F 
+ 1966      5F20282D 
+ 1967              	.LASF319:
+ 1968 0778 5F5F4743 		.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
+ 1968      435F4154 
+ 1968      4F4D4943 
+ 1968      5F544553 
+ 1968      545F414E 
+ 1969              	.LASF96:
+ 1970 079c 5F5F494E 		.ascii	"__INT_LEAST32_MAX__ 2147483647L\000"
+ 1970      545F4C45 
+ 1970      41535433 
+ 1970      325F4D41 
+ 1970      585F5F20 
+ 1971              	.LASF345:
+ 1972 07bc 5F5F4152 		.ascii	"__ARM_FP 12\000"
+ 1972      4D5F4650 
+ 1972      20313200 
+ 1973              	.LASF293:
+ 1974 07c8 5F5F5441 		.ascii	"__TA_IBIT__ 64\000"
+ 1974      5F494249 
+ 1974      545F5F20 
+ 1974      363400
+ 1975              	.LASF163:
+ 1976 07d7 5F5F4C44 		.ascii	"__LDBL_HAS_INFINITY__ 1\000"
+ 1976      424C5F48 
+ 1976      41535F49 
+ 1976      4E46494E 
+ 1976      4954595F 
+ 1977              	.LASF325:
+ 1978 07ef 5F5F5349 		.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
+ 1978      5A454F46 
+ 1978      5F505452 
+ 1978      44494646 
+ 1978      5F545F5F 
+ 1979              	.LASF377:
+ 1980 0806 52657365 		.ascii	"Reset_Handler\000"
+ 1980      745F4861 
+ 1980      6E646C65 
+ 1980      7200
+ 1981              	.LASF314:
+ 1982 0814 5F5F4743 		.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 46
+
+
+ 1982      435F4154 
+ 1982      4F4D4943 
+ 1982      5F574348 
+ 1982      41525F54 
+ 1983              	.LASF38:
+ 1984 0835 5F5F494E 		.ascii	"__INT8_TYPE__ signed char\000"
+ 1984      54385F54 
+ 1984      5950455F 
+ 1984      5F207369 
+ 1984      676E6564 
+ 1985              	.LASF26:
+ 1986 084f 5F5F4259 		.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
+ 1986      54455F4F 
+ 1986      52444552 
+ 1986      5F5F205F 
+ 1986      5F4F5244 
+ 1987              	.LASF209:
+ 1988 0876 5F5F4C46 		.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
+ 1988      52414354 
+ 1988      5F4D4158 
+ 1988      5F5F2030 
+ 1988      58374646 
+ 1989              	.LASF200:
+ 1990 0896 5F5F4652 		.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
+ 1990      4143545F 
+ 1990      45505349 
+ 1990      4C4F4E5F 
+ 1990      5F203078 
+ 1991              	.LASF322:
+ 1992 08b1 5F5F5052 		.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
+ 1992      41474D41 
+ 1992      5F524544 
+ 1992      4546494E 
+ 1992      455F4558 
+ 1993              	.LASF27:
+ 1994 08cd 5F5F464C 		.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
+ 1994      4F41545F 
+ 1994      574F5244 
+ 1994      5F4F5244 
+ 1994      45525F5F 
+ 1995              	.LASF352:
+ 1996 08fa 5F5F4758 		.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
+ 1996      585F5459 
+ 1996      5045494E 
+ 1996      464F5F45 
+ 1996      5155414C 
+ 1997              	.LASF250:
+ 1998 091b 5F5F4C41 		.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
+ 1998      4343554D 
+ 1998      5F455053 
+ 1998      494C4F4E 
+ 1998      5F5F2030 
+ 1999              	.LASF40:
+ 2000 0938 5F5F494E 		.ascii	"__INT32_TYPE__ long int\000"
+ 2000      5433325F 
+ 2000      54595045 
+ 2000      5F5F206C 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 47
+
+
+ 2000      6F6E6720 
+ 2001              	.LASF86:
+ 2002 0950 5F5F494E 		.ascii	"__INT32_MAX__ 2147483647L\000"
+ 2002      5433325F 
+ 2002      4D41585F 
+ 2002      5F203231 
+ 2002      34373438 
+ 2003              	.LASF55:
+ 2004 096a 5F5F494E 		.ascii	"__INT_FAST16_TYPE__ int\000"
+ 2004      545F4641 
+ 2004      53543136 
+ 2004      5F545950 
+ 2004      455F5F20 
+ 2005              	.LASF327:
+ 2006 0982 5F5F4152 		.ascii	"__ARM_FEATURE_SAT 1\000"
+ 2006      4D5F4645 
+ 2006      41545552 
+ 2006      455F5341 
+ 2006      54203100 
+ 2007              	.LASF237:
+ 2008 0996 5F5F4143 		.ascii	"__ACCUM_IBIT__ 16\000"
+ 2008      43554D5F 
+ 2008      49424954 
+ 2008      5F5F2031 
+ 2008      3600
+ 2009              	.LASF65:
+ 2010 09a8 5F5F6861 		.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
+ 2010      735F696E 
+ 2010      636C7564 
+ 2010      655F6E65 
+ 2010      78742853 
+ 2011              	.LASF368:
+ 2012 09da 5F656273 		.ascii	"_ebss_ahb\000"
+ 2012      735F6168 
+ 2012      6200
+ 2013              	.LASF285:
+ 2014 09e4 5F5F5554 		.ascii	"__UTQ_IBIT__ 0\000"
+ 2014      515F4942 
+ 2014      49545F5F 
+ 2014      203000
+ 2015              	.LASF244:
+ 2016 09f3 5F5F5541 		.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
+ 2016      4343554D 
+ 2016      5F4D4158 
+ 2016      5F5F2030 
+ 2016      58464646 
+ 2017              	.LASF39:
+ 2018 0a13 5F5F494E 		.ascii	"__INT16_TYPE__ short int\000"
+ 2018      5431365F 
+ 2018      54595045 
+ 2018      5F5F2073 
+ 2018      686F7274 
+ 2019              	.LASF164:
+ 2020 0a2c 5F5F4C44 		.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
+ 2020      424C5F48 
+ 2020      41535F51 
+ 2020      55494554 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 48
+
+
+ 2020      5F4E414E 
+ 2021              	.LASF260:
+ 2022 0a45 5F5F4C4C 		.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
+ 2022      41434355 
+ 2022      4D5F4550 
+ 2022      53494C4F 
+ 2022      4E5F5F20 
+ 2023              	.LASF18:
+ 2024 0a64 5F5F5349 		.ascii	"__SIZEOF_DOUBLE__ 8\000"
+ 2024      5A454F46 
+ 2024      5F444F55 
+ 2024      424C455F 
+ 2024      5F203800 
+ 2025              	.LASF234:
+ 2026 0a78 5F5F5553 		.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
+ 2026      41434355 
+ 2026      4D5F4D41 
+ 2026      585F5F20 
+ 2026      30584646 
+ 2027              	.LASF115:
+ 2028 0a95 5F5F5549 		.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
+ 2028      4E545F46 
+ 2028      41535436 
+ 2028      345F4D41 
+ 2028      585F5F20 
+ 2029              	.LASF171:
+ 2030 0ac1 5F5F4445 		.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
+ 2030      4333325F 
+ 2030      5355424E 
+ 2030      4F524D41 
+ 2030      4C5F4D49 
+ 2031              	.LASF275:
+ 2032 0ae8 5F5F5451 		.ascii	"__TQ_IBIT__ 0\000"
+ 2032      5F494249 
+ 2032      545F5F20 
+ 2032      3000
+ 2033              	.LASF7:
+ 2034 0af6 5F5F4154 		.ascii	"__ATOMIC_SEQ_CST 5\000"
+ 2034      4F4D4943 
+ 2034      5F534551 
+ 2034      5F435354 
+ 2034      203500
+ 2035              	.LASF271:
+ 2036 0b09 5F5F5351 		.ascii	"__SQ_IBIT__ 0\000"
+ 2036      5F494249 
+ 2036      545F5F20 
+ 2036      3000
+ 2037              	.LASF321:
+ 2038 0b17 5F5F4743 		.ascii	"__GCC_HAVE_DWARF2_CFI_ASM 1\000"
+ 2038      435F4841 
+ 2038      56455F44 
+ 2038      57415246 
+ 2038      325F4346 
+ 2039              	.LASF189:
+ 2040 0b33 5F5F5346 		.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
+ 2040      52414354 
+ 2040      5F4D4158 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 49
+
+
+ 2040      5F5F2030 
+ 2040      58374650 
+ 2041              	.LASF97:
+ 2042 0b4c 5F5F494E 		.ascii	"__INT32_C(c) c ## L\000"
+ 2042      5433325F 
+ 2042      43286329 
+ 2042      20632023 
+ 2042      23204C00 
+ 2043              	.LASF313:
+ 2044 0b60 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
+ 2044      435F4154 
+ 2044      4F4D4943 
+ 2044      5F434841 
+ 2044      5233325F 
+ 2045              	.LASF274:
+ 2046 0b82 5F5F5451 		.ascii	"__TQ_FBIT__ 127\000"
+ 2046      5F464249 
+ 2046      545F5F20 
+ 2046      31323700 
+ 2047              	.LASF175:
+ 2048 0b92 5F5F4445 		.ascii	"__DEC64_MIN__ 1E-383DD\000"
+ 2048      4336345F 
+ 2048      4D494E5F 
+ 2048      5F203145 
+ 2048      2D333833 
+ 2049              	.LASF34:
+ 2050 0ba9 5F5F5549 		.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
+ 2050      4E544D41 
+ 2050      585F5459 
+ 2050      50455F5F 
+ 2050      206C6F6E 
+ 2051              	.LASF302:
+ 2052 0bd1 5F5F5245 		.ascii	"__REGISTER_PREFIX__ \000"
+ 2052      47495354 
+ 2052      45525F50 
+ 2052      52454649 
+ 2052      585F5F20 
+ 2053              	.LASF210:
+ 2054 0be6 5F5F4C46 		.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
+ 2054      52414354 
+ 2054      5F455053 
+ 2054      494C4F4E 
+ 2054      5F5F2030 
+ 2055              	.LASF220:
+ 2056 0c03 5F5F4C4C 		.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
+ 2056      46524143 
+ 2056      545F4550 
+ 2056      53494C4F 
+ 2056      4E5F5F20 
+ 2057              	.LASF15:
+ 2058 0c22 5F5F5349 		.ascii	"__SIZEOF_LONG_LONG__ 8\000"
+ 2058      5A454F46 
+ 2058      5F4C4F4E 
+ 2058      475F4C4F 
+ 2058      4E475F5F 
+ 2059              	.LASF124:
+ 2060 0c39 5F5F464C 		.ascii	"__FLT_DIG__ 6\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 50
+
+
+ 2060      545F4449 
+ 2060      475F5F20 
+ 2060      3600
+ 2061              	.LASF346:
+ 2062 0c47 5F5F4152 		.ascii	"__ARM_NEON_FP 4\000"
+ 2062      4D5F4E45 
+ 2062      4F4E5F46 
+ 2062      50203400 
+ 2063              	.LASF215:
+ 2064 0c57 5F5F554C 		.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
+ 2064      46524143 
+ 2064      545F4550 
+ 2064      53494C4F 
+ 2064      4E5F5F20 
+ 2065              	.LASF47:
+ 2066 0c76 5F5F494E 		.ascii	"__INT_LEAST16_TYPE__ short int\000"
+ 2066      545F4C45 
+ 2066      41535431 
+ 2066      365F5459 
+ 2066      50455F5F 
+ 2067              	.LASF9:
+ 2068 0c95 5F5F4154 		.ascii	"__ATOMIC_RELEASE 3\000"
+ 2068      4F4D4943 
+ 2068      5F52454C 
+ 2068      45415345 
+ 2068      203300
+ 2069              	.LASF121:
+ 2070 0ca8 5F5F4445 		.ascii	"__DEC_EVAL_METHOD__ 2\000"
+ 2070      435F4556 
+ 2070      414C5F4D 
+ 2070      4554484F 
+ 2070      445F5F20 
+ 2071              	.LASF5:
+ 2072 0cbe 5F5F5645 		.ascii	"__VERSION__ \"4.9.3 20150303 (release) [ARM/embedde"
+ 2072      5253494F 
+ 2072      4E5F5F20 
+ 2072      22342E39 
+ 2072      2E332032 
+ 2073 0cf0 642D345F 		.ascii	"d-4_9-branch revision 221220]\"\000"
+ 2073      392D6272 
+ 2073      616E6368 
+ 2073      20726576 
+ 2073      6973696F 
+ 2074              	.LASF305:
+ 2075 0d0f 5F5F4E4F 		.ascii	"__NO_INLINE__ 1\000"
+ 2075      5F494E4C 
+ 2075      494E455F 
+ 2075      5F203100 
+ 2076              	.LASF94:
+ 2077 0d1f 5F5F494E 		.ascii	"__INT_LEAST16_MAX__ 32767\000"
+ 2077      545F4C45 
+ 2077      41535431 
+ 2077      365F4D41 
+ 2077      585F5F20 
+ 2078              	.LASF166:
+ 2079 0d39 5F5F4445 		.ascii	"__DEC32_MIN_EXP__ (-94)\000"
+ 2079      4333325F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 51
+
+
+ 2079      4D494E5F 
+ 2079      4558505F 
+ 2079      5F20282D 
+ 2080              	.LASF167:
+ 2081 0d51 5F5F4445 		.ascii	"__DEC32_MAX_EXP__ 97\000"
+ 2081      4333325F 
+ 2081      4D41585F 
+ 2081      4558505F 
+ 2081      5F203937 
+ 2082              	.LASF258:
+ 2083 0d66 5F5F4C4C 		.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
+ 2083      41434355 
+ 2083      4D5F4D49 
+ 2083      4E5F5F20 
+ 2083      282D3058 
+ 2084              	.LASF326:
+ 2085 0d8d 5F5F4152 		.ascii	"__ARM_FEATURE_QBIT 1\000"
+ 2085      4D5F4645 
+ 2085      41545552 
+ 2085      455F5142 
+ 2085      49542031 
+ 2086              	.LASF93:
+ 2087 0da2 5F5F494E 		.ascii	"__INT8_C(c) c\000"
+ 2087      54385F43 
+ 2087      28632920 
+ 2087      6300
+ 2088              	.LASF213:
+ 2089 0db0 5F5F554C 		.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
+ 2089      46524143 
+ 2089      545F4D49 
+ 2089      4E5F5F20 
+ 2089      302E3055 
+ 2090              	.LASF212:
+ 2091 0dc7 5F5F554C 		.ascii	"__ULFRACT_IBIT__ 0\000"
+ 2091      46524143 
+ 2091      545F4942 
+ 2091      49545F5F 
+ 2091      203000
+ 2092              	.LASF370:
+ 2093 0dda 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2093      20756E73 
+ 2093      69676E65 
+ 2093      6420696E 
+ 2093      7400
+ 2094              	.LASF169:
+ 2095 0dec 5F5F4445 		.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
+ 2095      4333325F 
+ 2095      4D41585F 
+ 2095      5F20392E 
+ 2095      39393939 
+ 2096              	.LASF235:
+ 2097 0e08 5F5F5553 		.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
+ 2097      41434355 
+ 2097      4D5F4550 
+ 2097      53494C4F 
+ 2097      4E5F5F20 
+ 2098              	.LASF3:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 52
+
+
+ 2099 0e26 5F5F474E 		.ascii	"__GNUC_MINOR__ 9\000"
+ 2099      55435F4D 
+ 2099      494E4F52 
+ 2099      5F5F2039 
+ 2099      00
+ 2100              	.LASF348:
+ 2101 0e37 5F5F4152 		.ascii	"__ARM_ARCH_7M__ 1\000"
+ 2101      4D5F4152 
+ 2101      43485F37 
+ 2101      4D5F5F20 
+ 2101      3100
+ 2102              	.LASF84:
+ 2103 0e49 5F5F494E 		.ascii	"__INT8_MAX__ 127\000"
+ 2103      54385F4D 
+ 2103      41585F5F 
+ 2103      20313237 
+ 2103      00
+ 2104              	.LASF119:
+ 2105 0e5a 5F5F4743 		.ascii	"__GCC_IEC_559_COMPLEX 0\000"
+ 2105      435F4945 
+ 2105      435F3535 
+ 2105      395F434F 
+ 2105      4D504C45 
+ 2106              	.LASF242:
+ 2107 0e72 5F5F5541 		.ascii	"__UACCUM_IBIT__ 16\000"
+ 2107      4343554D 
+ 2107      5F494249 
+ 2107      545F5F20 
+ 2107      313600
+ 2108              	.LASF231:
+ 2109 0e85 5F5F5553 		.ascii	"__USACCUM_FBIT__ 8\000"
+ 2109      41434355 
+ 2109      4D5F4642 
+ 2109      49545F5F 
+ 2109      203800
+ 2110              	.LASF91:
+ 2111 0e98 5F5F5549 		.ascii	"__UINT64_MAX__ 18446744073709551615ULL\000"
+ 2111      4E543634 
+ 2111      5F4D4158 
+ 2111      5F5F2031 
+ 2111      38343436 
+ 2112              	.LASF136:
+ 2113 0ebf 5F5F464C 		.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
+ 2113      545F4841 
+ 2113      535F5155 
+ 2113      4945545F 
+ 2113      4E414E5F 
+ 2114              	.LASF201:
+ 2115 0ed7 5F5F5546 		.ascii	"__UFRACT_FBIT__ 16\000"
+ 2115      52414354 
+ 2115      5F464249 
+ 2115      545F5F20 
+ 2115      313600
+ 2116              	.LASF125:
+ 2117 0eea 5F5F464C 		.ascii	"__FLT_MIN_EXP__ (-125)\000"
+ 2117      545F4D49 
+ 2117      4E5F4558 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 53
+
+
+ 2117      505F5F20 
+ 2117      282D3132 
+ 2118              	.LASF92:
+ 2119 0f01 5F5F494E 		.ascii	"__INT_LEAST8_MAX__ 127\000"
+ 2119      545F4C45 
+ 2119      41535438 
+ 2119      5F4D4158 
+ 2119      5F5F2031 
+ 2120              	.LASF204:
+ 2121 0f18 5F5F5546 		.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
+ 2121      52414354 
+ 2121      5F4D4158 
+ 2121      5F5F2030 
+ 2121      58464646 
+ 2122              	.LASF194:
+ 2123 0f34 5F5F5553 		.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
+ 2123      46524143 
+ 2123      545F4D41 
+ 2123      585F5F20 
+ 2123      30584646 
+ 2124              	.LASF111:
+ 2125 0f4f 5F5F494E 		.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
+ 2125      545F4641 
+ 2125      53543634 
+ 2125      5F4D4158 
+ 2125      5F5F2039 
+ 2126              	.LASF24:
+ 2127 0f78 5F5F4F52 		.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
+ 2127      4445525F 
+ 2127      4249475F 
+ 2127      454E4449 
+ 2127      414E5F5F 
+ 2128              	.LASF35:
+ 2129 0f92 5F5F4348 		.ascii	"__CHAR16_TYPE__ short unsigned int\000"
+ 2129      41523136 
+ 2129      5F545950 
+ 2129      455F5F20 
+ 2129      73686F72 
+ 2130              	.LASF193:
+ 2131 0fb5 5F5F5553 		.ascii	"__USFRACT_MIN__ 0.0UHR\000"
+ 2131      46524143 
+ 2131      545F4D49 
+ 2131      4E5F5F20 
+ 2131      302E3055 
+ 2132              	.LASF280:
+ 2133 0fcc 5F5F5553 		.ascii	"__USQ_FBIT__ 32\000"
+ 2133      515F4642 
+ 2133      49545F5F 
+ 2133      20333200 
+ 2134              	.LASF33:
+ 2135 0fdc 5F5F494E 		.ascii	"__INTMAX_TYPE__ long long int\000"
+ 2135      544D4158 
+ 2135      5F545950 
+ 2135      455F5F20 
+ 2135      6C6F6E67 
+ 2136              	.LASF16:
+ 2137 0ffa 5F5F5349 		.ascii	"__SIZEOF_SHORT__ 2\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 54
+
+
+ 2137      5A454F46 
+ 2137      5F53484F 
+ 2137      52545F5F 
+ 2137      203200
+ 2138              	.LASF316:
+ 2139 100d 5F5F4743 		.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
+ 2139      435F4154 
+ 2139      4F4D4943 
+ 2139      5F494E54 
+ 2139      5F4C4F43 
+ 2140              	.LASF270:
+ 2141 102a 5F5F5351 		.ascii	"__SQ_FBIT__ 31\000"
+ 2141      5F464249 
+ 2141      545F5F20 
+ 2141      333100
+ 2142              	.LASF290:
+ 2143 1039 5F5F4441 		.ascii	"__DA_FBIT__ 31\000"
+ 2143      5F464249 
+ 2143      545F5F20 
+ 2143      333100
+ 2144              	.LASF278:
+ 2145 1048 5F5F5548 		.ascii	"__UHQ_FBIT__ 16\000"
+ 2145      515F4642 
+ 2145      49545F5F 
+ 2145      20313600 
+ 2146              	.LASF95:
+ 2147 1058 5F5F494E 		.ascii	"__INT16_C(c) c\000"
+ 2147      5431365F 
+ 2147      43286329 
+ 2147      206300
+ 2148              	.LASF332:
+ 2149 1067 5F5F4152 		.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
+ 2149      4D5F5349 
+ 2149      5A454F46 
+ 2149      5F4D494E 
+ 2149      494D414C 
+ 2150              	.LASF248:
+ 2151 1083 5F5F4C41 		.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
+ 2151      4343554D 
+ 2151      5F4D494E 
+ 2151      5F5F2028 
+ 2151      2D305831 
+ 2152              	.LASF57:
+ 2153 10a7 5F5F494E 		.ascii	"__INT_FAST64_TYPE__ long long int\000"
+ 2153      545F4641 
+ 2153      53543634 
+ 2153      5F545950 
+ 2153      455F5F20 
+ 2154              	.LASF127:
+ 2155 10c9 5F5F464C 		.ascii	"__FLT_MAX_EXP__ 128\000"
+ 2155      545F4D41 
+ 2155      585F4558 
+ 2155      505F5F20 
+ 2155      31323800 
+ 2156              	.LASF297:
+ 2157 10dd 5F5F5553 		.ascii	"__USA_IBIT__ 16\000"
+ 2157      415F4942 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 55
+
+
+ 2157      49545F5F 
+ 2157      20313600 
+ 2158              	.LASF148:
+ 2159 10ed 5F5F4442 		.ascii	"__DBL_HAS_DENORM__ 1\000"
+ 2159      4C5F4841 
+ 2159      535F4445 
+ 2159      4E4F524D 
+ 2159      5F5F2031 
+ 2160              	.LASF263:
+ 2161 1102 5F5F554C 		.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
+ 2161      4C414343 
+ 2161      554D5F4D 
+ 2161      494E5F5F 
+ 2161      20302E30 
+ 2162              	.LASF70:
+ 2163 111b 5F5F4C4F 		.ascii	"__LONG_MAX__ 2147483647L\000"
+ 2163      4E475F4D 
+ 2163      41585F5F 
+ 2163      20323134 
+ 2163      37343833 
+ 2164              	.LASF206:
+ 2165 1134 5F5F4C46 		.ascii	"__LFRACT_FBIT__ 31\000"
+ 2165      52414354 
+ 2165      5F464249 
+ 2165      545F5F20 
+ 2165      333100
+ 2166              	.LASF337:
+ 2167 1147 5F5F4150 		.ascii	"__APCS_32__ 1\000"
+ 2167      43535F33 
+ 2167      325F5F20 
+ 2167      3100
+ 2168              	.LASF262:
+ 2169 1155 5F5F554C 		.ascii	"__ULLACCUM_IBIT__ 32\000"
+ 2169      4C414343 
+ 2169      554D5F49 
+ 2169      4249545F 
+ 2169      5F203332 
+ 2170              	.LASF267:
+ 2171 116a 5F5F5151 		.ascii	"__QQ_IBIT__ 0\000"
+ 2171      5F494249 
+ 2171      545F5F20 
+ 2171      3000
+ 2172              	.LASF211:
+ 2173 1178 5F5F554C 		.ascii	"__ULFRACT_FBIT__ 32\000"
+ 2173      46524143 
+ 2173      545F4642 
+ 2173      49545F5F 
+ 2173      20333200 
+ 2174              	.LASF180:
+ 2175 118c 5F5F4445 		.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
+ 2175      43313238 
+ 2175      5F4D494E 
+ 2175      5F455850 
+ 2175      5F5F2028 
+ 2176              	.LASF71:
+ 2177 11a7 5F5F4C4F 		.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
+ 2177      4E475F4C 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 56
+
+
+ 2177      4F4E475F 
+ 2177      4D41585F 
+ 2177      5F203932 
+ 2178              	.LASF4:
+ 2179 11cf 5F5F474E 		.ascii	"__GNUC_PATCHLEVEL__ 3\000"
+ 2179      55435F50 
+ 2179      41544348 
+ 2179      4C455645 
+ 2179      4C5F5F20 
+ 2180              	.LASF186:
+ 2181 11e5 5F5F5346 		.ascii	"__SFRACT_FBIT__ 7\000"
+ 2181      52414354 
+ 2181      5F464249 
+ 2181      545F5F20 
+ 2181      3700
+ 2182              	.LASF143:
+ 2183 11f7 5F5F4442 		.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+ 2183      4C5F4445 
+ 2183      43494D41 
+ 2183      4C5F4449 
+ 2183      475F5F20 
+ 2184              	.LASF138:
+ 2185 120e 5F5F4442 		.ascii	"__DBL_DIG__ 15\000"
+ 2185      4C5F4449 
+ 2185      475F5F20 
+ 2185      313500
+ 2186              	.LASF104:
+ 2187 121d 5F5F5549 		.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
+ 2187      4E545F4C 
+ 2187      45415354 
+ 2187      33325F4D 
+ 2187      41585F5F 
+ 2188              	.LASF129:
+ 2189 123f 5F5F464C 		.ascii	"__FLT_DECIMAL_DIG__ 9\000"
+ 2189      545F4445 
+ 2189      43494D41 
+ 2189      4C5F4449 
+ 2189      475F5F20 
+ 2190              	.LASF85:
+ 2191 1255 5F5F494E 		.ascii	"__INT16_MAX__ 32767\000"
+ 2191      5431365F 
+ 2191      4D41585F 
+ 2191      5F203332 
+ 2191      37363700 
+ 2192              	.LASF154:
+ 2193 1269 5F5F4C44 		.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
+ 2193      424C5F4D 
+ 2193      494E5F31 
+ 2193      305F4558 
+ 2193      505F5F20 
+ 2194              	.LASF329:
+ 2195 1284 5F5F4152 		.ascii	"__ARM_32BIT_STATE 1\000"
+ 2195      4D5F3332 
+ 2195      4249545F 
+ 2195      53544154 
+ 2195      45203100 
+ 2196              	.LASF13:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 57
+
+
+ 2197 1298 5F5F5349 		.ascii	"__SIZEOF_INT__ 4\000"
+ 2197      5A454F46 
+ 2197      5F494E54 
+ 2197      5F5F2034 
+ 2197      00
+ 2198              	.LASF41:
+ 2199 12a9 5F5F494E 		.ascii	"__INT64_TYPE__ long long int\000"
+ 2199      5436345F 
+ 2199      54595045 
+ 2199      5F5F206C 
+ 2199      6F6E6720 
+ 2200              	.LASF306:
+ 2201 12c6 5F5F4348 		.ascii	"__CHAR_UNSIGNED__ 1\000"
+ 2201      41525F55 
+ 2201      4E534947 
+ 2201      4E45445F 
+ 2201      5F203100 
+ 2202              	.LASF181:
+ 2203 12da 5F5F4445 		.ascii	"__DEC128_MAX_EXP__ 6145\000"
+ 2203      43313238 
+ 2203      5F4D4158 
+ 2203      5F455850 
+ 2203      5F5F2036 
+ 2204              	.LASF272:
+ 2205 12f2 5F5F4451 		.ascii	"__DQ_FBIT__ 63\000"
+ 2205      5F464249 
+ 2205      545F5F20 
+ 2205      363300
+ 2206              	.LASF309:
+ 2207 1301 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
+ 2207      435F4841 
+ 2207      56455F53 
+ 2207      594E435F 
+ 2207      434F4D50 
+ 2208              	.LASF371:
+ 2209 1326 73697A65 		.ascii	"sizetype\000"
+ 2209      74797065 
+ 2209      00
+ 2210              	.LASF241:
+ 2211 132f 5F5F5541 		.ascii	"__UACCUM_FBIT__ 16\000"
+ 2211      4343554D 
+ 2211      5F464249 
+ 2211      545F5F20 
+ 2211      313600
+ 2212              	.LASF161:
+ 2213 1342 5F5F4C44 		.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
+ 2213      424C5F44 
+ 2213      454E4F52 
+ 2213      4D5F4D49 
+ 2213      4E5F5F20 
+ 2214              	.LASF174:
+ 2215 136f 5F5F4445 		.ascii	"__DEC64_MAX_EXP__ 385\000"
+ 2215      4336345F 
+ 2215      4D41585F 
+ 2215      4558505F 
+ 2215      5F203338 
+ 2216              	.LASF147:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 58
+
+
+ 2217 1385 5F5F4442 		.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
+ 2217      4C5F4445 
+ 2217      4E4F524D 
+ 2217      5F4D494E 
+ 2217      5F5F2028 
+ 2218 13b8 4C2900   		.ascii	"L)\000"
+ 2219              	.LASF365:
+ 2220 13bb 5F736273 		.ascii	"_sbss\000"
+ 2220      7300
+ 2221              	.LASF123:
+ 2222 13c1 5F5F464C 		.ascii	"__FLT_MANT_DIG__ 24\000"
+ 2222      545F4D41 
+ 2222      4E545F44 
+ 2222      49475F5F 
+ 2222      20323400 
+ 2223              	.LASF22:
+ 2224 13d5 5F5F4249 		.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
+ 2224      47474553 
+ 2224      545F414C 
+ 2224      49474E4D 
+ 2224      454E545F 
+ 2225              	.LASF359:
+ 2226 13ed 70756C44 		.ascii	"pulDest\000"
+ 2226      65737400 
+ 2227              	.LASF54:
+ 2228 13f5 5F5F494E 		.ascii	"__INT_FAST8_TYPE__ int\000"
+ 2228      545F4641 
+ 2228      5354385F 
+ 2228      54595045 
+ 2228      5F5F2069 
+ 2229              	.LASF372:
+ 2230 140c 675F7066 		.ascii	"g_pfnVectors\000"
+ 2230      6E566563 
+ 2230      746F7273 
+ 2230      00
+ 2231              	.LASF336:
+ 2232 1419 5F5F4152 		.ascii	"__ARM_ARCH 7\000"
+ 2232      4D5F4152 
+ 2232      43482037 
+ 2232      00
+ 2233              	.LASF295:
+ 2234 1426 5F5F5548 		.ascii	"__UHA_IBIT__ 8\000"
+ 2234      415F4942 
+ 2234      49545F5F 
+ 2234      203800
+ 2235              	.LASF276:
+ 2236 1435 5F5F5551 		.ascii	"__UQQ_FBIT__ 8\000"
+ 2236      515F4642 
+ 2236      49545F5F 
+ 2236      203800
+ 2237              	.LASF176:
+ 2238 1444 5F5F4445 		.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
+ 2238      4336345F 
+ 2238      4D41585F 
+ 2238      5F20392E 
+ 2238      39393939 
+ 2239              	.LASF226:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 59
+
+
+ 2240 146a 5F5F5341 		.ascii	"__SACCUM_FBIT__ 7\000"
+ 2240      4343554D 
+ 2240      5F464249 
+ 2240      545F5F20 
+ 2240      3700
+ 2241              	.LASF183:
+ 2242 147c 5F5F4445 		.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
+ 2242      43313238 
+ 2242      5F4D4158 
+ 2242      5F5F2039 
+ 2242      2E393939 
+ 2243 14af 36313434 		.ascii	"6144DL\000"
+ 2243      444C00
+ 2244              	.LASF340:
+ 2245 14b6 5F5F4152 		.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
+ 2245      4D5F4152 
+ 2245      43485F49 
+ 2245      53415F54 
+ 2245      48554D42 
+ 2246              	.LASF109:
+ 2247 14cd 5F5F494E 		.ascii	"__INT_FAST16_MAX__ 2147483647\000"
+ 2247      545F4641 
+ 2247      53543136 
+ 2247      5F4D4158 
+ 2247      5F5F2032 
+ 2248              	.LASF51:
+ 2249 14eb 5F5F5549 		.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
+ 2249      4E545F4C 
+ 2249      45415354 
+ 2249      31365F54 
+ 2249      5950455F 
+ 2250              	.LASF284:
+ 2251 1514 5F5F5554 		.ascii	"__UTQ_FBIT__ 128\000"
+ 2251      515F4642 
+ 2251      49545F5F 
+ 2251      20313238 
+ 2251      00
+ 2252              	.LASF141:
+ 2253 1525 5F5F4442 		.ascii	"__DBL_MAX_EXP__ 1024\000"
+ 2253      4C5F4D41 
+ 2253      585F4558 
+ 2253      505F5F20 
+ 2253      31303234 
+ 2254              	.LASF0:
+ 2255 153a 5F5F5354 		.ascii	"__STDC__ 1\000"
+ 2255      44435F5F 
+ 2255      203100
+ 2256              	.LASF353:
+ 2257 1545 5F5F454C 		.ascii	"__ELF__ 1\000"
+ 2257      465F5F20 
+ 2257      3100
+ 2258              	.LASF374:
+ 2259 154f 73797374 		.ascii	"system/startup_LPC17xx.c\000"
+ 2259      656D2F73 
+ 2259      74617274 
+ 2259      75705F4C 
+ 2259      50433137 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 60
+
+
+ 2260              	.LASF120:
+ 2261 1568 5F5F464C 		.ascii	"__FLT_EVAL_METHOD__ 0\000"
+ 2261      545F4556 
+ 2261      414C5F4D 
+ 2261      4554484F 
+ 2261      445F5F20 
+ 2262              	.LASF301:
+ 2263 157e 5F5F5554 		.ascii	"__UTA_IBIT__ 64\000"
+ 2263      415F4942 
+ 2263      49545F5F 
+ 2263      20363400 
+ 2264              	.LASF8:
+ 2265 158e 5F5F4154 		.ascii	"__ATOMIC_ACQUIRE 2\000"
+ 2265      4F4D4943 
+ 2265      5F414351 
+ 2265      55495245 
+ 2265      203200
+ 2266              	.LASF177:
+ 2267 15a1 5F5F4445 		.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
+ 2267      4336345F 
+ 2267      45505349 
+ 2267      4C4F4E5F 
+ 2267      5F203145 
+ 2268              	.LASF311:
+ 2269 15bb 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 2\000"
+ 2269      435F4154 
+ 2269      4F4D4943 
+ 2269      5F434841 
+ 2269      525F4C4F 
+ 2270              	.LASF184:
+ 2271 15d9 5F5F4445 		.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+ 2271      43313238 
+ 2271      5F455053 
+ 2271      494C4F4E 
+ 2271      5F5F2031 
+ 2272              	.LASF283:
+ 2273 15f4 5F5F5544 		.ascii	"__UDQ_IBIT__ 0\000"
+ 2273      515F4942 
+ 2273      49545F5F 
+ 2273      203000
+ 2274              	.LASF323:
+ 2275 1603 5F5F5349 		.ascii	"__SIZEOF_WCHAR_T__ 4\000"
+ 2275      5A454F46 
+ 2275      5F574348 
+ 2275      41525F54 
+ 2275      5F5F2034 
+ 2276              	.LASF90:
+ 2277 1618 5F5F5549 		.ascii	"__UINT32_MAX__ 4294967295UL\000"
+ 2277      4E543332 
+ 2277      5F4D4158 
+ 2277      5F5F2034 
+ 2277      32393439 
+ 2278              	.LASF60:
+ 2279 1634 5F5F5549 		.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
+ 2279      4E545F46 
+ 2279      41535433 
+ 2279      325F5459 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 61
+
+
+ 2279      50455F5F 
+ 2280              	.LASF152:
+ 2281 1656 5F5F4C44 		.ascii	"__LDBL_DIG__ 15\000"
+ 2281      424C5F44 
+ 2281      49475F5F 
+ 2281      20313500 
+ 2282              	.LASF331:
+ 2283 1666 5F5F4152 		.ascii	"__ARM_FEATURE_CLZ 1\000"
+ 2283      4D5F4645 
+ 2283      41545552 
+ 2283      455F434C 
+ 2283      5A203100 
+ 2284              	.LASF160:
+ 2285 167a 5F5F4C44 		.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
+ 2285      424C5F45 
+ 2285      5053494C 
+ 2285      4F4E5F5F 
+ 2285      20322E32 
+ 2286              	.LASF291:
+ 2287 16a3 5F5F4441 		.ascii	"__DA_IBIT__ 32\000"
+ 2287      5F494249 
+ 2287      545F5F20 
+ 2287      333200
+ 2288              	.LASF304:
+ 2289 16b2 5F5F474E 		.ascii	"__GNUC_GNU_INLINE__ 1\000"
+ 2289      55435F47 
+ 2289      4E555F49 
+ 2289      4E4C494E 
+ 2289      455F5F20 
+ 2290              	.LASF191:
+ 2291 16c8 5F5F5553 		.ascii	"__USFRACT_FBIT__ 8\000"
+ 2291      46524143 
+ 2291      545F4642 
+ 2291      49545F5F 
+ 2291      203800
+ 2292              	.LASF266:
+ 2293 16db 5F5F5151 		.ascii	"__QQ_FBIT__ 7\000"
+ 2293      5F464249 
+ 2293      545F5F20 
+ 2293      3700
+ 2294              	.LASF287:
+ 2295 16e9 5F5F4841 		.ascii	"__HA_IBIT__ 8\000"
+ 2295      5F494249 
+ 2295      545F5F20 
+ 2295      3800
+ 2296              	.LASF44:
+ 2297 16f7 5F5F5549 		.ascii	"__UINT32_TYPE__ long unsigned int\000"
+ 2297      4E543332 
+ 2297      5F545950 
+ 2297      455F5F20 
+ 2297      6C6F6E67 
+ 2298              	.LASF105:
+ 2299 1719 5F5F5549 		.ascii	"__UINT32_C(c) c ## UL\000"
+ 2299      4E543332 
+ 2299      5F432863 
+ 2299      29206320 
+ 2299      23232055 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 62
+
+
+ 2300              	.LASF203:
+ 2301 172f 5F5F5546 		.ascii	"__UFRACT_MIN__ 0.0UR\000"
+ 2301      52414354 
+ 2301      5F4D494E 
+ 2301      5F5F2030 
+ 2301      2E305552 
+ 2302              	.LASF335:
+ 2303 1744 5F5F6172 		.ascii	"__arm__ 1\000"
+ 2303      6D5F5F20 
+ 2303      3100
+ 2304              	.LASF48:
+ 2305 174e 5F5F494E 		.ascii	"__INT_LEAST32_TYPE__ long int\000"
+ 2305      545F4C45 
+ 2305      41535433 
+ 2305      325F5459 
+ 2305      50455F5F 
+ 2306              	.LASF89:
+ 2307 176c 5F5F5549 		.ascii	"__UINT16_MAX__ 65535\000"
+ 2307      4E543136 
+ 2307      5F4D4158 
+ 2307      5F5F2036 
+ 2307      35353335 
+ 2308              	.LASF179:
+ 2309 1781 5F5F4445 		.ascii	"__DEC128_MANT_DIG__ 34\000"
+ 2309      43313238 
+ 2309      5F4D414E 
+ 2309      545F4449 
+ 2309      475F5F20 
+ 2310              	.LASF128:
+ 2311 1798 5F5F464C 		.ascii	"__FLT_MAX_10_EXP__ 38\000"
+ 2311      545F4D41 
+ 2311      585F3130 
+ 2311      5F455850 
+ 2311      5F5F2033 
+ 2312              	.LASF130:
+ 2313 17ae 5F5F464C 		.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
+ 2313      545F4D41 
+ 2313      585F5F20 
+ 2313      332E3430 
+ 2313      32383233 
+ 2314              	.LASF318:
+ 2315 17d2 5F5F4743 		.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
+ 2315      435F4154 
+ 2315      4F4D4943 
+ 2315      5F4C4C4F 
+ 2315      4E475F4C 
+ 2316              	.LASF76:
+ 2317 17f1 5F5F5054 		.ascii	"__PTRDIFF_MAX__ 2147483647\000"
+ 2317      52444946 
+ 2317      465F4D41 
+ 2317      585F5F20 
+ 2317      32313437 
+ 2318              	.LASF77:
+ 2319 180c 5F5F5349 		.ascii	"__SIZE_MAX__ 4294967295U\000"
+ 2319      5A455F4D 
+ 2319      41585F5F 
+ 2319      20343239 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 63
+
+
+ 2319      34393637 
+ 2320              	.LASF188:
+ 2321 1825 5F5F5346 		.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
+ 2321      52414354 
+ 2321      5F4D494E 
+ 2321      5F5F2028 
+ 2321      2D302E35 
+ 2322              	.LASF294:
+ 2323 1843 5F5F5548 		.ascii	"__UHA_FBIT__ 8\000"
+ 2323      415F4642 
+ 2323      49545F5F 
+ 2323      203800
+ 2324              	.LASF339:
+ 2325 1852 5F5F7468 		.ascii	"__thumb2__ 1\000"
+ 2325      756D6232 
+ 2325      5F5F2031 
+ 2325      00
+ 2326              	.LASF273:
+ 2327 185f 5F5F4451 		.ascii	"__DQ_IBIT__ 0\000"
+ 2327      5F494249 
+ 2327      545F5F20 
+ 2327      3000
+ 2328              	.LASF79:
+ 2329 186d 5F5F494E 		.ascii	"__INTMAX_C(c) c ## LL\000"
+ 2329      544D4158 
+ 2329      5F432863 
+ 2329      29206320 
+ 2329      2323204C 
+ 2330              	.LASF317:
+ 2331 1883 5F5F4743 		.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
+ 2331      435F4154 
+ 2331      4F4D4943 
+ 2331      5F4C4F4E 
+ 2331      475F4C4F 
+ 2332              	.LASF52:
+ 2333 18a1 5F5F5549 		.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
+ 2333      4E545F4C 
+ 2333      45415354 
+ 2333      33325F54 
+ 2333      5950455F 
+ 2334              	.LASF99:
+ 2335 18c9 5F5F494E 		.ascii	"__INT64_C(c) c ## LL\000"
+ 2335      5436345F 
+ 2335      43286329 
+ 2335      20632023 
+ 2335      23204C4C 
+ 2336              	.LASF279:
+ 2337 18de 5F5F5548 		.ascii	"__UHQ_IBIT__ 0\000"
+ 2337      515F4942 
+ 2337      49545F5F 
+ 2337      203000
+ 2338              	.LASF46:
+ 2339 18ed 5F5F494E 		.ascii	"__INT_LEAST8_TYPE__ signed char\000"
+ 2339      545F4C45 
+ 2339      41535438 
+ 2339      5F545950 
+ 2339      455F5F20 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 64
+
+
+ 2340              	.LASF103:
+ 2341 190d 5F5F5549 		.ascii	"__UINT16_C(c) c\000"
+ 2341      4E543136 
+ 2341      5F432863 
+ 2341      29206300 
+ 2342              	.LASF310:
+ 2343 191d 5F5F4743 		.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 2\000"
+ 2343      435F4154 
+ 2343      4F4D4943 
+ 2343      5F424F4F 
+ 2343      4C5F4C4F 
+ 2344              	.LASF17:
+ 2345 193b 5F5F5349 		.ascii	"__SIZEOF_FLOAT__ 4\000"
+ 2345      5A454F46 
+ 2345      5F464C4F 
+ 2345      41545F5F 
+ 2345      203400
+ 2346              	.LASF347:
+ 2347 194e 5F5F5448 		.ascii	"__THUMB_INTERWORK__ 1\000"
+ 2347      554D425F 
+ 2347      494E5445 
+ 2347      52574F52 
+ 2347      4B5F5F20 
+ 2348              	.LASF142:
+ 2349 1964 5F5F4442 		.ascii	"__DBL_MAX_10_EXP__ 308\000"
+ 2349      4C5F4D41 
+ 2349      585F3130 
+ 2349      5F455850 
+ 2349      5F5F2033 
+ 2350              	.LASF102:
+ 2351 197b 5F5F5549 		.ascii	"__UINT_LEAST16_MAX__ 65535\000"
+ 2351      4E545F4C 
+ 2351      45415354 
+ 2351      31365F4D 
+ 2351      41585F5F 
+ 2352              	.LASF132:
+ 2353 1996 5F5F464C 		.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
+ 2353      545F4550 
+ 2353      53494C4F 
+ 2353      4E5F5F20 
+ 2353      312E3139 
+ 2354              	.LASF25:
+ 2355 19bd 5F5F4F52 		.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
+ 2355      4445525F 
+ 2355      5044505F 
+ 2355      454E4449 
+ 2355      414E5F5F 
+ 2356              	.LASF320:
+ 2357 19d7 5F5F4743 		.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 2\000"
+ 2357      435F4154 
+ 2357      4F4D4943 
+ 2357      5F504F49 
+ 2357      4E544552 
+ 2358              	.LASF232:
+ 2359 19f8 5F5F5553 		.ascii	"__USACCUM_IBIT__ 8\000"
+ 2359      41434355 
+ 2359      4D5F4942 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 65
+
+
+ 2359      49545F5F 
+ 2359      203800
+ 2360              	.LASF23:
+ 2361 1a0b 5F5F4F52 		.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
+ 2361      4445525F 
+ 2361      4C495454 
+ 2361      4C455F45 
+ 2361      4E444941 
+ 2362              	.LASF32:
+ 2363 1a28 5F5F5749 		.ascii	"__WINT_TYPE__ unsigned int\000"
+ 2363      4E545F54 
+ 2363      5950455F 
+ 2363      5F20756E 
+ 2363      7369676E 
+ 2364              	.LASF330:
+ 2365 1a43 5F5F4152 		.ascii	"__ARM_FEATURE_LDREX 7\000"
+ 2365      4D5F4645 
+ 2365      41545552 
+ 2365      455F4C44 
+ 2365      52455820 
+ 2366              	.LASF49:
+ 2367 1a59 5F5F494E 		.ascii	"__INT_LEAST64_TYPE__ long long int\000"
+ 2367      545F4C45 
+ 2367      41535436 
+ 2367      345F5459 
+ 2367      50455F5F 
+ 2368              	.LASF6:
+ 2369 1a7c 5F5F4154 		.ascii	"__ATOMIC_RELAXED 0\000"
+ 2369      4F4D4943 
+ 2369      5F52454C 
+ 2369      41584544 
+ 2369      203000
+ 2370              	.LASF12:
+ 2371 1a8f 5F5F4649 		.ascii	"__FINITE_MATH_ONLY__ 0\000"
+ 2371      4E495445 
+ 2371      5F4D4154 
+ 2371      485F4F4E 
+ 2371      4C595F5F 
+ 2372              	.LASF249:
+ 2373 1aa6 5F5F4C41 		.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
+ 2373      4343554D 
+ 2373      5F4D4158 
+ 2373      5F5F2030 
+ 2373      58374646 
+ 2374              	.LASF182:
+ 2375 1ace 5F5F4445 		.ascii	"__DEC128_MIN__ 1E-6143DL\000"
+ 2375      43313238 
+ 2375      5F4D494E 
+ 2375      5F5F2031 
+ 2375      452D3631 
+ 2376              	.LASF165:
+ 2377 1ae7 5F5F4445 		.ascii	"__DEC32_MANT_DIG__ 7\000"
+ 2377      4333325F 
+ 2377      4D414E54 
+ 2377      5F444947 
+ 2377      5F5F2037 
+ 2378              	.LASF118:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 66
+
+
+ 2379 1afc 5F5F4743 		.ascii	"__GCC_IEC_559 0\000"
+ 2379      435F4945 
+ 2379      435F3535 
+ 2379      39203000 
+ 2380              	.LASF239:
+ 2381 1b0c 5F5F4143 		.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
+ 2381      43554D5F 
+ 2381      4D41585F 
+ 2381      5F203058 
+ 2381      37464646 
+ 2382              	.LASF82:
+ 2383 1b2a 5F5F5349 		.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
+ 2383      475F4154 
+ 2383      4F4D4943 
+ 2383      5F4D4158 
+ 2383      5F5F2032 
+ 2384              	.LASF369:
+ 2385 1b48 5F657374 		.ascii	"_estack\000"
+ 2385      61636B00 
+ 2386              	.LASF229:
+ 2387 1b50 5F5F5341 		.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
+ 2387      4343554D 
+ 2387      5F4D4158 
+ 2387      5F5F2030 
+ 2387      58374646 
+ 2388              	.LASF78:
+ 2389 1b6b 5F5F494E 		.ascii	"__INTMAX_MAX__ 9223372036854775807LL\000"
+ 2389      544D4158 
+ 2389      5F4D4158 
+ 2389      5F5F2039 
+ 2389      32323333 
+ 2390              	.LASF66:
+ 2391 1b90 5F5F4758 		.ascii	"__GXX_ABI_VERSION 1002\000"
+ 2391      585F4142 
+ 2391      495F5645 
+ 2391      5253494F 
+ 2391      4E203130 
+ 2392              	.LASF192:
+ 2393 1ba7 5F5F5553 		.ascii	"__USFRACT_IBIT__ 0\000"
+ 2393      46524143 
+ 2393      545F4942 
+ 2393      49545F5F 
+ 2393      203000
+ 2394              	.LASF288:
+ 2395 1bba 5F5F5341 		.ascii	"__SA_FBIT__ 15\000"
+ 2395      5F464249 
+ 2395      545F5F20 
+ 2395      313500
+ 2396              	.LASF252:
+ 2397 1bc9 5F5F554C 		.ascii	"__ULACCUM_IBIT__ 32\000"
+ 2397      41434355 
+ 2397      4D5F4942 
+ 2397      49545F5F 
+ 2397      20333200 
+ 2398              	.LASF341:
+ 2399 1bdd 5F5F4152 		.ascii	"__ARMEL__ 1\000"
+ 2399      4D454C5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 67
+
+
+ 2399      5F203100 
+ 2400              	.LASF282:
+ 2401 1be9 5F5F5544 		.ascii	"__UDQ_FBIT__ 64\000"
+ 2401      515F4642 
+ 2401      49545F5F 
+ 2401      20363400 
+ 2402              	.LASF269:
+ 2403 1bf9 5F5F4851 		.ascii	"__HQ_IBIT__ 0\000"
+ 2403      5F494249 
+ 2403      545F5F20 
+ 2403      3000
+ 2404              	.LASF139:
+ 2405 1c07 5F5F4442 		.ascii	"__DBL_MIN_EXP__ (-1021)\000"
+ 2405      4C5F4D49 
+ 2405      4E5F4558 
+ 2405      505F5F20 
+ 2405      282D3130 
+ 2406              	.LASF360:
+ 2407 1c1f 5F696E69 		.ascii	"_init\000"
+ 2407      7400
+ 2408              	.LASF286:
+ 2409 1c25 5F5F4841 		.ascii	"__HA_FBIT__ 7\000"
+ 2409      5F464249 
+ 2409      545F5F20 
+ 2409      3700
+ 2410              	.LASF151:
+ 2411 1c33 5F5F4C44 		.ascii	"__LDBL_MANT_DIG__ 53\000"
+ 2411      424C5F4D 
+ 2411      414E545F 
+ 2411      4449475F 
+ 2411      5F203533 
+ 2412              	.LASF205:
+ 2413 1c48 5F5F5546 		.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
+ 2413      52414354 
+ 2413      5F455053 
+ 2413      494C4F4E 
+ 2413      5F5F2030 
+ 2414              	.LASF63:
+ 2415 1c65 5F5F5549 		.ascii	"__UINTPTR_TYPE__ unsigned int\000"
+ 2415      4E545054 
+ 2415      525F5459 
+ 2415      50455F5F 
+ 2415      20756E73 
+ 2416              	.LASF350:
+ 2417 1c83 5F5F4152 		.ascii	"__ARM_EABI__ 1\000"
+ 2417      4D5F4541 
+ 2417      42495F5F 
+ 2417      203100
+ 2418              	.LASF122:
+ 2419 1c92 5F5F464C 		.ascii	"__FLT_RADIX__ 2\000"
+ 2419      545F5241 
+ 2419      4449585F 
+ 2419      5F203200 
+ 2420              	.LASF74:
+ 2421 1ca2 5F5F5749 		.ascii	"__WINT_MAX__ 4294967295U\000"
+ 2421      4E545F4D 
+ 2421      41585F5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 68
+
+
+ 2421      20343239 
+ 2421      34393637 
+ 2422              	.LASF228:
+ 2423 1cbb 5F5F5341 		.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
+ 2423      4343554D 
+ 2423      5F4D494E 
+ 2423      5F5F2028 
+ 2423      2D305831 
+ 2424              	.LASF135:
+ 2425 1cdd 5F5F464C 		.ascii	"__FLT_HAS_INFINITY__ 1\000"
+ 2425      545F4841 
+ 2425      535F494E 
+ 2425      46494E49 
+ 2425      54595F5F 
+ 2426              	.LASF73:
+ 2427 1cf4 5F5F5743 		.ascii	"__WCHAR_MIN__ 0U\000"
+ 2427      4841525F 
+ 2427      4D494E5F 
+ 2427      5F203055 
+ 2427      00
+ 2428              	.LASF68:
+ 2429 1d05 5F5F5348 		.ascii	"__SHRT_MAX__ 32767\000"
+ 2429      52545F4D 
+ 2429      41585F5F 
+ 2429      20333237 
+ 2429      363700
+ 2430              	.LASF106:
+ 2431 1d18 5F5F5549 		.ascii	"__UINT_LEAST64_MAX__ 18446744073709551615ULL\000"
+ 2431      4E545F4C 
+ 2431      45415354 
+ 2431      36345F4D 
+ 2431      41585F5F 
+ 2432              	.LASF156:
+ 2433 1d45 5F5F4C44 		.ascii	"__LDBL_MAX_10_EXP__ 308\000"
+ 2433      424C5F4D 
+ 2433      41585F31 
+ 2433      305F4558 
+ 2433      505F5F20 
+ 2434              	.LASF202:
+ 2435 1d5d 5F5F5546 		.ascii	"__UFRACT_IBIT__ 0\000"
+ 2435      52414354 
+ 2435      5F494249 
+ 2435      545F5F20 
+ 2435      3000
+ 2436              	.LASF225:
+ 2437 1d6f 5F5F554C 		.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
+ 2437      4C465241 
+ 2437      43545F45 
+ 2437      5053494C 
+ 2437      4F4E5F5F 
+ 2438              	.LASF110:
+ 2439 1d90 5F5F494E 		.ascii	"__INT_FAST32_MAX__ 2147483647\000"
+ 2439      545F4641 
+ 2439      53543332 
+ 2439      5F4D4158 
+ 2439      5F5F2032 
+ 2440              	.LASF281:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 69
+
+
+ 2441 1dae 5F5F5553 		.ascii	"__USQ_IBIT__ 0\000"
+ 2441      515F4942 
+ 2441      49545F5F 
+ 2441      203000
+ 2442              	.LASF356:
+ 2443 1dbd 5745414B 		.ascii	"WEAK __attribute__ ((weak))\000"
+ 2443      205F5F61 
+ 2443      74747269 
+ 2443      62757465 
+ 2443      5F5F2028 
+ 2444              	.LASF58:
+ 2445 1dd9 5F5F5549 		.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
+ 2445      4E545F46 
+ 2445      41535438 
+ 2445      5F545950 
+ 2445      455F5F20 
+ 2446              	.LASF30:
+ 2447 1dfa 5F5F5054 		.ascii	"__PTRDIFF_TYPE__ int\000"
+ 2447      52444946 
+ 2447      465F5459 
+ 2447      50455F5F 
+ 2447      20696E74 
+ 2448              	.LASF162:
+ 2449 1e0f 5F5F4C44 		.ascii	"__LDBL_HAS_DENORM__ 1\000"
+ 2449      424C5F48 
+ 2449      41535F44 
+ 2449      454E4F52 
+ 2449      4D5F5F20 
+ 2450              	.LASF361:
+ 2451 1e25 44656661 		.ascii	"Default_Handler\000"
+ 2451      756C745F 
+ 2451      48616E64 
+ 2451      6C657200 
+ 2452              	.LASF31:
+ 2453 1e35 5F5F5743 		.ascii	"__WCHAR_TYPE__ unsigned int\000"
+ 2453      4841525F 
+ 2453      54595045 
+ 2453      5F5F2075 
+ 2453      6E736967 
+ 2454              	.LASF312:
+ 2455 1e51 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
+ 2455      435F4154 
+ 2455      4F4D4943 
+ 2455      5F434841 
+ 2455      5231365F 
+ 2456              	.LASF146:
+ 2457 1e73 5F5F4442 		.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
+ 2457      4C5F4550 
+ 2457      53494C4F 
+ 2457      4E5F5F20 
+ 2457      2828646F 
+ 2458              	.LASF338:
+ 2459 1ea5 5F5F7468 		.ascii	"__thumb__ 1\000"
+ 2459      756D625F 
+ 2459      5F203100 
+ 2460              	.LASF243:
+ 2461 1eb1 5F5F5541 		.ascii	"__UACCUM_MIN__ 0.0UK\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 70
+
+
+ 2461      4343554D 
+ 2461      5F4D494E 
+ 2461      5F5F2030 
+ 2461      2E30554B 
+ 2462              	.LASF11:
+ 2463 1ec6 5F5F4154 		.ascii	"__ATOMIC_CONSUME 1\000"
+ 2463      4F4D4943 
+ 2463      5F434F4E 
+ 2463      53554D45 
+ 2463      203100
+ 2464              	.LASF355:
+ 2465 1ed9 53544152 		.ascii	"STARTUP_FREERTOS 1\000"
+ 2465      5455505F 
+ 2465      46524545 
+ 2465      52544F53 
+ 2465      203100
+ 2466              	.LASF185:
+ 2467 1eec 5F5F4445 		.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
+ 2467      43313238 
+ 2467      5F535542 
+ 2467      4E4F524D 
+ 2467      414C5F4D 
+ 2468 1f1f 30303030 		.ascii	"000000001E-6143DL\000"
+ 2468      30303030 
+ 2468      31452D36 
+ 2468      31343344 
+ 2468      4C00
+ 2469              	.LASF240:
+ 2470 1f31 5F5F4143 		.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
+ 2470      43554D5F 
+ 2470      45505349 
+ 2470      4C4F4E5F 
+ 2470      5F203078 
+ 2471              	.LASF366:
+ 2472 1f4c 5F736273 		.ascii	"_sbss_ahb\000"
+ 2472      735F6168 
+ 2472      6200
+ 2473              	.LASF43:
+ 2474 1f56 5F5F5549 		.ascii	"__UINT16_TYPE__ short unsigned int\000"
+ 2474      4E543136 
+ 2474      5F545950 
+ 2474      455F5F20 
+ 2474      73686F72 
+ 2475              	.LASF113:
+ 2476 1f79 5F5F5549 		.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
+ 2476      4E545F46 
+ 2476      41535431 
+ 2476      365F4D41 
+ 2476      585F5F20 
+ 2477              	.LASF362:
+ 2478 1f99 5F736964 		.ascii	"_sidata\000"
+ 2478      61746100 
+ 2479              	.LASF298:
+ 2480 1fa1 5F5F5544 		.ascii	"__UDA_FBIT__ 32\000"
+ 2480      415F4642 
+ 2480      49545F5F 
+ 2480      20333200 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 71
+
+
+ 2481              	.LASF224:
+ 2482 1fb1 5F5F554C 		.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
+ 2482      4C465241 
+ 2482      43545F4D 
+ 2482      41585F5F 
+ 2482      20305846 
+ 2483              	.LASF308:
+ 2484 1fdd 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\000"
+ 2484      435F4841 
+ 2484      56455F53 
+ 2484      594E435F 
+ 2484      434F4D50 
+ 2485              	.LASF376:
+ 2486 2002 696E7466 		.ascii	"intfunc\000"
+ 2486      756E6300 
+ 2487              	.LASF64:
+ 2488 200a 5F5F6861 		.ascii	"__has_include(STR) __has_include__(STR)\000"
+ 2488      735F696E 
+ 2488      636C7564 
+ 2488      65285354 
+ 2488      5229205F 
+ 2489              	.LASF21:
+ 2490 2032 5F5F4348 		.ascii	"__CHAR_BIT__ 8\000"
+ 2490      41525F42 
+ 2490      49545F5F 
+ 2490      203800
+ 2491              	.LASF83:
+ 2492 2041 5F5F5349 		.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
+ 2492      475F4154 
+ 2492      4F4D4943 
+ 2492      5F4D494E 
+ 2492      5F5F2028 
+ 2493              	.LASF253:
+ 2494 206e 5F5F554C 		.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
+ 2494      41434355 
+ 2494      4D5F4D49 
+ 2494      4E5F5F20 
+ 2494      302E3055 
+ 2495              	.LASF292:
+ 2496 2085 5F5F5441 		.ascii	"__TA_FBIT__ 63\000"
+ 2496      5F464249 
+ 2496      545F5F20 
+ 2496      363300
+ 2497              	.LASF375:
+ 2498 2094 443A5C77 		.ascii	"D:\\work\\Embedded\\aoaa\000"
+ 2498      6F726B5C 
+ 2498      456D6265 
+ 2498      64646564 
+ 2498      5C616F61 
+ 2499              	.LASF198:
+ 2500 20aa 5F5F4652 		.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
+ 2500      4143545F 
+ 2500      4D494E5F 
+ 2500      5F20282D 
+ 2500      302E3552 
+ 2501              	.LASF56:
+ 2502 20c5 5F5F494E 		.ascii	"__INT_FAST32_TYPE__ int\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 72
+
+
+ 2502      545F4641 
+ 2502      53543332 
+ 2502      5F545950 
+ 2502      455F5F20 
+ 2503              	.LASF59:
+ 2504 20dd 5F5F5549 		.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
+ 2504      4E545F46 
+ 2504      41535431 
+ 2504      365F5459 
+ 2504      50455F5F 
+ 2505              	.LASF197:
+ 2506 20ff 5F5F4652 		.ascii	"__FRACT_IBIT__ 0\000"
+ 2506      4143545F 
+ 2506      49424954 
+ 2506      5F5F2030 
+ 2506      00
+ 2507              	.LASF116:
+ 2508 2110 5F5F494E 		.ascii	"__INTPTR_MAX__ 2147483647\000"
+ 2508      54505452 
+ 2508      5F4D4158 
+ 2508      5F5F2032 
+ 2508      31343734 
+ 2509              	.LASF199:
+ 2510 212a 5F5F4652 		.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
+ 2510      4143545F 
+ 2510      4D41585F 
+ 2510      5F203058 
+ 2510      37464646 
+ 2511              	.LASF334:
+ 2512 2144 5F5F4152 		.ascii	"__ARM_ARCH_PROFILE 77\000"
+ 2512      4D5F4152 
+ 2512      43485F50 
+ 2512      524F4649 
+ 2512      4C452037 
+ 2513              	.LASF216:
+ 2514 215a 5F5F4C4C 		.ascii	"__LLFRACT_FBIT__ 63\000"
+ 2514      46524143 
+ 2514      545F4642 
+ 2514      49545F5F 
+ 2514      20363300 
+ 2515              	.LASF256:
+ 2516 216e 5F5F4C4C 		.ascii	"__LLACCUM_FBIT__ 31\000"
+ 2516      41434355 
+ 2516      4D5F4642 
+ 2516      49545F5F 
+ 2516      20333100 
+ 2517              	.LASF150:
+ 2518 2182 5F5F4442 		.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
+ 2518      4C5F4841 
+ 2518      535F5155 
+ 2518      4945545F 
+ 2518      4E414E5F 
+ 2519              	.LASF126:
+ 2520 219a 5F5F464C 		.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+ 2520      545F4D49 
+ 2520      4E5F3130 
+ 2520      5F455850 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 73
+
+
+ 2520      5F5F2028 
+ 2521              	.LASF221:
+ 2522 21b3 5F5F554C 		.ascii	"__ULLFRACT_FBIT__ 64\000"
+ 2522      4C465241 
+ 2522      43545F46 
+ 2522      4249545F 
+ 2522      5F203634 
+ 2523              	.LASF328:
+ 2524 21c8 5F5F4152 		.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
+ 2524      4D5F4645 
+ 2524      41545552 
+ 2524      455F554E 
+ 2524      414C4947 
+ 2525              	.LASF10:
+ 2526 21e2 5F5F4154 		.ascii	"__ATOMIC_ACQ_REL 4\000"
+ 2526      4F4D4943 
+ 2526      5F414351 
+ 2526      5F52454C 
+ 2526      203400
+ 2527              	.LASF218:
+ 2528 21f5 5F5F4C4C 		.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
+ 2528      46524143 
+ 2528      545F4D49 
+ 2528      4E5F5F20 
+ 2528      282D302E 
+ 2529              	.LASF277:
+ 2530 2216 5F5F5551 		.ascii	"__UQQ_IBIT__ 0\000"
+ 2530      515F4942 
+ 2530      49545F5F 
+ 2530      203000
+ 2531              	.LASF80:
+ 2532 2225 5F5F5549 		.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
+ 2532      4E544D41 
+ 2532      585F4D41 
+ 2532      585F5F20 
+ 2532      31383434 
+ 2533              	.LASF257:
+ 2534 224d 5F5F4C4C 		.ascii	"__LLACCUM_IBIT__ 32\000"
+ 2534      41434355 
+ 2534      4D5F4942 
+ 2534      49545F5F 
+ 2534      20333200 
+ 2535              	.LASF246:
+ 2536 2261 5F5F4C41 		.ascii	"__LACCUM_FBIT__ 31\000"
+ 2536      4343554D 
+ 2536      5F464249 
+ 2536      545F5F20 
+ 2536      333100
+ 2537              	.LASF264:
+ 2538 2274 5F5F554C 		.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
+ 2538      4C414343 
+ 2538      554D5F4D 
+ 2538      41585F5F 
+ 2538      20305846 
+ 2539              	.LASF233:
+ 2540 22a0 5F5F5553 		.ascii	"__USACCUM_MIN__ 0.0UHK\000"
+ 2540      41434355 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 74
+
+
+ 2540      4D5F4D49 
+ 2540      4E5F5F20 
+ 2540      302E3055 
+ 2541              	.LASF112:
+ 2542 22b7 5F5F5549 		.ascii	"__UINT_FAST8_MAX__ 4294967295U\000"
+ 2542      4E545F46 
+ 2542      41535438 
+ 2542      5F4D4158 
+ 2542      5F5F2034 
+ 2543              	.LASF259:
+ 2544 22d6 5F5F4C4C 		.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
+ 2544      41434355 
+ 2544      4D5F4D41 
+ 2544      585F5F20 
+ 2544      30583746 
+ 2545              	.LASF363:
+ 2546 2300 5F736461 		.ascii	"_sdata\000"
+ 2546      746100
+ 2547              	.LASF69:
+ 2548 2307 5F5F494E 		.ascii	"__INT_MAX__ 2147483647\000"
+ 2548      545F4D41 
+ 2548      585F5F20 
+ 2548      32313437 
+ 2548      34383336 
+ 2549              	.LASF296:
+ 2550 231e 5F5F5553 		.ascii	"__USA_FBIT__ 16\000"
+ 2550      415F4642 
+ 2550      49545F5F 
+ 2550      20313600 
+ 2551              	.LASF303:
+ 2552 232e 5F5F5553 		.ascii	"__USER_LABEL_PREFIX__ \000"
+ 2552      45525F4C 
+ 2552      4142454C 
+ 2552      5F505245 
+ 2552      4649585F 
+ 2553              	.LASF217:
+ 2554 2345 5F5F4C4C 		.ascii	"__LLFRACT_IBIT__ 0\000"
+ 2554      46524143 
+ 2554      545F4942 
+ 2554      49545F5F 
+ 2554      203000
+ 2555              	.LASF214:
+ 2556 2358 5F5F554C 		.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
+ 2556      46524143 
+ 2556      545F4D41 
+ 2556      585F5F20 
+ 2556      30584646 
+ 2557              	.LASF61:
+ 2558 237a 5F5F5549 		.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
+ 2558      4E545F46 
+ 2558      41535436 
+ 2558      345F5459 
+ 2558      50455F5F 
+ 2559              	.LASF101:
+ 2560 23a6 5F5F5549 		.ascii	"__UINT8_C(c) c\000"
+ 2560      4E54385F 
+ 2560      43286329 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 75
+
+
+ 2560      206300
+ 2561              	.LASF50:
+ 2562 23b5 5F5F5549 		.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
+ 2562      4E545F4C 
+ 2562      45415354 
+ 2562      385F5459 
+ 2562      50455F5F 
+ 2563              	.LASF367:
+ 2564 23d8 5F656273 		.ascii	"_ebss\000"
+ 2564      7300
+ 2565              	.LASF170:
+ 2566 23de 5F5F4445 		.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
+ 2566      4333325F 
+ 2566      45505349 
+ 2566      4C4F4E5F 
+ 2566      5F203145 
+ 2567              	.LASF307:
+ 2568 23f7 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\000"
+ 2568      435F4841 
+ 2568      56455F53 
+ 2568      594E435F 
+ 2568      434F4D50 
+ 2569              	.LASF238:
+ 2570 241c 5F5F4143 		.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
+ 2570      43554D5F 
+ 2570      4D494E5F 
+ 2570      5F20282D 
+ 2570      30583150 
+ 2571              	.LASF343:
+ 2572 243d 5F5F534F 		.ascii	"__SOFTFP__ 1\000"
+ 2572      46544650 
+ 2572      5F5F2031 
+ 2572      00
+ 2573              	.LASF117:
+ 2574 244a 5F5F5549 		.ascii	"__UINTPTR_MAX__ 4294967295U\000"
+ 2574      4E545054 
+ 2574      525F4D41 
+ 2574      585F5F20 
+ 2574      34323934 
+ 2575              	.LASF134:
+ 2576 2466 5F5F464C 		.ascii	"__FLT_HAS_DENORM__ 1\000"
+ 2576      545F4841 
+ 2576      535F4445 
+ 2576      4E4F524D 
+ 2576      5F5F2031 
+ 2577              	.LASF333:
+ 2578 247b 5F5F4152 		.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
+ 2578      4D5F5349 
+ 2578      5A454F46 
+ 2578      5F574348 
+ 2578      41525F54 
+ 2579              	.LASF145:
+ 2580 2492 5F5F4442 		.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
+ 2580      4C5F4D49 
+ 2580      4E5F5F20 
+ 2580      2828646F 
+ 2580      75626C65 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 76
+
+
+ 2581              	.LASF140:
+ 2582 24c1 5F5F4442 		.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
+ 2582      4C5F4D49 
+ 2582      4E5F3130 
+ 2582      5F455850 
+ 2582      5F5F2028 
+ 2583              	.LASF227:
+ 2584 24db 5F5F5341 		.ascii	"__SACCUM_IBIT__ 8\000"
+ 2584      4343554D 
+ 2584      5F494249 
+ 2584      545F5F20 
+ 2584      3800
+ 2585              	.LASF67:
+ 2586 24ed 5F5F5343 		.ascii	"__SCHAR_MAX__ 127\000"
+ 2586      4841525F 
+ 2586      4D41585F 
+ 2586      5F203132 
+ 2586      3700
+ 2587              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 77
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 startup_LPC17xx.c
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:59     .isr_vector:00000000 g_pfnVectors
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:56     .isr_vector:00000000 $d
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:117    .text.Reset_Handler:00000000 Reset_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 NMI_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 HardFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 MemManage_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 BusFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 UsageFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 DebugMon_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 WDT_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 rcscheduler_Timer0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 TIMER1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 TIMER2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 TIMER3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 UART0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 rcuart_PORT1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 UART2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 UART3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 PWM1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 I2C0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 I2C1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 I2C2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 SPI_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 SSP0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 SSP1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 PLL0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 RTC_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 EINT0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 EINT1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 EINT2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 EINT3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 ADC_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 BOD_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 USB_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 CAN_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 DMA_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 I2S_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 ENET_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 RIT_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 MCPWM_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 QEI_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 PLL1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 USBActivity_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 CANActivity_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:112    .text.Reset_Handler:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:205    .text.Reset_Handler:0000006c $d
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:216    .text._init:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:221    .text._init:00000000 _init
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:245    .text.Default_Handler:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 Default_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 SVC_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 PendSV_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s:250    .text.Default_Handler:00000000 SysTick_Handler
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.1834ce015d70b8127b1e5f7bc96e3d8e
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccCRPfc8.s 			page 78
+
+
+
+UNDEFINED SYMBOLS
+_estack
+vPortSVCHandler
+xPortPendSVHandler
+xPortSysTickHandler
+SystemInit
+main
+_sidata
+_sdata
+_edata
+_sbss
+_ebss
+_sbss_ahb
+_ebss_ahb

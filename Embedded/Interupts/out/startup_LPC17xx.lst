@@ -1,0 +1,4599 @@
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   5              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   6              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   7              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   8              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   9              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+  10              		.eabi_attribute 30, 6	@ Tag_ABI_optimization_goals
+  11              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  12              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  13              		.file	"startup_LPC17xx.c"
+  14              	@ GNU C (GNU Tools for ARM Embedded Processors) version 4.9.3 20150303 (release) [ARM/embedded-4_9-
+  15              	@	compiled by GNU C version 4.7.4, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.1
+  16              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  17              	@ options passed:  -I . -I config -I system -I core -I drivers -I FreeRTOS
+  18              	@ -I FreeRTOS/include -I FreeRTOS/portable/GCC/ARM_CM3 -I FreeRTOS/portable
+  19              	@ -I tasks/rc_task_leds -I modules/rc_leds -I drivers/rc_system
+  20              	@ -I drivers/rc_gpio -I drivers/rc_uart -I drivers/rc_pinsel
+  21              	@ -I drivers/rc_timer -I drivers/rc_adc -imultilib armv7-m
+  22              	@ -iprefix c:\gnu tools arm embedded\4.9 2015q1\bin\../lib/gcc/arm-none-eabi/4.9.3/
+  23              	@ -isysroot c:\gnu tools arm embedded\4.9 2015q1\bin\../arm-none-eabi
+  24              	@ -MD out/startup_LPC17xx.d -MF out/startup_LPC17xx.d -MP
+  25              	@ -MQ out/startup_LPC17xx.o -D__USES_INITFINI__ system/startup_LPC17xx.c
+  26              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip out/startup_LPC17xx.o -g -ggdb3
+  27              	@ -O0 -Wall -Wstrict-prototypes -Wextra -std=gnu90 -ffunction-sections
+  28              	@ -fdata-sections -fverbose-asm
+  29              	@ options enabled:  -faggressive-loop-optimizations -fauto-inc-dec -fcommon
+  30              	@ -fdata-sections -fdelete-null-pointer-checks -fdwarf2-cfi-asm
+  31              	@ -fearly-inlining -feliminate-unused-debug-types -ffunction-cse
+  32              	@ -ffunction-sections -fgcse-lm -fgnu-runtime -fgnu-unique -fident
+  33              	@ -finline-atomics -fira-hoist-pressure -fira-share-save-slots
+  34              	@ -fira-share-spill-slots -fivopts -fkeep-static-consts
+  35              	@ -fleading-underscore -flifetime-dse -fmath-errno -fmerge-debug-strings
+  36              	@ -fpeephole -fprefetch-loop-arrays -freg-struct-return
+  37              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  38              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  39              	@ -fsched-rank-heuristic -fsched-spec -fsched-spec-insn-heuristic
+  40              	@ -fsched-stalled-insns-dep -fshow-column -fsigned-zeros
+  41              	@ -fsplit-ivs-in-unroller -fstrict-volatile-bitfields -fsync-libcalls
+  42              	@ -ftrapping-math -ftree-coalesce-vars -ftree-cselim -ftree-forwprop
+  43              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  44              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop
+  45              	@ -ftree-reassoc -ftree-scev-cprop -funit-at-a-time -fverbose-asm
+  46              	@ -fzero-initialized-in-bss -mfix-cortex-m3-ldrd -mlittle-endian -mlra
+  47              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  48              	@ -mvectorize-with-neon-quad
+  49              	
+  50              		.text
+  51              	.Ltext0:
+  52              		.cfi_sections	.debug_frame
+  53              		.global	g_pfnVectors
+  54              		.section	.isr_vector,"a",%progbits
+  55              		.align	2
+  56              		.type	g_pfnVectors, %object
+  57              		.size	g_pfnVectors, 204
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 2
+
+
+  58              	g_pfnVectors:
+  59 0000 00000000 		.word	_estack
+  60 0004 00000000 		.word	Reset_Handler
+  61 0008 00000000 		.word	NMI_Handler
+  62 000c 00000000 		.word	HardFault_Handler
+  63 0010 00000000 		.word	MemManage_Handler
+  64 0014 00000000 		.word	BusFault_Handler
+  65 0018 00000000 		.word	UsageFault_Handler
+  66 001c 00000000 		.word	0
+  67 0020 00000000 		.word	0
+  68 0024 00000000 		.word	0
+  69 0028 00000000 		.word	0
+  70 002c 00000000 		.word	vPortSVCHandler
+  71 0030 00000000 		.word	DebugMon_Handler
+  72 0034 00000000 		.word	0
+  73 0038 00000000 		.word	xPortPendSVHandler
+  74 003c 00000000 		.word	xPortSysTickHandler
+  75 0040 00000000 		.word	WDT_IRQHandler
+  76 0044 00000000 		.word	rcscheduler_Timer0_IRQHandler
+  77 0048 00000000 		.word	TIMER1_IRQHandler
+  78 004c 00000000 		.word	TIMER2_IRQHandler
+  79 0050 00000000 		.word	TIMER3_IRQHandler
+  80 0054 00000000 		.word	UART0_IRQHandler
+  81 0058 00000000 		.word	rcuart_PORT1_IRQHandler
+  82 005c 00000000 		.word	UART2_IRQHandler
+  83 0060 00000000 		.word	UART3_IRQHandler
+  84 0064 00000000 		.word	PWM1_IRQHandler
+  85 0068 00000000 		.word	I2C0_IRQHandler
+  86 006c 00000000 		.word	I2C1_IRQHandler
+  87 0070 00000000 		.word	I2C2_IRQHandler
+  88 0074 00000000 		.word	SPI_IRQHandler
+  89 0078 00000000 		.word	SSP0_IRQHandler
+  90 007c 00000000 		.word	SSP1_IRQHandler
+  91 0080 00000000 		.word	PLL0_IRQHandler
+  92 0084 00000000 		.word	RTC_IRQHandler
+  93 0088 00000000 		.word	EINT0_IRQHandler
+  94 008c 00000000 		.word	EINT1_IRQHandler
+  95 0090 00000000 		.word	EINT2_IRQHandler
+  96 0094 00000000 		.word	EINT3_IRQHandler
+  97 0098 00000000 		.word	ADC_IRQHandler
+  98 009c 00000000 		.word	BOD_IRQHandler
+  99 00a0 00000000 		.word	USB_IRQHandler
+ 100 00a4 00000000 		.word	CAN_IRQHandler
+ 101 00a8 00000000 		.word	DMA_IRQHandler
+ 102 00ac 00000000 		.word	I2S_IRQHandler
+ 103 00b0 00000000 		.word	ENET_IRQHandler
+ 104 00b4 00000000 		.word	RIT_IRQHandler
+ 105 00b8 00000000 		.word	MCPWM_IRQHandler
+ 106 00bc 00000000 		.word	QEI_IRQHandler
+ 107 00c0 00000000 		.word	PLL1_IRQHandler
+ 108 00c4 00000000 		.word	USBActivity_IRQHandler
+ 109 00c8 00000000 		.word	CANActivity_IRQHandler
+ 110              		.section	.text.Reset_Handler,"ax",%progbits
+ 111              		.align	2
+ 112              		.weak	Reset_Handler
+ 113              		.thumb
+ 114              		.thumb_func
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 3
+
+
+ 115              		.type	Reset_Handler, %function
+ 116              	Reset_Handler:
+ 117              	.LFB0:
+ 118              		.file 1 "system/startup_LPC17xx.c"
+   1:system/startup_LPC17xx.c **** //$Id: startup_LPC17xx.c 1269 2011-07-22 22:51:08Z tk $
+   2:system/startup_LPC17xx.c **** /**
+   3:system/startup_LPC17xx.c ****  ******************************************************************************
+   4:system/startup_LPC17xx.c ****  * @file      startup_LPC17xx.c
+   5:system/startup_LPC17xx.c ****  ******************************************************************************
+   6:system/startup_LPC17xx.c ****  */
+   7:system/startup_LPC17xx.c **** 
+   8:system/startup_LPC17xx.c **** #define STARTUP_FREERTOS	1
+   9:system/startup_LPC17xx.c **** 
+  10:system/startup_LPC17xx.c **** /* Includes ------------------------------------------------------------------*/
+  11:system/startup_LPC17xx.c **** /* Private typedef -----------------------------------------------------------*/
+  12:system/startup_LPC17xx.c **** typedef void( *const intfunc )( void );
+  13:system/startup_LPC17xx.c **** 
+  14:system/startup_LPC17xx.c **** /* Private define ------------------------------------------------------------*/
+  15:system/startup_LPC17xx.c **** #define WEAK __attribute__ ((weak))
+  16:system/startup_LPC17xx.c **** #define ALIAS(f) __attribute__ ((weak, alias (#f)))
+  17:system/startup_LPC17xx.c **** 
+  18:system/startup_LPC17xx.c **** /* Private macro -------------------------------------------------------------*/
+  19:system/startup_LPC17xx.c **** //extern unsigned long _etext;
+  20:system/startup_LPC17xx.c **** /* start address for the initialization values of the .data section.
+  21:system/startup_LPC17xx.c **** defined in linker script */
+  22:system/startup_LPC17xx.c **** extern unsigned long _sidata;
+  23:system/startup_LPC17xx.c **** 
+  24:system/startup_LPC17xx.c **** /* start address for the .data section. defined in linker script */    
+  25:system/startup_LPC17xx.c **** extern unsigned long _sdata;
+  26:system/startup_LPC17xx.c **** 
+  27:system/startup_LPC17xx.c **** /* end address for the .data section. defined in linker script */    
+  28:system/startup_LPC17xx.c **** extern unsigned long _edata;
+  29:system/startup_LPC17xx.c ****    
+  30:system/startup_LPC17xx.c **** /* start address for the .bss section. defined in linker script */
+  31:system/startup_LPC17xx.c **** extern unsigned long _sbss;
+  32:system/startup_LPC17xx.c **** extern unsigned long _sbss_ahb;
+  33:system/startup_LPC17xx.c **** 
+  34:system/startup_LPC17xx.c **** /* end address for the .bss section. defined in linker script */      
+  35:system/startup_LPC17xx.c **** extern unsigned long _ebss;  
+  36:system/startup_LPC17xx.c **** extern unsigned long _ebss_ahb;  
+  37:system/startup_LPC17xx.c ****    
+  38:system/startup_LPC17xx.c **** /* init value for the stack pointer. defined in linker script */
+  39:system/startup_LPC17xx.c **** extern unsigned long _estack;
+  40:system/startup_LPC17xx.c **** 
+  41:system/startup_LPC17xx.c **** /* Private variables ---------------------------------------------------------*/
+  42:system/startup_LPC17xx.c **** /* Private function prototypes -----------------------------------------------*/
+  43:system/startup_LPC17xx.c **** void Reset_Handler(void) __attribute__((__interrupt__));
+  44:system/startup_LPC17xx.c **** extern int main(void);
+  45:system/startup_LPC17xx.c **** extern void SystemInit(void);
+  46:system/startup_LPC17xx.c **** //extern void __libc_init_array(void);  /* calls CTORS of static objects */
+  47:system/startup_LPC17xx.c **** //void __Init_Data(void);
+  48:system/startup_LPC17xx.c **** void _init(void);
+  49:system/startup_LPC17xx.c **** 
+  50:system/startup_LPC17xx.c **** // for FreeRTOS
+  51:system/startup_LPC17xx.c **** #if STARTUP_FREERTOS
+  52:system/startup_LPC17xx.c **** extern void xPortPendSVHandler(void);
+  53:system/startup_LPC17xx.c **** extern void xPortSysTickHandler(void);
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 4
+
+
+  54:system/startup_LPC17xx.c **** extern void vPortSVCHandler( void );
+  55:system/startup_LPC17xx.c **** #endif
+  56:system/startup_LPC17xx.c **** 
+  57:system/startup_LPC17xx.c **** /******************************************************************************
+  58:system/startup_LPC17xx.c **** *
+  59:system/startup_LPC17xx.c **** * Forward declaration of the default fault handlers.
+  60:system/startup_LPC17xx.c **** *
+  61:system/startup_LPC17xx.c **** *******************************************************************************/
+  62:system/startup_LPC17xx.c **** void WEAK Reset_Handler(void);
+  63:system/startup_LPC17xx.c **** void WEAK NMI_Handler(void);
+  64:system/startup_LPC17xx.c **** void WEAK HardFault_Handler(void);
+  65:system/startup_LPC17xx.c **** void WEAK MemManage_Handler(void);
+  66:system/startup_LPC17xx.c **** void WEAK BusFault_Handler(void);
+  67:system/startup_LPC17xx.c **** void WEAK UsageFault_Handler(void);
+  68:system/startup_LPC17xx.c **** void WEAK MemManage_Handler(void);
+  69:system/startup_LPC17xx.c **** void WEAK SVC_Handler(void);
+  70:system/startup_LPC17xx.c **** void WEAK DebugMon_Handler(void);
+  71:system/startup_LPC17xx.c **** void WEAK PendSV_Handler(void);
+  72:system/startup_LPC17xx.c **** void WEAK SysTick_Handler(void);
+  73:system/startup_LPC17xx.c **** 
+  74:system/startup_LPC17xx.c **** void WEAK Default_Handler(void);
+  75:system/startup_LPC17xx.c **** 
+  76:system/startup_LPC17xx.c **** /* External Interrupts */
+  77:system/startup_LPC17xx.c **** void WDT_IRQHandler(void) ALIAS(Default_Handler);
+  78:system/startup_LPC17xx.c **** void rcscheduler_Timer0_IRQHandler(void) ALIAS(Default_Handler);
+  79:system/startup_LPC17xx.c **** void TIMER1_IRQHandler(void) ALIAS(Default_Handler);
+  80:system/startup_LPC17xx.c **** void TIMER2_IRQHandler(void) ALIAS(Default_Handler);
+  81:system/startup_LPC17xx.c **** void TIMER3_IRQHandler(void) ALIAS(Default_Handler);
+  82:system/startup_LPC17xx.c **** void UART0_IRQHandler(void) ALIAS(Default_Handler);
+  83:system/startup_LPC17xx.c **** void rcuart_PORT1_IRQHandler(void) ALIAS(Default_Handler);
+  84:system/startup_LPC17xx.c **** void UART2_IRQHandler(void) ALIAS(Default_Handler);
+  85:system/startup_LPC17xx.c **** void UART3_IRQHandler(void) ALIAS(Default_Handler);
+  86:system/startup_LPC17xx.c **** void PWM1_IRQHandler(void) ALIAS(Default_Handler);
+  87:system/startup_LPC17xx.c **** void I2C0_IRQHandler(void) ALIAS(Default_Handler);
+  88:system/startup_LPC17xx.c **** void I2C1_IRQHandler(void) ALIAS(Default_Handler);
+  89:system/startup_LPC17xx.c **** void I2C2_IRQHandler(void) ALIAS(Default_Handler);
+  90:system/startup_LPC17xx.c **** void SPI_IRQHandler(void) ALIAS(Default_Handler);
+  91:system/startup_LPC17xx.c **** void SSP0_IRQHandler(void) ALIAS(Default_Handler);
+  92:system/startup_LPC17xx.c **** void SSP1_IRQHandler(void) ALIAS(Default_Handler);
+  93:system/startup_LPC17xx.c **** void PLL0_IRQHandler(void) ALIAS(Default_Handler);
+  94:system/startup_LPC17xx.c **** void RTC_IRQHandler(void) ALIAS(Default_Handler);
+  95:system/startup_LPC17xx.c **** void EINT0_IRQHandler(void) ALIAS(Default_Handler);
+  96:system/startup_LPC17xx.c **** void EINT1_IRQHandler(void) ALIAS(Default_Handler);
+  97:system/startup_LPC17xx.c **** void EINT2_IRQHandler(void) ALIAS(Default_Handler);
+  98:system/startup_LPC17xx.c **** void EINT3_IRQHandler(void) ALIAS(Default_Handler);
+  99:system/startup_LPC17xx.c **** void ADC_IRQHandler(void) ALIAS(Default_Handler);
+ 100:system/startup_LPC17xx.c **** void BOD_IRQHandler(void) ALIAS(Default_Handler);
+ 101:system/startup_LPC17xx.c **** void USB_IRQHandler(void) ALIAS(Default_Handler);
+ 102:system/startup_LPC17xx.c **** void CAN_IRQHandler(void) ALIAS(Default_Handler);
+ 103:system/startup_LPC17xx.c **** void DMA_IRQHandler(void) ALIAS(Default_Handler);
+ 104:system/startup_LPC17xx.c **** void I2S_IRQHandler(void) ALIAS(Default_Handler);
+ 105:system/startup_LPC17xx.c **** void ENET_IRQHandler(void) ALIAS(Default_Handler);
+ 106:system/startup_LPC17xx.c **** void RIT_IRQHandler(void) ALIAS(Default_Handler);
+ 107:system/startup_LPC17xx.c **** void MCPWM_IRQHandler(void) ALIAS(Default_Handler);
+ 108:system/startup_LPC17xx.c **** void QEI_IRQHandler(void) ALIAS(Default_Handler);
+ 109:system/startup_LPC17xx.c **** void PLL1_IRQHandler(void) ALIAS(Default_Handler);
+ 110:system/startup_LPC17xx.c **** void USBActivity_IRQHandler(void) ALIAS(Default_Handler);
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 5
+
+
+ 111:system/startup_LPC17xx.c **** void CANActivity_IRQHandler(void) ALIAS(Default_Handler);
+ 112:system/startup_LPC17xx.c **** 
+ 113:system/startup_LPC17xx.c **** /* Private functions ---------------------------------------------------------*/
+ 114:system/startup_LPC17xx.c **** /******************************************************************************
+ 115:system/startup_LPC17xx.c **** *
+ 116:system/startup_LPC17xx.c **** * The minimal vector table for a Cortex M3.  Note that the proper constructs
+ 117:system/startup_LPC17xx.c **** * must be placed on this to ensure that it ends up at physical address
+ 118:system/startup_LPC17xx.c **** * 0x0000.0000.
+ 119:system/startup_LPC17xx.c **** *
+ 120:system/startup_LPC17xx.c **** ******************************************************************************/
+ 121:system/startup_LPC17xx.c **** 
+ 122:system/startup_LPC17xx.c **** __attribute__ ((section(".isr_vector")))
+ 123:system/startup_LPC17xx.c **** void (* const g_pfnVectors[])(void) =
+ 124:system/startup_LPC17xx.c **** {      
+ 125:system/startup_LPC17xx.c ****     (intfunc)((unsigned long)&_estack), /* The initial stack pointer */
+ 126:system/startup_LPC17xx.c ****     Reset_Handler,              /* Reset Handler */
+ 127:system/startup_LPC17xx.c ****     NMI_Handler,                /* NMI Handler */
+ 128:system/startup_LPC17xx.c ****     HardFault_Handler,          /* Hard Fault Handler */
+ 129:system/startup_LPC17xx.c ****     MemManage_Handler,          /* MPU Fault Handler */
+ 130:system/startup_LPC17xx.c ****     BusFault_Handler,           /* Bus Fault Handler */
+ 131:system/startup_LPC17xx.c ****     UsageFault_Handler,         /* Usage Fault Handler */
+ 132:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 133:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 134:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 135:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 136:system/startup_LPC17xx.c **** 
+ 137:system/startup_LPC17xx.c **** #if !STARTUP_FREERTOS
+ 138:system/startup_LPC17xx.c ****     SVC_Handler,                /* SVCall Handler */
+ 139:system/startup_LPC17xx.c **** #else
+ 140:system/startup_LPC17xx.c ****     // for FreeRTOS
+ 141:system/startup_LPC17xx.c ****     vPortSVCHandler,
+ 142:system/startup_LPC17xx.c **** #endif
+ 143:system/startup_LPC17xx.c **** 
+ 144:system/startup_LPC17xx.c ****     DebugMon_Handler,           /* Debug Monitor Handler */
+ 145:system/startup_LPC17xx.c ****     0,                          /* Reserved */
+ 146:system/startup_LPC17xx.c **** 
+ 147:system/startup_LPC17xx.c **** #if !STARTUP_FREERTOS
+ 148:system/startup_LPC17xx.c ****     PendSV_Handler,             /* PendSV Handler */
+ 149:system/startup_LPC17xx.c ****     SysTick_Handler,            /* SysTick Handler */
+ 150:system/startup_LPC17xx.c **** #else
+ 151:system/startup_LPC17xx.c ****     // for FreeRTOS
+ 152:system/startup_LPC17xx.c ****     xPortPendSVHandler,
+ 153:system/startup_LPC17xx.c ****     xPortSysTickHandler,
+ 154:system/startup_LPC17xx.c **** #endif
+ 155:system/startup_LPC17xx.c **** 
+ 156:system/startup_LPC17xx.c ****     /* External Interrupts */
+ 157:system/startup_LPC17xx.c ****     WDT_IRQHandler,                         // 16, 0x40 - WDT
+ 158:system/startup_LPC17xx.c **** 	rcscheduler_Timer0_IRQHandler,                      // 17, 0x44 - TIMER0
+ 159:system/startup_LPC17xx.c ****     TIMER1_IRQHandler,                      // 18, 0x48 - TIMER1
+ 160:system/startup_LPC17xx.c ****     TIMER2_IRQHandler,                      // 19, 0x4c - TIMER2
+ 161:system/startup_LPC17xx.c ****     TIMER3_IRQHandler,                      // 20, 0x50 - TIMER3
+ 162:system/startup_LPC17xx.c ****     UART0_IRQHandler,                       // 21, 0x54 - UART0
+ 163:system/startup_LPC17xx.c **** 	rcuart_PORT1_IRQHandler,                       // 22, 0x58 - UART1
+ 164:system/startup_LPC17xx.c ****     UART2_IRQHandler,                       // 23, 0x5c - UART2
+ 165:system/startup_LPC17xx.c ****     UART3_IRQHandler,                       // 24, 0x60 - UART3
+ 166:system/startup_LPC17xx.c ****     PWM1_IRQHandler,                        // 25, 0x64 - PWM1
+ 167:system/startup_LPC17xx.c ****     I2C0_IRQHandler,                        // 26, 0x68 - I2C0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 6
+
+
+ 168:system/startup_LPC17xx.c ****     I2C1_IRQHandler,                        // 27, 0x6c - I2C1
+ 169:system/startup_LPC17xx.c ****     I2C2_IRQHandler,                        // 28, 0x70 - I2C2
+ 170:system/startup_LPC17xx.c ****     SPI_IRQHandler,                         // 29, 0x74 - SPI
+ 171:system/startup_LPC17xx.c ****     SSP0_IRQHandler,                        // 30, 0x78 - SSP0
+ 172:system/startup_LPC17xx.c ****     SSP1_IRQHandler,                        // 31, 0x7c - SSP1
+ 173:system/startup_LPC17xx.c ****     PLL0_IRQHandler,                        // 32, 0x80 - PLL0 (Main PLL)
+ 174:system/startup_LPC17xx.c ****     RTC_IRQHandler,                         // 33, 0x84 - RTC
+ 175:system/startup_LPC17xx.c ****     EINT0_IRQHandler,                       // 34, 0x88 - EINT0
+ 176:system/startup_LPC17xx.c ****     EINT1_IRQHandler,                       // 35, 0x8c - EINT1
+ 177:system/startup_LPC17xx.c ****     EINT2_IRQHandler,                       // 36, 0x90 - EINT2
+ 178:system/startup_LPC17xx.c ****     EINT3_IRQHandler,                       // 37, 0x94 - EINT3
+ 179:system/startup_LPC17xx.c ****     ADC_IRQHandler,                         // 38, 0x98 - ADC
+ 180:system/startup_LPC17xx.c ****     BOD_IRQHandler,                         // 39, 0x9c - BOD
+ 181:system/startup_LPC17xx.c ****     USB_IRQHandler,                         // 40, 0xA0 - USB
+ 182:system/startup_LPC17xx.c ****     CAN_IRQHandler,                         // 41, 0xa4 - CAN
+ 183:system/startup_LPC17xx.c ****     DMA_IRQHandler,                         // 42, 0xa8 - GP DMA
+ 184:system/startup_LPC17xx.c ****     I2S_IRQHandler,                         // 43, 0xac - I2S
+ 185:system/startup_LPC17xx.c ****     ENET_IRQHandler,                        // 44, 0xb0 - Ethernet
+ 186:system/startup_LPC17xx.c ****     RIT_IRQHandler,                         // 45, 0xb4 - RITINT
+ 187:system/startup_LPC17xx.c ****     MCPWM_IRQHandler,                       // 46, 0xb8 - Motor Control PWM
+ 188:system/startup_LPC17xx.c ****     QEI_IRQHandler,                         // 47, 0xbc - Quadrature Encoder
+ 189:system/startup_LPC17xx.c ****     PLL1_IRQHandler,                        // 48, 0xc0 - PLL1 (USB PLL)
+ 190:system/startup_LPC17xx.c ****     USBActivity_IRQHandler,                 // 49, 0xc4 - USB Activity interrupt to wakeup
+ 191:system/startup_LPC17xx.c ****     CANActivity_IRQHandler,                 // 50, 0xc8 - CAN Activity interrupt to wakeup
+ 192:system/startup_LPC17xx.c **** };
+ 193:system/startup_LPC17xx.c **** 
+ 194:system/startup_LPC17xx.c **** /**
+ 195:system/startup_LPC17xx.c ****  * @brief  This is the code that gets called when the processor first
+ 196:system/startup_LPC17xx.c ****  *          starts execution following a reset event. Only the absolutely
+ 197:system/startup_LPC17xx.c ****  *          necessary set is performed, after which the application
+ 198:system/startup_LPC17xx.c ****  *          supplied main() routine is called.
+ 199:system/startup_LPC17xx.c ****  * @param  None
+ 200:system/startup_LPC17xx.c ****  * @retval : None
+ 201:system/startup_LPC17xx.c **** */
+ 202:system/startup_LPC17xx.c **** 
+ 203:system/startup_LPC17xx.c **** void Reset_Handler(void)
+ 204:system/startup_LPC17xx.c **** {
+ 119              		.loc 1 204 0
+ 120              		.cfi_startproc
+ 121              		@ Stack Align: May be called with mis-aligned SP.
+ 122              		@ args = 0, pretend = 0, frame = 8
+ 123              		@ frame_needed = 1, uses_anonymous_args = 0
+ 124 0000 6846     		mov	r0, sp	@,
+ 125              		.cfi_register 13, 0
+ 126 0002 20F00701 		bic	r1, r0, #7	@,,
+ 127 0006 8D46     		mov	sp, r1	@,
+ 128 0008 81B5     		push	{r0, r7, lr}	@
+ 129              		.cfi_def_cfa_offset 12
+ 130              		.cfi_offset 13, -12
+ 131              		.cfi_offset 7, -8
+ 132              		.cfi_offset 14, -4
+ 133 000a 83B0     		sub	sp, sp, #12	@,,
+ 134              		.cfi_def_cfa_offset 24
+ 135 000c 00AF     		add	r7, sp, #0	@,,
+ 136              		.cfi_def_cfa_register 7
+ 205:system/startup_LPC17xx.c ****   /* Initialize data and bss */
+ 206:system/startup_LPC17xx.c ****   unsigned long *pulSrc, *pulDest;
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 7
+
+
+ 207:system/startup_LPC17xx.c **** 
+ 208:system/startup_LPC17xx.c ****   /* Copy the data segment initializers from flash to SRAM */
+ 209:system/startup_LPC17xx.c ****   pulSrc = &_sidata;
+ 137              		.loc 1 209 0
+ 138 000e 174B     		ldr	r3, .L9	@ tmp115,
+ 139 0010 7B60     		str	r3, [r7, #4]	@ tmp115, pulSrc
+ 210:system/startup_LPC17xx.c **** 
+ 211:system/startup_LPC17xx.c ****   for(pulDest = &_sdata; pulDest < &_edata; )
+ 140              		.loc 1 211 0
+ 141 0012 174B     		ldr	r3, .L9+4	@ tmp116,
+ 142 0014 3B60     		str	r3, [r7]	@ tmp116, pulDest
+ 143 0016 07E0     		b	.L2	@
+ 144              	.L3:
+ 212:system/startup_LPC17xx.c ****   {
+ 213:system/startup_LPC17xx.c ****     *(pulDest++) = *(pulSrc++);
+ 145              		.loc 1 213 0
+ 146 0018 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 147 001a 1A1D     		adds	r2, r3, #4	@ tmp117, D.4227,
+ 148 001c 3A60     		str	r2, [r7]	@ tmp117, pulDest
+ 149 001e 7A68     		ldr	r2, [r7, #4]	@ D.4227, pulSrc
+ 150 0020 111D     		adds	r1, r2, #4	@ tmp118, D.4227,
+ 151 0022 7960     		str	r1, [r7, #4]	@ tmp118, pulSrc
+ 152 0024 1268     		ldr	r2, [r2]	@ D.4228, *_9
+ 153 0026 1A60     		str	r2, [r3]	@ D.4228, *_7
+ 154              	.L2:
+ 211:system/startup_LPC17xx.c ****   {
+ 155              		.loc 1 211 0 discriminator 1
+ 156 0028 3B68     		ldr	r3, [r7]	@ tmp119, pulDest
+ 157 002a 124A     		ldr	r2, .L9+8	@ tmp120,
+ 158 002c 9342     		cmp	r3, r2	@ tmp119, tmp120
+ 159 002e F3D3     		bcc	.L3	@,
+ 214:system/startup_LPC17xx.c ****   }
+ 215:system/startup_LPC17xx.c **** 
+ 216:system/startup_LPC17xx.c ****   /* Zero fill the bss segment. */
+ 217:system/startup_LPC17xx.c ****   for(pulDest = &_sbss; pulDest < &_ebss; )
+ 160              		.loc 1 217 0
+ 161 0030 114B     		ldr	r3, .L9+12	@ tmp121,
+ 162 0032 3B60     		str	r3, [r7]	@ tmp121, pulDest
+ 163 0034 04E0     		b	.L4	@
+ 164              	.L5:
+ 218:system/startup_LPC17xx.c ****   {
+ 219:system/startup_LPC17xx.c ****     *(pulDest++) = 0;
+ 165              		.loc 1 219 0
+ 166 0036 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 167 0038 1A1D     		adds	r2, r3, #4	@ tmp122, D.4227,
+ 168 003a 3A60     		str	r2, [r7]	@ tmp122, pulDest
+ 169 003c 0022     		movs	r2, #0	@ tmp123,
+ 170 003e 1A60     		str	r2, [r3]	@ tmp123, *_13
+ 171              	.L4:
+ 217:system/startup_LPC17xx.c ****   {
+ 172              		.loc 1 217 0 discriminator 1
+ 173 0040 3B68     		ldr	r3, [r7]	@ tmp124, pulDest
+ 174 0042 0E4A     		ldr	r2, .L9+16	@ tmp125,
+ 175 0044 9342     		cmp	r3, r2	@ tmp124, tmp125
+ 176 0046 F6D3     		bcc	.L5	@,
+ 220:system/startup_LPC17xx.c ****   }
+ 221:system/startup_LPC17xx.c **** 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 8
+
+
+ 222:system/startup_LPC17xx.c ****   /* Zero fill the bss_ahb segment. */
+ 223:system/startup_LPC17xx.c ****   for(pulDest = &_sbss_ahb; pulDest < &_ebss_ahb; )
+ 177              		.loc 1 223 0
+ 178 0048 0D4B     		ldr	r3, .L9+20	@ tmp126,
+ 179 004a 3B60     		str	r3, [r7]	@ tmp126, pulDest
+ 180 004c 04E0     		b	.L6	@
+ 181              	.L7:
+ 224:system/startup_LPC17xx.c ****   {
+ 225:system/startup_LPC17xx.c ****     *(pulDest++) = 0;
+ 182              		.loc 1 225 0
+ 183 004e 3B68     		ldr	r3, [r7]	@ D.4227, pulDest
+ 184 0050 1A1D     		adds	r2, r3, #4	@ tmp127, D.4227,
+ 185 0052 3A60     		str	r2, [r7]	@ tmp127, pulDest
+ 186 0054 0022     		movs	r2, #0	@ tmp128,
+ 187 0056 1A60     		str	r2, [r3]	@ tmp128, *_16
+ 188              	.L6:
+ 223:system/startup_LPC17xx.c ****   {
+ 189              		.loc 1 223 0 discriminator 1
+ 190 0058 3B68     		ldr	r3, [r7]	@ tmp129, pulDest
+ 191 005a 0A4A     		ldr	r2, .L9+24	@ tmp130,
+ 192 005c 9342     		cmp	r3, r2	@ tmp129, tmp130
+ 193 005e F6D3     		bcc	.L7	@,
+ 226:system/startup_LPC17xx.c ****   }
+ 227:system/startup_LPC17xx.c **** 
+ 228:system/startup_LPC17xx.c ****   /* Call the application's entry point.*/
+ 229:system/startup_LPC17xx.c ****   SystemInit();
+ 194              		.loc 1 229 0
+ 195 0060 FFF7FEFF 		bl	SystemInit	@
+ 230:system/startup_LPC17xx.c ****   main();
+ 196              		.loc 1 230 0
+ 197 0064 FFF7FEFF 		bl	main	@
+ 198              	.L8:
+ 231:system/startup_LPC17xx.c **** 
+ 232:system/startup_LPC17xx.c ****   //
+ 233:system/startup_LPC17xx.c ****   // we should never reach this point
+ 234:system/startup_LPC17xx.c ****   // however, wait endless...
+ 235:system/startup_LPC17xx.c ****   //
+ 236:system/startup_LPC17xx.c ****   while( 1 );
+ 199              		.loc 1 236 0 discriminator 1
+ 200 0068 FEE7     		b	.L8	@
+ 201              	.L10:
+ 202 006a 00BF     		.align	2
+ 203              	.L9:
+ 204 006c 00000000 		.word	_sidata
+ 205 0070 00000000 		.word	_sdata
+ 206 0074 00000000 		.word	_edata
+ 207 0078 00000000 		.word	_sbss
+ 208 007c 00000000 		.word	_ebss
+ 209 0080 00000000 		.word	_sbss_ahb
+ 210 0084 00000000 		.word	_ebss_ahb
+ 211              		.cfi_endproc
+ 212              	.LFE0:
+ 213              		.size	Reset_Handler, .-Reset_Handler
+ 214              		.section	.text._init,"ax",%progbits
+ 215              		.align	2
+ 216              		.global	_init
+ 217              		.thumb
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 9
+
+
+ 218              		.thumb_func
+ 219              		.type	_init, %function
+ 220              	_init:
+ 221              	.LFB1:
+ 237:system/startup_LPC17xx.c **** }
+ 238:system/startup_LPC17xx.c **** 
+ 239:system/startup_LPC17xx.c **** // dummy for newer gcc versions
+ 240:system/startup_LPC17xx.c **** void _init()
+ 241:system/startup_LPC17xx.c **** {
+ 222              		.loc 1 241 0
+ 223              		.cfi_startproc
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 1, uses_anonymous_args = 0
+ 226              		@ link register save eliminated.
+ 227 0000 80B4     		push	{r7}	@
+ 228              		.cfi_def_cfa_offset 4
+ 229              		.cfi_offset 7, -4
+ 230 0002 00AF     		add	r7, sp, #0	@,,
+ 231              		.cfi_def_cfa_register 7
+ 242:system/startup_LPC17xx.c **** }
+ 232              		.loc 1 242 0
+ 233 0004 BD46     		mov	sp, r7	@,
+ 234              		.cfi_def_cfa_register 13
+ 235              		@ sp needed	@
+ 236 0006 5DF8047B 		ldr	r7, [sp], #4	@,
+ 237              		.cfi_restore 7
+ 238              		.cfi_def_cfa_offset 0
+ 239 000a 7047     		bx	lr	@
+ 240              		.cfi_endproc
+ 241              	.LFE1:
+ 242              		.size	_init, .-_init
+ 243              		.section	.text.Default_Handler,"ax",%progbits
+ 244              		.align	2
+ 245              		.weak	Default_Handler
+ 246              		.thumb
+ 247              		.thumb_func
+ 248              		.type	Default_Handler, %function
+ 249              	Default_Handler:
+ 250              	.LFB2:
+ 243:system/startup_LPC17xx.c **** 
+ 244:system/startup_LPC17xx.c **** /*******************************************************************************
+ 245:system/startup_LPC17xx.c **** *
+ 246:system/startup_LPC17xx.c **** * Provide weak aliases for each Exception handler to the Default_Handler.
+ 247:system/startup_LPC17xx.c **** * As they are weak aliases, any function with the same name will override
+ 248:system/startup_LPC17xx.c **** * this definition.
+ 249:system/startup_LPC17xx.c **** *
+ 250:system/startup_LPC17xx.c **** *******************************************************************************/
+ 251:system/startup_LPC17xx.c **** #pragma weak NMI_Handler = Default_Handler
+ 252:system/startup_LPC17xx.c **** #pragma weak MemManage_Handler = Default_Handler
+ 253:system/startup_LPC17xx.c **** #pragma weak BusFault_Handler = Default_Handler
+ 254:system/startup_LPC17xx.c **** #pragma weak HardFault_Handler = Default_Handler
+ 255:system/startup_LPC17xx.c **** #pragma weak UsageFault_Handler = Default_Handler
+ 256:system/startup_LPC17xx.c **** #pragma weak SVC_Handler = Default_Handler
+ 257:system/startup_LPC17xx.c **** #pragma weak DebugMon_Handler = Default_Handler
+ 258:system/startup_LPC17xx.c **** #pragma weak PendSV_Handler = Default_Handler
+ 259:system/startup_LPC17xx.c **** #pragma weak SysTick_Handler = Default_Handler
+ 260:system/startup_LPC17xx.c **** 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 10
+
+
+ 261:system/startup_LPC17xx.c **** /**
+ 262:system/startup_LPC17xx.c ****  * @brief  This is the code that gets called when the processor receives an
+ 263:system/startup_LPC17xx.c ****  *         unexpected interrupt.  This simply enters an infinite loop, preserving
+ 264:system/startup_LPC17xx.c ****  *         the system state for examination by a debugger.
+ 265:system/startup_LPC17xx.c ****  *
+ 266:system/startup_LPC17xx.c ****  * @param  None    
+ 267:system/startup_LPC17xx.c ****  * @retval : None      
+ 268:system/startup_LPC17xx.c **** */
+ 269:system/startup_LPC17xx.c **** 
+ 270:system/startup_LPC17xx.c **** void Default_Handler(void)
+ 271:system/startup_LPC17xx.c **** {
+ 251              		.loc 1 271 0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 1, uses_anonymous_args = 0
+ 255              		@ link register save eliminated.
+ 256 0000 80B4     		push	{r7}	@
+ 257              		.cfi_def_cfa_offset 4
+ 258              		.cfi_offset 7, -4
+ 259 0002 00AF     		add	r7, sp, #0	@,,
+ 260              		.cfi_def_cfa_register 7
+ 261              	.L13:
+ 272:system/startup_LPC17xx.c ****   /* Go into an infinite loop. */
+ 273:system/startup_LPC17xx.c ****   while (1)
+ 274:system/startup_LPC17xx.c ****   {
+ 275:system/startup_LPC17xx.c ****     // TK: TODO - insert an error notification here
+ 276:system/startup_LPC17xx.c ****     // We could send a debug message via USB, but this could be critical if there is
+ 277:system/startup_LPC17xx.c ****     // an issue in the MIDI or USB handler or related application hooks
+ 278:system/startup_LPC17xx.c ****     //
+ 279:system/startup_LPC17xx.c ****     // Alternatively we could flash the On-Board LED - it's safe!
+ 280:system/startup_LPC17xx.c ****   }
+ 262              		.loc 1 280 0 discriminator 1
+ 263 0004 FEE7     		b	.L13	@
+ 264              		.cfi_endproc
+ 265              	.LFE2:
+ 266              		.size	Default_Handler, .-Default_Handler
+ 267              		.weak	WDT_IRQHandler
+ 268              		.thumb_set WDT_IRQHandler,Default_Handler
+ 269              		.weak	rcscheduler_Timer0_IRQHandler
+ 270              		.thumb_set rcscheduler_Timer0_IRQHandler,Default_Handler
+ 271              		.weak	TIMER1_IRQHandler
+ 272              		.thumb_set TIMER1_IRQHandler,Default_Handler
+ 273              		.weak	TIMER2_IRQHandler
+ 274              		.thumb_set TIMER2_IRQHandler,Default_Handler
+ 275              		.weak	TIMER3_IRQHandler
+ 276              		.thumb_set TIMER3_IRQHandler,Default_Handler
+ 277              		.weak	UART0_IRQHandler
+ 278              		.thumb_set UART0_IRQHandler,Default_Handler
+ 279              		.weak	rcuart_PORT1_IRQHandler
+ 280              		.thumb_set rcuart_PORT1_IRQHandler,Default_Handler
+ 281              		.weak	UART2_IRQHandler
+ 282              		.thumb_set UART2_IRQHandler,Default_Handler
+ 283              		.weak	UART3_IRQHandler
+ 284              		.thumb_set UART3_IRQHandler,Default_Handler
+ 285              		.weak	PWM1_IRQHandler
+ 286              		.thumb_set PWM1_IRQHandler,Default_Handler
+ 287              		.weak	I2C0_IRQHandler
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 11
+
+
+ 288              		.thumb_set I2C0_IRQHandler,Default_Handler
+ 289              		.weak	I2C1_IRQHandler
+ 290              		.thumb_set I2C1_IRQHandler,Default_Handler
+ 291              		.weak	I2C2_IRQHandler
+ 292              		.thumb_set I2C2_IRQHandler,Default_Handler
+ 293              		.weak	SPI_IRQHandler
+ 294              		.thumb_set SPI_IRQHandler,Default_Handler
+ 295              		.weak	SSP0_IRQHandler
+ 296              		.thumb_set SSP0_IRQHandler,Default_Handler
+ 297              		.weak	SSP1_IRQHandler
+ 298              		.thumb_set SSP1_IRQHandler,Default_Handler
+ 299              		.weak	PLL0_IRQHandler
+ 300              		.thumb_set PLL0_IRQHandler,Default_Handler
+ 301              		.weak	RTC_IRQHandler
+ 302              		.thumb_set RTC_IRQHandler,Default_Handler
+ 303              		.weak	EINT0_IRQHandler
+ 304              		.thumb_set EINT0_IRQHandler,Default_Handler
+ 305              		.weak	EINT1_IRQHandler
+ 306              		.thumb_set EINT1_IRQHandler,Default_Handler
+ 307              		.weak	EINT2_IRQHandler
+ 308              		.thumb_set EINT2_IRQHandler,Default_Handler
+ 309              		.weak	EINT3_IRQHandler
+ 310              		.thumb_set EINT3_IRQHandler,Default_Handler
+ 311              		.weak	ADC_IRQHandler
+ 312              		.thumb_set ADC_IRQHandler,Default_Handler
+ 313              		.weak	BOD_IRQHandler
+ 314              		.thumb_set BOD_IRQHandler,Default_Handler
+ 315              		.weak	USB_IRQHandler
+ 316              		.thumb_set USB_IRQHandler,Default_Handler
+ 317              		.weak	CAN_IRQHandler
+ 318              		.thumb_set CAN_IRQHandler,Default_Handler
+ 319              		.weak	DMA_IRQHandler
+ 320              		.thumb_set DMA_IRQHandler,Default_Handler
+ 321              		.weak	I2S_IRQHandler
+ 322              		.thumb_set I2S_IRQHandler,Default_Handler
+ 323              		.weak	ENET_IRQHandler
+ 324              		.thumb_set ENET_IRQHandler,Default_Handler
+ 325              		.weak	RIT_IRQHandler
+ 326              		.thumb_set RIT_IRQHandler,Default_Handler
+ 327              		.weak	MCPWM_IRQHandler
+ 328              		.thumb_set MCPWM_IRQHandler,Default_Handler
+ 329              		.weak	QEI_IRQHandler
+ 330              		.thumb_set QEI_IRQHandler,Default_Handler
+ 331              		.weak	PLL1_IRQHandler
+ 332              		.thumb_set PLL1_IRQHandler,Default_Handler
+ 333              		.weak	USBActivity_IRQHandler
+ 334              		.thumb_set USBActivity_IRQHandler,Default_Handler
+ 335              		.weak	CANActivity_IRQHandler
+ 336              		.thumb_set CANActivity_IRQHandler,Default_Handler
+ 337              		.weak	NMI_Handler
+ 338              		.thumb_set NMI_Handler,Default_Handler
+ 339              		.weak	MemManage_Handler
+ 340              		.thumb_set MemManage_Handler,Default_Handler
+ 341              		.weak	BusFault_Handler
+ 342              		.thumb_set BusFault_Handler,Default_Handler
+ 343              		.weak	HardFault_Handler
+ 344              		.thumb_set HardFault_Handler,Default_Handler
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 12
+
+
+ 345              		.weak	UsageFault_Handler
+ 346              		.thumb_set UsageFault_Handler,Default_Handler
+ 347              		.weak	SVC_Handler
+ 348              		.thumb_set SVC_Handler,Default_Handler
+ 349              		.weak	DebugMon_Handler
+ 350              		.thumb_set DebugMon_Handler,Default_Handler
+ 351              		.weak	PendSV_Handler
+ 352              		.thumb_set PendSV_Handler,Default_Handler
+ 353              		.weak	SysTick_Handler
+ 354              		.thumb_set SysTick_Handler,Default_Handler
+ 355 0006 00BF     		.text
+ 356              	.Letext0:
+ 357              		.section	.debug_info,"",%progbits
+ 358              	.Ldebug_info0:
+ 359 0000 24010000 		.4byte	0x124
+ 360 0004 0400     		.2byte	0x4
+ 361 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 362 000a 04       		.byte	0x4
+ 363 000b 01       		.uleb128 0x1
+ 364 000c 02060000 		.4byte	.LASF373
+ 365 0010 01       		.byte	0x1
+ 366 0011 4F150000 		.4byte	.LASF374
+ 367 0015 94200000 		.4byte	.LASF375
+ 368 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 369 001d 00000000 		.4byte	0
+ 370 0021 00000000 		.4byte	.Ldebug_line0
+ 371 0025 00000000 		.4byte	.Ldebug_macro0
+ 372 0029 02       		.uleb128 0x2
+ 373 002a 02200000 		.4byte	.LASF376
+ 374 002e 01       		.byte	0x1
+ 375 002f 0C       		.byte	0xc
+ 376 0030 34000000 		.4byte	0x34
+ 377 0034 03       		.uleb128 0x3
+ 378 0035 39000000 		.4byte	0x39
+ 379 0039 04       		.uleb128 0x4
+ 380 003a 04       		.byte	0x4
+ 381 003b 3F000000 		.4byte	0x3f
+ 382 003f 05       		.uleb128 0x5
+ 383 0040 06       		.uleb128 0x6
+ 384 0041 06080000 		.4byte	.LASF377
+ 385 0045 01       		.byte	0x1
+ 386 0046 CB       		.byte	0xcb
+ 387 0047 00000000 		.4byte	.LFB0
+ 388 004b 88000000 		.4byte	.LFE0-.LFB0
+ 389 004f 01       		.uleb128 0x1
+ 390 0050 9C       		.byte	0x9c
+ 391 0051 72000000 		.4byte	0x72
+ 392 0055 07       		.uleb128 0x7
+ 393 0056 90050000 		.4byte	.LASF358
+ 394 005a 01       		.byte	0x1
+ 395 005b CE       		.byte	0xce
+ 396 005c 72000000 		.4byte	0x72
+ 397 0060 02       		.uleb128 0x2
+ 398 0061 91       		.byte	0x91
+ 399 0062 6C       		.sleb128 -20
+ 400 0063 07       		.uleb128 0x7
+ 401 0064 ED130000 		.4byte	.LASF359
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 13
+
+
+ 402 0068 01       		.byte	0x1
+ 403 0069 CE       		.byte	0xce
+ 404 006a 72000000 		.4byte	0x72
+ 405 006e 02       		.uleb128 0x2
+ 406 006f 91       		.byte	0x91
+ 407 0070 68       		.sleb128 -24
+ 408 0071 00       		.byte	0
+ 409 0072 04       		.uleb128 0x4
+ 410 0073 04       		.byte	0x4
+ 411 0074 78000000 		.4byte	0x78
+ 412 0078 08       		.uleb128 0x8
+ 413 0079 04       		.byte	0x4
+ 414 007a 07       		.byte	0x7
+ 415 007b DA0D0000 		.4byte	.LASF370
+ 416 007f 09       		.uleb128 0x9
+ 417 0080 1F1C0000 		.4byte	.LASF360
+ 418 0084 01       		.byte	0x1
+ 419 0085 F0       		.byte	0xf0
+ 420 0086 00000000 		.4byte	.LFB1
+ 421 008a 0C000000 		.4byte	.LFE1-.LFB1
+ 422 008e 01       		.uleb128 0x1
+ 423 008f 9C       		.byte	0x9c
+ 424 0090 0A       		.uleb128 0xa
+ 425 0091 251E0000 		.4byte	.LASF361
+ 426 0095 01       		.byte	0x1
+ 427 0096 0E01     		.2byte	0x10e
+ 428 0098 00000000 		.4byte	.LFB2
+ 429 009c 06000000 		.4byte	.LFE2-.LFB2
+ 430 00a0 01       		.uleb128 0x1
+ 431 00a1 9C       		.byte	0x9c
+ 432 00a2 0B       		.uleb128 0xb
+ 433 00a3 991F0000 		.4byte	.LASF362
+ 434 00a7 01       		.byte	0x1
+ 435 00a8 16       		.byte	0x16
+ 436 00a9 78000000 		.4byte	0x78
+ 437 00ad 0B       		.uleb128 0xb
+ 438 00ae 00230000 		.4byte	.LASF363
+ 439 00b2 01       		.byte	0x1
+ 440 00b3 19       		.byte	0x19
+ 441 00b4 78000000 		.4byte	0x78
+ 442 00b8 0B       		.uleb128 0xb
+ 443 00b9 6E040000 		.4byte	.LASF364
+ 444 00bd 01       		.byte	0x1
+ 445 00be 1C       		.byte	0x1c
+ 446 00bf 78000000 		.4byte	0x78
+ 447 00c3 0B       		.uleb128 0xb
+ 448 00c4 BB130000 		.4byte	.LASF365
+ 449 00c8 01       		.byte	0x1
+ 450 00c9 1F       		.byte	0x1f
+ 451 00ca 78000000 		.4byte	0x78
+ 452 00ce 0B       		.uleb128 0xb
+ 453 00cf 4C1F0000 		.4byte	.LASF366
+ 454 00d3 01       		.byte	0x1
+ 455 00d4 20       		.byte	0x20
+ 456 00d5 78000000 		.4byte	0x78
+ 457 00d9 0B       		.uleb128 0xb
+ 458 00da D8230000 		.4byte	.LASF367
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 14
+
+
+ 459 00de 01       		.byte	0x1
+ 460 00df 23       		.byte	0x23
+ 461 00e0 78000000 		.4byte	0x78
+ 462 00e4 0B       		.uleb128 0xb
+ 463 00e5 DA090000 		.4byte	.LASF368
+ 464 00e9 01       		.byte	0x1
+ 465 00ea 24       		.byte	0x24
+ 466 00eb 78000000 		.4byte	0x78
+ 467 00ef 0B       		.uleb128 0xb
+ 468 00f0 481B0000 		.4byte	.LASF369
+ 469 00f4 01       		.byte	0x1
+ 470 00f5 27       		.byte	0x27
+ 471 00f6 78000000 		.4byte	0x78
+ 472 00fa 0C       		.uleb128 0xc
+ 473 00fb 39000000 		.4byte	0x39
+ 474 00ff 0A010000 		.4byte	0x10a
+ 475 0103 0D       		.uleb128 0xd
+ 476 0104 0A010000 		.4byte	0x10a
+ 477 0108 32       		.byte	0x32
+ 478 0109 00       		.byte	0
+ 479 010a 08       		.uleb128 0x8
+ 480 010b 04       		.byte	0x4
+ 481 010c 07       		.byte	0x7
+ 482 010d 26130000 		.4byte	.LASF371
+ 483 0111 0E       		.uleb128 0xe
+ 484 0112 0C140000 		.4byte	.LASF372
+ 485 0116 01       		.byte	0x1
+ 486 0117 7B       		.byte	0x7b
+ 487 0118 22010000 		.4byte	0x122
+ 488 011c 05       		.uleb128 0x5
+ 489 011d 03       		.byte	0x3
+ 490 011e 00000000 		.4byte	g_pfnVectors
+ 491 0122 03       		.uleb128 0x3
+ 492 0123 FA000000 		.4byte	0xfa
+ 493 0127 00       		.byte	0
+ 494              		.section	.debug_abbrev,"",%progbits
+ 495              	.Ldebug_abbrev0:
+ 496 0000 01       		.uleb128 0x1
+ 497 0001 11       		.uleb128 0x11
+ 498 0002 01       		.byte	0x1
+ 499 0003 25       		.uleb128 0x25
+ 500 0004 0E       		.uleb128 0xe
+ 501 0005 13       		.uleb128 0x13
+ 502 0006 0B       		.uleb128 0xb
+ 503 0007 03       		.uleb128 0x3
+ 504 0008 0E       		.uleb128 0xe
+ 505 0009 1B       		.uleb128 0x1b
+ 506 000a 0E       		.uleb128 0xe
+ 507 000b 55       		.uleb128 0x55
+ 508 000c 17       		.uleb128 0x17
+ 509 000d 11       		.uleb128 0x11
+ 510 000e 01       		.uleb128 0x1
+ 511 000f 10       		.uleb128 0x10
+ 512 0010 17       		.uleb128 0x17
+ 513 0011 9942     		.uleb128 0x2119
+ 514 0013 17       		.uleb128 0x17
+ 515 0014 00       		.byte	0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 15
+
+
+ 516 0015 00       		.byte	0
+ 517 0016 02       		.uleb128 0x2
+ 518 0017 16       		.uleb128 0x16
+ 519 0018 00       		.byte	0
+ 520 0019 03       		.uleb128 0x3
+ 521 001a 0E       		.uleb128 0xe
+ 522 001b 3A       		.uleb128 0x3a
+ 523 001c 0B       		.uleb128 0xb
+ 524 001d 3B       		.uleb128 0x3b
+ 525 001e 0B       		.uleb128 0xb
+ 526 001f 49       		.uleb128 0x49
+ 527 0020 13       		.uleb128 0x13
+ 528 0021 00       		.byte	0
+ 529 0022 00       		.byte	0
+ 530 0023 03       		.uleb128 0x3
+ 531 0024 26       		.uleb128 0x26
+ 532 0025 00       		.byte	0
+ 533 0026 49       		.uleb128 0x49
+ 534 0027 13       		.uleb128 0x13
+ 535 0028 00       		.byte	0
+ 536 0029 00       		.byte	0
+ 537 002a 04       		.uleb128 0x4
+ 538 002b 0F       		.uleb128 0xf
+ 539 002c 00       		.byte	0
+ 540 002d 0B       		.uleb128 0xb
+ 541 002e 0B       		.uleb128 0xb
+ 542 002f 49       		.uleb128 0x49
+ 543 0030 13       		.uleb128 0x13
+ 544 0031 00       		.byte	0
+ 545 0032 00       		.byte	0
+ 546 0033 05       		.uleb128 0x5
+ 547 0034 15       		.uleb128 0x15
+ 548 0035 00       		.byte	0
+ 549 0036 27       		.uleb128 0x27
+ 550 0037 19       		.uleb128 0x19
+ 551 0038 00       		.byte	0
+ 552 0039 00       		.byte	0
+ 553 003a 06       		.uleb128 0x6
+ 554 003b 2E       		.uleb128 0x2e
+ 555 003c 01       		.byte	0x1
+ 556 003d 3F       		.uleb128 0x3f
+ 557 003e 19       		.uleb128 0x19
+ 558 003f 03       		.uleb128 0x3
+ 559 0040 0E       		.uleb128 0xe
+ 560 0041 3A       		.uleb128 0x3a
+ 561 0042 0B       		.uleb128 0xb
+ 562 0043 3B       		.uleb128 0x3b
+ 563 0044 0B       		.uleb128 0xb
+ 564 0045 27       		.uleb128 0x27
+ 565 0046 19       		.uleb128 0x19
+ 566 0047 11       		.uleb128 0x11
+ 567 0048 01       		.uleb128 0x1
+ 568 0049 12       		.uleb128 0x12
+ 569 004a 06       		.uleb128 0x6
+ 570 004b 40       		.uleb128 0x40
+ 571 004c 18       		.uleb128 0x18
+ 572 004d 9642     		.uleb128 0x2116
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 16
+
+
+ 573 004f 19       		.uleb128 0x19
+ 574 0050 01       		.uleb128 0x1
+ 575 0051 13       		.uleb128 0x13
+ 576 0052 00       		.byte	0
+ 577 0053 00       		.byte	0
+ 578 0054 07       		.uleb128 0x7
+ 579 0055 34       		.uleb128 0x34
+ 580 0056 00       		.byte	0
+ 581 0057 03       		.uleb128 0x3
+ 582 0058 0E       		.uleb128 0xe
+ 583 0059 3A       		.uleb128 0x3a
+ 584 005a 0B       		.uleb128 0xb
+ 585 005b 3B       		.uleb128 0x3b
+ 586 005c 0B       		.uleb128 0xb
+ 587 005d 49       		.uleb128 0x49
+ 588 005e 13       		.uleb128 0x13
+ 589 005f 02       		.uleb128 0x2
+ 590 0060 18       		.uleb128 0x18
+ 591 0061 00       		.byte	0
+ 592 0062 00       		.byte	0
+ 593 0063 08       		.uleb128 0x8
+ 594 0064 24       		.uleb128 0x24
+ 595 0065 00       		.byte	0
+ 596 0066 0B       		.uleb128 0xb
+ 597 0067 0B       		.uleb128 0xb
+ 598 0068 3E       		.uleb128 0x3e
+ 599 0069 0B       		.uleb128 0xb
+ 600 006a 03       		.uleb128 0x3
+ 601 006b 0E       		.uleb128 0xe
+ 602 006c 00       		.byte	0
+ 603 006d 00       		.byte	0
+ 604 006e 09       		.uleb128 0x9
+ 605 006f 2E       		.uleb128 0x2e
+ 606 0070 00       		.byte	0
+ 607 0071 3F       		.uleb128 0x3f
+ 608 0072 19       		.uleb128 0x19
+ 609 0073 03       		.uleb128 0x3
+ 610 0074 0E       		.uleb128 0xe
+ 611 0075 3A       		.uleb128 0x3a
+ 612 0076 0B       		.uleb128 0xb
+ 613 0077 3B       		.uleb128 0x3b
+ 614 0078 0B       		.uleb128 0xb
+ 615 0079 27       		.uleb128 0x27
+ 616 007a 19       		.uleb128 0x19
+ 617 007b 11       		.uleb128 0x11
+ 618 007c 01       		.uleb128 0x1
+ 619 007d 12       		.uleb128 0x12
+ 620 007e 06       		.uleb128 0x6
+ 621 007f 40       		.uleb128 0x40
+ 622 0080 18       		.uleb128 0x18
+ 623 0081 9742     		.uleb128 0x2117
+ 624 0083 19       		.uleb128 0x19
+ 625 0084 00       		.byte	0
+ 626 0085 00       		.byte	0
+ 627 0086 0A       		.uleb128 0xa
+ 628 0087 2E       		.uleb128 0x2e
+ 629 0088 00       		.byte	0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 17
+
+
+ 630 0089 3F       		.uleb128 0x3f
+ 631 008a 19       		.uleb128 0x19
+ 632 008b 03       		.uleb128 0x3
+ 633 008c 0E       		.uleb128 0xe
+ 634 008d 3A       		.uleb128 0x3a
+ 635 008e 0B       		.uleb128 0xb
+ 636 008f 3B       		.uleb128 0x3b
+ 637 0090 05       		.uleb128 0x5
+ 638 0091 27       		.uleb128 0x27
+ 639 0092 19       		.uleb128 0x19
+ 640 0093 11       		.uleb128 0x11
+ 641 0094 01       		.uleb128 0x1
+ 642 0095 12       		.uleb128 0x12
+ 643 0096 06       		.uleb128 0x6
+ 644 0097 40       		.uleb128 0x40
+ 645 0098 18       		.uleb128 0x18
+ 646 0099 9742     		.uleb128 0x2117
+ 647 009b 19       		.uleb128 0x19
+ 648 009c 00       		.byte	0
+ 649 009d 00       		.byte	0
+ 650 009e 0B       		.uleb128 0xb
+ 651 009f 34       		.uleb128 0x34
+ 652 00a0 00       		.byte	0
+ 653 00a1 03       		.uleb128 0x3
+ 654 00a2 0E       		.uleb128 0xe
+ 655 00a3 3A       		.uleb128 0x3a
+ 656 00a4 0B       		.uleb128 0xb
+ 657 00a5 3B       		.uleb128 0x3b
+ 658 00a6 0B       		.uleb128 0xb
+ 659 00a7 49       		.uleb128 0x49
+ 660 00a8 13       		.uleb128 0x13
+ 661 00a9 3F       		.uleb128 0x3f
+ 662 00aa 19       		.uleb128 0x19
+ 663 00ab 3C       		.uleb128 0x3c
+ 664 00ac 19       		.uleb128 0x19
+ 665 00ad 00       		.byte	0
+ 666 00ae 00       		.byte	0
+ 667 00af 0C       		.uleb128 0xc
+ 668 00b0 01       		.uleb128 0x1
+ 669 00b1 01       		.byte	0x1
+ 670 00b2 49       		.uleb128 0x49
+ 671 00b3 13       		.uleb128 0x13
+ 672 00b4 01       		.uleb128 0x1
+ 673 00b5 13       		.uleb128 0x13
+ 674 00b6 00       		.byte	0
+ 675 00b7 00       		.byte	0
+ 676 00b8 0D       		.uleb128 0xd
+ 677 00b9 21       		.uleb128 0x21
+ 678 00ba 00       		.byte	0
+ 679 00bb 49       		.uleb128 0x49
+ 680 00bc 13       		.uleb128 0x13
+ 681 00bd 2F       		.uleb128 0x2f
+ 682 00be 0B       		.uleb128 0xb
+ 683 00bf 00       		.byte	0
+ 684 00c0 00       		.byte	0
+ 685 00c1 0E       		.uleb128 0xe
+ 686 00c2 34       		.uleb128 0x34
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 18
+
+
+ 687 00c3 00       		.byte	0
+ 688 00c4 03       		.uleb128 0x3
+ 689 00c5 0E       		.uleb128 0xe
+ 690 00c6 3A       		.uleb128 0x3a
+ 691 00c7 0B       		.uleb128 0xb
+ 692 00c8 3B       		.uleb128 0x3b
+ 693 00c9 0B       		.uleb128 0xb
+ 694 00ca 49       		.uleb128 0x49
+ 695 00cb 13       		.uleb128 0x13
+ 696 00cc 3F       		.uleb128 0x3f
+ 697 00cd 19       		.uleb128 0x19
+ 698 00ce 02       		.uleb128 0x2
+ 699 00cf 18       		.uleb128 0x18
+ 700 00d0 00       		.byte	0
+ 701 00d1 00       		.byte	0
+ 702 00d2 00       		.byte	0
+ 703              		.section	.debug_aranges,"",%progbits
+ 704 0000 2C000000 		.4byte	0x2c
+ 705 0004 0200     		.2byte	0x2
+ 706 0006 00000000 		.4byte	.Ldebug_info0
+ 707 000a 04       		.byte	0x4
+ 708 000b 00       		.byte	0
+ 709 000c 0000     		.2byte	0
+ 710 000e 0000     		.2byte	0
+ 711 0010 00000000 		.4byte	.LFB0
+ 712 0014 88000000 		.4byte	.LFE0-.LFB0
+ 713 0018 00000000 		.4byte	.LFB1
+ 714 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 715 0020 00000000 		.4byte	.LFB2
+ 716 0024 06000000 		.4byte	.LFE2-.LFB2
+ 717 0028 00000000 		.4byte	0
+ 718 002c 00000000 		.4byte	0
+ 719              		.section	.debug_ranges,"",%progbits
+ 720              	.Ldebug_ranges0:
+ 721 0000 00000000 		.4byte	.LFB0
+ 722 0004 88000000 		.4byte	.LFE0
+ 723 0008 00000000 		.4byte	.LFB1
+ 724 000c 0C000000 		.4byte	.LFE1
+ 725 0010 00000000 		.4byte	.LFB2
+ 726 0014 06000000 		.4byte	.LFE2
+ 727 0018 00000000 		.4byte	0
+ 728 001c 00000000 		.4byte	0
+ 729              		.section	.debug_macro,"",%progbits
+ 730              	.Ldebug_macro0:
+ 731 0000 0400     		.2byte	0x4
+ 732 0002 02       		.byte	0x2
+ 733 0003 00000000 		.4byte	.Ldebug_line0
+ 734 0007 07       		.byte	0x7
+ 735 0008 00000000 		.4byte	.Ldebug_macro1
+ 736 000c 03       		.byte	0x3
+ 737 000d 00       		.uleb128 0
+ 738 000e 01       		.uleb128 0x1
+ 739 000f 05       		.byte	0x5
+ 740 0010 08       		.uleb128 0x8
+ 741 0011 D91E0000 		.4byte	.LASF355
+ 742 0015 05       		.byte	0x5
+ 743 0016 0F       		.uleb128 0xf
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 19
+
+
+ 744 0017 BD1D0000 		.4byte	.LASF356
+ 745 001b 05       		.byte	0x5
+ 746 001c 10       		.uleb128 0x10
+ 747 001d 95020000 		.4byte	.LASF357
+ 748 0021 04       		.byte	0x4
+ 749 0022 00       		.byte	0
+ 750              		.section	.debug_macro,"G",%progbits,wm4.0.1834ce015d70b8127b1e5f7bc96e3d8e,comdat
+ 751              	.Ldebug_macro1:
+ 752 0000 0400     		.2byte	0x4
+ 753 0002 00       		.byte	0
+ 754 0003 05       		.byte	0x5
+ 755 0004 00       		.uleb128 0
+ 756 0005 3A150000 		.4byte	.LASF0
+ 757 0009 05       		.byte	0x5
+ 758 000a 00       		.uleb128 0
+ 759 000b 39040000 		.4byte	.LASF1
+ 760 000f 05       		.byte	0x5
+ 761 0010 00       		.uleb128 0
+ 762 0011 90030000 		.4byte	.LASF2
+ 763 0015 05       		.byte	0x5
+ 764 0016 00       		.uleb128 0
+ 765 0017 260E0000 		.4byte	.LASF3
+ 766 001b 05       		.byte	0x5
+ 767 001c 00       		.uleb128 0
+ 768 001d CF110000 		.4byte	.LASF4
+ 769 0021 05       		.byte	0x5
+ 770 0022 00       		.uleb128 0
+ 771 0023 BE0C0000 		.4byte	.LASF5
+ 772 0027 05       		.byte	0x5
+ 773 0028 00       		.uleb128 0
+ 774 0029 7C1A0000 		.4byte	.LASF6
+ 775 002d 05       		.byte	0x5
+ 776 002e 00       		.uleb128 0
+ 777 002f F60A0000 		.4byte	.LASF7
+ 778 0033 05       		.byte	0x5
+ 779 0034 00       		.uleb128 0
+ 780 0035 8E150000 		.4byte	.LASF8
+ 781 0039 05       		.byte	0x5
+ 782 003a 00       		.uleb128 0
+ 783 003b 950C0000 		.4byte	.LASF9
+ 784 003f 05       		.byte	0x5
+ 785 0040 00       		.uleb128 0
+ 786 0041 E2210000 		.4byte	.LASF10
+ 787 0045 05       		.byte	0x5
+ 788 0046 00       		.uleb128 0
+ 789 0047 C61E0000 		.4byte	.LASF11
+ 790 004b 05       		.byte	0x5
+ 791 004c 00       		.uleb128 0
+ 792 004d 8F1A0000 		.4byte	.LASF12
+ 793 0051 05       		.byte	0x5
+ 794 0052 00       		.uleb128 0
+ 795 0053 98120000 		.4byte	.LASF13
+ 796 0057 05       		.byte	0x5
+ 797 0058 00       		.uleb128 0
+ 798 0059 4D070000 		.4byte	.LASF14
+ 799 005d 05       		.byte	0x5
+ 800 005e 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 20
+
+
+ 801 005f 220C0000 		.4byte	.LASF15
+ 802 0063 05       		.byte	0x5
+ 803 0064 00       		.uleb128 0
+ 804 0065 FA0F0000 		.4byte	.LASF16
+ 805 0069 05       		.byte	0x5
+ 806 006a 00       		.uleb128 0
+ 807 006b 3B190000 		.4byte	.LASF17
+ 808 006f 05       		.byte	0x5
+ 809 0070 00       		.uleb128 0
+ 810 0071 640A0000 		.4byte	.LASF18
+ 811 0075 05       		.byte	0x5
+ 812 0076 00       		.uleb128 0
+ 813 0077 F8060000 		.4byte	.LASF19
+ 814 007b 05       		.byte	0x5
+ 815 007c 00       		.uleb128 0
+ 816 007d 88000000 		.4byte	.LASF20
+ 817 0081 05       		.byte	0x5
+ 818 0082 00       		.uleb128 0
+ 819 0083 32200000 		.4byte	.LASF21
+ 820 0087 05       		.byte	0x5
+ 821 0088 00       		.uleb128 0
+ 822 0089 D5130000 		.4byte	.LASF22
+ 823 008d 05       		.byte	0x5
+ 824 008e 00       		.uleb128 0
+ 825 008f 0B1A0000 		.4byte	.LASF23
+ 826 0093 05       		.byte	0x5
+ 827 0094 00       		.uleb128 0
+ 828 0095 780F0000 		.4byte	.LASF24
+ 829 0099 05       		.byte	0x5
+ 830 009a 00       		.uleb128 0
+ 831 009b BD190000 		.4byte	.LASF25
+ 832 009f 05       		.byte	0x5
+ 833 00a0 00       		.uleb128 0
+ 834 00a1 4F080000 		.4byte	.LASF26
+ 835 00a5 05       		.byte	0x5
+ 836 00a6 00       		.uleb128 0
+ 837 00a7 CD080000 		.4byte	.LASF27
+ 838 00ab 05       		.byte	0x5
+ 839 00ac 00       		.uleb128 0
+ 840 00ad FA000000 		.4byte	.LASF28
+ 841 00b1 05       		.byte	0x5
+ 842 00b2 00       		.uleb128 0
+ 843 00b3 CD040000 		.4byte	.LASF29
+ 844 00b7 05       		.byte	0x5
+ 845 00b8 00       		.uleb128 0
+ 846 00b9 FA1D0000 		.4byte	.LASF30
+ 847 00bd 05       		.byte	0x5
+ 848 00be 00       		.uleb128 0
+ 849 00bf 351E0000 		.4byte	.LASF31
+ 850 00c3 05       		.byte	0x5
+ 851 00c4 00       		.uleb128 0
+ 852 00c5 281A0000 		.4byte	.LASF32
+ 853 00c9 05       		.byte	0x5
+ 854 00ca 00       		.uleb128 0
+ 855 00cb DC0F0000 		.4byte	.LASF33
+ 856 00cf 05       		.byte	0x5
+ 857 00d0 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 21
+
+
+ 858 00d1 A90B0000 		.4byte	.LASF34
+ 859 00d5 05       		.byte	0x5
+ 860 00d6 00       		.uleb128 0
+ 861 00d7 920F0000 		.4byte	.LASF35
+ 862 00db 05       		.byte	0x5
+ 863 00dc 00       		.uleb128 0
+ 864 00dd 4F030000 		.4byte	.LASF36
+ 865 00e1 05       		.byte	0x5
+ 866 00e2 00       		.uleb128 0
+ 867 00e3 B6060000 		.4byte	.LASF37
+ 868 00e7 05       		.byte	0x5
+ 869 00e8 00       		.uleb128 0
+ 870 00e9 35080000 		.4byte	.LASF38
+ 871 00ed 05       		.byte	0x5
+ 872 00ee 00       		.uleb128 0
+ 873 00ef 130A0000 		.4byte	.LASF39
+ 874 00f3 05       		.byte	0x5
+ 875 00f4 00       		.uleb128 0
+ 876 00f5 38090000 		.4byte	.LASF40
+ 877 00f9 05       		.byte	0x5
+ 878 00fa 00       		.uleb128 0
+ 879 00fb A9120000 		.4byte	.LASF41
+ 880 00ff 05       		.byte	0x5
+ 881 0100 00       		.uleb128 0
+ 882 0101 E5050000 		.4byte	.LASF42
+ 883 0105 05       		.byte	0x5
+ 884 0106 00       		.uleb128 0
+ 885 0107 561F0000 		.4byte	.LASF43
+ 886 010b 05       		.byte	0x5
+ 887 010c 00       		.uleb128 0
+ 888 010d F7160000 		.4byte	.LASF44
+ 889 0111 05       		.byte	0x5
+ 890 0112 00       		.uleb128 0
+ 891 0113 14020000 		.4byte	.LASF45
+ 892 0117 05       		.byte	0x5
+ 893 0118 00       		.uleb128 0
+ 894 0119 ED180000 		.4byte	.LASF46
+ 895 011d 05       		.byte	0x5
+ 896 011e 00       		.uleb128 0
+ 897 011f 760C0000 		.4byte	.LASF47
+ 898 0123 05       		.byte	0x5
+ 899 0124 00       		.uleb128 0
+ 900 0125 4E170000 		.4byte	.LASF48
+ 901 0129 05       		.byte	0x5
+ 902 012a 00       		.uleb128 0
+ 903 012b 591A0000 		.4byte	.LASF49
+ 904 012f 05       		.byte	0x5
+ 905 0130 00       		.uleb128 0
+ 906 0131 B5230000 		.4byte	.LASF50
+ 907 0135 05       		.byte	0x5
+ 908 0136 00       		.uleb128 0
+ 909 0137 EB140000 		.4byte	.LASF51
+ 910 013b 05       		.byte	0x5
+ 911 013c 00       		.uleb128 0
+ 912 013d A1180000 		.4byte	.LASF52
+ 913 0141 05       		.byte	0x5
+ 914 0142 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 22
+
+
+ 915 0143 63050000 		.4byte	.LASF53
+ 916 0147 05       		.byte	0x5
+ 917 0148 00       		.uleb128 0
+ 918 0149 F5130000 		.4byte	.LASF54
+ 919 014d 05       		.byte	0x5
+ 920 014e 00       		.uleb128 0
+ 921 014f 6A090000 		.4byte	.LASF55
+ 922 0153 05       		.byte	0x5
+ 923 0154 00       		.uleb128 0
+ 924 0155 C5200000 		.4byte	.LASF56
+ 925 0159 05       		.byte	0x5
+ 926 015a 00       		.uleb128 0
+ 927 015b A7100000 		.4byte	.LASF57
+ 928 015f 05       		.byte	0x5
+ 929 0160 00       		.uleb128 0
+ 930 0161 D91D0000 		.4byte	.LASF58
+ 931 0165 05       		.byte	0x5
+ 932 0166 00       		.uleb128 0
+ 933 0167 DD200000 		.4byte	.LASF59
+ 934 016b 05       		.byte	0x5
+ 935 016c 00       		.uleb128 0
+ 936 016d 34160000 		.4byte	.LASF60
+ 937 0171 05       		.byte	0x5
+ 938 0172 00       		.uleb128 0
+ 939 0173 7A230000 		.4byte	.LASF61
+ 940 0177 05       		.byte	0x5
+ 941 0178 00       		.uleb128 0
+ 942 0179 97050000 		.4byte	.LASF62
+ 943 017d 05       		.byte	0x5
+ 944 017e 00       		.uleb128 0
+ 945 017f 651C0000 		.4byte	.LASF63
+ 946 0183 05       		.byte	0x5
+ 947 0184 00       		.uleb128 0
+ 948 0185 0A200000 		.4byte	.LASF64
+ 949 0189 05       		.byte	0x5
+ 950 018a 00       		.uleb128 0
+ 951 018b A8090000 		.4byte	.LASF65
+ 952 018f 05       		.byte	0x5
+ 953 0190 00       		.uleb128 0
+ 954 0191 901B0000 		.4byte	.LASF66
+ 955 0195 05       		.byte	0x5
+ 956 0196 00       		.uleb128 0
+ 957 0197 ED240000 		.4byte	.LASF67
+ 958 019b 05       		.byte	0x5
+ 959 019c 00       		.uleb128 0
+ 960 019d 051D0000 		.4byte	.LASF68
+ 961 01a1 05       		.byte	0x5
+ 962 01a2 00       		.uleb128 0
+ 963 01a3 07230000 		.4byte	.LASF69
+ 964 01a7 05       		.byte	0x5
+ 965 01a8 00       		.uleb128 0
+ 966 01a9 1B110000 		.4byte	.LASF70
+ 967 01ad 05       		.byte	0x5
+ 968 01ae 00       		.uleb128 0
+ 969 01af A7110000 		.4byte	.LASF71
+ 970 01b3 05       		.byte	0x5
+ 971 01b4 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 23
+
+
+ 972 01b5 23000000 		.4byte	.LASF72
+ 973 01b9 05       		.byte	0x5
+ 974 01ba 00       		.uleb128 0
+ 975 01bb F41C0000 		.4byte	.LASF73
+ 976 01bf 05       		.byte	0x5
+ 977 01c0 00       		.uleb128 0
+ 978 01c1 A21C0000 		.4byte	.LASF74
+ 979 01c5 05       		.byte	0x5
+ 980 01c6 00       		.uleb128 0
+ 981 01c7 4B040000 		.4byte	.LASF75
+ 982 01cb 05       		.byte	0x5
+ 983 01cc 00       		.uleb128 0
+ 984 01cd F1170000 		.4byte	.LASF76
+ 985 01d1 05       		.byte	0x5
+ 986 01d2 00       		.uleb128 0
+ 987 01d3 0C180000 		.4byte	.LASF77
+ 988 01d7 05       		.byte	0x5
+ 989 01d8 00       		.uleb128 0
+ 990 01d9 6B1B0000 		.4byte	.LASF78
+ 991 01dd 05       		.byte	0x5
+ 992 01de 00       		.uleb128 0
+ 993 01df 6D180000 		.4byte	.LASF79
+ 994 01e3 05       		.byte	0x5
+ 995 01e4 00       		.uleb128 0
+ 996 01e5 25220000 		.4byte	.LASF80
+ 997 01e9 05       		.byte	0x5
+ 998 01ea 00       		.uleb128 0
+ 999 01eb E6010000 		.4byte	.LASF81
+ 1000 01ef 05       		.byte	0x5
+ 1001 01f0 00       		.uleb128 0
+ 1002 01f1 2A1B0000 		.4byte	.LASF82
+ 1003 01f5 05       		.byte	0x5
+ 1004 01f6 00       		.uleb128 0
+ 1005 01f7 41200000 		.4byte	.LASF83
+ 1006 01fb 05       		.byte	0x5
+ 1007 01fc 00       		.uleb128 0
+ 1008 01fd 490E0000 		.4byte	.LASF84
+ 1009 0201 05       		.byte	0x5
+ 1010 0202 00       		.uleb128 0
+ 1011 0203 55120000 		.4byte	.LASF85
+ 1012 0207 05       		.byte	0x5
+ 1013 0208 00       		.uleb128 0
+ 1014 0209 50090000 		.4byte	.LASF86
+ 1015 020d 05       		.byte	0x5
+ 1016 020e 00       		.uleb128 0
+ 1017 020f 3D000000 		.4byte	.LASF87
+ 1018 0213 05       		.byte	0x5
+ 1019 0214 00       		.uleb128 0
+ 1020 0215 77010000 		.4byte	.LASF88
+ 1021 0219 05       		.byte	0x5
+ 1022 021a 00       		.uleb128 0
+ 1023 021b 6C170000 		.4byte	.LASF89
+ 1024 021f 05       		.byte	0x5
+ 1025 0220 00       		.uleb128 0
+ 1026 0221 18160000 		.4byte	.LASF90
+ 1027 0225 05       		.byte	0x5
+ 1028 0226 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 24
+
+
+ 1029 0227 980E0000 		.4byte	.LASF91
+ 1030 022b 05       		.byte	0x5
+ 1031 022c 00       		.uleb128 0
+ 1032 022d 010F0000 		.4byte	.LASF92
+ 1033 0231 05       		.byte	0x5
+ 1034 0232 00       		.uleb128 0
+ 1035 0233 A20D0000 		.4byte	.LASF93
+ 1036 0237 05       		.byte	0x5
+ 1037 0238 00       		.uleb128 0
+ 1038 0239 1F0D0000 		.4byte	.LASF94
+ 1039 023d 05       		.byte	0x5
+ 1040 023e 00       		.uleb128 0
+ 1041 023f 58100000 		.4byte	.LASF95
+ 1042 0243 05       		.byte	0x5
+ 1043 0244 00       		.uleb128 0
+ 1044 0245 9C070000 		.4byte	.LASF96
+ 1045 0249 05       		.byte	0x5
+ 1046 024a 00       		.uleb128 0
+ 1047 024b 4C0B0000 		.4byte	.LASF97
+ 1048 024f 05       		.byte	0x5
+ 1049 0250 00       		.uleb128 0
+ 1050 0251 D0000000 		.4byte	.LASF98
+ 1051 0255 05       		.byte	0x5
+ 1052 0256 00       		.uleb128 0
+ 1053 0257 C9180000 		.4byte	.LASF99
+ 1054 025b 05       		.byte	0x5
+ 1055 025c 00       		.uleb128 0
+ 1056 025d CE010000 		.4byte	.LASF100
+ 1057 0261 05       		.byte	0x5
+ 1058 0262 00       		.uleb128 0
+ 1059 0263 A6230000 		.4byte	.LASF101
+ 1060 0267 05       		.byte	0x5
+ 1061 0268 00       		.uleb128 0
+ 1062 0269 7B190000 		.4byte	.LASF102
+ 1063 026d 05       		.byte	0x5
+ 1064 026e 00       		.uleb128 0
+ 1065 026f 0D190000 		.4byte	.LASF103
+ 1066 0273 05       		.byte	0x5
+ 1067 0274 00       		.uleb128 0
+ 1068 0275 1D120000 		.4byte	.LASF104
+ 1069 0279 05       		.byte	0x5
+ 1070 027a 00       		.uleb128 0
+ 1071 027b 19170000 		.4byte	.LASF105
+ 1072 027f 05       		.byte	0x5
+ 1073 0280 00       		.uleb128 0
+ 1074 0281 181D0000 		.4byte	.LASF106
+ 1075 0285 05       		.byte	0x5
+ 1076 0286 00       		.uleb128 0
+ 1077 0287 71000000 		.4byte	.LASF107
+ 1078 028b 05       		.byte	0x5
+ 1079 028c 00       		.uleb128 0
+ 1080 028d 0F010000 		.4byte	.LASF108
+ 1081 0291 05       		.byte	0x5
+ 1082 0292 00       		.uleb128 0
+ 1083 0293 CD140000 		.4byte	.LASF109
+ 1084 0297 05       		.byte	0x5
+ 1085 0298 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 25
+
+
+ 1086 0299 901D0000 		.4byte	.LASF110
+ 1087 029d 05       		.byte	0x5
+ 1088 029e 00       		.uleb128 0
+ 1089 029f 4F0F0000 		.4byte	.LASF111
+ 1090 02a3 05       		.byte	0x5
+ 1091 02a4 00       		.uleb128 0
+ 1092 02a5 B7220000 		.4byte	.LASF112
+ 1093 02a9 05       		.byte	0x5
+ 1094 02aa 00       		.uleb128 0
+ 1095 02ab 791F0000 		.4byte	.LASF113
+ 1096 02af 05       		.byte	0x5
+ 1097 02b0 00       		.uleb128 0
+ 1098 02b1 75040000 		.4byte	.LASF114
+ 1099 02b5 05       		.byte	0x5
+ 1100 02b6 00       		.uleb128 0
+ 1101 02b7 950A0000 		.4byte	.LASF115
+ 1102 02bb 05       		.byte	0x5
+ 1103 02bc 00       		.uleb128 0
+ 1104 02bd 10210000 		.4byte	.LASF116
+ 1105 02c1 05       		.byte	0x5
+ 1106 02c2 00       		.uleb128 0
+ 1107 02c3 4A240000 		.4byte	.LASF117
+ 1108 02c7 05       		.byte	0x5
+ 1109 02c8 00       		.uleb128 0
+ 1110 02c9 FC1A0000 		.4byte	.LASF118
+ 1111 02cd 05       		.byte	0x5
+ 1112 02ce 00       		.uleb128 0
+ 1113 02cf 5A0E0000 		.4byte	.LASF119
+ 1114 02d3 05       		.byte	0x5
+ 1115 02d4 00       		.uleb128 0
+ 1116 02d5 68150000 		.4byte	.LASF120
+ 1117 02d9 05       		.byte	0x5
+ 1118 02da 00       		.uleb128 0
+ 1119 02db A80C0000 		.4byte	.LASF121
+ 1120 02df 05       		.byte	0x5
+ 1121 02e0 00       		.uleb128 0
+ 1122 02e1 921C0000 		.4byte	.LASF122
+ 1123 02e5 05       		.byte	0x5
+ 1124 02e6 00       		.uleb128 0
+ 1125 02e7 C1130000 		.4byte	.LASF123
+ 1126 02eb 05       		.byte	0x5
+ 1127 02ec 00       		.uleb128 0
+ 1128 02ed 390C0000 		.4byte	.LASF124
+ 1129 02f1 05       		.byte	0x5
+ 1130 02f2 00       		.uleb128 0
+ 1131 02f3 EA0E0000 		.4byte	.LASF125
+ 1132 02f7 05       		.byte	0x5
+ 1133 02f8 00       		.uleb128 0
+ 1134 02f9 9A210000 		.4byte	.LASF126
+ 1135 02fd 05       		.byte	0x5
+ 1136 02fe 00       		.uleb128 0
+ 1137 02ff C9100000 		.4byte	.LASF127
+ 1138 0303 05       		.byte	0x5
+ 1139 0304 00       		.uleb128 0
+ 1140 0305 98170000 		.4byte	.LASF128
+ 1141 0309 05       		.byte	0x5
+ 1142 030a 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 26
+
+
+ 1143 030b 3F120000 		.4byte	.LASF129
+ 1144 030f 05       		.byte	0x5
+ 1145 0310 00       		.uleb128 0
+ 1146 0311 AE170000 		.4byte	.LASF130
+ 1147 0315 05       		.byte	0x5
+ 1148 0316 00       		.uleb128 0
+ 1149 0317 19050000 		.4byte	.LASF131
+ 1150 031b 05       		.byte	0x5
+ 1151 031c 00       		.uleb128 0
+ 1152 031d 96190000 		.4byte	.LASF132
+ 1153 0321 05       		.byte	0x5
+ 1154 0322 00       		.uleb128 0
+ 1155 0323 24030000 		.4byte	.LASF133
+ 1156 0327 05       		.byte	0x5
+ 1157 0328 00       		.uleb128 0
+ 1158 0329 66240000 		.4byte	.LASF134
+ 1159 032d 05       		.byte	0x5
+ 1160 032e 00       		.uleb128 0
+ 1161 032f DD1C0000 		.4byte	.LASF135
+ 1162 0333 05       		.byte	0x5
+ 1163 0334 00       		.uleb128 0
+ 1164 0335 BF0E0000 		.4byte	.LASF136
+ 1165 0339 05       		.byte	0x5
+ 1166 033a 00       		.uleb128 0
+ 1167 033b 3D050000 		.4byte	.LASF137
+ 1168 033f 05       		.byte	0x5
+ 1169 0340 00       		.uleb128 0
+ 1170 0341 0E120000 		.4byte	.LASF138
+ 1171 0345 05       		.byte	0x5
+ 1172 0346 00       		.uleb128 0
+ 1173 0347 071C0000 		.4byte	.LASF139
+ 1174 034b 05       		.byte	0x5
+ 1175 034c 00       		.uleb128 0
+ 1176 034d C1240000 		.4byte	.LASF140
+ 1177 0351 05       		.byte	0x5
+ 1178 0352 00       		.uleb128 0
+ 1179 0353 25150000 		.4byte	.LASF141
+ 1180 0357 05       		.byte	0x5
+ 1181 0358 00       		.uleb128 0
+ 1182 0359 64190000 		.4byte	.LASF142
+ 1183 035d 05       		.byte	0x5
+ 1184 035e 00       		.uleb128 0
+ 1185 035f F7110000 		.4byte	.LASF143
+ 1186 0363 05       		.byte	0x5
+ 1187 0364 00       		.uleb128 0
+ 1188 0365 89010000 		.4byte	.LASF144
+ 1189 0369 05       		.byte	0x5
+ 1190 036a 00       		.uleb128 0
+ 1191 036b 92240000 		.4byte	.LASF145
+ 1192 036f 05       		.byte	0x5
+ 1193 0370 00       		.uleb128 0
+ 1194 0371 731E0000 		.4byte	.LASF146
+ 1195 0375 05       		.byte	0x5
+ 1196 0376 00       		.uleb128 0
+ 1197 0377 85130000 		.4byte	.LASF147
+ 1198 037b 05       		.byte	0x5
+ 1199 037c 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 27
+
+
+ 1200 037d ED100000 		.4byte	.LASF148
+ 1201 0381 05       		.byte	0x5
+ 1202 0382 00       		.uleb128 0
+ 1203 0383 D4030000 		.4byte	.LASF149
+ 1204 0387 05       		.byte	0x5
+ 1205 0388 00       		.uleb128 0
+ 1206 0389 82210000 		.4byte	.LASF150
+ 1207 038d 05       		.byte	0x5
+ 1208 038e 00       		.uleb128 0
+ 1209 038f 331C0000 		.4byte	.LASF151
+ 1210 0393 05       		.byte	0x5
+ 1211 0394 00       		.uleb128 0
+ 1212 0395 56160000 		.4byte	.LASF152
+ 1213 0399 05       		.byte	0x5
+ 1214 039a 00       		.uleb128 0
+ 1215 039b EB030000 		.4byte	.LASF153
+ 1216 039f 05       		.byte	0x5
+ 1217 03a0 00       		.uleb128 0
+ 1218 03a1 69120000 		.4byte	.LASF154
+ 1219 03a5 05       		.byte	0x5
+ 1220 03a6 00       		.uleb128 0
+ 1221 03a7 A0060000 		.4byte	.LASF155
+ 1222 03ab 05       		.byte	0x5
+ 1223 03ac 00       		.uleb128 0
+ 1224 03ad 451D0000 		.4byte	.LASF156
+ 1225 03b1 05       		.byte	0x5
+ 1226 03b2 00       		.uleb128 0
+ 1227 03b3 5B040000 		.4byte	.LASF157
+ 1228 03b7 05       		.byte	0x5
+ 1229 03b8 00       		.uleb128 0
+ 1230 03b9 95040000 		.4byte	.LASF158
+ 1231 03bd 05       		.byte	0x5
+ 1232 03be 00       		.uleb128 0
+ 1233 03bf AB050000 		.4byte	.LASF159
+ 1234 03c3 05       		.byte	0x5
+ 1235 03c4 00       		.uleb128 0
+ 1236 03c5 7A160000 		.4byte	.LASF160
+ 1237 03c9 05       		.byte	0x5
+ 1238 03ca 00       		.uleb128 0
+ 1239 03cb 42130000 		.4byte	.LASF161
+ 1240 03cf 05       		.byte	0x5
+ 1241 03d0 00       		.uleb128 0
+ 1242 03d1 0F1E0000 		.4byte	.LASF162
+ 1243 03d5 05       		.byte	0x5
+ 1244 03d6 00       		.uleb128 0
+ 1245 03d7 D7070000 		.4byte	.LASF163
+ 1246 03db 05       		.byte	0x5
+ 1247 03dc 00       		.uleb128 0
+ 1248 03dd 2C0A0000 		.4byte	.LASF164
+ 1249 03e1 05       		.byte	0x5
+ 1250 03e2 00       		.uleb128 0
+ 1251 03e3 E71A0000 		.4byte	.LASF165
+ 1252 03e7 05       		.byte	0x5
+ 1253 03e8 00       		.uleb128 0
+ 1254 03e9 390D0000 		.4byte	.LASF166
+ 1255 03ed 05       		.byte	0x5
+ 1256 03ee 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 28
+
+
+ 1257 03ef 510D0000 		.4byte	.LASF167
+ 1258 03f3 05       		.byte	0x5
+ 1259 03f4 00       		.uleb128 0
+ 1260 03f5 FE010000 		.4byte	.LASF168
+ 1261 03f9 05       		.byte	0x5
+ 1262 03fa 00       		.uleb128 0
+ 1263 03fb EC0D0000 		.4byte	.LASF169
+ 1264 03ff 05       		.byte	0x5
+ 1265 0400 00       		.uleb128 0
+ 1266 0401 DE230000 		.4byte	.LASF170
+ 1267 0405 05       		.byte	0x5
+ 1268 0406 00       		.uleb128 0
+ 1269 0407 C10A0000 		.4byte	.LASF171
+ 1270 040b 05       		.byte	0x5
+ 1271 040c 00       		.uleb128 0
+ 1272 040d B8010000 		.4byte	.LASF172
+ 1273 0411 05       		.byte	0x5
+ 1274 0412 00       		.uleb128 0
+ 1275 0413 5F070000 		.4byte	.LASF173
+ 1276 0417 05       		.byte	0x5
+ 1277 0418 00       		.uleb128 0
+ 1278 0419 6F130000 		.4byte	.LASF174
+ 1279 041d 05       		.byte	0x5
+ 1280 041e 00       		.uleb128 0
+ 1281 041f 920B0000 		.4byte	.LASF175
+ 1282 0423 05       		.byte	0x5
+ 1283 0424 00       		.uleb128 0
+ 1284 0425 44140000 		.4byte	.LASF176
+ 1285 0429 05       		.byte	0x5
+ 1286 042a 00       		.uleb128 0
+ 1287 042b A1150000 		.4byte	.LASF177
+ 1288 042f 05       		.byte	0x5
+ 1289 0430 00       		.uleb128 0
+ 1290 0431 E8040000 		.4byte	.LASF178
+ 1291 0435 05       		.byte	0x5
+ 1292 0436 00       		.uleb128 0
+ 1293 0437 81170000 		.4byte	.LASF179
+ 1294 043b 05       		.byte	0x5
+ 1295 043c 00       		.uleb128 0
+ 1296 043d 8C110000 		.4byte	.LASF180
+ 1297 0441 05       		.byte	0x5
+ 1298 0442 00       		.uleb128 0
+ 1299 0443 DA120000 		.4byte	.LASF181
+ 1300 0447 05       		.byte	0x5
+ 1301 0448 00       		.uleb128 0
+ 1302 0449 CE1A0000 		.4byte	.LASF182
+ 1303 044d 05       		.byte	0x5
+ 1304 044e 00       		.uleb128 0
+ 1305 044f 7C140000 		.4byte	.LASF183
+ 1306 0453 05       		.byte	0x5
+ 1307 0454 00       		.uleb128 0
+ 1308 0455 D9150000 		.4byte	.LASF184
+ 1309 0459 05       		.byte	0x5
+ 1310 045a 00       		.uleb128 0
+ 1311 045b EC1E0000 		.4byte	.LASF185
+ 1312 045f 05       		.byte	0x5
+ 1313 0460 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 29
+
+
+ 1314 0461 E5110000 		.4byte	.LASF186
+ 1315 0465 05       		.byte	0x5
+ 1316 0466 00       		.uleb128 0
+ 1317 0467 BB040000 		.4byte	.LASF187
+ 1318 046b 05       		.byte	0x5
+ 1319 046c 00       		.uleb128 0
+ 1320 046d 25180000 		.4byte	.LASF188
+ 1321 0471 05       		.byte	0x5
+ 1322 0472 00       		.uleb128 0
+ 1323 0473 330B0000 		.4byte	.LASF189
+ 1324 0477 05       		.byte	0x5
+ 1325 0478 00       		.uleb128 0
+ 1326 0479 B8030000 		.4byte	.LASF190
+ 1327 047d 05       		.byte	0x5
+ 1328 047e 00       		.uleb128 0
+ 1329 047f C8160000 		.4byte	.LASF191
+ 1330 0483 05       		.byte	0x5
+ 1331 0484 00       		.uleb128 0
+ 1332 0485 A71B0000 		.4byte	.LASF192
+ 1333 0489 05       		.byte	0x5
+ 1334 048a 00       		.uleb128 0
+ 1335 048b B50F0000 		.4byte	.LASF193
+ 1336 048f 05       		.byte	0x5
+ 1337 0490 00       		.uleb128 0
+ 1338 0491 340F0000 		.4byte	.LASF194
+ 1339 0495 05       		.byte	0x5
+ 1340 0496 00       		.uleb128 0
+ 1341 0497 59010000 		.4byte	.LASF195
+ 1342 049b 05       		.byte	0x5
+ 1343 049c 00       		.uleb128 0
+ 1344 049d 11070000 		.4byte	.LASF196
+ 1345 04a1 05       		.byte	0x5
+ 1346 04a2 00       		.uleb128 0
+ 1347 04a3 FF200000 		.4byte	.LASF197
+ 1348 04a7 05       		.byte	0x5
+ 1349 04a8 00       		.uleb128 0
+ 1350 04a9 AA200000 		.4byte	.LASF198
+ 1351 04ad 05       		.byte	0x5
+ 1352 04ae 00       		.uleb128 0
+ 1353 04af 2A210000 		.4byte	.LASF199
+ 1354 04b3 05       		.byte	0x5
+ 1355 04b4 00       		.uleb128 0
+ 1356 04b5 96080000 		.4byte	.LASF200
+ 1357 04b9 05       		.byte	0x5
+ 1358 04ba 00       		.uleb128 0
+ 1359 04bb D70E0000 		.4byte	.LASF201
+ 1360 04bf 05       		.byte	0x5
+ 1361 04c0 00       		.uleb128 0
+ 1362 04c1 5D1D0000 		.4byte	.LASF202
+ 1363 04c5 05       		.byte	0x5
+ 1364 04c6 00       		.uleb128 0
+ 1365 04c7 2F170000 		.4byte	.LASF203
+ 1366 04cb 05       		.byte	0x5
+ 1367 04cc 00       		.uleb128 0
+ 1368 04cd 180F0000 		.4byte	.LASF204
+ 1369 04d1 05       		.byte	0x5
+ 1370 04d2 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 30
+
+
+ 1371 04d3 481C0000 		.4byte	.LASF205
+ 1372 04d7 05       		.byte	0x5
+ 1373 04d8 00       		.uleb128 0
+ 1374 04d9 34110000 		.4byte	.LASF206
+ 1375 04dd 05       		.byte	0x5
+ 1376 04de 00       		.uleb128 0
+ 1377 04df 51050000 		.4byte	.LASF207
+ 1378 04e3 05       		.byte	0x5
+ 1379 04e4 00       		.uleb128 0
+ 1380 04e5 2C010000 		.4byte	.LASF208
+ 1381 04e9 05       		.byte	0x5
+ 1382 04ea 00       		.uleb128 0
+ 1383 04eb 76080000 		.4byte	.LASF209
+ 1384 04ef 05       		.byte	0x5
+ 1385 04f0 00       		.uleb128 0
+ 1386 04f1 E60B0000 		.4byte	.LASF210
+ 1387 04f5 05       		.byte	0x5
+ 1388 04f6 00       		.uleb128 0
+ 1389 04f7 78110000 		.4byte	.LASF211
+ 1390 04fb 05       		.byte	0x5
+ 1391 04fc 00       		.uleb128 0
+ 1392 04fd C70D0000 		.4byte	.LASF212
+ 1393 0501 05       		.byte	0x5
+ 1394 0502 00       		.uleb128 0
+ 1395 0503 B00D0000 		.4byte	.LASF213
+ 1396 0507 05       		.byte	0x5
+ 1397 0508 00       		.uleb128 0
+ 1398 0509 58230000 		.4byte	.LASF214
+ 1399 050d 05       		.byte	0x5
+ 1400 050e 00       		.uleb128 0
+ 1401 050f 570C0000 		.4byte	.LASF215
+ 1402 0513 05       		.byte	0x5
+ 1403 0514 00       		.uleb128 0
+ 1404 0515 5A210000 		.4byte	.LASF216
+ 1405 0519 05       		.byte	0x5
+ 1406 051a 00       		.uleb128 0
+ 1407 051b 45230000 		.4byte	.LASF217
+ 1408 051f 05       		.byte	0x5
+ 1409 0520 00       		.uleb128 0
+ 1410 0521 F5210000 		.4byte	.LASF218
+ 1411 0525 05       		.byte	0x5
+ 1412 0526 00       		.uleb128 0
+ 1413 0527 23070000 		.4byte	.LASF219
+ 1414 052b 05       		.byte	0x5
+ 1415 052c 00       		.uleb128 0
+ 1416 052d 030C0000 		.4byte	.LASF220
+ 1417 0531 05       		.byte	0x5
+ 1418 0532 00       		.uleb128 0
+ 1419 0533 B3210000 		.4byte	.LASF221
+ 1420 0537 05       		.byte	0x5
+ 1421 0538 00       		.uleb128 0
+ 1422 0539 D1050000 		.4byte	.LASF222
+ 1423 053d 05       		.byte	0x5
+ 1424 053e 00       		.uleb128 0
+ 1425 053f 3B020000 		.4byte	.LASF223
+ 1426 0543 05       		.byte	0x5
+ 1427 0544 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 31
+
+
+ 1428 0545 B11F0000 		.4byte	.LASF224
+ 1429 0549 05       		.byte	0x5
+ 1430 054a 00       		.uleb128 0
+ 1431 054b 6F1D0000 		.4byte	.LASF225
+ 1432 054f 05       		.byte	0x5
+ 1433 0550 00       		.uleb128 0
+ 1434 0551 6A140000 		.4byte	.LASF226
+ 1435 0555 05       		.byte	0x5
+ 1436 0556 00       		.uleb128 0
+ 1437 0557 DB240000 		.4byte	.LASF227
+ 1438 055b 05       		.byte	0x5
+ 1439 055c 00       		.uleb128 0
+ 1440 055d BB1C0000 		.4byte	.LASF228
+ 1441 0561 05       		.byte	0x5
+ 1442 0562 00       		.uleb128 0
+ 1443 0563 501B0000 		.4byte	.LASF229
+ 1444 0567 05       		.byte	0x5
+ 1445 0568 00       		.uleb128 0
+ 1446 0569 E2020000 		.4byte	.LASF230
+ 1447 056d 05       		.byte	0x5
+ 1448 056e 00       		.uleb128 0
+ 1449 056f 850E0000 		.4byte	.LASF231
+ 1450 0573 05       		.byte	0x5
+ 1451 0574 00       		.uleb128 0
+ 1452 0575 F8190000 		.4byte	.LASF232
+ 1453 0579 05       		.byte	0x5
+ 1454 057a 00       		.uleb128 0
+ 1455 057b A0220000 		.4byte	.LASF233
+ 1456 057f 05       		.byte	0x5
+ 1457 0580 00       		.uleb128 0
+ 1458 0581 780A0000 		.4byte	.LASF234
+ 1459 0585 05       		.byte	0x5
+ 1460 0586 00       		.uleb128 0
+ 1461 0587 080E0000 		.4byte	.LASF235
+ 1462 058b 05       		.byte	0x5
+ 1463 058c 00       		.uleb128 0
+ 1464 058d 04040000 		.4byte	.LASF236
+ 1465 0591 05       		.byte	0x5
+ 1466 0592 00       		.uleb128 0
+ 1467 0593 96090000 		.4byte	.LASF237
+ 1468 0597 05       		.byte	0x5
+ 1469 0598 00       		.uleb128 0
+ 1470 0599 1C240000 		.4byte	.LASF238
+ 1471 059d 05       		.byte	0x5
+ 1472 059e 00       		.uleb128 0
+ 1473 059f 0C1B0000 		.4byte	.LASF239
+ 1474 05a3 05       		.byte	0x5
+ 1475 05a4 00       		.uleb128 0
+ 1476 05a5 311F0000 		.4byte	.LASF240
+ 1477 05a9 05       		.byte	0x5
+ 1478 05aa 00       		.uleb128 0
+ 1479 05ab 2F130000 		.4byte	.LASF241
+ 1480 05af 05       		.byte	0x5
+ 1481 05b0 00       		.uleb128 0
+ 1482 05b1 720E0000 		.4byte	.LASF242
+ 1483 05b5 05       		.byte	0x5
+ 1484 05b6 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 32
+
+
+ 1485 05b7 B11E0000 		.4byte	.LASF243
+ 1486 05bb 05       		.byte	0x5
+ 1487 05bc 00       		.uleb128 0
+ 1488 05bd F3090000 		.4byte	.LASF244
+ 1489 05c1 05       		.byte	0x5
+ 1490 05c2 00       		.uleb128 0
+ 1491 05c3 9B030000 		.4byte	.LASF245
+ 1492 05c7 05       		.byte	0x5
+ 1493 05c8 00       		.uleb128 0
+ 1494 05c9 61220000 		.4byte	.LASF246
+ 1495 05cd 05       		.byte	0x5
+ 1496 05ce 00       		.uleb128 0
+ 1497 05cf 26040000 		.4byte	.LASF247
+ 1498 05d3 05       		.byte	0x5
+ 1499 05d4 00       		.uleb128 0
+ 1500 05d5 83100000 		.4byte	.LASF248
+ 1501 05d9 05       		.byte	0x5
+ 1502 05da 00       		.uleb128 0
+ 1503 05db A61A0000 		.4byte	.LASF249
+ 1504 05df 05       		.byte	0x5
+ 1505 05e0 00       		.uleb128 0
+ 1506 05e1 1B090000 		.4byte	.LASF250
+ 1507 05e5 05       		.byte	0x5
+ 1508 05e6 00       		.uleb128 0
+ 1509 05e7 00000000 		.4byte	.LASF251
+ 1510 05eb 05       		.byte	0x5
+ 1511 05ec 00       		.uleb128 0
+ 1512 05ed C91B0000 		.4byte	.LASF252
+ 1513 05f1 05       		.byte	0x5
+ 1514 05f2 00       		.uleb128 0
+ 1515 05f3 6E200000 		.4byte	.LASF253
+ 1516 05f7 05       		.byte	0x5
+ 1517 05f8 00       		.uleb128 0
+ 1518 05f9 CE060000 		.4byte	.LASF254
+ 1519 05fd 05       		.byte	0x5
+ 1520 05fe 00       		.uleb128 0
+ 1521 05ff 9C000000 		.4byte	.LASF255
+ 1522 0603 05       		.byte	0x5
+ 1523 0604 00       		.uleb128 0
+ 1524 0605 6E210000 		.4byte	.LASF256
+ 1525 0609 05       		.byte	0x5
+ 1526 060a 00       		.uleb128 0
+ 1527 060b 4D220000 		.4byte	.LASF257
+ 1528 060f 05       		.byte	0x5
+ 1529 0610 00       		.uleb128 0
+ 1530 0611 660D0000 		.4byte	.LASF258
+ 1531 0615 05       		.byte	0x5
+ 1532 0616 00       		.uleb128 0
+ 1533 0617 D6220000 		.4byte	.LASF259
+ 1534 061b 05       		.byte	0x5
+ 1535 061c 00       		.uleb128 0
+ 1536 061d 450A0000 		.4byte	.LASF260
+ 1537 0621 05       		.byte	0x5
+ 1538 0622 00       		.uleb128 0
+ 1539 0623 BB000000 		.4byte	.LASF261
+ 1540 0627 05       		.byte	0x5
+ 1541 0628 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 33
+
+
+ 1542 0629 55110000 		.4byte	.LASF262
+ 1543 062d 05       		.byte	0x5
+ 1544 062e 00       		.uleb128 0
+ 1545 062f 02110000 		.4byte	.LASF263
+ 1546 0633 05       		.byte	0x5
+ 1547 0634 00       		.uleb128 0
+ 1548 0635 74220000 		.4byte	.LASF264
+ 1549 0639 05       		.byte	0x5
+ 1550 063a 00       		.uleb128 0
+ 1551 063b 54020000 		.4byte	.LASF265
+ 1552 063f 05       		.byte	0x5
+ 1553 0640 00       		.uleb128 0
+ 1554 0641 DB160000 		.4byte	.LASF266
+ 1555 0645 05       		.byte	0x5
+ 1556 0646 00       		.uleb128 0
+ 1557 0647 6A110000 		.4byte	.LASF267
+ 1558 064b 05       		.byte	0x5
+ 1559 064c 00       		.uleb128 0
+ 1560 064d 14000000 		.4byte	.LASF268
+ 1561 0651 05       		.byte	0x5
+ 1562 0652 00       		.uleb128 0
+ 1563 0653 F91B0000 		.4byte	.LASF269
+ 1564 0657 05       		.byte	0x5
+ 1565 0658 00       		.uleb128 0
+ 1566 0659 2A100000 		.4byte	.LASF270
+ 1567 065d 05       		.byte	0x5
+ 1568 065e 00       		.uleb128 0
+ 1569 065f 090B0000 		.4byte	.LASF271
+ 1570 0663 05       		.byte	0x5
+ 1571 0664 00       		.uleb128 0
+ 1572 0665 F2120000 		.4byte	.LASF272
+ 1573 0669 05       		.byte	0x5
+ 1574 066a 00       		.uleb128 0
+ 1575 066b 5F180000 		.4byte	.LASF273
+ 1576 066f 05       		.byte	0x5
+ 1577 0670 00       		.uleb128 0
+ 1578 0671 820B0000 		.4byte	.LASF274
+ 1579 0675 05       		.byte	0x5
+ 1580 0676 00       		.uleb128 0
+ 1581 0677 E80A0000 		.4byte	.LASF275
+ 1582 067b 05       		.byte	0x5
+ 1583 067c 00       		.uleb128 0
+ 1584 067d 35140000 		.4byte	.LASF276
+ 1585 0681 05       		.byte	0x5
+ 1586 0682 00       		.uleb128 0
+ 1587 0683 16220000 		.4byte	.LASF277
+ 1588 0687 05       		.byte	0x5
+ 1589 0688 00       		.uleb128 0
+ 1590 0689 48100000 		.4byte	.LASF278
+ 1591 068d 05       		.byte	0x5
+ 1592 068e 00       		.uleb128 0
+ 1593 068f DE180000 		.4byte	.LASF279
+ 1594 0693 05       		.byte	0x5
+ 1595 0694 00       		.uleb128 0
+ 1596 0695 CC0F0000 		.4byte	.LASF280
+ 1597 0699 05       		.byte	0x5
+ 1598 069a 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 34
+
+
+ 1599 069b AE1D0000 		.4byte	.LASF281
+ 1600 069f 05       		.byte	0x5
+ 1601 06a0 00       		.uleb128 0
+ 1602 06a1 E91B0000 		.4byte	.LASF282
+ 1603 06a5 05       		.byte	0x5
+ 1604 06a6 00       		.uleb128 0
+ 1605 06a7 F4150000 		.4byte	.LASF283
+ 1606 06ab 05       		.byte	0x5
+ 1607 06ac 00       		.uleb128 0
+ 1608 06ad 14150000 		.4byte	.LASF284
+ 1609 06b1 05       		.byte	0x5
+ 1610 06b2 00       		.uleb128 0
+ 1611 06b3 E4090000 		.4byte	.LASF285
+ 1612 06b7 05       		.byte	0x5
+ 1613 06b8 00       		.uleb128 0
+ 1614 06b9 251C0000 		.4byte	.LASF286
+ 1615 06bd 05       		.byte	0x5
+ 1616 06be 00       		.uleb128 0
+ 1617 06bf E9160000 		.4byte	.LASF287
+ 1618 06c3 05       		.byte	0x5
+ 1619 06c4 00       		.uleb128 0
+ 1620 06c5 BA1B0000 		.4byte	.LASF288
+ 1621 06c9 05       		.byte	0x5
+ 1622 06ca 00       		.uleb128 0
+ 1623 06cb 4A010000 		.4byte	.LASF289
+ 1624 06cf 05       		.byte	0x5
+ 1625 06d0 00       		.uleb128 0
+ 1626 06d1 39100000 		.4byte	.LASF290
+ 1627 06d5 05       		.byte	0x5
+ 1628 06d6 00       		.uleb128 0
+ 1629 06d7 A3160000 		.4byte	.LASF291
+ 1630 06db 05       		.byte	0x5
+ 1631 06dc 00       		.uleb128 0
+ 1632 06dd 85200000 		.4byte	.LASF292
+ 1633 06e1 05       		.byte	0x5
+ 1634 06e2 00       		.uleb128 0
+ 1635 06e3 C8070000 		.4byte	.LASF293
+ 1636 06e7 05       		.byte	0x5
+ 1637 06e8 00       		.uleb128 0
+ 1638 06e9 43180000 		.4byte	.LASF294
+ 1639 06ed 05       		.byte	0x5
+ 1640 06ee 00       		.uleb128 0
+ 1641 06ef 26140000 		.4byte	.LASF295
+ 1642 06f3 05       		.byte	0x5
+ 1643 06f4 00       		.uleb128 0
+ 1644 06f5 1E230000 		.4byte	.LASF296
+ 1645 06f9 05       		.byte	0x5
+ 1646 06fa 00       		.uleb128 0
+ 1647 06fb DD100000 		.4byte	.LASF297
+ 1648 06ff 05       		.byte	0x5
+ 1649 0700 00       		.uleb128 0
+ 1650 0701 A11F0000 		.4byte	.LASF298
+ 1651 0705 05       		.byte	0x5
+ 1652 0706 00       		.uleb128 0
+ 1653 0707 16040000 		.4byte	.LASF299
+ 1654 070b 05       		.byte	0x5
+ 1655 070c 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 35
+
+
+ 1656 070d 61000000 		.4byte	.LASF300
+ 1657 0711 05       		.byte	0x5
+ 1658 0712 00       		.uleb128 0
+ 1659 0713 7E150000 		.4byte	.LASF301
+ 1660 0717 05       		.byte	0x5
+ 1661 0718 00       		.uleb128 0
+ 1662 0719 D10B0000 		.4byte	.LASF302
+ 1663 071d 05       		.byte	0x5
+ 1664 071e 00       		.uleb128 0
+ 1665 071f 2E230000 		.4byte	.LASF303
+ 1666 0723 05       		.byte	0x5
+ 1667 0724 00       		.uleb128 0
+ 1668 0725 B2160000 		.4byte	.LASF304
+ 1669 0729 05       		.byte	0x5
+ 1670 072a 00       		.uleb128 0
+ 1671 072b 0F0D0000 		.4byte	.LASF305
+ 1672 072f 05       		.byte	0x5
+ 1673 0730 00       		.uleb128 0
+ 1674 0731 C6120000 		.4byte	.LASF306
+ 1675 0735 05       		.byte	0x5
+ 1676 0736 00       		.uleb128 0
+ 1677 0737 F7230000 		.4byte	.LASF307
+ 1678 073b 05       		.byte	0x5
+ 1679 073c 00       		.uleb128 0
+ 1680 073d DD1F0000 		.4byte	.LASF308
+ 1681 0741 05       		.byte	0x5
+ 1682 0742 00       		.uleb128 0
+ 1683 0743 01130000 		.4byte	.LASF309
+ 1684 0747 05       		.byte	0x5
+ 1685 0748 00       		.uleb128 0
+ 1686 0749 1D190000 		.4byte	.LASF310
+ 1687 074d 05       		.byte	0x5
+ 1688 074e 00       		.uleb128 0
+ 1689 074f BB150000 		.4byte	.LASF311
+ 1690 0753 05       		.byte	0x5
+ 1691 0754 00       		.uleb128 0
+ 1692 0755 511E0000 		.4byte	.LASF312
+ 1693 0759 05       		.byte	0x5
+ 1694 075a 00       		.uleb128 0
+ 1695 075b 600B0000 		.4byte	.LASF313
+ 1696 075f 05       		.byte	0x5
+ 1697 0760 00       		.uleb128 0
+ 1698 0761 14080000 		.4byte	.LASF314
+ 1699 0765 05       		.byte	0x5
+ 1700 0766 00       		.uleb128 0
+ 1701 0767 71030000 		.4byte	.LASF315
+ 1702 076b 05       		.byte	0x5
+ 1703 076c 00       		.uleb128 0
+ 1704 076d 0D100000 		.4byte	.LASF316
+ 1705 0771 05       		.byte	0x5
+ 1706 0772 00       		.uleb128 0
+ 1707 0773 83180000 		.4byte	.LASF317
+ 1708 0777 05       		.byte	0x5
+ 1709 0778 00       		.uleb128 0
+ 1710 0779 D2170000 		.4byte	.LASF318
+ 1711 077d 05       		.byte	0x5
+ 1712 077e 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 36
+
+
+ 1713 077f 78070000 		.4byte	.LASF319
+ 1714 0783 05       		.byte	0x5
+ 1715 0784 00       		.uleb128 0
+ 1716 0785 D7190000 		.4byte	.LASF320
+ 1717 0789 05       		.byte	0x5
+ 1718 078a 00       		.uleb128 0
+ 1719 078b 170B0000 		.4byte	.LASF321
+ 1720 078f 05       		.byte	0x5
+ 1721 0790 00       		.uleb128 0
+ 1722 0791 B1080000 		.4byte	.LASF322
+ 1723 0795 05       		.byte	0x5
+ 1724 0796 00       		.uleb128 0
+ 1725 0797 03160000 		.4byte	.LASF323
+ 1726 079b 05       		.byte	0x5
+ 1727 079c 00       		.uleb128 0
+ 1728 079d CE020000 		.4byte	.LASF324
+ 1729 07a1 05       		.byte	0x5
+ 1730 07a2 00       		.uleb128 0
+ 1731 07a3 EF070000 		.4byte	.LASF325
+ 1732 07a7 05       		.byte	0x5
+ 1733 07a8 00       		.uleb128 0
+ 1734 07a9 8D0D0000 		.4byte	.LASF326
+ 1735 07ad 05       		.byte	0x5
+ 1736 07ae 00       		.uleb128 0
+ 1737 07af 82090000 		.4byte	.LASF327
+ 1738 07b3 05       		.byte	0x5
+ 1739 07b4 00       		.uleb128 0
+ 1740 07b5 C8210000 		.4byte	.LASF328
+ 1741 07b9 05       		.byte	0x5
+ 1742 07ba 00       		.uleb128 0
+ 1743 07bb 84120000 		.4byte	.LASF329
+ 1744 07bf 05       		.byte	0x5
+ 1745 07c0 00       		.uleb128 0
+ 1746 07c1 431A0000 		.4byte	.LASF330
+ 1747 07c5 05       		.byte	0x5
+ 1748 07c6 00       		.uleb128 0
+ 1749 07c7 66160000 		.4byte	.LASF331
+ 1750 07cb 05       		.byte	0x5
+ 1751 07cc 00       		.uleb128 0
+ 1752 07cd 67100000 		.4byte	.LASF332
+ 1753 07d1 05       		.byte	0x5
+ 1754 07d2 00       		.uleb128 0
+ 1755 07d3 7B240000 		.4byte	.LASF333
+ 1756 07d7 05       		.byte	0x5
+ 1757 07d8 00       		.uleb128 0
+ 1758 07d9 44210000 		.4byte	.LASF334
+ 1759 07dd 05       		.byte	0x5
+ 1760 07de 00       		.uleb128 0
+ 1761 07df 44170000 		.4byte	.LASF335
+ 1762 07e3 05       		.byte	0x5
+ 1763 07e4 00       		.uleb128 0
+ 1764 07e5 19140000 		.4byte	.LASF336
+ 1765 07e9 05       		.byte	0x5
+ 1766 07ea 00       		.uleb128 0
+ 1767 07eb 47110000 		.4byte	.LASF337
+ 1768 07ef 05       		.byte	0x5
+ 1769 07f0 00       		.uleb128 0
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 37
+
+
+ 1770 07f1 A51E0000 		.4byte	.LASF338
+ 1771 07f5 05       		.byte	0x5
+ 1772 07f6 00       		.uleb128 0
+ 1773 07f7 52180000 		.4byte	.LASF339
+ 1774 07fb 05       		.byte	0x5
+ 1775 07fc 00       		.uleb128 0
+ 1776 07fd B6140000 		.4byte	.LASF340
+ 1777 0801 05       		.byte	0x5
+ 1778 0802 00       		.uleb128 0
+ 1779 0803 DD1B0000 		.4byte	.LASF341
+ 1780 0807 05       		.byte	0x5
+ 1781 0808 00       		.uleb128 0
+ 1782 0809 FE020000 		.4byte	.LASF342
+ 1783 080d 05       		.byte	0x5
+ 1784 080e 00       		.uleb128 0
+ 1785 080f 3D240000 		.4byte	.LASF343
+ 1786 0813 05       		.byte	0x5
+ 1787 0814 00       		.uleb128 0
+ 1788 0815 C1020000 		.4byte	.LASF344
+ 1789 0819 05       		.byte	0x5
+ 1790 081a 00       		.uleb128 0
+ 1791 081b BC070000 		.4byte	.LASF345
+ 1792 081f 05       		.byte	0x5
+ 1793 0820 00       		.uleb128 0
+ 1794 0821 470C0000 		.4byte	.LASF346
+ 1795 0825 05       		.byte	0x5
+ 1796 0826 00       		.uleb128 0
+ 1797 0827 4E190000 		.4byte	.LASF347
+ 1798 082b 05       		.byte	0x5
+ 1799 082c 00       		.uleb128 0
+ 1800 082d 370E0000 		.4byte	.LASF348
+ 1801 0831 05       		.byte	0x5
+ 1802 0832 00       		.uleb128 0
+ 1803 0833 75020000 		.4byte	.LASF349
+ 1804 0837 05       		.byte	0x5
+ 1805 0838 00       		.uleb128 0
+ 1806 0839 831C0000 		.4byte	.LASF350
+ 1807 083d 05       		.byte	0x5
+ 1808 083e 00       		.uleb128 0
+ 1809 083f 0C030000 		.4byte	.LASF351
+ 1810 0843 05       		.byte	0x5
+ 1811 0844 00       		.uleb128 0
+ 1812 0845 FA080000 		.4byte	.LASF352
+ 1813 0849 05       		.byte	0x5
+ 1814 084a 00       		.uleb128 0
+ 1815 084b 45150000 		.4byte	.LASF353
+ 1816 084f 05       		.byte	0x5
+ 1817 0850 00       		.uleb128 0
+ 1818 0851 81020000 		.4byte	.LASF354
+ 1819 0855 00       		.byte	0
+ 1820              		.section	.debug_line,"",%progbits
+ 1821              	.Ldebug_line0:
+ 1822 0000 8A000000 		.section	.debug_str,"MS",%progbits,1
+ 1822      02002F00 
+ 1822      00000201 
+ 1822      FB0E0D00 
+ 1822      01010101 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 38
+
+
+ 1823              	.LASF251:
+ 1824 0000 5F5F554C 		.ascii	"__ULACCUM_FBIT__ 32\000"
+ 1824      41434355 
+ 1824      4D5F4642 
+ 1824      49545F5F 
+ 1824      20333200 
+ 1825              	.LASF268:
+ 1826 0014 5F5F4851 		.ascii	"__HQ_FBIT__ 15\000"
+ 1826      5F464249 
+ 1826      545F5F20 
+ 1826      313500
+ 1827              	.LASF72:
+ 1828 0023 5F5F5743 		.ascii	"__WCHAR_MAX__ 4294967295U\000"
+ 1828      4841525F 
+ 1828      4D41585F 
+ 1828      5F203432 
+ 1828      39343936 
+ 1829              	.LASF87:
+ 1830 003d 5F5F494E 		.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
+ 1830      5436345F 
+ 1830      4D41585F 
+ 1830      5F203932 
+ 1830      32333337 
+ 1831              	.LASF300:
+ 1832 0061 5F5F5554 		.ascii	"__UTA_FBIT__ 64\000"
+ 1832      415F4642 
+ 1832      49545F5F 
+ 1832      20363400 
+ 1833              	.LASF107:
+ 1834 0071 5F5F5549 		.ascii	"__UINT64_C(c) c ## ULL\000"
+ 1834      4E543634 
+ 1834      5F432863 
+ 1834      29206320 
+ 1834      23232055 
+ 1835              	.LASF20:
+ 1836 0088 5F5F5349 		.ascii	"__SIZEOF_SIZE_T__ 4\000"
+ 1836      5A454F46 
+ 1836      5F53495A 
+ 1836      455F545F 
+ 1836      5F203400 
+ 1837              	.LASF255:
+ 1838 009c 5F5F554C 		.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
+ 1838      41434355 
+ 1838      4D5F4550 
+ 1838      53494C4F 
+ 1838      4E5F5F20 
+ 1839              	.LASF261:
+ 1840 00bb 5F5F554C 		.ascii	"__ULLACCUM_FBIT__ 32\000"
+ 1840      4C414343 
+ 1840      554D5F46 
+ 1840      4249545F 
+ 1840      5F203332 
+ 1841              	.LASF98:
+ 1842 00d0 5F5F494E 		.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
+ 1842      545F4C45 
+ 1842      41535436 
+ 1842      345F4D41 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 39
+
+
+ 1842      585F5F20 
+ 1843              	.LASF28:
+ 1844 00fa 5F5F5349 		.ascii	"__SIZEOF_POINTER__ 4\000"
+ 1844      5A454F46 
+ 1844      5F504F49 
+ 1844      4E544552 
+ 1844      5F5F2034 
+ 1845              	.LASF108:
+ 1846 010f 5F5F494E 		.ascii	"__INT_FAST8_MAX__ 2147483647\000"
+ 1846      545F4641 
+ 1846      5354385F 
+ 1846      4D41585F 
+ 1846      5F203231 
+ 1847              	.LASF208:
+ 1848 012c 5F5F4C46 		.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
+ 1848      52414354 
+ 1848      5F4D494E 
+ 1848      5F5F2028 
+ 1848      2D302E35 
+ 1849              	.LASF289:
+ 1850 014a 5F5F5341 		.ascii	"__SA_IBIT__ 16\000"
+ 1850      5F494249 
+ 1850      545F5F20 
+ 1850      313600
+ 1851              	.LASF195:
+ 1852 0159 5F5F5553 		.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
+ 1852      46524143 
+ 1852      545F4550 
+ 1852      53494C4F 
+ 1852      4E5F5F20 
+ 1853              	.LASF88:
+ 1854 0177 5F5F5549 		.ascii	"__UINT8_MAX__ 255\000"
+ 1854      4E54385F 
+ 1854      4D41585F 
+ 1854      5F203235 
+ 1854      3500
+ 1855              	.LASF144:
+ 1856 0189 5F5F4442 		.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
+ 1856      4C5F4D41 
+ 1856      585F5F20 
+ 1856      2828646F 
+ 1856      75626C65 
+ 1857              	.LASF172:
+ 1858 01b8 5F5F4445 		.ascii	"__DEC64_MANT_DIG__ 16\000"
+ 1858      4336345F 
+ 1858      4D414E54 
+ 1858      5F444947 
+ 1858      5F5F2031 
+ 1859              	.LASF100:
+ 1860 01ce 5F5F5549 		.ascii	"__UINT_LEAST8_MAX__ 255\000"
+ 1860      4E545F4C 
+ 1860      45415354 
+ 1860      385F4D41 
+ 1860      585F5F20 
+ 1861              	.LASF81:
+ 1862 01e6 5F5F5549 		.ascii	"__UINTMAX_C(c) c ## ULL\000"
+ 1862      4E544D41 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 40
+
+
+ 1862      585F4328 
+ 1862      63292063 
+ 1862      20232320 
+ 1863              	.LASF168:
+ 1864 01fe 5F5F4445 		.ascii	"__DEC32_MIN__ 1E-95DF\000"
+ 1864      4333325F 
+ 1864      4D494E5F 
+ 1864      5F203145 
+ 1864      2D393544 
+ 1865              	.LASF45:
+ 1866 0214 5F5F5549 		.ascii	"__UINT64_TYPE__ long long unsigned int\000"
+ 1866      4E543634 
+ 1866      5F545950 
+ 1866      455F5F20 
+ 1866      6C6F6E67 
+ 1867              	.LASF223:
+ 1868 023b 5F5F554C 		.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
+ 1868      4C465241 
+ 1868      43545F4D 
+ 1868      494E5F5F 
+ 1868      20302E30 
+ 1869              	.LASF265:
+ 1870 0254 5F5F554C 		.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
+ 1870      4C414343 
+ 1870      554D5F45 
+ 1870      5053494C 
+ 1870      4F4E5F5F 
+ 1871              	.LASF349:
+ 1872 0275 5F5F4152 		.ascii	"__ARM_PCS 1\000"
+ 1872      4D5F5043 
+ 1872      53203100 
+ 1873              	.LASF354:
+ 1874 0281 5F5F5553 		.ascii	"__USES_INITFINI__ 1\000"
+ 1874      45535F49 
+ 1874      4E495446 
+ 1874      494E495F 
+ 1874      5F203100 
+ 1875              	.LASF357:
+ 1876 0295 414C4941 		.ascii	"ALIAS(f) __attribute__ ((weak, alias (#f)))\000"
+ 1876      53286629 
+ 1876      205F5F61 
+ 1876      74747269 
+ 1876      62757465 
+ 1877              	.LASF344:
+ 1878 02c1 5F5F5646 		.ascii	"__VFP_FP__ 1\000"
+ 1878      505F4650 
+ 1878      5F5F2031 
+ 1878      00
+ 1879              	.LASF324:
+ 1880 02ce 5F5F5349 		.ascii	"__SIZEOF_WINT_T__ 4\000"
+ 1880      5A454F46 
+ 1880      5F57494E 
+ 1880      545F545F 
+ 1880      5F203400 
+ 1881              	.LASF230:
+ 1882 02e2 5F5F5341 		.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
+ 1882      4343554D 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 41
+
+
+ 1882      5F455053 
+ 1882      494C4F4E 
+ 1882      5F5F2030 
+ 1883              	.LASF342:
+ 1884 02fe 5F5F5448 		.ascii	"__THUMBEL__ 1\000"
+ 1884      554D4245 
+ 1884      4C5F5F20 
+ 1884      3100
+ 1885              	.LASF351:
+ 1886 030c 5F5F4152 		.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
+ 1886      4D5F4152 
+ 1886      43485F45 
+ 1886      58545F49 
+ 1886      4449565F 
+ 1887              	.LASF133:
+ 1888 0324 5F5F464C 		.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
+ 1888      545F4445 
+ 1888      4E4F524D 
+ 1888      5F4D494E 
+ 1888      5F5F2031 
+ 1889              	.LASF36:
+ 1890 034f 5F5F4348 		.ascii	"__CHAR32_TYPE__ long unsigned int\000"
+ 1890      41523332 
+ 1890      5F545950 
+ 1890      455F5F20 
+ 1890      6C6F6E67 
+ 1891              	.LASF315:
+ 1892 0371 5F5F4743 		.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 2\000"
+ 1892      435F4154 
+ 1892      4F4D4943 
+ 1892      5F53484F 
+ 1892      52545F4C 
+ 1893              	.LASF2:
+ 1894 0390 5F5F474E 		.ascii	"__GNUC__ 4\000"
+ 1894      55435F5F 
+ 1894      203400
+ 1895              	.LASF245:
+ 1896 039b 5F5F5541 		.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
+ 1896      4343554D 
+ 1896      5F455053 
+ 1896      494C4F4E 
+ 1896      5F5F2030 
+ 1897              	.LASF190:
+ 1898 03b8 5F5F5346 		.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
+ 1898      52414354 
+ 1898      5F455053 
+ 1898      494C4F4E 
+ 1898      5F5F2030 
+ 1899              	.LASF149:
+ 1900 03d4 5F5F4442 		.ascii	"__DBL_HAS_INFINITY__ 1\000"
+ 1900      4C5F4841 
+ 1900      535F494E 
+ 1900      46494E49 
+ 1900      54595F5F 
+ 1901              	.LASF153:
+ 1902 03eb 5F5F4C44 		.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
+ 1902      424C5F4D 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 42
+
+
+ 1902      494E5F45 
+ 1902      58505F5F 
+ 1902      20282D31 
+ 1903              	.LASF236:
+ 1904 0404 5F5F4143 		.ascii	"__ACCUM_FBIT__ 15\000"
+ 1904      43554D5F 
+ 1904      46424954 
+ 1904      5F5F2031 
+ 1904      3500
+ 1905              	.LASF299:
+ 1906 0416 5F5F5544 		.ascii	"__UDA_IBIT__ 32\000"
+ 1906      415F4942 
+ 1906      49545F5F 
+ 1906      20333200 
+ 1907              	.LASF247:
+ 1908 0426 5F5F4C41 		.ascii	"__LACCUM_IBIT__ 32\000"
+ 1908      4343554D 
+ 1908      5F494249 
+ 1908      545F5F20 
+ 1908      333200
+ 1909              	.LASF1:
+ 1910 0439 5F5F5354 		.ascii	"__STDC_HOSTED__ 1\000"
+ 1910      44435F48 
+ 1910      4F535445 
+ 1910      445F5F20 
+ 1910      3100
+ 1911              	.LASF75:
+ 1912 044b 5F5F5749 		.ascii	"__WINT_MIN__ 0U\000"
+ 1912      4E545F4D 
+ 1912      494E5F5F 
+ 1912      20305500 
+ 1913              	.LASF157:
+ 1914 045b 5F5F4445 		.ascii	"__DECIMAL_DIG__ 17\000"
+ 1914      43494D41 
+ 1914      4C5F4449 
+ 1914      475F5F20 
+ 1914      313700
+ 1915              	.LASF364:
+ 1916 046e 5F656461 		.ascii	"_edata\000"
+ 1916      746100
+ 1917              	.LASF114:
+ 1918 0475 5F5F5549 		.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
+ 1918      4E545F46 
+ 1918      41535433 
+ 1918      325F4D41 
+ 1918      585F5F20 
+ 1919              	.LASF158:
+ 1920 0495 5F5F4C44 		.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
+ 1920      424C5F4D 
+ 1920      41585F5F 
+ 1920      20312E37 
+ 1920      39373639 
+ 1921              	.LASF187:
+ 1922 04bb 5F5F5346 		.ascii	"__SFRACT_IBIT__ 0\000"
+ 1922      52414354 
+ 1922      5F494249 
+ 1922      545F5F20 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 43
+
+
+ 1922      3000
+ 1923              	.LASF29:
+ 1924 04cd 5F5F5349 		.ascii	"__SIZE_TYPE__ unsigned int\000"
+ 1924      5A455F54 
+ 1924      5950455F 
+ 1924      5F20756E 
+ 1924      7369676E 
+ 1925              	.LASF178:
+ 1926 04e8 5F5F4445 		.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
+ 1926      4336345F 
+ 1926      5355424E 
+ 1926      4F524D41 
+ 1926      4C5F4D49 
+ 1927              	.LASF131:
+ 1928 0519 5F5F464C 		.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
+ 1928      545F4D49 
+ 1928      4E5F5F20 
+ 1928      312E3137 
+ 1928      35343934 
+ 1929              	.LASF137:
+ 1930 053d 5F5F4442 		.ascii	"__DBL_MANT_DIG__ 53\000"
+ 1930      4C5F4D41 
+ 1930      4E545F44 
+ 1930      49475F5F 
+ 1930      20353300 
+ 1931              	.LASF207:
+ 1932 0551 5F5F4C46 		.ascii	"__LFRACT_IBIT__ 0\000"
+ 1932      52414354 
+ 1932      5F494249 
+ 1932      545F5F20 
+ 1932      3000
+ 1933              	.LASF53:
+ 1934 0563 5F5F5549 		.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
+ 1934      4E545F4C 
+ 1934      45415354 
+ 1934      36345F54 
+ 1934      5950455F 
+ 1935              	.LASF358:
+ 1936 0590 70756C53 		.ascii	"pulSrc\000"
+ 1936      726300
+ 1937              	.LASF62:
+ 1938 0597 5F5F494E 		.ascii	"__INTPTR_TYPE__ int\000"
+ 1938      54505452 
+ 1938      5F545950 
+ 1938      455F5F20 
+ 1938      696E7400 
+ 1939              	.LASF159:
+ 1940 05ab 5F5F4C44 		.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
+ 1940      424C5F4D 
+ 1940      494E5F5F 
+ 1940      20322E32 
+ 1940      32353037 
+ 1941              	.LASF222:
+ 1942 05d1 5F5F554C 		.ascii	"__ULLFRACT_IBIT__ 0\000"
+ 1942      4C465241 
+ 1942      43545F49 
+ 1942      4249545F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 44
+
+
+ 1942      5F203000 
+ 1943              	.LASF42:
+ 1944 05e5 5F5F5549 		.ascii	"__UINT8_TYPE__ unsigned char\000"
+ 1944      4E54385F 
+ 1944      54595045 
+ 1944      5F5F2075 
+ 1944      6E736967 
+ 1945              	.LASF373:
+ 1946 0602 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1946      4320342E 
+ 1946      392E3320 
+ 1946      32303135 
+ 1946      30333033 
+ 1947 0635 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -g"
+ 1947      20726576 
+ 1947      6973696F 
+ 1947      6E203232 
+ 1947      31323230 
+ 1948 0668 67646233 		.ascii	"gdb3 -O0 -std=gnu90 -ffunction-sections -fdata-sect"
+ 1948      202D4F30 
+ 1948      202D7374 
+ 1948      643D676E 
+ 1948      75393020 
+ 1949 069b 696F6E73 		.ascii	"ions\000"
+ 1949      00
+ 1950              	.LASF155:
+ 1951 06a0 5F5F4C44 		.ascii	"__LDBL_MAX_EXP__ 1024\000"
+ 1951      424C5F4D 
+ 1951      41585F45 
+ 1951      58505F5F 
+ 1951      20313032 
+ 1952              	.LASF37:
+ 1953 06b6 5F5F5349 		.ascii	"__SIG_ATOMIC_TYPE__ int\000"
+ 1953      475F4154 
+ 1953      4F4D4943 
+ 1953      5F545950 
+ 1953      455F5F20 
+ 1954              	.LASF254:
+ 1955 06ce 5F5F554C 		.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
+ 1955      41434355 
+ 1955      4D5F4D41 
+ 1955      585F5F20 
+ 1955      30584646 
+ 1956              	.LASF19:
+ 1957 06f8 5F5F5349 		.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
+ 1957      5A454F46 
+ 1957      5F4C4F4E 
+ 1957      475F444F 
+ 1957      55424C45 
+ 1958              	.LASF196:
+ 1959 0711 5F5F4652 		.ascii	"__FRACT_FBIT__ 15\000"
+ 1959      4143545F 
+ 1959      46424954 
+ 1959      5F5F2031 
+ 1959      3500
+ 1960              	.LASF219:
+ 1961 0723 5F5F4C4C 		.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 45
+
+
+ 1961      46524143 
+ 1961      545F4D41 
+ 1961      585F5F20 
+ 1961      30583746 
+ 1962              	.LASF14:
+ 1963 074d 5F5F5349 		.ascii	"__SIZEOF_LONG__ 4\000"
+ 1963      5A454F46 
+ 1963      5F4C4F4E 
+ 1963      475F5F20 
+ 1963      3400
+ 1964              	.LASF173:
+ 1965 075f 5F5F4445 		.ascii	"__DEC64_MIN_EXP__ (-382)\000"
+ 1965      4336345F 
+ 1965      4D494E5F 
+ 1965      4558505F 
+ 1965      5F20282D 
+ 1966              	.LASF319:
+ 1967 0778 5F5F4743 		.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
+ 1967      435F4154 
+ 1967      4F4D4943 
+ 1967      5F544553 
+ 1967      545F414E 
+ 1968              	.LASF96:
+ 1969 079c 5F5F494E 		.ascii	"__INT_LEAST32_MAX__ 2147483647L\000"
+ 1969      545F4C45 
+ 1969      41535433 
+ 1969      325F4D41 
+ 1969      585F5F20 
+ 1970              	.LASF345:
+ 1971 07bc 5F5F4152 		.ascii	"__ARM_FP 12\000"
+ 1971      4D5F4650 
+ 1971      20313200 
+ 1972              	.LASF293:
+ 1973 07c8 5F5F5441 		.ascii	"__TA_IBIT__ 64\000"
+ 1973      5F494249 
+ 1973      545F5F20 
+ 1973      363400
+ 1974              	.LASF163:
+ 1975 07d7 5F5F4C44 		.ascii	"__LDBL_HAS_INFINITY__ 1\000"
+ 1975      424C5F48 
+ 1975      41535F49 
+ 1975      4E46494E 
+ 1975      4954595F 
+ 1976              	.LASF325:
+ 1977 07ef 5F5F5349 		.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
+ 1977      5A454F46 
+ 1977      5F505452 
+ 1977      44494646 
+ 1977      5F545F5F 
+ 1978              	.LASF377:
+ 1979 0806 52657365 		.ascii	"Reset_Handler\000"
+ 1979      745F4861 
+ 1979      6E646C65 
+ 1979      7200
+ 1980              	.LASF314:
+ 1981 0814 5F5F4743 		.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
+ 1981      435F4154 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 46
+
+
+ 1981      4F4D4943 
+ 1981      5F574348 
+ 1981      41525F54 
+ 1982              	.LASF38:
+ 1983 0835 5F5F494E 		.ascii	"__INT8_TYPE__ signed char\000"
+ 1983      54385F54 
+ 1983      5950455F 
+ 1983      5F207369 
+ 1983      676E6564 
+ 1984              	.LASF26:
+ 1985 084f 5F5F4259 		.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
+ 1985      54455F4F 
+ 1985      52444552 
+ 1985      5F5F205F 
+ 1985      5F4F5244 
+ 1986              	.LASF209:
+ 1987 0876 5F5F4C46 		.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
+ 1987      52414354 
+ 1987      5F4D4158 
+ 1987      5F5F2030 
+ 1987      58374646 
+ 1988              	.LASF200:
+ 1989 0896 5F5F4652 		.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
+ 1989      4143545F 
+ 1989      45505349 
+ 1989      4C4F4E5F 
+ 1989      5F203078 
+ 1990              	.LASF322:
+ 1991 08b1 5F5F5052 		.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
+ 1991      41474D41 
+ 1991      5F524544 
+ 1991      4546494E 
+ 1991      455F4558 
+ 1992              	.LASF27:
+ 1993 08cd 5F5F464C 		.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
+ 1993      4F41545F 
+ 1993      574F5244 
+ 1993      5F4F5244 
+ 1993      45525F5F 
+ 1994              	.LASF352:
+ 1995 08fa 5F5F4758 		.ascii	"__GXX_TYPEINFO_EQUALITY_INLINE 0\000"
+ 1995      585F5459 
+ 1995      5045494E 
+ 1995      464F5F45 
+ 1995      5155414C 
+ 1996              	.LASF250:
+ 1997 091b 5F5F4C41 		.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
+ 1997      4343554D 
+ 1997      5F455053 
+ 1997      494C4F4E 
+ 1997      5F5F2030 
+ 1998              	.LASF40:
+ 1999 0938 5F5F494E 		.ascii	"__INT32_TYPE__ long int\000"
+ 1999      5433325F 
+ 1999      54595045 
+ 1999      5F5F206C 
+ 1999      6F6E6720 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 47
+
+
+ 2000              	.LASF86:
+ 2001 0950 5F5F494E 		.ascii	"__INT32_MAX__ 2147483647L\000"
+ 2001      5433325F 
+ 2001      4D41585F 
+ 2001      5F203231 
+ 2001      34373438 
+ 2002              	.LASF55:
+ 2003 096a 5F5F494E 		.ascii	"__INT_FAST16_TYPE__ int\000"
+ 2003      545F4641 
+ 2003      53543136 
+ 2003      5F545950 
+ 2003      455F5F20 
+ 2004              	.LASF327:
+ 2005 0982 5F5F4152 		.ascii	"__ARM_FEATURE_SAT 1\000"
+ 2005      4D5F4645 
+ 2005      41545552 
+ 2005      455F5341 
+ 2005      54203100 
+ 2006              	.LASF237:
+ 2007 0996 5F5F4143 		.ascii	"__ACCUM_IBIT__ 16\000"
+ 2007      43554D5F 
+ 2007      49424954 
+ 2007      5F5F2031 
+ 2007      3600
+ 2008              	.LASF65:
+ 2009 09a8 5F5F6861 		.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
+ 2009      735F696E 
+ 2009      636C7564 
+ 2009      655F6E65 
+ 2009      78742853 
+ 2010              	.LASF368:
+ 2011 09da 5F656273 		.ascii	"_ebss_ahb\000"
+ 2011      735F6168 
+ 2011      6200
+ 2012              	.LASF285:
+ 2013 09e4 5F5F5554 		.ascii	"__UTQ_IBIT__ 0\000"
+ 2013      515F4942 
+ 2013      49545F5F 
+ 2013      203000
+ 2014              	.LASF244:
+ 2015 09f3 5F5F5541 		.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
+ 2015      4343554D 
+ 2015      5F4D4158 
+ 2015      5F5F2030 
+ 2015      58464646 
+ 2016              	.LASF39:
+ 2017 0a13 5F5F494E 		.ascii	"__INT16_TYPE__ short int\000"
+ 2017      5431365F 
+ 2017      54595045 
+ 2017      5F5F2073 
+ 2017      686F7274 
+ 2018              	.LASF164:
+ 2019 0a2c 5F5F4C44 		.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
+ 2019      424C5F48 
+ 2019      41535F51 
+ 2019      55494554 
+ 2019      5F4E414E 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 48
+
+
+ 2020              	.LASF260:
+ 2021 0a45 5F5F4C4C 		.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
+ 2021      41434355 
+ 2021      4D5F4550 
+ 2021      53494C4F 
+ 2021      4E5F5F20 
+ 2022              	.LASF18:
+ 2023 0a64 5F5F5349 		.ascii	"__SIZEOF_DOUBLE__ 8\000"
+ 2023      5A454F46 
+ 2023      5F444F55 
+ 2023      424C455F 
+ 2023      5F203800 
+ 2024              	.LASF234:
+ 2025 0a78 5F5F5553 		.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
+ 2025      41434355 
+ 2025      4D5F4D41 
+ 2025      585F5F20 
+ 2025      30584646 
+ 2026              	.LASF115:
+ 2027 0a95 5F5F5549 		.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
+ 2027      4E545F46 
+ 2027      41535436 
+ 2027      345F4D41 
+ 2027      585F5F20 
+ 2028              	.LASF171:
+ 2029 0ac1 5F5F4445 		.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
+ 2029      4333325F 
+ 2029      5355424E 
+ 2029      4F524D41 
+ 2029      4C5F4D49 
+ 2030              	.LASF275:
+ 2031 0ae8 5F5F5451 		.ascii	"__TQ_IBIT__ 0\000"
+ 2031      5F494249 
+ 2031      545F5F20 
+ 2031      3000
+ 2032              	.LASF7:
+ 2033 0af6 5F5F4154 		.ascii	"__ATOMIC_SEQ_CST 5\000"
+ 2033      4F4D4943 
+ 2033      5F534551 
+ 2033      5F435354 
+ 2033      203500
+ 2034              	.LASF271:
+ 2035 0b09 5F5F5351 		.ascii	"__SQ_IBIT__ 0\000"
+ 2035      5F494249 
+ 2035      545F5F20 
+ 2035      3000
+ 2036              	.LASF321:
+ 2037 0b17 5F5F4743 		.ascii	"__GCC_HAVE_DWARF2_CFI_ASM 1\000"
+ 2037      435F4841 
+ 2037      56455F44 
+ 2037      57415246 
+ 2037      325F4346 
+ 2038              	.LASF189:
+ 2039 0b33 5F5F5346 		.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
+ 2039      52414354 
+ 2039      5F4D4158 
+ 2039      5F5F2030 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 49
+
+
+ 2039      58374650 
+ 2040              	.LASF97:
+ 2041 0b4c 5F5F494E 		.ascii	"__INT32_C(c) c ## L\000"
+ 2041      5433325F 
+ 2041      43286329 
+ 2041      20632023 
+ 2041      23204C00 
+ 2042              	.LASF313:
+ 2043 0b60 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
+ 2043      435F4154 
+ 2043      4F4D4943 
+ 2043      5F434841 
+ 2043      5233325F 
+ 2044              	.LASF274:
+ 2045 0b82 5F5F5451 		.ascii	"__TQ_FBIT__ 127\000"
+ 2045      5F464249 
+ 2045      545F5F20 
+ 2045      31323700 
+ 2046              	.LASF175:
+ 2047 0b92 5F5F4445 		.ascii	"__DEC64_MIN__ 1E-383DD\000"
+ 2047      4336345F 
+ 2047      4D494E5F 
+ 2047      5F203145 
+ 2047      2D333833 
+ 2048              	.LASF34:
+ 2049 0ba9 5F5F5549 		.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
+ 2049      4E544D41 
+ 2049      585F5459 
+ 2049      50455F5F 
+ 2049      206C6F6E 
+ 2050              	.LASF302:
+ 2051 0bd1 5F5F5245 		.ascii	"__REGISTER_PREFIX__ \000"
+ 2051      47495354 
+ 2051      45525F50 
+ 2051      52454649 
+ 2051      585F5F20 
+ 2052              	.LASF210:
+ 2053 0be6 5F5F4C46 		.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
+ 2053      52414354 
+ 2053      5F455053 
+ 2053      494C4F4E 
+ 2053      5F5F2030 
+ 2054              	.LASF220:
+ 2055 0c03 5F5F4C4C 		.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
+ 2055      46524143 
+ 2055      545F4550 
+ 2055      53494C4F 
+ 2055      4E5F5F20 
+ 2056              	.LASF15:
+ 2057 0c22 5F5F5349 		.ascii	"__SIZEOF_LONG_LONG__ 8\000"
+ 2057      5A454F46 
+ 2057      5F4C4F4E 
+ 2057      475F4C4F 
+ 2057      4E475F5F 
+ 2058              	.LASF124:
+ 2059 0c39 5F5F464C 		.ascii	"__FLT_DIG__ 6\000"
+ 2059      545F4449 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 50
+
+
+ 2059      475F5F20 
+ 2059      3600
+ 2060              	.LASF346:
+ 2061 0c47 5F5F4152 		.ascii	"__ARM_NEON_FP 4\000"
+ 2061      4D5F4E45 
+ 2061      4F4E5F46 
+ 2061      50203400 
+ 2062              	.LASF215:
+ 2063 0c57 5F5F554C 		.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
+ 2063      46524143 
+ 2063      545F4550 
+ 2063      53494C4F 
+ 2063      4E5F5F20 
+ 2064              	.LASF47:
+ 2065 0c76 5F5F494E 		.ascii	"__INT_LEAST16_TYPE__ short int\000"
+ 2065      545F4C45 
+ 2065      41535431 
+ 2065      365F5459 
+ 2065      50455F5F 
+ 2066              	.LASF9:
+ 2067 0c95 5F5F4154 		.ascii	"__ATOMIC_RELEASE 3\000"
+ 2067      4F4D4943 
+ 2067      5F52454C 
+ 2067      45415345 
+ 2067      203300
+ 2068              	.LASF121:
+ 2069 0ca8 5F5F4445 		.ascii	"__DEC_EVAL_METHOD__ 2\000"
+ 2069      435F4556 
+ 2069      414C5F4D 
+ 2069      4554484F 
+ 2069      445F5F20 
+ 2070              	.LASF5:
+ 2071 0cbe 5F5F5645 		.ascii	"__VERSION__ \"4.9.3 20150303 (release) [ARM/embedde"
+ 2071      5253494F 
+ 2071      4E5F5F20 
+ 2071      22342E39 
+ 2071      2E332032 
+ 2072 0cf0 642D345F 		.ascii	"d-4_9-branch revision 221220]\"\000"
+ 2072      392D6272 
+ 2072      616E6368 
+ 2072      20726576 
+ 2072      6973696F 
+ 2073              	.LASF305:
+ 2074 0d0f 5F5F4E4F 		.ascii	"__NO_INLINE__ 1\000"
+ 2074      5F494E4C 
+ 2074      494E455F 
+ 2074      5F203100 
+ 2075              	.LASF94:
+ 2076 0d1f 5F5F494E 		.ascii	"__INT_LEAST16_MAX__ 32767\000"
+ 2076      545F4C45 
+ 2076      41535431 
+ 2076      365F4D41 
+ 2076      585F5F20 
+ 2077              	.LASF166:
+ 2078 0d39 5F5F4445 		.ascii	"__DEC32_MIN_EXP__ (-94)\000"
+ 2078      4333325F 
+ 2078      4D494E5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 51
+
+
+ 2078      4558505F 
+ 2078      5F20282D 
+ 2079              	.LASF167:
+ 2080 0d51 5F5F4445 		.ascii	"__DEC32_MAX_EXP__ 97\000"
+ 2080      4333325F 
+ 2080      4D41585F 
+ 2080      4558505F 
+ 2080      5F203937 
+ 2081              	.LASF258:
+ 2082 0d66 5F5F4C4C 		.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
+ 2082      41434355 
+ 2082      4D5F4D49 
+ 2082      4E5F5F20 
+ 2082      282D3058 
+ 2083              	.LASF326:
+ 2084 0d8d 5F5F4152 		.ascii	"__ARM_FEATURE_QBIT 1\000"
+ 2084      4D5F4645 
+ 2084      41545552 
+ 2084      455F5142 
+ 2084      49542031 
+ 2085              	.LASF93:
+ 2086 0da2 5F5F494E 		.ascii	"__INT8_C(c) c\000"
+ 2086      54385F43 
+ 2086      28632920 
+ 2086      6300
+ 2087              	.LASF213:
+ 2088 0db0 5F5F554C 		.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
+ 2088      46524143 
+ 2088      545F4D49 
+ 2088      4E5F5F20 
+ 2088      302E3055 
+ 2089              	.LASF212:
+ 2090 0dc7 5F5F554C 		.ascii	"__ULFRACT_IBIT__ 0\000"
+ 2090      46524143 
+ 2090      545F4942 
+ 2090      49545F5F 
+ 2090      203000
+ 2091              	.LASF370:
+ 2092 0dda 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2092      20756E73 
+ 2092      69676E65 
+ 2092      6420696E 
+ 2092      7400
+ 2093              	.LASF169:
+ 2094 0dec 5F5F4445 		.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
+ 2094      4333325F 
+ 2094      4D41585F 
+ 2094      5F20392E 
+ 2094      39393939 
+ 2095              	.LASF235:
+ 2096 0e08 5F5F5553 		.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
+ 2096      41434355 
+ 2096      4D5F4550 
+ 2096      53494C4F 
+ 2096      4E5F5F20 
+ 2097              	.LASF3:
+ 2098 0e26 5F5F474E 		.ascii	"__GNUC_MINOR__ 9\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 52
+
+
+ 2098      55435F4D 
+ 2098      494E4F52 
+ 2098      5F5F2039 
+ 2098      00
+ 2099              	.LASF348:
+ 2100 0e37 5F5F4152 		.ascii	"__ARM_ARCH_7M__ 1\000"
+ 2100      4D5F4152 
+ 2100      43485F37 
+ 2100      4D5F5F20 
+ 2100      3100
+ 2101              	.LASF84:
+ 2102 0e49 5F5F494E 		.ascii	"__INT8_MAX__ 127\000"
+ 2102      54385F4D 
+ 2102      41585F5F 
+ 2102      20313237 
+ 2102      00
+ 2103              	.LASF119:
+ 2104 0e5a 5F5F4743 		.ascii	"__GCC_IEC_559_COMPLEX 0\000"
+ 2104      435F4945 
+ 2104      435F3535 
+ 2104      395F434F 
+ 2104      4D504C45 
+ 2105              	.LASF242:
+ 2106 0e72 5F5F5541 		.ascii	"__UACCUM_IBIT__ 16\000"
+ 2106      4343554D 
+ 2106      5F494249 
+ 2106      545F5F20 
+ 2106      313600
+ 2107              	.LASF231:
+ 2108 0e85 5F5F5553 		.ascii	"__USACCUM_FBIT__ 8\000"
+ 2108      41434355 
+ 2108      4D5F4642 
+ 2108      49545F5F 
+ 2108      203800
+ 2109              	.LASF91:
+ 2110 0e98 5F5F5549 		.ascii	"__UINT64_MAX__ 18446744073709551615ULL\000"
+ 2110      4E543634 
+ 2110      5F4D4158 
+ 2110      5F5F2031 
+ 2110      38343436 
+ 2111              	.LASF136:
+ 2112 0ebf 5F5F464C 		.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
+ 2112      545F4841 
+ 2112      535F5155 
+ 2112      4945545F 
+ 2112      4E414E5F 
+ 2113              	.LASF201:
+ 2114 0ed7 5F5F5546 		.ascii	"__UFRACT_FBIT__ 16\000"
+ 2114      52414354 
+ 2114      5F464249 
+ 2114      545F5F20 
+ 2114      313600
+ 2115              	.LASF125:
+ 2116 0eea 5F5F464C 		.ascii	"__FLT_MIN_EXP__ (-125)\000"
+ 2116      545F4D49 
+ 2116      4E5F4558 
+ 2116      505F5F20 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 53
+
+
+ 2116      282D3132 
+ 2117              	.LASF92:
+ 2118 0f01 5F5F494E 		.ascii	"__INT_LEAST8_MAX__ 127\000"
+ 2118      545F4C45 
+ 2118      41535438 
+ 2118      5F4D4158 
+ 2118      5F5F2031 
+ 2119              	.LASF204:
+ 2120 0f18 5F5F5546 		.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
+ 2120      52414354 
+ 2120      5F4D4158 
+ 2120      5F5F2030 
+ 2120      58464646 
+ 2121              	.LASF194:
+ 2122 0f34 5F5F5553 		.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
+ 2122      46524143 
+ 2122      545F4D41 
+ 2122      585F5F20 
+ 2122      30584646 
+ 2123              	.LASF111:
+ 2124 0f4f 5F5F494E 		.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
+ 2124      545F4641 
+ 2124      53543634 
+ 2124      5F4D4158 
+ 2124      5F5F2039 
+ 2125              	.LASF24:
+ 2126 0f78 5F5F4F52 		.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
+ 2126      4445525F 
+ 2126      4249475F 
+ 2126      454E4449 
+ 2126      414E5F5F 
+ 2127              	.LASF35:
+ 2128 0f92 5F5F4348 		.ascii	"__CHAR16_TYPE__ short unsigned int\000"
+ 2128      41523136 
+ 2128      5F545950 
+ 2128      455F5F20 
+ 2128      73686F72 
+ 2129              	.LASF193:
+ 2130 0fb5 5F5F5553 		.ascii	"__USFRACT_MIN__ 0.0UHR\000"
+ 2130      46524143 
+ 2130      545F4D49 
+ 2130      4E5F5F20 
+ 2130      302E3055 
+ 2131              	.LASF280:
+ 2132 0fcc 5F5F5553 		.ascii	"__USQ_FBIT__ 32\000"
+ 2132      515F4642 
+ 2132      49545F5F 
+ 2132      20333200 
+ 2133              	.LASF33:
+ 2134 0fdc 5F5F494E 		.ascii	"__INTMAX_TYPE__ long long int\000"
+ 2134      544D4158 
+ 2134      5F545950 
+ 2134      455F5F20 
+ 2134      6C6F6E67 
+ 2135              	.LASF16:
+ 2136 0ffa 5F5F5349 		.ascii	"__SIZEOF_SHORT__ 2\000"
+ 2136      5A454F46 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 54
+
+
+ 2136      5F53484F 
+ 2136      52545F5F 
+ 2136      203200
+ 2137              	.LASF316:
+ 2138 100d 5F5F4743 		.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
+ 2138      435F4154 
+ 2138      4F4D4943 
+ 2138      5F494E54 
+ 2138      5F4C4F43 
+ 2139              	.LASF270:
+ 2140 102a 5F5F5351 		.ascii	"__SQ_FBIT__ 31\000"
+ 2140      5F464249 
+ 2140      545F5F20 
+ 2140      333100
+ 2141              	.LASF290:
+ 2142 1039 5F5F4441 		.ascii	"__DA_FBIT__ 31\000"
+ 2142      5F464249 
+ 2142      545F5F20 
+ 2142      333100
+ 2143              	.LASF278:
+ 2144 1048 5F5F5548 		.ascii	"__UHQ_FBIT__ 16\000"
+ 2144      515F4642 
+ 2144      49545F5F 
+ 2144      20313600 
+ 2145              	.LASF95:
+ 2146 1058 5F5F494E 		.ascii	"__INT16_C(c) c\000"
+ 2146      5431365F 
+ 2146      43286329 
+ 2146      206300
+ 2147              	.LASF332:
+ 2148 1067 5F5F4152 		.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
+ 2148      4D5F5349 
+ 2148      5A454F46 
+ 2148      5F4D494E 
+ 2148      494D414C 
+ 2149              	.LASF248:
+ 2150 1083 5F5F4C41 		.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
+ 2150      4343554D 
+ 2150      5F4D494E 
+ 2150      5F5F2028 
+ 2150      2D305831 
+ 2151              	.LASF57:
+ 2152 10a7 5F5F494E 		.ascii	"__INT_FAST64_TYPE__ long long int\000"
+ 2152      545F4641 
+ 2152      53543634 
+ 2152      5F545950 
+ 2152      455F5F20 
+ 2153              	.LASF127:
+ 2154 10c9 5F5F464C 		.ascii	"__FLT_MAX_EXP__ 128\000"
+ 2154      545F4D41 
+ 2154      585F4558 
+ 2154      505F5F20 
+ 2154      31323800 
+ 2155              	.LASF297:
+ 2156 10dd 5F5F5553 		.ascii	"__USA_IBIT__ 16\000"
+ 2156      415F4942 
+ 2156      49545F5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 55
+
+
+ 2156      20313600 
+ 2157              	.LASF148:
+ 2158 10ed 5F5F4442 		.ascii	"__DBL_HAS_DENORM__ 1\000"
+ 2158      4C5F4841 
+ 2158      535F4445 
+ 2158      4E4F524D 
+ 2158      5F5F2031 
+ 2159              	.LASF263:
+ 2160 1102 5F5F554C 		.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
+ 2160      4C414343 
+ 2160      554D5F4D 
+ 2160      494E5F5F 
+ 2160      20302E30 
+ 2161              	.LASF70:
+ 2162 111b 5F5F4C4F 		.ascii	"__LONG_MAX__ 2147483647L\000"
+ 2162      4E475F4D 
+ 2162      41585F5F 
+ 2162      20323134 
+ 2162      37343833 
+ 2163              	.LASF206:
+ 2164 1134 5F5F4C46 		.ascii	"__LFRACT_FBIT__ 31\000"
+ 2164      52414354 
+ 2164      5F464249 
+ 2164      545F5F20 
+ 2164      333100
+ 2165              	.LASF337:
+ 2166 1147 5F5F4150 		.ascii	"__APCS_32__ 1\000"
+ 2166      43535F33 
+ 2166      325F5F20 
+ 2166      3100
+ 2167              	.LASF262:
+ 2168 1155 5F5F554C 		.ascii	"__ULLACCUM_IBIT__ 32\000"
+ 2168      4C414343 
+ 2168      554D5F49 
+ 2168      4249545F 
+ 2168      5F203332 
+ 2169              	.LASF267:
+ 2170 116a 5F5F5151 		.ascii	"__QQ_IBIT__ 0\000"
+ 2170      5F494249 
+ 2170      545F5F20 
+ 2170      3000
+ 2171              	.LASF211:
+ 2172 1178 5F5F554C 		.ascii	"__ULFRACT_FBIT__ 32\000"
+ 2172      46524143 
+ 2172      545F4642 
+ 2172      49545F5F 
+ 2172      20333200 
+ 2173              	.LASF180:
+ 2174 118c 5F5F4445 		.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
+ 2174      43313238 
+ 2174      5F4D494E 
+ 2174      5F455850 
+ 2174      5F5F2028 
+ 2175              	.LASF71:
+ 2176 11a7 5F5F4C4F 		.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
+ 2176      4E475F4C 
+ 2176      4F4E475F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 56
+
+
+ 2176      4D41585F 
+ 2176      5F203932 
+ 2177              	.LASF4:
+ 2178 11cf 5F5F474E 		.ascii	"__GNUC_PATCHLEVEL__ 3\000"
+ 2178      55435F50 
+ 2178      41544348 
+ 2178      4C455645 
+ 2178      4C5F5F20 
+ 2179              	.LASF186:
+ 2180 11e5 5F5F5346 		.ascii	"__SFRACT_FBIT__ 7\000"
+ 2180      52414354 
+ 2180      5F464249 
+ 2180      545F5F20 
+ 2180      3700
+ 2181              	.LASF143:
+ 2182 11f7 5F5F4442 		.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+ 2182      4C5F4445 
+ 2182      43494D41 
+ 2182      4C5F4449 
+ 2182      475F5F20 
+ 2183              	.LASF138:
+ 2184 120e 5F5F4442 		.ascii	"__DBL_DIG__ 15\000"
+ 2184      4C5F4449 
+ 2184      475F5F20 
+ 2184      313500
+ 2185              	.LASF104:
+ 2186 121d 5F5F5549 		.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
+ 2186      4E545F4C 
+ 2186      45415354 
+ 2186      33325F4D 
+ 2186      41585F5F 
+ 2187              	.LASF129:
+ 2188 123f 5F5F464C 		.ascii	"__FLT_DECIMAL_DIG__ 9\000"
+ 2188      545F4445 
+ 2188      43494D41 
+ 2188      4C5F4449 
+ 2188      475F5F20 
+ 2189              	.LASF85:
+ 2190 1255 5F5F494E 		.ascii	"__INT16_MAX__ 32767\000"
+ 2190      5431365F 
+ 2190      4D41585F 
+ 2190      5F203332 
+ 2190      37363700 
+ 2191              	.LASF154:
+ 2192 1269 5F5F4C44 		.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
+ 2192      424C5F4D 
+ 2192      494E5F31 
+ 2192      305F4558 
+ 2192      505F5F20 
+ 2193              	.LASF329:
+ 2194 1284 5F5F4152 		.ascii	"__ARM_32BIT_STATE 1\000"
+ 2194      4D5F3332 
+ 2194      4249545F 
+ 2194      53544154 
+ 2194      45203100 
+ 2195              	.LASF13:
+ 2196 1298 5F5F5349 		.ascii	"__SIZEOF_INT__ 4\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 57
+
+
+ 2196      5A454F46 
+ 2196      5F494E54 
+ 2196      5F5F2034 
+ 2196      00
+ 2197              	.LASF41:
+ 2198 12a9 5F5F494E 		.ascii	"__INT64_TYPE__ long long int\000"
+ 2198      5436345F 
+ 2198      54595045 
+ 2198      5F5F206C 
+ 2198      6F6E6720 
+ 2199              	.LASF306:
+ 2200 12c6 5F5F4348 		.ascii	"__CHAR_UNSIGNED__ 1\000"
+ 2200      41525F55 
+ 2200      4E534947 
+ 2200      4E45445F 
+ 2200      5F203100 
+ 2201              	.LASF181:
+ 2202 12da 5F5F4445 		.ascii	"__DEC128_MAX_EXP__ 6145\000"
+ 2202      43313238 
+ 2202      5F4D4158 
+ 2202      5F455850 
+ 2202      5F5F2036 
+ 2203              	.LASF272:
+ 2204 12f2 5F5F4451 		.ascii	"__DQ_FBIT__ 63\000"
+ 2204      5F464249 
+ 2204      545F5F20 
+ 2204      363300
+ 2205              	.LASF309:
+ 2206 1301 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
+ 2206      435F4841 
+ 2206      56455F53 
+ 2206      594E435F 
+ 2206      434F4D50 
+ 2207              	.LASF371:
+ 2208 1326 73697A65 		.ascii	"sizetype\000"
+ 2208      74797065 
+ 2208      00
+ 2209              	.LASF241:
+ 2210 132f 5F5F5541 		.ascii	"__UACCUM_FBIT__ 16\000"
+ 2210      4343554D 
+ 2210      5F464249 
+ 2210      545F5F20 
+ 2210      313600
+ 2211              	.LASF161:
+ 2212 1342 5F5F4C44 		.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
+ 2212      424C5F44 
+ 2212      454E4F52 
+ 2212      4D5F4D49 
+ 2212      4E5F5F20 
+ 2213              	.LASF174:
+ 2214 136f 5F5F4445 		.ascii	"__DEC64_MAX_EXP__ 385\000"
+ 2214      4336345F 
+ 2214      4D41585F 
+ 2214      4558505F 
+ 2214      5F203338 
+ 2215              	.LASF147:
+ 2216 1385 5F5F4442 		.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 58
+
+
+ 2216      4C5F4445 
+ 2216      4E4F524D 
+ 2216      5F4D494E 
+ 2216      5F5F2028 
+ 2217 13b8 4C2900   		.ascii	"L)\000"
+ 2218              	.LASF365:
+ 2219 13bb 5F736273 		.ascii	"_sbss\000"
+ 2219      7300
+ 2220              	.LASF123:
+ 2221 13c1 5F5F464C 		.ascii	"__FLT_MANT_DIG__ 24\000"
+ 2221      545F4D41 
+ 2221      4E545F44 
+ 2221      49475F5F 
+ 2221      20323400 
+ 2222              	.LASF22:
+ 2223 13d5 5F5F4249 		.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
+ 2223      47474553 
+ 2223      545F414C 
+ 2223      49474E4D 
+ 2223      454E545F 
+ 2224              	.LASF359:
+ 2225 13ed 70756C44 		.ascii	"pulDest\000"
+ 2225      65737400 
+ 2226              	.LASF54:
+ 2227 13f5 5F5F494E 		.ascii	"__INT_FAST8_TYPE__ int\000"
+ 2227      545F4641 
+ 2227      5354385F 
+ 2227      54595045 
+ 2227      5F5F2069 
+ 2228              	.LASF372:
+ 2229 140c 675F7066 		.ascii	"g_pfnVectors\000"
+ 2229      6E566563 
+ 2229      746F7273 
+ 2229      00
+ 2230              	.LASF336:
+ 2231 1419 5F5F4152 		.ascii	"__ARM_ARCH 7\000"
+ 2231      4D5F4152 
+ 2231      43482037 
+ 2231      00
+ 2232              	.LASF295:
+ 2233 1426 5F5F5548 		.ascii	"__UHA_IBIT__ 8\000"
+ 2233      415F4942 
+ 2233      49545F5F 
+ 2233      203800
+ 2234              	.LASF276:
+ 2235 1435 5F5F5551 		.ascii	"__UQQ_FBIT__ 8\000"
+ 2235      515F4642 
+ 2235      49545F5F 
+ 2235      203800
+ 2236              	.LASF176:
+ 2237 1444 5F5F4445 		.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
+ 2237      4336345F 
+ 2237      4D41585F 
+ 2237      5F20392E 
+ 2237      39393939 
+ 2238              	.LASF226:
+ 2239 146a 5F5F5341 		.ascii	"__SACCUM_FBIT__ 7\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 59
+
+
+ 2239      4343554D 
+ 2239      5F464249 
+ 2239      545F5F20 
+ 2239      3700
+ 2240              	.LASF183:
+ 2241 147c 5F5F4445 		.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
+ 2241      43313238 
+ 2241      5F4D4158 
+ 2241      5F5F2039 
+ 2241      2E393939 
+ 2242 14af 36313434 		.ascii	"6144DL\000"
+ 2242      444C00
+ 2243              	.LASF340:
+ 2244 14b6 5F5F4152 		.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
+ 2244      4D5F4152 
+ 2244      43485F49 
+ 2244      53415F54 
+ 2244      48554D42 
+ 2245              	.LASF109:
+ 2246 14cd 5F5F494E 		.ascii	"__INT_FAST16_MAX__ 2147483647\000"
+ 2246      545F4641 
+ 2246      53543136 
+ 2246      5F4D4158 
+ 2246      5F5F2032 
+ 2247              	.LASF51:
+ 2248 14eb 5F5F5549 		.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
+ 2248      4E545F4C 
+ 2248      45415354 
+ 2248      31365F54 
+ 2248      5950455F 
+ 2249              	.LASF284:
+ 2250 1514 5F5F5554 		.ascii	"__UTQ_FBIT__ 128\000"
+ 2250      515F4642 
+ 2250      49545F5F 
+ 2250      20313238 
+ 2250      00
+ 2251              	.LASF141:
+ 2252 1525 5F5F4442 		.ascii	"__DBL_MAX_EXP__ 1024\000"
+ 2252      4C5F4D41 
+ 2252      585F4558 
+ 2252      505F5F20 
+ 2252      31303234 
+ 2253              	.LASF0:
+ 2254 153a 5F5F5354 		.ascii	"__STDC__ 1\000"
+ 2254      44435F5F 
+ 2254      203100
+ 2255              	.LASF353:
+ 2256 1545 5F5F454C 		.ascii	"__ELF__ 1\000"
+ 2256      465F5F20 
+ 2256      3100
+ 2257              	.LASF374:
+ 2258 154f 73797374 		.ascii	"system/startup_LPC17xx.c\000"
+ 2258      656D2F73 
+ 2258      74617274 
+ 2258      75705F4C 
+ 2258      50433137 
+ 2259              	.LASF120:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 60
+
+
+ 2260 1568 5F5F464C 		.ascii	"__FLT_EVAL_METHOD__ 0\000"
+ 2260      545F4556 
+ 2260      414C5F4D 
+ 2260      4554484F 
+ 2260      445F5F20 
+ 2261              	.LASF301:
+ 2262 157e 5F5F5554 		.ascii	"__UTA_IBIT__ 64\000"
+ 2262      415F4942 
+ 2262      49545F5F 
+ 2262      20363400 
+ 2263              	.LASF8:
+ 2264 158e 5F5F4154 		.ascii	"__ATOMIC_ACQUIRE 2\000"
+ 2264      4F4D4943 
+ 2264      5F414351 
+ 2264      55495245 
+ 2264      203200
+ 2265              	.LASF177:
+ 2266 15a1 5F5F4445 		.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
+ 2266      4336345F 
+ 2266      45505349 
+ 2266      4C4F4E5F 
+ 2266      5F203145 
+ 2267              	.LASF311:
+ 2268 15bb 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 2\000"
+ 2268      435F4154 
+ 2268      4F4D4943 
+ 2268      5F434841 
+ 2268      525F4C4F 
+ 2269              	.LASF184:
+ 2270 15d9 5F5F4445 		.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
+ 2270      43313238 
+ 2270      5F455053 
+ 2270      494C4F4E 
+ 2270      5F5F2031 
+ 2271              	.LASF283:
+ 2272 15f4 5F5F5544 		.ascii	"__UDQ_IBIT__ 0\000"
+ 2272      515F4942 
+ 2272      49545F5F 
+ 2272      203000
+ 2273              	.LASF323:
+ 2274 1603 5F5F5349 		.ascii	"__SIZEOF_WCHAR_T__ 4\000"
+ 2274      5A454F46 
+ 2274      5F574348 
+ 2274      41525F54 
+ 2274      5F5F2034 
+ 2275              	.LASF90:
+ 2276 1618 5F5F5549 		.ascii	"__UINT32_MAX__ 4294967295UL\000"
+ 2276      4E543332 
+ 2276      5F4D4158 
+ 2276      5F5F2034 
+ 2276      32393439 
+ 2277              	.LASF60:
+ 2278 1634 5F5F5549 		.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
+ 2278      4E545F46 
+ 2278      41535433 
+ 2278      325F5459 
+ 2278      50455F5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 61
+
+
+ 2279              	.LASF152:
+ 2280 1656 5F5F4C44 		.ascii	"__LDBL_DIG__ 15\000"
+ 2280      424C5F44 
+ 2280      49475F5F 
+ 2280      20313500 
+ 2281              	.LASF331:
+ 2282 1666 5F5F4152 		.ascii	"__ARM_FEATURE_CLZ 1\000"
+ 2282      4D5F4645 
+ 2282      41545552 
+ 2282      455F434C 
+ 2282      5A203100 
+ 2283              	.LASF160:
+ 2284 167a 5F5F4C44 		.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
+ 2284      424C5F45 
+ 2284      5053494C 
+ 2284      4F4E5F5F 
+ 2284      20322E32 
+ 2285              	.LASF291:
+ 2286 16a3 5F5F4441 		.ascii	"__DA_IBIT__ 32\000"
+ 2286      5F494249 
+ 2286      545F5F20 
+ 2286      333200
+ 2287              	.LASF304:
+ 2288 16b2 5F5F474E 		.ascii	"__GNUC_GNU_INLINE__ 1\000"
+ 2288      55435F47 
+ 2288      4E555F49 
+ 2288      4E4C494E 
+ 2288      455F5F20 
+ 2289              	.LASF191:
+ 2290 16c8 5F5F5553 		.ascii	"__USFRACT_FBIT__ 8\000"
+ 2290      46524143 
+ 2290      545F4642 
+ 2290      49545F5F 
+ 2290      203800
+ 2291              	.LASF266:
+ 2292 16db 5F5F5151 		.ascii	"__QQ_FBIT__ 7\000"
+ 2292      5F464249 
+ 2292      545F5F20 
+ 2292      3700
+ 2293              	.LASF287:
+ 2294 16e9 5F5F4841 		.ascii	"__HA_IBIT__ 8\000"
+ 2294      5F494249 
+ 2294      545F5F20 
+ 2294      3800
+ 2295              	.LASF44:
+ 2296 16f7 5F5F5549 		.ascii	"__UINT32_TYPE__ long unsigned int\000"
+ 2296      4E543332 
+ 2296      5F545950 
+ 2296      455F5F20 
+ 2296      6C6F6E67 
+ 2297              	.LASF105:
+ 2298 1719 5F5F5549 		.ascii	"__UINT32_C(c) c ## UL\000"
+ 2298      4E543332 
+ 2298      5F432863 
+ 2298      29206320 
+ 2298      23232055 
+ 2299              	.LASF203:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 62
+
+
+ 2300 172f 5F5F5546 		.ascii	"__UFRACT_MIN__ 0.0UR\000"
+ 2300      52414354 
+ 2300      5F4D494E 
+ 2300      5F5F2030 
+ 2300      2E305552 
+ 2301              	.LASF335:
+ 2302 1744 5F5F6172 		.ascii	"__arm__ 1\000"
+ 2302      6D5F5F20 
+ 2302      3100
+ 2303              	.LASF48:
+ 2304 174e 5F5F494E 		.ascii	"__INT_LEAST32_TYPE__ long int\000"
+ 2304      545F4C45 
+ 2304      41535433 
+ 2304      325F5459 
+ 2304      50455F5F 
+ 2305              	.LASF89:
+ 2306 176c 5F5F5549 		.ascii	"__UINT16_MAX__ 65535\000"
+ 2306      4E543136 
+ 2306      5F4D4158 
+ 2306      5F5F2036 
+ 2306      35353335 
+ 2307              	.LASF179:
+ 2308 1781 5F5F4445 		.ascii	"__DEC128_MANT_DIG__ 34\000"
+ 2308      43313238 
+ 2308      5F4D414E 
+ 2308      545F4449 
+ 2308      475F5F20 
+ 2309              	.LASF128:
+ 2310 1798 5F5F464C 		.ascii	"__FLT_MAX_10_EXP__ 38\000"
+ 2310      545F4D41 
+ 2310      585F3130 
+ 2310      5F455850 
+ 2310      5F5F2033 
+ 2311              	.LASF130:
+ 2312 17ae 5F5F464C 		.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
+ 2312      545F4D41 
+ 2312      585F5F20 
+ 2312      332E3430 
+ 2312      32383233 
+ 2313              	.LASF318:
+ 2314 17d2 5F5F4743 		.ascii	"__GCC_ATOMIC_LLONG_LOCK_FREE 1\000"
+ 2314      435F4154 
+ 2314      4F4D4943 
+ 2314      5F4C4C4F 
+ 2314      4E475F4C 
+ 2315              	.LASF76:
+ 2316 17f1 5F5F5054 		.ascii	"__PTRDIFF_MAX__ 2147483647\000"
+ 2316      52444946 
+ 2316      465F4D41 
+ 2316      585F5F20 
+ 2316      32313437 
+ 2317              	.LASF77:
+ 2318 180c 5F5F5349 		.ascii	"__SIZE_MAX__ 4294967295U\000"
+ 2318      5A455F4D 
+ 2318      41585F5F 
+ 2318      20343239 
+ 2318      34393637 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 63
+
+
+ 2319              	.LASF188:
+ 2320 1825 5F5F5346 		.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
+ 2320      52414354 
+ 2320      5F4D494E 
+ 2320      5F5F2028 
+ 2320      2D302E35 
+ 2321              	.LASF294:
+ 2322 1843 5F5F5548 		.ascii	"__UHA_FBIT__ 8\000"
+ 2322      415F4642 
+ 2322      49545F5F 
+ 2322      203800
+ 2323              	.LASF339:
+ 2324 1852 5F5F7468 		.ascii	"__thumb2__ 1\000"
+ 2324      756D6232 
+ 2324      5F5F2031 
+ 2324      00
+ 2325              	.LASF273:
+ 2326 185f 5F5F4451 		.ascii	"__DQ_IBIT__ 0\000"
+ 2326      5F494249 
+ 2326      545F5F20 
+ 2326      3000
+ 2327              	.LASF79:
+ 2328 186d 5F5F494E 		.ascii	"__INTMAX_C(c) c ## LL\000"
+ 2328      544D4158 
+ 2328      5F432863 
+ 2328      29206320 
+ 2328      2323204C 
+ 2329              	.LASF317:
+ 2330 1883 5F5F4743 		.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
+ 2330      435F4154 
+ 2330      4F4D4943 
+ 2330      5F4C4F4E 
+ 2330      475F4C4F 
+ 2331              	.LASF52:
+ 2332 18a1 5F5F5549 		.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
+ 2332      4E545F4C 
+ 2332      45415354 
+ 2332      33325F54 
+ 2332      5950455F 
+ 2333              	.LASF99:
+ 2334 18c9 5F5F494E 		.ascii	"__INT64_C(c) c ## LL\000"
+ 2334      5436345F 
+ 2334      43286329 
+ 2334      20632023 
+ 2334      23204C4C 
+ 2335              	.LASF279:
+ 2336 18de 5F5F5548 		.ascii	"__UHQ_IBIT__ 0\000"
+ 2336      515F4942 
+ 2336      49545F5F 
+ 2336      203000
+ 2337              	.LASF46:
+ 2338 18ed 5F5F494E 		.ascii	"__INT_LEAST8_TYPE__ signed char\000"
+ 2338      545F4C45 
+ 2338      41535438 
+ 2338      5F545950 
+ 2338      455F5F20 
+ 2339              	.LASF103:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 64
+
+
+ 2340 190d 5F5F5549 		.ascii	"__UINT16_C(c) c\000"
+ 2340      4E543136 
+ 2340      5F432863 
+ 2340      29206300 
+ 2341              	.LASF310:
+ 2342 191d 5F5F4743 		.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 2\000"
+ 2342      435F4154 
+ 2342      4F4D4943 
+ 2342      5F424F4F 
+ 2342      4C5F4C4F 
+ 2343              	.LASF17:
+ 2344 193b 5F5F5349 		.ascii	"__SIZEOF_FLOAT__ 4\000"
+ 2344      5A454F46 
+ 2344      5F464C4F 
+ 2344      41545F5F 
+ 2344      203400
+ 2345              	.LASF347:
+ 2346 194e 5F5F5448 		.ascii	"__THUMB_INTERWORK__ 1\000"
+ 2346      554D425F 
+ 2346      494E5445 
+ 2346      52574F52 
+ 2346      4B5F5F20 
+ 2347              	.LASF142:
+ 2348 1964 5F5F4442 		.ascii	"__DBL_MAX_10_EXP__ 308\000"
+ 2348      4C5F4D41 
+ 2348      585F3130 
+ 2348      5F455850 
+ 2348      5F5F2033 
+ 2349              	.LASF102:
+ 2350 197b 5F5F5549 		.ascii	"__UINT_LEAST16_MAX__ 65535\000"
+ 2350      4E545F4C 
+ 2350      45415354 
+ 2350      31365F4D 
+ 2350      41585F5F 
+ 2351              	.LASF132:
+ 2352 1996 5F5F464C 		.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
+ 2352      545F4550 
+ 2352      53494C4F 
+ 2352      4E5F5F20 
+ 2352      312E3139 
+ 2353              	.LASF25:
+ 2354 19bd 5F5F4F52 		.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
+ 2354      4445525F 
+ 2354      5044505F 
+ 2354      454E4449 
+ 2354      414E5F5F 
+ 2355              	.LASF320:
+ 2356 19d7 5F5F4743 		.ascii	"__GCC_ATOMIC_POINTER_LOCK_FREE 2\000"
+ 2356      435F4154 
+ 2356      4F4D4943 
+ 2356      5F504F49 
+ 2356      4E544552 
+ 2357              	.LASF232:
+ 2358 19f8 5F5F5553 		.ascii	"__USACCUM_IBIT__ 8\000"
+ 2358      41434355 
+ 2358      4D5F4942 
+ 2358      49545F5F 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 65
+
+
+ 2358      203800
+ 2359              	.LASF23:
+ 2360 1a0b 5F5F4F52 		.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
+ 2360      4445525F 
+ 2360      4C495454 
+ 2360      4C455F45 
+ 2360      4E444941 
+ 2361              	.LASF32:
+ 2362 1a28 5F5F5749 		.ascii	"__WINT_TYPE__ unsigned int\000"
+ 2362      4E545F54 
+ 2362      5950455F 
+ 2362      5F20756E 
+ 2362      7369676E 
+ 2363              	.LASF330:
+ 2364 1a43 5F5F4152 		.ascii	"__ARM_FEATURE_LDREX 7\000"
+ 2364      4D5F4645 
+ 2364      41545552 
+ 2364      455F4C44 
+ 2364      52455820 
+ 2365              	.LASF49:
+ 2366 1a59 5F5F494E 		.ascii	"__INT_LEAST64_TYPE__ long long int\000"
+ 2366      545F4C45 
+ 2366      41535436 
+ 2366      345F5459 
+ 2366      50455F5F 
+ 2367              	.LASF6:
+ 2368 1a7c 5F5F4154 		.ascii	"__ATOMIC_RELAXED 0\000"
+ 2368      4F4D4943 
+ 2368      5F52454C 
+ 2368      41584544 
+ 2368      203000
+ 2369              	.LASF12:
+ 2370 1a8f 5F5F4649 		.ascii	"__FINITE_MATH_ONLY__ 0\000"
+ 2370      4E495445 
+ 2370      5F4D4154 
+ 2370      485F4F4E 
+ 2370      4C595F5F 
+ 2371              	.LASF249:
+ 2372 1aa6 5F5F4C41 		.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
+ 2372      4343554D 
+ 2372      5F4D4158 
+ 2372      5F5F2030 
+ 2372      58374646 
+ 2373              	.LASF182:
+ 2374 1ace 5F5F4445 		.ascii	"__DEC128_MIN__ 1E-6143DL\000"
+ 2374      43313238 
+ 2374      5F4D494E 
+ 2374      5F5F2031 
+ 2374      452D3631 
+ 2375              	.LASF165:
+ 2376 1ae7 5F5F4445 		.ascii	"__DEC32_MANT_DIG__ 7\000"
+ 2376      4333325F 
+ 2376      4D414E54 
+ 2376      5F444947 
+ 2376      5F5F2037 
+ 2377              	.LASF118:
+ 2378 1afc 5F5F4743 		.ascii	"__GCC_IEC_559 0\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 66
+
+
+ 2378      435F4945 
+ 2378      435F3535 
+ 2378      39203000 
+ 2379              	.LASF239:
+ 2380 1b0c 5F5F4143 		.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
+ 2380      43554D5F 
+ 2380      4D41585F 
+ 2380      5F203058 
+ 2380      37464646 
+ 2381              	.LASF82:
+ 2382 1b2a 5F5F5349 		.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
+ 2382      475F4154 
+ 2382      4F4D4943 
+ 2382      5F4D4158 
+ 2382      5F5F2032 
+ 2383              	.LASF369:
+ 2384 1b48 5F657374 		.ascii	"_estack\000"
+ 2384      61636B00 
+ 2385              	.LASF229:
+ 2386 1b50 5F5F5341 		.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
+ 2386      4343554D 
+ 2386      5F4D4158 
+ 2386      5F5F2030 
+ 2386      58374646 
+ 2387              	.LASF78:
+ 2388 1b6b 5F5F494E 		.ascii	"__INTMAX_MAX__ 9223372036854775807LL\000"
+ 2388      544D4158 
+ 2388      5F4D4158 
+ 2388      5F5F2039 
+ 2388      32323333 
+ 2389              	.LASF66:
+ 2390 1b90 5F5F4758 		.ascii	"__GXX_ABI_VERSION 1002\000"
+ 2390      585F4142 
+ 2390      495F5645 
+ 2390      5253494F 
+ 2390      4E203130 
+ 2391              	.LASF192:
+ 2392 1ba7 5F5F5553 		.ascii	"__USFRACT_IBIT__ 0\000"
+ 2392      46524143 
+ 2392      545F4942 
+ 2392      49545F5F 
+ 2392      203000
+ 2393              	.LASF288:
+ 2394 1bba 5F5F5341 		.ascii	"__SA_FBIT__ 15\000"
+ 2394      5F464249 
+ 2394      545F5F20 
+ 2394      313500
+ 2395              	.LASF252:
+ 2396 1bc9 5F5F554C 		.ascii	"__ULACCUM_IBIT__ 32\000"
+ 2396      41434355 
+ 2396      4D5F4942 
+ 2396      49545F5F 
+ 2396      20333200 
+ 2397              	.LASF341:
+ 2398 1bdd 5F5F4152 		.ascii	"__ARMEL__ 1\000"
+ 2398      4D454C5F 
+ 2398      5F203100 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 67
+
+
+ 2399              	.LASF282:
+ 2400 1be9 5F5F5544 		.ascii	"__UDQ_FBIT__ 64\000"
+ 2400      515F4642 
+ 2400      49545F5F 
+ 2400      20363400 
+ 2401              	.LASF269:
+ 2402 1bf9 5F5F4851 		.ascii	"__HQ_IBIT__ 0\000"
+ 2402      5F494249 
+ 2402      545F5F20 
+ 2402      3000
+ 2403              	.LASF139:
+ 2404 1c07 5F5F4442 		.ascii	"__DBL_MIN_EXP__ (-1021)\000"
+ 2404      4C5F4D49 
+ 2404      4E5F4558 
+ 2404      505F5F20 
+ 2404      282D3130 
+ 2405              	.LASF360:
+ 2406 1c1f 5F696E69 		.ascii	"_init\000"
+ 2406      7400
+ 2407              	.LASF286:
+ 2408 1c25 5F5F4841 		.ascii	"__HA_FBIT__ 7\000"
+ 2408      5F464249 
+ 2408      545F5F20 
+ 2408      3700
+ 2409              	.LASF151:
+ 2410 1c33 5F5F4C44 		.ascii	"__LDBL_MANT_DIG__ 53\000"
+ 2410      424C5F4D 
+ 2410      414E545F 
+ 2410      4449475F 
+ 2410      5F203533 
+ 2411              	.LASF205:
+ 2412 1c48 5F5F5546 		.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
+ 2412      52414354 
+ 2412      5F455053 
+ 2412      494C4F4E 
+ 2412      5F5F2030 
+ 2413              	.LASF63:
+ 2414 1c65 5F5F5549 		.ascii	"__UINTPTR_TYPE__ unsigned int\000"
+ 2414      4E545054 
+ 2414      525F5459 
+ 2414      50455F5F 
+ 2414      20756E73 
+ 2415              	.LASF350:
+ 2416 1c83 5F5F4152 		.ascii	"__ARM_EABI__ 1\000"
+ 2416      4D5F4541 
+ 2416      42495F5F 
+ 2416      203100
+ 2417              	.LASF122:
+ 2418 1c92 5F5F464C 		.ascii	"__FLT_RADIX__ 2\000"
+ 2418      545F5241 
+ 2418      4449585F 
+ 2418      5F203200 
+ 2419              	.LASF74:
+ 2420 1ca2 5F5F5749 		.ascii	"__WINT_MAX__ 4294967295U\000"
+ 2420      4E545F4D 
+ 2420      41585F5F 
+ 2420      20343239 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 68
+
+
+ 2420      34393637 
+ 2421              	.LASF228:
+ 2422 1cbb 5F5F5341 		.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
+ 2422      4343554D 
+ 2422      5F4D494E 
+ 2422      5F5F2028 
+ 2422      2D305831 
+ 2423              	.LASF135:
+ 2424 1cdd 5F5F464C 		.ascii	"__FLT_HAS_INFINITY__ 1\000"
+ 2424      545F4841 
+ 2424      535F494E 
+ 2424      46494E49 
+ 2424      54595F5F 
+ 2425              	.LASF73:
+ 2426 1cf4 5F5F5743 		.ascii	"__WCHAR_MIN__ 0U\000"
+ 2426      4841525F 
+ 2426      4D494E5F 
+ 2426      5F203055 
+ 2426      00
+ 2427              	.LASF68:
+ 2428 1d05 5F5F5348 		.ascii	"__SHRT_MAX__ 32767\000"
+ 2428      52545F4D 
+ 2428      41585F5F 
+ 2428      20333237 
+ 2428      363700
+ 2429              	.LASF106:
+ 2430 1d18 5F5F5549 		.ascii	"__UINT_LEAST64_MAX__ 18446744073709551615ULL\000"
+ 2430      4E545F4C 
+ 2430      45415354 
+ 2430      36345F4D 
+ 2430      41585F5F 
+ 2431              	.LASF156:
+ 2432 1d45 5F5F4C44 		.ascii	"__LDBL_MAX_10_EXP__ 308\000"
+ 2432      424C5F4D 
+ 2432      41585F31 
+ 2432      305F4558 
+ 2432      505F5F20 
+ 2433              	.LASF202:
+ 2434 1d5d 5F5F5546 		.ascii	"__UFRACT_IBIT__ 0\000"
+ 2434      52414354 
+ 2434      5F494249 
+ 2434      545F5F20 
+ 2434      3000
+ 2435              	.LASF225:
+ 2436 1d6f 5F5F554C 		.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
+ 2436      4C465241 
+ 2436      43545F45 
+ 2436      5053494C 
+ 2436      4F4E5F5F 
+ 2437              	.LASF110:
+ 2438 1d90 5F5F494E 		.ascii	"__INT_FAST32_MAX__ 2147483647\000"
+ 2438      545F4641 
+ 2438      53543332 
+ 2438      5F4D4158 
+ 2438      5F5F2032 
+ 2439              	.LASF281:
+ 2440 1dae 5F5F5553 		.ascii	"__USQ_IBIT__ 0\000"
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 69
+
+
+ 2440      515F4942 
+ 2440      49545F5F 
+ 2440      203000
+ 2441              	.LASF356:
+ 2442 1dbd 5745414B 		.ascii	"WEAK __attribute__ ((weak))\000"
+ 2442      205F5F61 
+ 2442      74747269 
+ 2442      62757465 
+ 2442      5F5F2028 
+ 2443              	.LASF58:
+ 2444 1dd9 5F5F5549 		.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
+ 2444      4E545F46 
+ 2444      41535438 
+ 2444      5F545950 
+ 2444      455F5F20 
+ 2445              	.LASF30:
+ 2446 1dfa 5F5F5054 		.ascii	"__PTRDIFF_TYPE__ int\000"
+ 2446      52444946 
+ 2446      465F5459 
+ 2446      50455F5F 
+ 2446      20696E74 
+ 2447              	.LASF162:
+ 2448 1e0f 5F5F4C44 		.ascii	"__LDBL_HAS_DENORM__ 1\000"
+ 2448      424C5F48 
+ 2448      41535F44 
+ 2448      454E4F52 
+ 2448      4D5F5F20 
+ 2449              	.LASF361:
+ 2450 1e25 44656661 		.ascii	"Default_Handler\000"
+ 2450      756C745F 
+ 2450      48616E64 
+ 2450      6C657200 
+ 2451              	.LASF31:
+ 2452 1e35 5F5F5743 		.ascii	"__WCHAR_TYPE__ unsigned int\000"
+ 2452      4841525F 
+ 2452      54595045 
+ 2452      5F5F2075 
+ 2452      6E736967 
+ 2453              	.LASF312:
+ 2454 1e51 5F5F4743 		.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
+ 2454      435F4154 
+ 2454      4F4D4943 
+ 2454      5F434841 
+ 2454      5231365F 
+ 2455              	.LASF146:
+ 2456 1e73 5F5F4442 		.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
+ 2456      4C5F4550 
+ 2456      53494C4F 
+ 2456      4E5F5F20 
+ 2456      2828646F 
+ 2457              	.LASF338:
+ 2458 1ea5 5F5F7468 		.ascii	"__thumb__ 1\000"
+ 2458      756D625F 
+ 2458      5F203100 
+ 2459              	.LASF243:
+ 2460 1eb1 5F5F5541 		.ascii	"__UACCUM_MIN__ 0.0UK\000"
+ 2460      4343554D 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 70
+
+
+ 2460      5F4D494E 
+ 2460      5F5F2030 
+ 2460      2E30554B 
+ 2461              	.LASF11:
+ 2462 1ec6 5F5F4154 		.ascii	"__ATOMIC_CONSUME 1\000"
+ 2462      4F4D4943 
+ 2462      5F434F4E 
+ 2462      53554D45 
+ 2462      203100
+ 2463              	.LASF355:
+ 2464 1ed9 53544152 		.ascii	"STARTUP_FREERTOS 1\000"
+ 2464      5455505F 
+ 2464      46524545 
+ 2464      52544F53 
+ 2464      203100
+ 2465              	.LASF185:
+ 2466 1eec 5F5F4445 		.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
+ 2466      43313238 
+ 2466      5F535542 
+ 2466      4E4F524D 
+ 2466      414C5F4D 
+ 2467 1f1f 30303030 		.ascii	"000000001E-6143DL\000"
+ 2467      30303030 
+ 2467      31452D36 
+ 2467      31343344 
+ 2467      4C00
+ 2468              	.LASF240:
+ 2469 1f31 5F5F4143 		.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
+ 2469      43554D5F 
+ 2469      45505349 
+ 2469      4C4F4E5F 
+ 2469      5F203078 
+ 2470              	.LASF366:
+ 2471 1f4c 5F736273 		.ascii	"_sbss_ahb\000"
+ 2471      735F6168 
+ 2471      6200
+ 2472              	.LASF43:
+ 2473 1f56 5F5F5549 		.ascii	"__UINT16_TYPE__ short unsigned int\000"
+ 2473      4E543136 
+ 2473      5F545950 
+ 2473      455F5F20 
+ 2473      73686F72 
+ 2474              	.LASF113:
+ 2475 1f79 5F5F5549 		.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
+ 2475      4E545F46 
+ 2475      41535431 
+ 2475      365F4D41 
+ 2475      585F5F20 
+ 2476              	.LASF362:
+ 2477 1f99 5F736964 		.ascii	"_sidata\000"
+ 2477      61746100 
+ 2478              	.LASF298:
+ 2479 1fa1 5F5F5544 		.ascii	"__UDA_FBIT__ 32\000"
+ 2479      415F4642 
+ 2479      49545F5F 
+ 2479      20333200 
+ 2480              	.LASF224:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 71
+
+
+ 2481 1fb1 5F5F554C 		.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
+ 2481      4C465241 
+ 2481      43545F4D 
+ 2481      41585F5F 
+ 2481      20305846 
+ 2482              	.LASF308:
+ 2483 1fdd 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1\000"
+ 2483      435F4841 
+ 2483      56455F53 
+ 2483      594E435F 
+ 2483      434F4D50 
+ 2484              	.LASF376:
+ 2485 2002 696E7466 		.ascii	"intfunc\000"
+ 2485      756E6300 
+ 2486              	.LASF64:
+ 2487 200a 5F5F6861 		.ascii	"__has_include(STR) __has_include__(STR)\000"
+ 2487      735F696E 
+ 2487      636C7564 
+ 2487      65285354 
+ 2487      5229205F 
+ 2488              	.LASF21:
+ 2489 2032 5F5F4348 		.ascii	"__CHAR_BIT__ 8\000"
+ 2489      41525F42 
+ 2489      49545F5F 
+ 2489      203800
+ 2490              	.LASF83:
+ 2491 2041 5F5F5349 		.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
+ 2491      475F4154 
+ 2491      4F4D4943 
+ 2491      5F4D494E 
+ 2491      5F5F2028 
+ 2492              	.LASF253:
+ 2493 206e 5F5F554C 		.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
+ 2493      41434355 
+ 2493      4D5F4D49 
+ 2493      4E5F5F20 
+ 2493      302E3055 
+ 2494              	.LASF292:
+ 2495 2085 5F5F5441 		.ascii	"__TA_FBIT__ 63\000"
+ 2495      5F464249 
+ 2495      545F5F20 
+ 2495      363300
+ 2496              	.LASF375:
+ 2497 2094 443A5C77 		.ascii	"D:\\work\\Embedded\\aoaa\000"
+ 2497      6F726B5C 
+ 2497      456D6265 
+ 2497      64646564 
+ 2497      5C616F61 
+ 2498              	.LASF198:
+ 2499 20aa 5F5F4652 		.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
+ 2499      4143545F 
+ 2499      4D494E5F 
+ 2499      5F20282D 
+ 2499      302E3552 
+ 2500              	.LASF56:
+ 2501 20c5 5F5F494E 		.ascii	"__INT_FAST32_TYPE__ int\000"
+ 2501      545F4641 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 72
+
+
+ 2501      53543332 
+ 2501      5F545950 
+ 2501      455F5F20 
+ 2502              	.LASF59:
+ 2503 20dd 5F5F5549 		.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
+ 2503      4E545F46 
+ 2503      41535431 
+ 2503      365F5459 
+ 2503      50455F5F 
+ 2504              	.LASF197:
+ 2505 20ff 5F5F4652 		.ascii	"__FRACT_IBIT__ 0\000"
+ 2505      4143545F 
+ 2505      49424954 
+ 2505      5F5F2030 
+ 2505      00
+ 2506              	.LASF116:
+ 2507 2110 5F5F494E 		.ascii	"__INTPTR_MAX__ 2147483647\000"
+ 2507      54505452 
+ 2507      5F4D4158 
+ 2507      5F5F2032 
+ 2507      31343734 
+ 2508              	.LASF199:
+ 2509 212a 5F5F4652 		.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
+ 2509      4143545F 
+ 2509      4D41585F 
+ 2509      5F203058 
+ 2509      37464646 
+ 2510              	.LASF334:
+ 2511 2144 5F5F4152 		.ascii	"__ARM_ARCH_PROFILE 77\000"
+ 2511      4D5F4152 
+ 2511      43485F50 
+ 2511      524F4649 
+ 2511      4C452037 
+ 2512              	.LASF216:
+ 2513 215a 5F5F4C4C 		.ascii	"__LLFRACT_FBIT__ 63\000"
+ 2513      46524143 
+ 2513      545F4642 
+ 2513      49545F5F 
+ 2513      20363300 
+ 2514              	.LASF256:
+ 2515 216e 5F5F4C4C 		.ascii	"__LLACCUM_FBIT__ 31\000"
+ 2515      41434355 
+ 2515      4D5F4642 
+ 2515      49545F5F 
+ 2515      20333100 
+ 2516              	.LASF150:
+ 2517 2182 5F5F4442 		.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
+ 2517      4C5F4841 
+ 2517      535F5155 
+ 2517      4945545F 
+ 2517      4E414E5F 
+ 2518              	.LASF126:
+ 2519 219a 5F5F464C 		.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+ 2519      545F4D49 
+ 2519      4E5F3130 
+ 2519      5F455850 
+ 2519      5F5F2028 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 73
+
+
+ 2520              	.LASF221:
+ 2521 21b3 5F5F554C 		.ascii	"__ULLFRACT_FBIT__ 64\000"
+ 2521      4C465241 
+ 2521      43545F46 
+ 2521      4249545F 
+ 2521      5F203634 
+ 2522              	.LASF328:
+ 2523 21c8 5F5F4152 		.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
+ 2523      4D5F4645 
+ 2523      41545552 
+ 2523      455F554E 
+ 2523      414C4947 
+ 2524              	.LASF10:
+ 2525 21e2 5F5F4154 		.ascii	"__ATOMIC_ACQ_REL 4\000"
+ 2525      4F4D4943 
+ 2525      5F414351 
+ 2525      5F52454C 
+ 2525      203400
+ 2526              	.LASF218:
+ 2527 21f5 5F5F4C4C 		.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
+ 2527      46524143 
+ 2527      545F4D49 
+ 2527      4E5F5F20 
+ 2527      282D302E 
+ 2528              	.LASF277:
+ 2529 2216 5F5F5551 		.ascii	"__UQQ_IBIT__ 0\000"
+ 2529      515F4942 
+ 2529      49545F5F 
+ 2529      203000
+ 2530              	.LASF80:
+ 2531 2225 5F5F5549 		.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
+ 2531      4E544D41 
+ 2531      585F4D41 
+ 2531      585F5F20 
+ 2531      31383434 
+ 2532              	.LASF257:
+ 2533 224d 5F5F4C4C 		.ascii	"__LLACCUM_IBIT__ 32\000"
+ 2533      41434355 
+ 2533      4D5F4942 
+ 2533      49545F5F 
+ 2533      20333200 
+ 2534              	.LASF246:
+ 2535 2261 5F5F4C41 		.ascii	"__LACCUM_FBIT__ 31\000"
+ 2535      4343554D 
+ 2535      5F464249 
+ 2535      545F5F20 
+ 2535      333100
+ 2536              	.LASF264:
+ 2537 2274 5F5F554C 		.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
+ 2537      4C414343 
+ 2537      554D5F4D 
+ 2537      41585F5F 
+ 2537      20305846 
+ 2538              	.LASF233:
+ 2539 22a0 5F5F5553 		.ascii	"__USACCUM_MIN__ 0.0UHK\000"
+ 2539      41434355 
+ 2539      4D5F4D49 
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 74
+
+
+ 2539      4E5F5F20 
+ 2539      302E3055 
+ 2540              	.LASF112:
+ 2541 22b7 5F5F5549 		.ascii	"__UINT_FAST8_MAX__ 4294967295U\000"
+ 2541      4E545F46 
+ 2541      41535438 
+ 2541      5F4D4158 
+ 2541      5F5F2034 
+ 2542              	.LASF259:
+ 2543 22d6 5F5F4C4C 		.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
+ 2543      41434355 
+ 2543      4D5F4D41 
+ 2543      585F5F20 
+ 2543      30583746 
+ 2544              	.LASF363:
+ 2545 2300 5F736461 		.ascii	"_sdata\000"
+ 2545      746100
+ 2546              	.LASF69:
+ 2547 2307 5F5F494E 		.ascii	"__INT_MAX__ 2147483647\000"
+ 2547      545F4D41 
+ 2547      585F5F20 
+ 2547      32313437 
+ 2547      34383336 
+ 2548              	.LASF296:
+ 2549 231e 5F5F5553 		.ascii	"__USA_FBIT__ 16\000"
+ 2549      415F4642 
+ 2549      49545F5F 
+ 2549      20313600 
+ 2550              	.LASF303:
+ 2551 232e 5F5F5553 		.ascii	"__USER_LABEL_PREFIX__ \000"
+ 2551      45525F4C 
+ 2551      4142454C 
+ 2551      5F505245 
+ 2551      4649585F 
+ 2552              	.LASF217:
+ 2553 2345 5F5F4C4C 		.ascii	"__LLFRACT_IBIT__ 0\000"
+ 2553      46524143 
+ 2553      545F4942 
+ 2553      49545F5F 
+ 2553      203000
+ 2554              	.LASF214:
+ 2555 2358 5F5F554C 		.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
+ 2555      46524143 
+ 2555      545F4D41 
+ 2555      585F5F20 
+ 2555      30584646 
+ 2556              	.LASF61:
+ 2557 237a 5F5F5549 		.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
+ 2557      4E545F46 
+ 2557      41535436 
+ 2557      345F5459 
+ 2557      50455F5F 
+ 2558              	.LASF101:
+ 2559 23a6 5F5F5549 		.ascii	"__UINT8_C(c) c\000"
+ 2559      4E54385F 
+ 2559      43286329 
+ 2559      206300
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 75
+
+
+ 2560              	.LASF50:
+ 2561 23b5 5F5F5549 		.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
+ 2561      4E545F4C 
+ 2561      45415354 
+ 2561      385F5459 
+ 2561      50455F5F 
+ 2562              	.LASF367:
+ 2563 23d8 5F656273 		.ascii	"_ebss\000"
+ 2563      7300
+ 2564              	.LASF170:
+ 2565 23de 5F5F4445 		.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
+ 2565      4333325F 
+ 2565      45505349 
+ 2565      4C4F4E5F 
+ 2565      5F203145 
+ 2566              	.LASF307:
+ 2567 23f7 5F5F4743 		.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 1\000"
+ 2567      435F4841 
+ 2567      56455F53 
+ 2567      594E435F 
+ 2567      434F4D50 
+ 2568              	.LASF238:
+ 2569 241c 5F5F4143 		.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
+ 2569      43554D5F 
+ 2569      4D494E5F 
+ 2569      5F20282D 
+ 2569      30583150 
+ 2570              	.LASF343:
+ 2571 243d 5F5F534F 		.ascii	"__SOFTFP__ 1\000"
+ 2571      46544650 
+ 2571      5F5F2031 
+ 2571      00
+ 2572              	.LASF117:
+ 2573 244a 5F5F5549 		.ascii	"__UINTPTR_MAX__ 4294967295U\000"
+ 2573      4E545054 
+ 2573      525F4D41 
+ 2573      585F5F20 
+ 2573      34323934 
+ 2574              	.LASF134:
+ 2575 2466 5F5F464C 		.ascii	"__FLT_HAS_DENORM__ 1\000"
+ 2575      545F4841 
+ 2575      535F4445 
+ 2575      4E4F524D 
+ 2575      5F5F2031 
+ 2576              	.LASF333:
+ 2577 247b 5F5F4152 		.ascii	"__ARM_SIZEOF_WCHAR_T 4\000"
+ 2577      4D5F5349 
+ 2577      5A454F46 
+ 2577      5F574348 
+ 2577      41525F54 
+ 2578              	.LASF145:
+ 2579 2492 5F5F4442 		.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
+ 2579      4C5F4D49 
+ 2579      4E5F5F20 
+ 2579      2828646F 
+ 2579      75626C65 
+ 2580              	.LASF140:
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 76
+
+
+ 2581 24c1 5F5F4442 		.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
+ 2581      4C5F4D49 
+ 2581      4E5F3130 
+ 2581      5F455850 
+ 2581      5F5F2028 
+ 2582              	.LASF227:
+ 2583 24db 5F5F5341 		.ascii	"__SACCUM_IBIT__ 8\000"
+ 2583      4343554D 
+ 2583      5F494249 
+ 2583      545F5F20 
+ 2583      3800
+ 2584              	.LASF67:
+ 2585 24ed 5F5F5343 		.ascii	"__SCHAR_MAX__ 127\000"
+ 2585      4841525F 
+ 2585      4D41585F 
+ 2585      5F203132 
+ 2585      3700
+ 2586              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 77
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 startup_LPC17xx.c
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:58     .isr_vector:00000000 g_pfnVectors
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:55     .isr_vector:00000000 $d
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:116    .text.Reset_Handler:00000000 Reset_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 NMI_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 HardFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 MemManage_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 BusFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 UsageFault_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 DebugMon_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 WDT_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 rcscheduler_Timer0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 TIMER1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 TIMER2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 TIMER3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 UART0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 rcuart_PORT1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 UART2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 UART3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 PWM1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 I2C0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 I2C1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 I2C2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 SPI_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 SSP0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 SSP1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 PLL0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 RTC_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 EINT0_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 EINT1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 EINT2_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 EINT3_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 ADC_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 BOD_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 USB_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 CAN_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 DMA_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 I2S_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 ENET_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 RIT_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 MCPWM_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 QEI_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 PLL1_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 USBActivity_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 CANActivity_IRQHandler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:111    .text.Reset_Handler:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:204    .text.Reset_Handler:0000006c $d
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:215    .text._init:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:220    .text._init:00000000 _init
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:244    .text.Default_Handler:00000000 $t
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 Default_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 SVC_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 PendSV_Handler
+C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s:249    .text.Default_Handler:00000000 SysTick_Handler
+                     .debug_frame:00000010 $d
+                           .group:00000000 wm4.0.1834ce015d70b8127b1e5f7bc96e3d8e
+ARM GAS  C:\Users\COSMIN~1.MAR\AppData\Local\Temp\ccgG6WD8.s 			page 78
+
+
+
+UNDEFINED SYMBOLS
+_estack
+vPortSVCHandler
+xPortPendSVHandler
+xPortSysTickHandler
+SystemInit
+main
+_sidata
+_sdata
+_edata
+_sbss
+_ebss
+_sbss_ahb
+_ebss_ahb
