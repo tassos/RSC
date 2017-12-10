@@ -375,11 +375,7 @@ union u_t {
 	double d;
 };
 
-static T_UBYTE global_state = 1;
-static double previous_error1 = 0;
-static double previous_error2 = 0;
-
-static void controller (double q1, double q2, double time, double *tau1, double *tau2, double setpoint1, double setpoint2);
+static T_UBYTE global_state = 0;
 
 void rcpot_SetState (T_UBYTE state)
 {
@@ -392,22 +388,9 @@ static void udpecho_raw_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, str
 	double tau1;
 	double tau2;
 	double luw_PotValue;
-	static double setpoint1 = 0;
-	static double setpoint2 = 0;
+	static double setpoint = 0;
 
-	switch(global_state)
-	{
-	case SETPOINT_0:
-		luw_PotValue = (double)(ecuAppl_Pot_GetPotValue());
-		setpoint1 = luw_PotValue/2000-0.825;
-		break;
-	case SETPOINT_1:
-		luw_PotValue = (double)(ecuAppl_Pot_GetPotValue());
-		setpoint2 = luw_PotValue/2000-0.825;
-		break;
-	default:
-		break;
-	}
+	setpoint = (double)(ecuAppl_Pot_GetPotValue());
 
 	LWIP_UNUSED_ARG(arg);
 	if(p == NULL)
@@ -424,12 +407,10 @@ static void udpecho_raw_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, str
 	memcpy(q2.buffer,&bigBuffer[8],8);
 	memcpy(time.buffer,&bigBuffer[16],8);
 
-	controller(q1.d, q2.d, time.d, &tau1, &tau2, setpoint1, setpoint2);
-
 	raub_buf[0] = tau1;
 	raub_buf[1] = tau2;
-	raub_buf[2] = setpoint1;
-	raub_buf[3] = setpoint2;
+	raub_buf[2] = setpoint;
+	raub_buf[3] = setpoint;
 
 	pl.flags = p->flags;
 	pl.len = 32;
@@ -445,15 +426,6 @@ static void udpecho_raw_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, str
 //	T_UBYTE lub_size = p->len;
 	udp_sendto(pcb, &pl, addr, 4000);
 	pbuf_free(p);
-}
-
-static void controller (double q1, double q2, double time, double *tau1, double *tau2, double setpoint1, double setpoint2)
-{
-	*tau1 = (3.7805+0.6301/0.01)*(setpoint1-q1)-(0.6301/0.01)*previous_error1;
-	*tau2 = (3.7805+0.6301/0.01)*(setpoint2-q2)-(0.6301/0.01)*previous_error2;
-
-	previous_error1 = setpoint1-q1;
-	previous_error2 = setpoint2-q2;
 }
 
 /*-----------------------------------------------------------------------------------*/
