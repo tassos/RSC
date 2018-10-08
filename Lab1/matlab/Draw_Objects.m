@@ -11,7 +11,7 @@ plot3([0;0],[0;5],[0;0],'green','LineWidth',3);
 plot3([0;0],[0;0],[0;5],'blue','LineWidth',3);
 
 F={F1,F2};
-V={V1(:,1:3),V2(:,1:3)};
+V={V1(1:3,:)',V2(1:3,:)'};
 
 % Draw the two objects
 for ind = 1:length(F)
