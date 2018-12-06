@@ -33,8 +33,8 @@ void ethernetif_poll(void);
  */
 /* Private variables */
 PRIVATE_DATA struct netif rs_NetIf;									//!< Ethernet interface
-PRIVATE_DATA T_UBYTE raub_IP[4u] = { 192u, 168u, 1u, 239u };		//!< IP address
-PRIVATE_DATA T_UBYTE raub_GW[4u] = { 192u, 168u, 1u, 1u };			//!< Gateway address
+PRIVATE_DATA T_UBYTE raub_IP[4u] = { 192u, 168u, 2u, 239u };		//!< IP address
+PRIVATE_DATA T_UBYTE raub_GW[4u] = { 192u, 168u, 2u, 1u };			//!< Gateway address
 PRIVATE_DATA T_UBYTE raub_NetMask[4u] = { 255u, 255u, 255u, 0u };	//!< Subnet mask
 /**@} end of group eth_variables */
 
