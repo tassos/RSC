@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.33"
+    ComputedModelVersion    "1.34"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -18,7 +18,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "comunicationUDP"
+      Cell		      "comunicationUDP_2015"
       PropName		      "mdlProps"
     }
   }
@@ -64,7 +64,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1886.0, 881.0]
+	Extents			[1886.0, 882.0]
 	ZoomFactor		[1.0]
 	Offset			[316.0, -274.40000680088997]
       }
@@ -74,11 +74,11 @@ Model {
   Creator		  "zigg"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "nakano"
+  LastModifiedBy	  "STUDENT"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Dec 10 22:02:52 2017"
-  RTWModifiedTimeStamp	  434844169
-  ModelVersionFormat	  "1.%<AutoIncrement:33>"
+  LastModifiedDate	  "Sat Dec 08 00:32:33 2018"
+  RTWModifiedTimeStamp	  466129831
+  ModelVersionFormat	  "1.%<AutoIncrement:34>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -841,8 +841,8 @@ Model {
     }
     Block {
       BlockType		      MATLABFcn
-      MATLABFcn		      "my_robot"
-      OutputDimensions	      "2"
+      MATLABFcn		      "sin"
+      OutputDimensions	      "-1"
       OutputSignalType	      "auto"
       Output1D		      on
       SampleTime	      "-1"
@@ -1073,6 +1073,8 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [490, 200, 560, 230]
 	  ZOrder		  27
+	  MATLABFcn		  "my_robot"
+	  OutputDimensions	  "2"
 	}
 	Block {
 	  BlockType		  Mux
