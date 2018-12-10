@@ -841,8 +841,8 @@ Model {
     }
     Block {
       BlockType		      MATLABFcn
-      MATLABFcn		      "sin"
-      OutputDimensions	      "-1"
+      MATLABFcn		      "my_robot"
+      OutputDimensions	      "2"
       OutputSignalType	      "auto"
       Output1D		      on
       SampleTime	      "-1"
